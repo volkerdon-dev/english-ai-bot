@@ -1,0 +1,15 @@
+{
+  "name": "engtrain-webapp",
+  "version": "1.0.0",
+  "description": "EngTrain WebApp for Telegram Bot",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -s . -l $PORT"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+} 
