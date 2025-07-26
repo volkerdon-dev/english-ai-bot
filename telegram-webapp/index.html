@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EngTrain App</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <h1>👋 Добро пожаловать в EngTrain App!</h1>
+  </div>
+
+  <div class="content">
+    <h2>Бесплатные разделы:</h2>
+
+    <button class="btn" onclick="navigateTo('grammar.html')">📚 Grammar</button>
+    <button class="btn" onclick="navigateTo('vocabulary.html')">🧠 Vocabulary</button>
+    <button class="btn" onclick="navigateTo('practice.html')">✍️ Practice</button>
+    <button class="btn" onclick="navigateTo('games.html')">🎮 Игры</button>
+    <button class="btn secondary" onclick="navigateTo('full-version.html')">🔐 Что в полной версии?</button>
+  </div>
+
+  <script>
+    function navigateTo(page) {
+      window.location.href = page;
+    }
+  </script>
+</body>
+</html>

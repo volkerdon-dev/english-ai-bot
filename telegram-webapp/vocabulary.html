@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vocabulary - EngTrain App</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <button onclick="goBack()" class="back-btn">← Назад</button>
+    <h1>🧠 Vocabulary</h1>
+  </div>
+
+  <div class="content">
+    <h2>Словарные разделы</h2>
+    
+    <div class="section-grid">
+      <div class="section-card" onclick="openSection('daily_words')">
+        <h3>📅 Слово дня</h3>
+        <p>Новые слова каждый день</p>
+      </div>
+      
+      <div class="section-card" onclick="openSection('topics')">
+        <h3>📚 Тематические наборы</h3>
+        <p>Слова по темам</p>
+      </div>
+      
+      <div class="section-card" onclick="openSection('idioms')">
+        <h3>💬 Идиомы</h3>
+        <p>Популярные выражения</p>
+      </div>
+      
+      <div class="section-card" onclick="openSection('synonyms')">
+        <h3>🔄 Синонимы</h3>
+        <p>Слова с похожим значением</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      window.location.href = 'index.html';
+    }
+    
+    function openSection(section) {
+      alert(`Открывается раздел: ${section}`);
+    }
+  </script>
+</body>
+</html> 

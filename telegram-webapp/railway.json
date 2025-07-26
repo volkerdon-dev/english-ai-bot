@@ -1,0 +1,9 @@
+{
+  "build": {
+    "command": "echo 'no build needed'"
+  },
+  "start": {
+    "command": "npx serve .",
+    "port": 3000
+  }
+}
