@@ -23,12 +23,6 @@
         <button class="btn" onclick="showPage('practice')">✍️ Practice</button>
         <button class="btn" onclick="showPage('games')">🎮 Игры</button>
         <button class="btn secondary" onclick="showPage('full-version')">🔐 Что в полной версии?</button>
-        <button class="btn" onclick="showPage('test')" style="background-color: #28a745;">🧪 Тест навигации</button>
-        <button class="btn" onclick="testNavigation()" style="background-color: #ff6b6b;">🔧 Тест в браузере</button>
-        <button class="btn" onclick="testDirectNavigation()" style="background-color: #ffa500;">🚀 Прямая навигация</button>
-        <button class="btn" onclick="testTelegramNavigation()" style="background-color: #9c27b0;">📱 Тест Telegram</button>
-        <button class="btn" onclick="simpleTest()" style="background-color: #e91e63;">🔬 Простой тест</button>
-        <button class="btn" onclick="testReplace()" style="background-color: #607d8b;">🔄 Тест Replace</button>
       </div>
     </div>
 
@@ -43,25 +37,227 @@
         <h2>Грамматические разделы</h2>
         
         <div class="section-grid">
-          <div class="section-card" onclick="openSection('tenses')">
+          <div class="section-card" onclick="showPage('tenses')">
             <h3>⏰ Времена</h3>
             <p>Изучение английских времен</p>
           </div>
           
-          <div class="section-card" onclick="openSection('articles')">
+          <div class="section-card" onclick="showPage('articles')">
             <h3>📝 Артикли</h3>
             <p>Правила использования a/an/the</p>
           </div>
           
-          <div class="section-card" onclick="openSection('prepositions')">
+          <div class="section-card" onclick="showPage('prepositions')">
             <h3>🔗 Предлоги</h3>
             <p>Предлоги места и времени</p>
           </div>
           
-          <div class="section-card" onclick="openSection('conditionals')">
+          <div class="section-card" onclick="showPage('conditionals')">
             <h3>🎯 Условные предложения</h3>
             <p>If-clauses и их типы</p>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Tenses -->
+    <div id="tenses-page" class="page">
+      <div class="header">
+        <button onclick="showPage('grammar')" class="back-btn">← Назад</button>
+        <h1>⏰ Времена</h1>
+      </div>
+
+      <div class="content">
+        <h2>Английские времена</h2>
+        
+        <div class="section-grid">
+          <div class="section-card" onclick="showPage('present-simple')">
+            <h3>📝 Present Simple</h3>
+            <p>Настоящее простое время</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('present-continuous')">
+            <h3>🔄 Present Continuous</h3>
+            <p>Настоящее продолженное время</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('past-simple')">
+            <h3>📚 Past Simple</h3>
+            <p>Прошедшее простое время</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('future-simple')">
+            <h3>🔮 Future Simple</h3>
+            <p>Будущее простое время</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Present Simple -->
+    <div id="present-simple-page" class="page">
+      <div class="header">
+        <button onclick="showPage('tenses')" class="back-btn">← Назад</button>
+        <h1>📝 Present Simple</h1>
+      </div>
+
+      <div class="content">
+        <h2>Настоящее простое время</h2>
+        
+        <div class="grammar-content">
+          <h3>📖 Формула</h3>
+          <p><strong>Утверждение:</strong> Subject + V1 (he/she/it + V1+s)</p>
+          <p><strong>Отрицание:</strong> Subject + don't/doesn't + V1</p>
+          <p><strong>Вопрос:</strong> Do/Does + Subject + V1?</p>
+          
+          <h3>🎯 Примеры</h3>
+          <ul>
+            <li>I <strong>work</strong> every day. (Я работаю каждый день)</li>
+            <li>She <strong>works</strong> in a hospital. (Она работает в больнице)</li>
+            <li>We <strong>don't</strong> speak French. (Мы не говорим по-французски)</li>
+            <li><strong>Do</strong> you like coffee? (Ты любишь кофе?)</li>
+          </ul>
+          
+          <h3>⏰ Когда используется</h3>
+          <ul>
+            <li>Регулярные действия и привычки</li>
+            <li>Факты и общие истины</li>
+            <li>Расписания и графики</li>
+            <li>Комментарии к спортивным событиям</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Present Continuous -->
+    <div id="present-continuous-page" class="page">
+      <div class="header">
+        <button onclick="showPage('tenses')" class="back-btn">← Назад</button>
+        <h1>🔄 Present Continuous</h1>
+      </div>
+
+      <div class="content">
+        <h2>Настоящее продолженное время</h2>
+        
+        <div class="grammar-content">
+          <h3>📖 Формула</h3>
+          <p><strong>Утверждение:</strong> Subject + am/is/are + V-ing</p>
+          <p><strong>Отрицание:</strong> Subject + am/is/are + not + V-ing</p>
+          <p><strong>Вопрос:</strong> Am/Is/Are + Subject + V-ing?</p>
+          
+          <h3>🎯 Примеры</h3>
+          <ul>
+            <li>I <strong>am reading</strong> a book now. (Я сейчас читаю книгу)</li>
+            <li>She <strong>is cooking</strong> dinner. (Она готовит ужин)</li>
+            <li>They <strong>are not</strong> sleeping. (Они не спят)</li>
+            <li><strong>Are</strong> you <strong>working</strong>? (Ты работаешь?)</li>
+          </ul>
+          
+          <h3>⏰ Когда используется</h3>
+          <ul>
+            <li>Действия, происходящие в момент речи</li>
+            <li>Временные действия</li>
+            <li>Запланированные действия в ближайшем будущем</li>
+            <li>Раздражающие привычки (с always)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Articles -->
+    <div id="articles-page" class="page">
+      <div class="header">
+        <button onclick="showPage('grammar')" class="back-btn">← Назад</button>
+        <h1>📝 Артикли</h1>
+      </div>
+
+      <div class="content">
+        <h2>Артикли в английском языке</h2>
+        
+        <div class="grammar-content">
+          <h3>📖 Типы артиклей</h3>
+          
+          <h4>🔤 Неопределенный артикль "A/An"</h4>
+          <ul>
+            <li><strong>A</strong> - перед согласными звуками: a book, a car</li>
+            <li><strong>An</strong> - перед гласными звуками: an apple, an hour</li>
+            <li>Используется с исчисляемыми существительными в единственном числе</li>
+          </ul>
+          
+          <h4>🎯 Определенный артикль "The"</h4>
+          <ul>
+            <li>Используется с конкретными предметами</li>
+            <li>С уникальными предметами: the sun, the moon</li>
+            <li>С предметами, упомянутыми ранее</li>
+          </ul>
+          
+          <h4>🚫 Отсутствие артикля</h4>
+          <ul>
+            <li>С неисчисляемыми существительными</li>
+            <li>С существительными во множественном числе в общем смысле</li>
+            <li>С именами собственными</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Prepositions -->
+    <div id="prepositions-page" class="page">
+      <div class="header">
+        <button onclick="showPage('grammar')" class="back-btn">← Назад</button>
+        <h1>🔗 Предлоги</h1>
+      </div>
+
+      <div class="content">
+        <h2>Предлоги в английском языке</h2>
+        
+        <div class="grammar-content">
+          <h3>📍 Предлоги места</h3>
+          <ul>
+            <li><strong>In</strong> - внутри: in the room, in the car</li>
+            <li><strong>On</strong> - на поверхности: on the table, on the wall</li>
+            <li><strong>At</strong> - у, около: at the station, at home</li>
+            <li><strong>Under</strong> - под: under the bed</li>
+            <li><strong>Behind</strong> - за: behind the house</li>
+          </ul>
+          
+          <h3>⏰ Предлоги времени</h3>
+          <ul>
+            <li><strong>At</strong> - точное время: at 5 o'clock</li>
+            <li><strong>In</strong> - месяцы, годы: in March, in 2023</li>
+            <li><strong>On</strong> - дни недели, даты: on Monday, on May 1st</li>
+            <li><strong>For</strong> - продолжительность: for 2 hours</li>
+            <li><strong>Since</strong> - с какого-то момента: since Monday</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Conditionals -->
+    <div id="conditionals-page" class="page">
+      <div class="header">
+        <button onclick="showPage('grammar')" class="back-btn">← Назад</button>
+        <h1>🎯 Условные предложения</h1>
+      </div>
+
+      <div class="content">
+        <h2>Типы условных предложений</h2>
+        
+        <div class="grammar-content">
+          <h3>1️⃣ Первый тип (реальные условия)</h3>
+          <p><strong>If + Present Simple, will + V1</strong></p>
+          <p>Если я увижу его, я скажу ему об этом.</p>
+          <p><em>If I see him, I will tell him about it.</em></p>
+          
+          <h3>2️⃣ Второй тип (нереальные условия)</h3>
+          <p><strong>If + Past Simple, would + V1</strong></p>
+          <p>Если бы у меня были деньги, я купил бы дом.</p>
+          <p><em>If I had money, I would buy a house.</em></p>
+          
+          <h3>3️⃣ Третий тип (прошедшие нереальные условия)</h3>
+          <p><strong>If + Past Perfect, would have + V3</strong></p>
+          <p>Если бы я знал об этом раньше, я бы пришел.</p>
+          <p><em>If I had known about it earlier, I would have come.</em></p>
         </div>
       </div>
     </div>
@@ -77,24 +273,95 @@
         <h2>Словарные разделы</h2>
         
         <div class="section-grid">
-          <div class="section-card" onclick="openSection('daily_words')">
+          <div class="section-card" onclick="showPage('daily-words')">
             <h3>📅 Слова дня</h3>
             <p>Новые слова каждый день</p>
           </div>
           
-          <div class="section-card" onclick="openSection('topics')">
+          <div class="section-card" onclick="showPage('topics')">
             <h3>📚 Тематические слова</h3>
             <p>Слова по темам</p>
           </div>
           
-          <div class="section-card" onclick="openSection('idioms')">
+          <div class="section-card" onclick="showPage('idioms')">
             <h3>💬 Идиомы</h3>
             <p>Популярные выражения</p>
           </div>
           
-          <div class="section-card" onclick="openSection('phrasal_verbs')">
+          <div class="section-card" onclick="showPage('phrasal-verbs')">
             <h3>🔗 Фразовые глаголы</h3>
             <p>Важные фразовые глаголы</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Daily Words -->
+    <div id="daily-words-page" class="page">
+      <div class="header">
+        <button onclick="showPage('vocabulary')" class="back-btn">← Назад</button>
+        <h1>📅 Слова дня</h1>
+      </div>
+
+      <div class="content">
+        <h2>Слова дня - 2 августа 2025</h2>
+        
+        <div class="grammar-content">
+          <h3>🎯 Сегодняшние слова</h3>
+          
+          <div class="word-card">
+            <h4>🌟 Accomplish</h4>
+            <p><strong>Перевод:</strong> достигать, выполнять</p>
+            <p><strong>Пример:</strong> She accomplished her goal of learning English.</p>
+            <p><em>Она достигла своей цели изучения английского.</em></p>
+          </div>
+          
+          <div class="word-card">
+            <h4>💡 Perseverance</h4>
+            <p><strong>Перевод:</strong> настойчивость, упорство</p>
+            <p><strong>Пример:</strong> His perseverance helped him succeed.</p>
+            <p><em>Его настойчивость помогла ему добиться успеха.</em></p>
+          </div>
+          
+          <div class="word-card">
+            <h4>🚀 Endeavor</h4>
+            <p><strong>Перевод:</strong> стремление, попытка</p>
+            <p><strong>Пример:</strong> Learning a new language is a worthwhile endeavor.</p>
+            <p><em>Изучение нового языка - стоящее стремление.</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Topics -->
+    <div id="topics-page" class="page">
+      <div class="header">
+        <button onclick="showPage('vocabulary')" class="back-btn">← Назад</button>
+        <h1>📚 Тематические слова</h1>
+      </div>
+
+      <div class="content">
+        <h2>Слова по темам</h2>
+        
+        <div class="section-grid">
+          <div class="section-card" onclick="showPage('family-words')">
+            <h3>👨‍👩‍👧‍👦 Семья</h3>
+            <p>Слова о семье и родственниках</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('work-words')">
+            <h3>💼 Работа</h3>
+            <p>Профессии и рабочая лексика</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('food-words')">
+            <h3>🍕 Еда</h3>
+            <p>Продукты и блюда</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('travel-words')">
+            <h3>✈️ Путешествия</h3>
+            <p>Туризм и транспорт</p>
           </div>
         </div>
       </div>

@@ -1,3 +1,71 @@
+/* Word card styles */
+.word-card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px 0;
+  border-left: 4px solid #667eea;
+}
+
+.word-card h4 {
+  color: #333;
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+.word-card p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+/* Grammar content styles */
+.grammar-content {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.grammar-content h3 {
+  color: #333;
+  margin: 20px 0 10px 0;
+  font-size: 18px;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 5px;
+}
+
+.grammar-content h4 {
+  color: #555;
+  margin: 15px 0 8px 0;
+  font-size: 16px;
+}
+
+.grammar-content p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.grammar-content ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.grammar-content li {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.grammar-content strong {
+  color: #667eea;
+  font-weight: bold;
+}
+
+.grammar-content em {
+  color: #666;
+  font-style: italic;
+}
+
 /* SPA Navigation styles */
 .page {
   display: none;
