@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navigation Test - EngTrain App</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <button onclick="goBack()" class="back-btn">← Назад</button>
+    <h1>🔧 Тест навигации</h1>
+  </div>
+
+  <div class="content">
+    <h2>Тест навигации</h2>
+    
+    <p>Если вы видите эту страницу, значит навигация работает!</p>
+    
+    <div class="section-grid">
+      <div class="section-card" onclick="testAlert()">
+        <h3>🔔 Тест уведомлений</h3>
+        <p>Проверка работы alert</p>
+      </div>
+      
+      <div class="section-card" onclick="testConsole()">
+        <h3>📝 Тест консоли</h3>
+        <p>Проверка console.log</p>
+      </div>
+      
+      <div class="section-card" onclick="testTelegram()">
+        <h3>📱 Тест Telegram</h3>
+        <p>Проверка Telegram Web App</p>
+      </div>
+      
+      <div class="section-card" onclick="goBack()">
+        <h3>🏠 Главное меню</h3>
+        <p>Возврат в главное меню</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Инициализация Telegram Web App
+    if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+      Telegram.WebApp.ready();
+      Telegram.WebApp.expand();
+      console.log('Telegram Web App initialized');
+    } else {
+      console.log('Running in browser mode');
+    }
+
+    function goBack() {
+      console.log('Going back to main menu');
+      
+      try {
+        window.location.href = 'index.html';
+      } catch (error) {
+        console.error('Navigation failed:', error);
+        window.open('index.html', '_self');
+      }
+    }
+    
+    function testAlert() {
+      alert('Уведомления работают!');
+    }
+    
+    function testConsole() {
+      console.log('Console работает!');
+      alert('Проверьте консоль разработчика (F12)');
+    }
+    
+    function testTelegram() {
+      if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+        alert('Telegram Web App обнаружен!');
+        console.log('Telegram Web App info:', Telegram.WebApp);
+      } else {
+        alert('Telegram Web App не обнаружен (работаем в браузере)');
+      }
+    }
+  </script>
+</body>
+</html> 
