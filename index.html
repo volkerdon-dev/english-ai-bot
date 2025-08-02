@@ -25,6 +25,7 @@
     <button class="btn" onclick="testDirectNavigation()" style="background-color: #ffa500;">🚀 Прямая навигация</button>
     <button class="btn" onclick="testTelegramNavigation()" style="background-color: #9c27b0;">📱 Тест Telegram</button>
     <button class="btn" onclick="simpleTest()" style="background-color: #e91e63;">🔬 Простой тест</button>
+    <button class="btn" onclick="testReplace()" style="background-color: #607d8b;">🔄 Тест Replace</button>
   </div>
 
   <script>
@@ -39,42 +40,15 @@
       console.log('=== NAVIGATION DEBUG ===');
       console.log('Navigating to:', page);
       console.log('Current URL:', window.location.href);
-      console.log('Current pathname:', window.location.pathname);
       
-      // Проверяем, находимся ли мы в Telegram Web App
-      if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
-        console.log('Telegram Web App detected');
-        
-        try {
-          // Для Telegram Web App используем специальный подход
-          console.log('Using Telegram Web App navigation');
-          
-          // Попробуем использовать Telegram Web App API для навигации
-          if (Telegram.WebApp.openTelegramLink) {
-            console.log('Using Telegram.WebApp.openTelegramLink');
-            const currentUrl = window.location.href;
-            const baseUrl = currentUrl.substring(0, currentUrl.lastIndexOf('/') + 1);
-            const newUrl = baseUrl + page;
-            Telegram.WebApp.openTelegramLink(newUrl);
-          } else {
-            console.log('Using fallback navigation');
-            window.location.href = page;
-          }
-          
-        } catch (error) {
-          console.error('Telegram navigation error:', error);
-          // Fallback к обычной навигации
-          window.location.href = page;
-        }
-      } else {
-        console.log('Browser mode detected');
-        // Обычная навигация для браузера
-        try {
-          window.location.href = page;
-        } catch (error) {
-          console.error('Browser navigation error:', error);
-          window.open(page, '_self');
-        }
+      // Простая навигация для всех случаев
+      try {
+        console.log('Attempting navigation with window.location.replace');
+        window.location.replace(page);
+      } catch (error) {
+        console.error('Navigation error:', error);
+        // Fallback
+        window.location.href = page;
       }
     }
     
@@ -120,6 +94,18 @@
       } catch (error) {
         console.error('Simple navigation failed:', error);
         alert('Простой тест навигации не сработал. Ошибка: ' + error.message);
+      }
+    }
+    
+    function testReplace() {
+      console.log('=== REPLACE TEST ===');
+      console.log('Testing window.location.replace to grammar.html');
+      try {
+        window.location.replace('grammar.html');
+        console.log('Replace navigation successful.');
+      } catch (error) {
+        console.error('Replace navigation failed:', error);
+        alert('Тест Replace не сработал. Ошибка: ' + error.message);
       }
     }
   </script>

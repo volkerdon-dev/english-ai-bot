@@ -73,31 +73,12 @@
     function goBack() {
       console.log('Going back to main menu');
       
-      if (telegramReady && typeof Telegram !== 'undefined' && Telegram.WebApp) {
-        console.log('Telegram Web App detected, going back');
-        
-        try {
-          // Для Telegram Web App используем специальный подход
-          if (Telegram.WebApp.openTelegramLink) {
-            const currentUrl = window.location.href;
-            const baseUrl = currentUrl.substring(0, currentUrl.lastIndexOf('/') + 1);
-            const newUrl = baseUrl + 'index.html';
-            Telegram.WebApp.openTelegramLink(newUrl);
-          } else {
-            window.location.href = 'index.html';
-          }
-        } catch (error) {
-          console.error('Telegram back navigation error:', error);
-          window.location.href = 'index.html';
-        }
-      } else {
-        console.log('Browser mode, going back');
-        try {
-          window.location.href = 'index.html';
-        } catch (error) {
-          console.error('Browser back navigation error:', error);
-          window.open('index.html', '_self');
-        }
+      try {
+        console.log('Attempting back navigation with window.location.replace');
+        window.location.replace('index.html');
+      } catch (error) {
+        console.error('Back navigation error:', error);
+        window.location.href = 'index.html';
       }
     }
     
