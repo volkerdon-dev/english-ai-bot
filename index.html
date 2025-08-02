@@ -42,19 +42,24 @@
             <p>Изучение английских времен</p>
           </div>
           
-          <div class="section-card" onclick="showPage('articles')">
-            <h3>📝 Артикли</h3>
-            <p>Правила использования a/an/the</p>
+          <div class="section-card" onclick="showPage('parts-of-speech')">
+            <h3>📌 Части речи</h3>
+            <p>Nouns, Pronouns, Verbs, Adjectives, Adverbs, Prepositions, Conjunctions, Interjections</p>
           </div>
           
-          <div class="section-card" onclick="showPage('prepositions')">
-            <h3>🔗 Предлоги</h3>
-            <p>Предлоги места и времени</p>
+          <div class="section-card" onclick="showPage('sentence-structure')">
+            <h3>🧱 Структура предложений</h3>
+            <p>Типы предложений, элементы, порядок слов, вопросы, отрицания</p>
           </div>
           
-          <div class="section-card" onclick="showPage('conditionals')">
-            <h3>🎯 Условные предложения</h3>
-            <p>If-clauses и их типы</p>
+          <div class="section-card" onclick="showPage('constructions')">
+            <h3>🛠 Конструкции</h3>
+            <p>There is/are, Have got/Has got, Used to, Be going to, It takes</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('common-mistakes')">
+            <h3>🚫 Общие ошибки</h3>
+            <p>Неправильные формы глаголов, порядок слов, предлоги, артикли</p>
           </div>
         </div>
       </div>
@@ -879,6 +884,560 @@
             <button class="test-btn" onclick="checkAnswer('won\'t come', 'will not comes', 'not come', 'won\'t come')">B) will not comes</button>
             <button class="test-btn" onclick="checkAnswer('won\'t come', 'will not comes', 'not come', 'won\'t come')">C) not come</button>
             <button class="test-btn" onclick="checkAnswer('won\'t come', 'will not comes', 'not come', 'won\'t come')">D) won't come</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Parts of Speech -->
+    <div id="parts-of-speech-page" class="page">
+      <div class="header">
+        <button onclick="showPage('grammar')" class="back-btn">← Назад</button>
+        <h1>📌 Части речи</h1>
+      </div>
+
+      <div class="content">
+        <h2>Части речи в английском языке</h2>
+        
+        <div class="section-grid">
+          <div class="section-card" onclick="showPage('nouns')">
+            <h3>📝 Nouns (Существительные)</h3>
+            <p>Обозначают людей, животных, предметы, места, идеи</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('pronouns')">
+            <h3>👤 Pronouns (Местоимения)</h3>
+            <p>Заменяют существительные: he, she, it, they, this, which</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('verbs')">
+            <h3>🏃 Verbs (Глаголы)</h3>
+            <p>Обозначают действия или состояния: run, eat, write, be</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('adjectives')">
+            <h3>🎨 Adjectives (Прилагательные)</h3>
+            <p>Описывают существительные: big, interesting, red, beautiful</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('adverbs')">
+            <h3>⚡ Adverbs (Наречия)</h3>
+            <p>Описывают глаголы, прилагательные, другие наречия</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('prepositions')">
+            <h3>🔗 Prepositions (Предлоги)</h3>
+            <p>Показывают отношения: in, on, at, under, for, with</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('conjunctions')">
+            <h3>🔗 Conjunctions (Союзы)</h3>
+            <p>Соединяют слова и предложения: and, but, or, because</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('interjections')">
+            <h3>💬 Interjections (Междометия)</h3>
+            <p>Выражают эмоции: oh, wow, ouch, hey, hmm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Nouns -->
+    <div id="nouns-page" class="page">
+      <div class="header">
+        <button onclick="showPage('parts-of-speech')" class="back-btn">← Назад</button>
+        <h1>📝 Nouns (Существительные)</h1>
+      </div>
+
+      <div class="content">
+        <h2>Существительные в английском языке</h2>
+        
+        <div class="grammar-content">
+          <h3>📖 Определение и функция</h3>
+          <p>Обозначают людей, животных, предметы, места, идеи, качества, события или абстрактные понятия. Существительные являются основой большинства предложений, выполняя роль подлежащего или дополнения.</p>
+          <p><strong>Примеры:</strong> teacher, car, happiness, London, cat, beauty, meeting</p>
+          
+          <h3>🔹 Виды существительных</h3>
+          
+          <h4>📊 Countable (исчисляемые) / Uncountable (неисчисляемые)</h4>
+          <ul>
+            <li><strong>Countable:</strong> могут быть посчитаны и имеют формы единственного и множественного числа. Например: one car, two cars; a book, many books.</li>
+            <li><strong>Uncountable:</strong> нельзя посчитать (например, water, happiness, information, advice). Они обычно не имеют формы множественного числа и используются без неопределенного артикля a/an.</li>
+          </ul>
+          
+          <h4>🏷️ Common (нарицательные) / Proper (собственные)</h4>
+          <ul>
+            <li><strong>Common:</strong> общие названия для классов людей, мест, вещей. Пишутся с маленькой буквы (если это не начало предложения). Например: city, book, river.</li>
+            <li><strong>Proper:</strong> имена, названия конкретных людей, мест, организаций, дней недели, месяцев. Всегда пишутся с большой буквы. Например: London, Shakespeare, Monday, Amazon.</li>
+          </ul>
+          
+          <h4>🎭 Abstract (абстрактные) / Concrete (конкретные)</h4>
+          <ul>
+            <li><strong>Abstract:</strong> идеи, концепции, чувства, качества, состояния, которые нельзя потрогать или увидеть. Например: love, freedom, knowledge, courage.</li>
+            <li><strong>Concrete:</strong> то, что можно воспринимать с помощью пяти чувств (увидеть, потрогать, услышать, попробовать на вкус, понюхать). Например: table, tree, music, pizza.</li>
+          </ul>
+          
+          <h3>🎯 Примеры использования в предложении</h3>
+          <ul>
+            <li>My <strong>dog</strong> is very friendly. (dog - подлежащее)</li>
+            <li>She studies <strong>history</strong>. (history - дополнение)</li>
+            <li><strong>The book</strong> is on the table. (book - подлежащее)</li>
+            <li><strong>London</strong> is a beautiful <strong>city</strong>. (London - собственное, city - нарицательное)</li>
+          </ul>
+          
+          <h3>❓ Вопросы</h3>
+          <p>Чтобы определить существительное, можно задать вопросы: <strong>Who? What?</strong> (Кто? Что?)</p>
+          
+          <h3>📝 Дополнительно</h3>
+          <ul>
+            <li>Существительные могут быть в единственном и множественном числе (множественное число часто образуется добавлением -s/-es).</li>
+            <li>Могут выполнять разные роли в предложении: подлежащее, прямое или косвенное дополнение, именная часть сказуемого, обстоятельство.</li>
+          </ul>
+        </div>
+        
+        <div class="test-section">
+          <h3>🧪 Тест: Nouns</h3>
+          <div class="test-question">
+            <p><strong>Вопрос 1:</strong> Какое слово является существительным?</p>
+            <button class="test-btn" onclick="checkAnswer('run', 'quickly', 'teacher', 'teacher')">A) run</button>
+            <button class="test-btn" onclick="checkAnswer('run', 'quickly', 'teacher', 'teacher')">B) quickly</button>
+            <button class="test-btn" onclick="checkAnswer('run', 'quickly', 'teacher', 'teacher')">C) teacher</button>
+            <button class="test-btn" onclick="checkAnswer('run', 'quickly', 'teacher', 'teacher')">D) teacher</button>
+          </div>
+          
+          <div class="test-question">
+            <p><strong>Вопрос 2:</strong> Какое существительное является неисчисляемым?</p>
+            <button class="test-btn" onclick="checkAnswer('book', 'water', 'car', 'water')">A) book</button>
+            <button class="test-btn" onclick="checkAnswer('book', 'water', 'car', 'water')">B) water</button>
+            <button class="test-btn" onclick="checkAnswer('book', 'water', 'car', 'water')">C) car</button>
+            <button class="test-btn" onclick="checkAnswer('book', 'water', 'car', 'water')">D) water</button>
+          </div>
+          
+          <div class="test-question">
+            <p><strong>Вопрос 3:</strong> Какое существительное является собственным?</p>
+            <button class="test-btn" onclick="checkAnswer('city', 'London', 'river', 'London')">A) city</button>
+            <button class="test-btn" onclick="checkAnswer('city', 'London', 'river', 'London')">B) London</button>
+            <button class="test-btn" onclick="checkAnswer('city', 'London', 'river', 'London')">C) river</button>
+            <button class="test-btn" onclick="checkAnswer('city', 'London', 'river', 'London')">D) London</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Sentence Structure -->
+    <div id="sentence-structure-page" class="page">
+      <div class="header">
+        <button onclick="showPage('grammar')" class="back-btn">← Назад</button>
+        <h1>🧱 Структура предложений</h1>
+      </div>
+
+      <div class="content">
+        <h2>Структура предложений в английском языке</h2>
+        
+        <div class="section-grid">
+          <div class="section-card" onclick="showPage('sentence-types')">
+            <h3>📝 Типы предложений</h3>
+            <p>Повествовательные, вопросительные, повелительные, восклицательные</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('sentence-elements')">
+            <h3>🔧 Элементы предложения</h3>
+            <p>Подлежащее, сказуемое, дополнение, обстоятельство</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('word-order')">
+            <h3>📐 Порядок слов</h3>
+            <p>Subject + Verb + Object (SVO)</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('questions')">
+            <h3>❓ Вопросы</h3>
+            <p>Yes/No вопросы, Wh-вопросы, альтернативные вопросы</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('negation')">
+            <h3>🚫 Отрицания</h3>
+            <p>Формирование отрицательных предложений</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('complex-sentences')">
+            <h3>🔗 Сложные предложения</h3>
+            <p>Сложноподчиненные предложения</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('passive-voice')">
+            <h3>🔄 Страдательный залог</h3>
+            <p>Active Voice vs Passive Voice</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Sentence Types -->
+    <div id="sentence-types-page" class="page">
+      <div class="header">
+        <button onclick="showPage('sentence-structure')" class="back-btn">← Назад</button>
+        <h1>📝 Типы предложений</h1>
+      </div>
+
+      <div class="content">
+        <h2>Типы предложений в английском языке</h2>
+        
+        <div class="grammar-content">
+          <h3>📖 По цели высказывания (Function)</h3>
+          
+          <h4>📢 Declarative (повествовательные)</h4>
+          <p>Используются для утверждения факта, мнения или информации. Заканчиваются точкой.</p>
+          <ul>
+            <li>I like tea. (Я люблю чай.)</li>
+            <li>The sun rises in the east. (Солнце встает на востоке.)</li>
+            <li>She is a teacher. (Она учительница.)</li>
+          </ul>
+          
+          <h4>❓ Interrogative (вопросительные)</h4>
+          <p>Используются для того, чтобы задать вопрос. Заканчиваются вопросительным знаком.</p>
+          <ul>
+            <li>Do you like tea? (Ты любишь чай?)</li>
+            <li>Where do you live? (Где ты живешь?)</li>
+            <li>What time is it? (Который час?)</li>
+          </ul>
+          
+          <h4>⚡ Imperative (повелительные)</h4>
+          <p>Используются для отдачи команды, просьбы, инструкции или совета. Обычно начинаются с глагола и могут не иметь явного подлежащего (подразумевается "you"). Заканчиваются точкой или восклицательным знаком.</p>
+          <ul>
+            <li>Close the door. (Закрой дверь.)</li>
+            <li>Please sit down. (Пожалуйста, сядьте.)</li>
+            <li>Don't be late! (Не опаздывай!)</li>
+          </ul>
+          
+          <h4>💥 Exclamatory (восклицательные)</h4>
+          <p>Используются для выражения сильных эмоций, удивления, восхищения. Заканчиваются восклицательным знаком.</p>
+          <ul>
+            <li>What a day! (Какой день!)</li>
+            <li>How wonderful! (Как прекрасно!)</li>
+            <li>That's amazing! (Это потрясающе!)</li>
+          </ul>
+          
+          <h3>📖 По структуре (Structure)</h3>
+          
+          <h4>📝 Simple Sentence (простое предложение)</h4>
+          <p>Содержит одно независимое (главное) предложение.</p>
+          <ul>
+            <li>The cat slept. (Кот спал.)</li>
+            <li>I like coffee. (Я люблю кофе.)</li>
+            <li>She works in a bank. (Она работает в банке.)</li>
+          </ul>
+          
+          <h4>🔗 Compound Sentence (сложносочиненное предложение)</h4>
+          <p>Содержит два или более независимых предложения, соединенных сочинительным союзом (FANBOYS: For, And, Nor, But, Or, Yet, So).</p>
+          <ul>
+            <li>I like coffee, <strong>and</strong> she likes tea. (Я люблю кофе, а она любит чай.)</li>
+            <li>He was tired, <strong>but</strong> he kept working. (Он был уставшим, но продолжал работать.)</li>
+            <li>You can stay here, <strong>or</strong> you can go home. (Ты можешь остаться здесь или пойти домой.)</li>
+          </ul>
+          
+          <h4>🔗 Complex Sentence (сложноподчиненное предложение)</h4>
+          <p>Содержит одно независимое предложение и одно или несколько зависимых (придаточных) предложений, соединенных подчинительным союзом (e.g., because, although, if, when).</p>
+          <ul>
+            <li>I stayed home <strong>because</strong> it was raining. (Я остался дома, потому что шел дождь.)</li>
+            <li><strong>If</strong> you study, you'll pass the exam. (Если ты будешь учиться, ты сдашь экзамен.)</li>
+            <li><strong>Although</strong> it was late, she kept working. (Хотя было поздно, она продолжала работать.)</li>
+          </ul>
+          
+          <h4>🔗 Compound-Complex Sentence (сложносочиненно-подчиненное предложение)</h4>
+          <p>Содержит два или более независимых предложения и одно или несколько зависимых предложений.</p>
+          <ul>
+            <li>Although it was raining, I went for a walk, <strong>and</strong> I enjoyed it. (Хотя шел дождь, я пошел на прогулку, и мне понравилось.)</li>
+            <li>If you study hard, you'll pass the exam, <strong>but</strong> if you don't, you might fail. (Если ты будешь усердно учиться, ты сдашь экзамен, но если не будешь, можешь провалиться.)</li>
+          </ul>
+        </div>
+        
+        <div class="test-section">
+          <h3>🧪 Тест: Типы предложений</h3>
+          <div class="test-question">
+            <p><strong>Вопрос 1:</strong> Какое предложение является повествовательным?</p>
+            <button class="test-btn" onclick="checkAnswer('Do you like coffee?', 'I like coffee.', 'Close the door!', 'I like coffee.')">A) Do you like coffee?</button>
+            <button class="test-btn" onclick="checkAnswer('Do you like coffee?', 'I like coffee.', 'Close the door!', 'I like coffee.')">B) I like coffee.</button>
+            <button class="test-btn" onclick="checkAnswer('Do you like coffee?', 'I like coffee.', 'Close the door!', 'I like coffee.')">C) Close the door!</button>
+            <button class="test-btn" onclick="checkAnswer('Do you like coffee?', 'I like coffee.', 'Close the door!', 'I like coffee.')">D) I like coffee.</button>
+          </div>
+          
+          <div class="test-question">
+            <p><strong>Вопрос 2:</strong> Какое предложение является сложносочиненным?</p>
+            <button class="test-btn" onclick="checkAnswer('I like coffee.', 'I like coffee and she likes tea.', 'I stayed home because it was raining.', 'I like coffee and she likes tea.')">A) I like coffee.</button>
+            <button class="test-btn" onclick="checkAnswer('I like coffee.', 'I like coffee and she likes tea.', 'I stayed home because it was raining.', 'I like coffee and she likes tea.')">B) I like coffee and she likes tea.</button>
+            <button class="test-btn" onclick="checkAnswer('I like coffee.', 'I like coffee and she likes tea.', 'I stayed home because it was raining.', 'I like coffee and she likes tea.')">C) I stayed home because it was raining.</button>
+            <button class="test-btn" onclick="checkAnswer('I like coffee.', 'I like coffee and she likes tea.', 'I stayed home because it was raining.', 'I like coffee and she likes tea.')">D) I like coffee and she likes tea.</button>
+          </div>
+          
+          <div class="test-question">
+            <p><strong>Вопрос 3:</strong> Какое предложение является повелительным?</p>
+            <button class="test-btn" onclick="checkAnswer('What time is it?', 'Please sit down.', 'The sun rises in the east.', 'Please sit down.')">A) What time is it?</button>
+            <button class="test-btn" onclick="checkAnswer('What time is it?', 'Please sit down.', 'The sun rises in the east.', 'Please sit down.')">B) Please sit down.</button>
+            <button class="test-btn" onclick="checkAnswer('What time is it?', 'Please sit down.', 'The sun rises in the east.', 'Please sit down.')">C) The sun rises in the east.</button>
+            <button class="test-btn" onclick="checkAnswer('What time is it?', 'Please sit down.', 'The sun rises in the east.', 'Please sit down.')">D) Please sit down.</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Constructions -->
+    <div id="constructions-page" class="page">
+      <div class="header">
+        <button onclick="showPage('grammar')" class="back-btn">← Назад</button>
+        <h1>🛠 Конструкции</h1>
+      </div>
+
+      <div class="content">
+        <h2>Грамматические конструкции в английском языке</h2>
+        
+        <div class="section-grid">
+          <div class="section-card" onclick="showPage('there-is-are')">
+            <h3>📍 There is / There are</h3>
+            <p>Конструкция для указания на существование чего-либо</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('have-got')">
+            <h3>💎 Have got / Has got</h3>
+            <p>Конструкция для выражения обладания</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('used-to')">
+            <h3>⏰ Used to</h3>
+            <p>Привычные действия или состояния в прошлом</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('be-going-to')">
+            <h3>🎯 Be going to</h3>
+            <p>Намерения и предсказания на будущее</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('it-takes')">
+            <h3>⏱️ It takes</h3>
+            <p>Конструкция для выражения времени, необходимого для действия</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница There is / There are -->
+    <div id="there-is-are-page" class="page">
+      <div class="header">
+        <button onclick="showPage('constructions')" class="back-btn">← Назад</button>
+        <h1>📍 There is / There are</h1>
+      </div>
+
+      <div class="content">
+        <h2>Конструкция для указания на существование чего-либо</h2>
+        
+        <div class="grammar-content">
+          <h3>📖 Когда используется</h3>
+          <p>Эта конструкция используется для указания на существование или наличие чего-либо (или кого-либо) в определенном месте или в определенный момент времени. Она отвечает на вопрос "Что (кто) где находится?" или "Что (кто) существует?".</p>
+          <p><strong>Примеры:</strong></p>
+          <ul>
+            <li>There is a book on the table. (На столе есть книга.)</li>
+            <li>There are many people here. (Здесь много людей.)</li>
+          </ul>
+          
+          <h3>🧩 Формулы</h3>
+          <ul>
+            <li><strong>There is + существительное в единственном числе</strong> (или неисчисляемое существительное)</li>
+            <li><strong>There are + существительное во множественном числе</strong></li>
+          </ul>
+          
+          <h3>🎯 Примеры</h3>
+          <ul>
+            <li>There is a cat in the garden. (В саду есть кошка.)</li>
+            <li>There is some milk in the fridge. (В холодильнике есть немного молока.)</li>
+            <li>There are some apples on the plate. (На тарелке есть несколько яблок.)</li>
+            <li>There are two cars in the garage. (В гараже две машины.)</li>
+          </ul>
+          
+          <h3>❓ Вопросы и отрицания</h3>
+          
+          <h4>Вопросы</h4>
+          <p>Вспомогательный глагол (is или are) ставится перед there.</p>
+          <ul>
+            <li>Is there a problem? (Есть проблема?)</li>
+            <li>Are there any new students? (Есть ли новые студенты?)</li>
+            <li>Is there any coffee left? (Остался ли кофе?)</li>
+          </ul>
+          
+          <h4>Отрицания</h4>
+          <p>Частица not добавляется после вспомогательного глагола. Сокращенные формы: there isn't, there aren't.</p>
+          <ul>
+            <li>There isn't any milk. (Нет молока.)</li>
+            <li>There aren't many people. (Не очень много людей.)</li>
+            <li>There isn't a car in the garage. (В гараже нет машины.)</li>
+          </ul>
+          
+          <h3>📝 Дополнительно</h3>
+          <ul>
+            <li>Эта конструкция может использоваться и в других временах (e.g., There was a cat, There will be a party).</li>
+            <li>Часто используется для представления новой информации.</li>
+            <li>В разговорной речи часто используется сокращение: There's вместо There is.</li>
+          </ul>
+        </div>
+        
+        <div class="test-section">
+          <h3>🧪 Тест: There is / There are</h3>
+          <div class="test-question">
+            <p><strong>Вопрос 1:</strong> Выберите правильную форму:</p>
+            <p>______ a lot of books in the library.</p>
+            <button class="test-btn" onclick="checkAnswer('There is', 'There are', 'It is', 'There are')">A) There is</button>
+            <button class="test-btn" onclick="checkAnswer('There is', 'There are', 'It is', 'There are')">B) There are</button>
+            <button class="test-btn" onclick="checkAnswer('There is', 'There are', 'It is', 'There are')">C) It is</button>
+            <button class="test-btn" onclick="checkAnswer('There is', 'There are', 'It is', 'There are')">D) There are</button>
+          </div>
+          
+          <div class="test-question">
+            <p><strong>Вопрос 2:</strong> Выберите правильную форму:</p>
+            <p>______ some water in the bottle.</p>
+            <button class="test-btn" onclick="checkAnswer('There is', 'There are', 'It is', 'There is')">A) There is</button>
+            <button class="test-btn" onclick="checkAnswer('There is', 'There are', 'It is', 'There is')">B) There are</button>
+            <button class="test-btn" onclick="checkAnswer('There is', 'There are', 'It is', 'There is')">C) It is</button>
+            <button class="test-btn" onclick="checkAnswer('There is', 'There are', 'It is', 'There is')">D) There is</button>
+          </div>
+          
+          <div class="test-question">
+            <p><strong>Вопрос 3:</strong> Выберите правильный вопрос:</p>
+            <button class="test-btn" onclick="checkAnswer('Is there any coffee?', 'Are there any coffee?', 'There is any coffee?', 'Is there any coffee?')">A) Is there any coffee?</button>
+            <button class="test-btn" onclick="checkAnswer('Is there any coffee?', 'Are there any coffee?', 'There is any coffee?', 'Is there any coffee?')">B) Are there any coffee?</button>
+            <button class="test-btn" onclick="checkAnswer('Is there any coffee?', 'Are there any coffee?', 'There is any coffee?', 'Is there any coffee?')">C) There is any coffee?</button>
+            <button class="test-btn" onclick="checkAnswer('Is there any coffee?', 'Are there any coffee?', 'There is any coffee?', 'Is there any coffee?')">D) Is there any coffee?</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Common Mistakes -->
+    <div id="common-mistakes-page" class="page">
+      <div class="header">
+        <button onclick="showPage('grammar')" class="back-btn">← Назад</button>
+        <h1>🚫 Общие ошибки</h1>
+      </div>
+
+      <div class="content">
+        <h2>Распространенные ошибки в английском языке</h2>
+        
+        <div class="section-grid">
+          <div class="section-card" onclick="showPage('wrong-verb-forms')">
+            <h3>❌ Неправильные формы глаголов</h3>
+            <p>Ошибки в согласовании, времени, форме глаголов</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('do-does-did-errors')">
+            <h3>🔧 Ошибки с do/does/did</h3>
+            <p>Неправильное использование вспомогательных глаголов</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('word-order')">
+            <h3>📐 Нарушение порядка слов</h3>
+            <p>Ошибки в структуре предложения SVO</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('wrong-prepositions')">
+            <h3>🔗 Неверные предлоги</h3>
+            <p>Ошибки в устойчивых сочетаниях</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('articles')">
+            <h3>📝 Ошибки с артиклями</h3>
+            <p>Неправильное использование a/an/the</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('too-enough')">
+            <h3>⚖️ Too / Enough</h3>
+            <p>Ошибки в порядке слов</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('false-friends')">
+            <h3>🤝 Ложные друзья переводчика</h3>
+            <p>Слова, похожие на русские, но с другим значением</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Wrong Verb Forms -->
+    <div id="wrong-verb-forms-page" class="page">
+      <div class="header">
+        <button onclick="showPage('common-mistakes')" class="back-btn">← Назад</button>
+        <h1>❌ Неправильные формы глаголов</h1>
+      </div>
+
+      <div class="content">
+        <h2>Ошибки в формах глаголов</h2>
+        
+        <div class="grammar-content">
+          <h3>📖 Описание ошибки</h3>
+          <p>Одна из самых частых ошибок – использование неверной формы глагола (например, неправильного времени, лица, числа, или неверной формы неправильного глагола).</p>
+          
+          <h3>❌ Примеры ошибок</h3>
+          <ul>
+            <li><strong>Неправильное согласование по лицу/числу:</strong><br>
+              ❌ He go to school every day.<br>
+              ✅ He <strong>goes</strong> to school every day.</li>
+            
+            <li><strong>Неправильное согласование глагола 'to be' по числу:</strong><br>
+              ❌ They was happy.<br>
+              ✅ They <strong>were</strong> happy.</li>
+            
+            <li><strong>Неправильная третья форма глагола:</strong><br>
+              ❌ I have went home.<br>
+              ✅ I <strong>have gone</strong> home.</li>
+            
+            <li><strong>Неправильная базовая форма после 'did':</strong><br>
+              ❌ She did break the window. (если это Past Simple утверждение)<br>
+              ✅ She <strong>broke</strong> the window.</li>
+          </ul>
+          
+          <h3>✅ Как исправить</h3>
+          <p>Всегда проверяй:</p>
+          <ol>
+            <li><strong>Согласование глагола по лицу и числу</strong> с подлежащим (например, he goes, they go).</li>
+            <li><strong>Правильную форму глагола</strong> для выбранного времени (V1, V2, V3 или -ing форма).</li>
+            <li><strong>Особое внимание удели неправильным глаголам</strong> (Irregular Verbs).</li>
+            <li><strong>После вспомогательных глаголов</strong> основной глагол всегда в базовой форме.</li>
+          </ol>
+          
+          <h3>🔍 Частые ошибки</h3>
+          <ul>
+            <li><strong>3-е лицо единственного числа:</strong> забывают добавлять -s</li>
+            <li><strong>Неправильные глаголы:</strong> путают V2 и V3 формы</li>
+            <li><strong>После did:</strong> используют V2 вместо V1</li>
+            <li><strong>После have/has:</strong> используют V2 вместо V3</li>
+          </ul>
+        </div>
+        
+        <div class="test-section">
+          <h3>🧪 Тест: Неправильные формы глаголов</h3>
+          <div class="test-question">
+            <p><strong>Вопрос 1:</strong> Исправьте ошибку:</p>
+            <p>He _____ to school every day.</p>
+            <button class="test-btn" onclick="checkAnswer('go', 'goes', 'going', 'goes')">A) go</button>
+            <button class="test-btn" onclick="checkAnswer('go', 'goes', 'going', 'goes')">B) goes</button>
+            <button class="test-btn" onclick="checkAnswer('go', 'goes', 'going', 'goes')">C) going</button>
+            <button class="test-btn" onclick="checkAnswer('go', 'goes', 'going', 'goes')">D) goes</button>
+          </div>
+          
+          <div class="test-question">
+            <p><strong>Вопрос 2:</strong> Исправьте ошибку:</p>
+            <p>I have _____ home.</p>
+            <button class="test-btn" onclick="checkAnswer('went', 'gone', 'go', 'gone')">A) went</button>
+            <button class="test-btn" onclick="checkAnswer('went', 'gone', 'go', 'gone')">B) gone</button>
+            <button class="test-btn" onclick="checkAnswer('went', 'gone', 'go', 'gone')">C) go</button>
+            <button class="test-btn" onclick="checkAnswer('went', 'gone', 'go', 'gone')">D) gone</button>
+          </div>
+          
+          <div class="test-question">
+            <p><strong>Вопрос 3:</strong> Исправьте ошибку:</p>
+            <p>Did you _____ to the party?</p>
+            <button class="test-btn" onclick="checkAnswer('went', 'go', 'gone', 'go')">A) went</button>
+            <button class="test-btn" onclick="checkAnswer('went', 'go', 'gone', 'go')">B) go</button>
+            <button class="test-btn" onclick="checkAnswer('went', 'go', 'gone', 'go')">C) gone</button>
+            <button class="test-btn" onclick="checkAnswer('went', 'go', 'gone', 'go')">D) go</button>
           </div>
         </div>
       </div>
