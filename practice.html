@@ -47,13 +47,13 @@
     }
 
     function goBack() {
-      if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
-        Telegram.WebApp.showAlert('Возврат в главное меню...');
-        setTimeout(() => {
-          window.location.href = 'index.html';
-        }, 300);
-      } else {
+      console.log('Going back to main menu');
+      
+      try {
         window.location.href = 'index.html';
+      } catch (error) {
+        console.error('Navigation failed:', error);
+        window.open('index.html', '_self');
       }
     }
     

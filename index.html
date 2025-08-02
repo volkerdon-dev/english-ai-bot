@@ -34,14 +34,13 @@
     function navigateTo(page) {
       console.log('Navigating to:', page);
       
-      // Проверяем, находимся ли мы в Telegram Web App
-      if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
-        // Простое уведомление и переход
-        Telegram.WebApp.showAlert('Переход к разделу...');
+      try {
+        // Простая навигация для всех случаев
         window.location.href = page;
-      } else {
-        // Обычная навигация для браузера
-        window.location.href = page;
+      } catch (error) {
+        console.error('Navigation failed:', error);
+        // Альтернативный способ
+        window.open(page, '_self');
       }
     }
   </script>
