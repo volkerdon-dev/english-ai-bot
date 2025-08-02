@@ -24,6 +24,7 @@
     <button class="btn" onclick="testNavigation()" style="background-color: #ff6b6b;">🔧 Тест в браузере</button>
     <button class="btn" onclick="testDirectNavigation()" style="background-color: #ffa500;">🚀 Прямая навигация</button>
     <button class="btn" onclick="testTelegramNavigation()" style="background-color: #9c27b0;">📱 Тест Telegram</button>
+    <button class="btn" onclick="simpleTest()" style="background-color: #e91e63;">🔬 Простой тест</button>
   </div>
 
   <script>
@@ -98,6 +99,18 @@
       } else {
         console.log('Telegram Web App not detected');
         alert('Telegram Web App не обнаружен.\nЭтот тест работает только в Telegram.');
+      }
+    }
+
+    function simpleTest() {
+      console.log('=== SIMPLE TEST ===');
+      console.log('Testing simple navigation to grammar.html');
+      try {
+        window.location.href = 'grammar.html';
+        console.log('Simple navigation successful.');
+      } catch (error) {
+        console.error('Simple navigation failed:', error);
+        alert('Простой тест навигации не сработал. Ошибка: ' + error.message);
       }
     }
   </script>
