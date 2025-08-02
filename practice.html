@@ -14,38 +14,55 @@
   </div>
 
   <div class="content">
-    <h2>Типы упражнений</h2>
+    <h2>Практические упражнения</h2>
     
     <div class="section-grid">
-      <div class="section-card" onclick="openSection('multiple_choice')">
-        <h3>✅ Множественный выбор</h3>
-        <p>Выберите правильный ответ</p>
-      </div>
-      
-      <div class="section-card" onclick="openSection('fill_blanks')">
-        <h3>📝 Заполните пропуски</h3>
-        <p>Вставьте нужные слова</p>
-      </div>
-      
-      <div class="section-card" onclick="openSection('translation')">
-        <h3>🔄 Перевод</h3>
-        <p>Переведите предложения</p>
-      </div>
-      
       <div class="section-card" onclick="openSection('listening')">
         <h3>🎧 Аудирование</h3>
-        <p>Слушайте и отвечайте</p>
+        <p>Упражнения на понимание речи</p>
+      </div>
+      
+      <div class="section-card" onclick="openSection('reading')">
+        <h3>📖 Чтение</h3>
+        <p>Тексты и понимание</p>
+      </div>
+      
+      <div class="section-card" onclick="openSection('writing')">
+        <h3>✏️ Письмо</h3>
+        <p>Написание текстов</p>
+      </div>
+      
+      <div class="section-card" onclick="openSection('speaking')">
+        <h3>🗣️ Говорение</h3>
+        <p>Разговорная практика</p>
       </div>
     </div>
   </div>
 
   <script>
+    // Инициализация Telegram Web App
+    if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+      Telegram.WebApp.ready();
+      Telegram.WebApp.expand();
+    }
+
     function goBack() {
-      window.location.href = 'index.html';
+      if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+        Telegram.WebApp.showAlert('Возврат в главное меню...');
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 300);
+      } else {
+        window.location.href = 'index.html';
+      }
     }
     
     function openSection(section) {
-      alert(`Открывается раздел: ${section}`);
+      if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+        Telegram.WebApp.showAlert(`Открывается раздел: ${section}`);
+      } else {
+        alert(`Открывается раздел: ${section}`);
+      }
     }
   </script>
 </body>

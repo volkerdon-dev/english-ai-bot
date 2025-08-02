@@ -20,11 +20,29 @@
     <button class="btn" onclick="navigateTo('practice.html')">✍️ Practice</button>
     <button class="btn" onclick="navigateTo('games.html')">🎮 Игры</button>
     <button class="btn secondary" onclick="navigateTo('full-version.html')">🔐 Что в полной версии?</button>
+    <button class="btn" onclick="navigateTo('test.html')" style="background-color: #28a745;">🧪 Тест навигации</button>
   </div>
 
   <script>
+    // Инициализация Telegram Web App
+    if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+      Telegram.WebApp.ready();
+      Telegram.WebApp.expand();
+      console.log('Telegram Web App initialized');
+    }
+
     function navigateTo(page) {
-      window.location.href = page;
+      console.log('Navigating to:', page);
+      
+      // Проверяем, находимся ли мы в Telegram Web App
+      if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+        // Простое уведомление и переход
+        Telegram.WebApp.showAlert('Переход к разделу...');
+        window.location.href = page;
+      } else {
+        // Обычная навигация для браузера
+        window.location.href = page;
+      }
     }
   </script>
 </body>

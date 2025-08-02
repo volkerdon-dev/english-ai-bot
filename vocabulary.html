@@ -18,12 +18,12 @@
     
     <div class="section-grid">
       <div class="section-card" onclick="openSection('daily_words')">
-        <h3>📅 Слово дня</h3>
+        <h3>📅 Слова дня</h3>
         <p>Новые слова каждый день</p>
       </div>
       
       <div class="section-card" onclick="openSection('topics')">
-        <h3>📚 Тематические наборы</h3>
+        <h3>📚 Тематические слова</h3>
         <p>Слова по темам</p>
       </div>
       
@@ -32,20 +32,37 @@
         <p>Популярные выражения</p>
       </div>
       
-      <div class="section-card" onclick="openSection('synonyms')">
-        <h3>🔄 Синонимы</h3>
-        <p>Слова с похожим значением</p>
+      <div class="section-card" onclick="openSection('phrasal_verbs')">
+        <h3>🔗 Фразовые глаголы</h3>
+        <p>Важные фразовые глаголы</p>
       </div>
     </div>
   </div>
 
   <script>
+    // Инициализация Telegram Web App
+    if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+      Telegram.WebApp.ready();
+      Telegram.WebApp.expand();
+    }
+
     function goBack() {
-      window.location.href = 'index.html';
+      if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+        Telegram.WebApp.showAlert('Возврат в главное меню...');
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 300);
+      } else {
+        window.location.href = 'index.html';
+      }
     }
     
     function openSection(section) {
-      alert(`Открывается раздел: ${section}`);
+      if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+        Telegram.WebApp.showAlert(`Открывается раздел: ${section}`);
+      } else {
+        alert(`Открывается раздел: ${section}`);
+      }
     }
   </script>
 </body>

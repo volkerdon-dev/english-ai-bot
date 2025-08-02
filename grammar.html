@@ -40,13 +40,29 @@
   </div>
 
   <script>
+    // Инициализация Telegram Web App
+    if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+      Telegram.WebApp.ready();
+      Telegram.WebApp.expand();
+    }
+
     function goBack() {
-      window.location.href = 'index.html';
+      console.log('Going back to main menu');
+      
+      if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+        Telegram.WebApp.showAlert('Возврат в главное меню...');
+        window.location.href = 'index.html';
+      } else {
+        window.location.href = 'index.html';
+      }
     }
     
     function openSection(section) {
-      // Здесь можно добавить переход к конкретным упражнениям
-      alert(`Открывается раздел: ${section}`);
+      if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+        Telegram.WebApp.showAlert(`Открывается раздел: ${section}`);
+      } else {
+        alert(`Открывается раздел: ${section}`);
+      }
     }
   </script>
 </body>

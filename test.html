@@ -3,40 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Games - EngTrain App</title>
+  <title>Test - EngTrain App</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="header">
     <button onclick="goBack()" class="back-btn">← Назад</button>
-    <h1>🎮 Игры</h1>
+    <h1>🧪 Тест</h1>
   </div>
 
   <div class="content">
-    <h2>Обучающие игры</h2>
+    <h2>Тестовая страница</h2>
     
-    <div class="section-grid">
-      <div class="section-card" onclick="openSection('word_guess')">
-        <h3>🎯 Угадай слово</h3>
-        <p>Угадайте слово по описанию</p>
-      </div>
-      
-      <div class="section-card" onclick="openSection('memory')">
-        <h3>🧠 Память</h3>
-        <p>Найдите пары слов</p>
-      </div>
-      
-      <div class="section-card" onclick="openSection('quiz')">
-        <h3>❓ Викторина</h3>
-        <p>Ответьте на вопросы</p>
-      </div>
-      
-      <div class="section-card" onclick="openSection('puzzle')">
-        <h3>🧩 Головоломка</h3>
-        <p>Соберите предложение</p>
-      </div>
-    </div>
+    <p>Если вы видите эту страницу, значит навигация работает правильно!</p>
+    
+    <button class="btn" onclick="testAlert()">Тест уведомления</button>
+    <button class="btn secondary" onclick="goBack()">Вернуться в главное меню</button>
   </div>
 
   <script>
@@ -44,6 +27,9 @@
     if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
       Telegram.WebApp.ready();
       Telegram.WebApp.expand();
+      console.log('Telegram Web App initialized');
+    } else {
+      console.log('Running in browser mode');
     }
 
     function goBack() {
@@ -57,11 +43,11 @@
       }
     }
     
-    function openSection(section) {
+    function testAlert() {
       if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
-        Telegram.WebApp.showAlert(`Открывается игра: ${section}`);
+        Telegram.WebApp.showAlert('Тест уведомления работает!');
       } else {
-        alert(`Открывается игра: ${section}`);
+        alert('Тест уведомления работает!');
       }
     }
   </script>
