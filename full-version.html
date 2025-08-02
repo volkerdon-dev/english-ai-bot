@@ -67,17 +67,8 @@
         console.log('Telegram Web App detected, going back');
         
         try {
-          const currentUrl = window.location.href;
-          const baseUrl = currentUrl.substring(0, currentUrl.lastIndexOf('/') + 1);
-          const newUrl = baseUrl + 'index.html';
-          
-          console.log('Going back to:', newUrl);
-          
-          if (Telegram.WebApp.openLink) {
-            Telegram.WebApp.openLink(newUrl);
-          } else {
-            window.location.href = 'index.html';
-          }
+          // Простая навигация внутри Web App
+          window.location.href = 'index.html';
         } catch (error) {
           console.error('Telegram back navigation error:', error);
           window.location.href = 'index.html';

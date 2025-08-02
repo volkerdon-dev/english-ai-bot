@@ -23,6 +23,7 @@
     <button class="btn" onclick="navigateTo('test.html')" style="background-color: #28a745;">🧪 Тест навигации</button>
     <button class="btn" onclick="testNavigation()" style="background-color: #ff6b6b;">🔧 Тест в браузере</button>
     <button class="btn" onclick="testDirectNavigation()" style="background-color: #ffa500;">🚀 Прямая навигация</button>
+    <button class="btn" onclick="testTelegramNavigation()" style="background-color: #9c27b0;">📱 Тест Telegram</button>
   </div>
 
   <script>
@@ -44,25 +45,12 @@
         console.log('Telegram Web App detected');
         
         try {
-          // Для Telegram Web App используем специальный подход
-          const currentUrl = window.location.href;
-          const baseUrl = currentUrl.substring(0, currentUrl.lastIndexOf('/') + 1);
-          const newUrl = baseUrl + page;
+          // Для Telegram Web App используем внутреннюю навигацию
+          console.log('Using internal navigation for Telegram Web App');
           
-          console.log('Base URL:', baseUrl);
-          console.log('New URL:', newUrl);
+          // Простая навигация внутри Web App
+          window.location.href = page;
           
-          // Используем Telegram Web App API для навигации
-          if (Telegram.WebApp.openLink) {
-            console.log('Using Telegram.WebApp.openLink');
-            Telegram.WebApp.openLink(newUrl);
-          } else if (Telegram.WebApp.openTelegramLink) {
-            console.log('Using Telegram.WebApp.openTelegramLink');
-            Telegram.WebApp.openTelegramLink(newUrl);
-          } else {
-            console.log('Using fallback navigation');
-            window.location.href = page;
-          }
         } catch (error) {
           console.error('Telegram navigation error:', error);
           // Fallback к обычной навигации
@@ -96,6 +84,20 @@
       } catch (error) {
         console.error('Direct navigation failed:', error);
         alert('Прямая навигация не сработала. Ошибка: ' + error.message);
+      }
+    }
+    
+    function testTelegramNavigation() {
+      console.log('=== TELEGRAM NAVIGATION TEST ===');
+      
+      if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+        console.log('Telegram Web App detected');
+        console.log('Telegram Web App info:', Telegram.WebApp);
+        
+        alert('Telegram Web App обнаружен!\nПопробуйте нажать на кнопку "📚 Grammar" выше.');
+      } else {
+        console.log('Telegram Web App not detected');
+        alert('Telegram Web App не обнаружен.\nЭтот тест работает только в Telegram.');
       }
     }
   </script>
