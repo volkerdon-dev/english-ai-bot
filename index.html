@@ -46,11 +46,20 @@
         console.log('Telegram Web App detected');
         
         try {
-          // Для Telegram Web App используем внутреннюю навигацию
-          console.log('Using internal navigation for Telegram Web App');
+          // Для Telegram Web App используем специальный подход
+          console.log('Using Telegram Web App navigation');
           
-          // Простая навигация внутри Web App
-          window.location.href = page;
+          // Попробуем использовать Telegram Web App API для навигации
+          if (Telegram.WebApp.openTelegramLink) {
+            console.log('Using Telegram.WebApp.openTelegramLink');
+            const currentUrl = window.location.href;
+            const baseUrl = currentUrl.substring(0, currentUrl.lastIndexOf('/') + 1);
+            const newUrl = baseUrl + page;
+            Telegram.WebApp.openTelegramLink(newUrl);
+          } else {
+            console.log('Using fallback navigation');
+            window.location.href = page;
+          }
           
         } catch (error) {
           console.error('Telegram navigation error:', error);
