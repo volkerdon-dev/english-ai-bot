@@ -81,6 +81,11 @@
             <p>Настоящее продолженное время</p>
           </div>
           
+          <div class="section-card" onclick="showPage('present-perfect')">
+            <h3>✅ Present Perfect</h3>
+            <p>Настоящее совершенное время</p>
+          </div>
+          
           <div class="section-card" onclick="showPage('past-simple')">
             <h3>📚 Past Simple</h3>
             <p>Прошедшее простое время</p>
@@ -116,15 +121,64 @@
             <li>She <strong>works</strong> in a hospital. (Она работает в больнице)</li>
             <li>We <strong>don't</strong> speak French. (Мы не говорим по-французски)</li>
             <li><strong>Do</strong> you like coffee? (Ты любишь кофе?)</li>
+            <li>He <strong>doesn't</strong> play football. (Он не играет в футбол)</li>
+            <li><strong>Does</strong> she <strong>live</strong> in London? (Она живет в Лондоне?)</li>
           </ul>
           
           <h3>⏰ Когда используется</h3>
           <ul>
-            <li>Регулярные действия и привычки</li>
-            <li>Факты и общие истины</li>
-            <li>Расписания и графики</li>
-            <li>Комментарии к спортивным событиям</li>
+            <li><strong>Регулярные действия и привычки:</strong> I go to work every morning.</li>
+            <li><strong>Факты и общие истины:</strong> The Earth revolves around the Sun.</li>
+            <li><strong>Расписания и графики:</strong> The train leaves at 8:30 AM.</li>
+            <li><strong>Комментарии к спортивным событиям:</strong> Messi scores a goal!</li>
+            <li><strong>Постоянные состояния:</strong> I live in Moscow.</li>
+            <li><strong>Научные факты:</strong> Water boils at 100°C.</li>
           </ul>
+          
+          <h3>🔍 Особенности</h3>
+          <ul>
+            <li><strong>3-е лицо единственного числа:</strong> добавляется -s к глаголу</li>
+            <li><strong>Глаголы на -y:</strong> study → studies, try → tries</li>
+            <li><strong>Глаголы на -o:</strong> go → goes, do → does</li>
+            <li><strong>Глаголы на -sh, -ch, -x:</strong> wash → washes, watch → watches</li>
+          </ul>
+          
+          <h3>📝 Частые наречия</h3>
+          <ul>
+            <li>always (всегда), usually (обычно), often (часто)</li>
+            <li>sometimes (иногда), rarely (редко), never (никогда)</li>
+            <li>every day/week/month/year (каждый день/неделю/месяц/год)</li>
+            <li>on Mondays (по понедельникам), in the morning (утром)</li>
+          </ul>
+        </div>
+        
+        <div class="test-section">
+          <h3>🧪 Тест: Present Simple</h3>
+          <div class="test-question">
+            <p><strong>Вопрос 1:</strong> Выберите правильную форму глагола:</p>
+            <p>She _____ (work) in a bank.</p>
+            <button class="test-btn" onclick="checkAnswer('work', 'works', 'working', 'works')">A) work</button>
+            <button class="test-btn" onclick="checkAnswer('work', 'works', 'working', 'works')">B) works</button>
+            <button class="test-btn" onclick="checkAnswer('work', 'works', 'working', 'works')">C) working</button>
+            <button class="test-btn" onclick="checkAnswer('work', 'works', 'working', 'works')">D) works</button>
+          </div>
+          
+          <div class="test-question">
+            <p><strong>Вопрос 2:</strong> Выберите правильное предложение:</p>
+            <button class="test-btn" onclick="checkAnswer('I goes to school', 'I go to school', 'I going to school', 'I go to school')">A) I goes to school</button>
+            <button class="test-btn" onclick="checkAnswer('I goes to school', 'I go to school', 'I going to school', 'I go to school')">B) I go to school</button>
+            <button class="test-btn" onclick="checkAnswer('I goes to school', 'I go to school', 'I going to school', 'I go to school')">C) I going to school</button>
+            <button class="test-btn" onclick="checkAnswer('I goes to school', 'I go to school', 'I going to school', 'I go to school')">D) I go to school</button>
+          </div>
+          
+          <div class="test-question">
+            <p><strong>Вопрос 3:</strong> Выберите правильную отрицательную форму:</p>
+            <p>He _____ (like) coffee.</p>
+            <button class="test-btn" onclick="checkAnswer('don\'t like', 'doesn\'t like', 'not like', 'doesn\'t like')">A) don't like</button>
+            <button class="test-btn" onclick="checkAnswer('don\'t like', 'doesn\'t like', 'not like', 'doesn\'t like')">B) doesn't like</button>
+            <button class="test-btn" onclick="checkAnswer('don\'t like', 'doesn\'t like', 'not like', 'doesn\'t like')">C) not like</button>
+            <button class="test-btn" onclick="checkAnswer('don\'t like', 'doesn\'t like', 'not like', 'doesn\'t like')">D) doesn't like</button>
+          </div>
         </div>
       </div>
     </div>
@@ -151,15 +205,64 @@
             <li>She <strong>is cooking</strong> dinner. (Она готовит ужин)</li>
             <li>They <strong>are not</strong> sleeping. (Они не спят)</li>
             <li><strong>Are</strong> you <strong>working</strong>? (Ты работаешь?)</li>
+            <li>He <strong>is studying</strong> for his exam. (Он готовится к экзамену)</li>
+            <li>We <strong>are watching</strong> TV. (Мы смотрим телевизор)</li>
           </ul>
           
           <h3>⏰ Когда используется</h3>
           <ul>
-            <li>Действия, происходящие в момент речи</li>
-            <li>Временные действия</li>
-            <li>Запланированные действия в ближайшем будущем</li>
-            <li>Раздражающие привычки (с always)</li>
+            <li><strong>Действия, происходящие в момент речи:</strong> I'm typing now.</li>
+            <li><strong>Временные действия:</strong> I'm staying at a hotel this week.</li>
+            <li><strong>Запланированные действия в ближайшем будущем:</strong> I'm meeting John tomorrow.</li>
+            <li><strong>Раздражающие привычки (с always):</strong> He's always complaining.</li>
+            <li><strong>Изменения и развитие:</strong> The weather is getting worse.</li>
+            <li><strong>Временные ситуации:</strong> I'm working in London this month.</li>
           </ul>
+          
+          <h3>🔍 Особенности</h3>
+          <ul>
+            <li><strong>Глаголы на -e:</strong> write → writing, make → making</li>
+            <li><strong>Глаголы на -ie:</strong> lie → lying, die → dying</li>
+            <li><strong>Глаголы с удвоением согласной:</strong> run → running, sit → sitting</li>
+            <li><strong>Глаголы на -y:</strong> study → studying, play → playing</li>
+          </ul>
+          
+          <h3>📝 Частые наречия</h3>
+          <ul>
+            <li>now (сейчас), at the moment (в данный момент)</li>
+            <li>currently (в настоящее время), right now (прямо сейчас)</li>
+            <li>this week/month/year (на этой неделе/месяце/году)</li>
+            <li>today (сегодня), tonight (сегодня вечером)</li>
+          </ul>
+        </div>
+        
+        <div class="test-section">
+          <h3>🧪 Тест: Present Continuous</h3>
+          <div class="test-question">
+            <p><strong>Вопрос 1:</strong> Выберите правильную форму:</p>
+            <p>I _____ (read) a book now.</p>
+            <button class="test-btn" onclick="checkAnswer('am reading', 'is reading', 'are reading', 'am reading')">A) am reading</button>
+            <button class="test-btn" onclick="checkAnswer('am reading', 'is reading', 'are reading', 'am reading')">B) is reading</button>
+            <button class="test-btn" onclick="checkAnswer('am reading', 'is reading', 'are reading', 'am reading')">C) are reading</button>
+            <button class="test-btn" onclick="checkAnswer('am reading', 'is reading', 'are reading', 'am reading')">D) am reading</button>
+          </div>
+          
+          <div class="test-question">
+            <p><strong>Вопрос 2:</strong> Выберите правильное предложение:</p>
+            <button class="test-btn" onclick="checkAnswer('She is work', 'She is working', 'She working', 'She is working')">A) She is work</button>
+            <button class="test-btn" onclick="checkAnswer('She is work', 'She is working', 'She working', 'She is working')">B) She is working</button>
+            <button class="test-btn" onclick="checkAnswer('She is work', 'She is working', 'She working', 'She is working')">C) She working</button>
+            <button class="test-btn" onclick="checkAnswer('She is work', 'She is working', 'She working', 'She is working')">D) She is working</button>
+          </div>
+          
+          <div class="test-question">
+            <p><strong>Вопрос 3:</strong> Выберите правильную отрицательную форму:</p>
+            <p>They _____ (sleep) now.</p>
+            <button class="test-btn" onclick="checkAnswer('are not sleeping', 'is not sleeping', 'not sleeping', 'are not sleeping')">A) are not sleeping</button>
+            <button class="test-btn" onclick="checkAnswer('are not sleeping', 'is not sleeping', 'not sleeping', 'are not sleeping')">B) is not sleeping</button>
+            <button class="test-btn" onclick="checkAnswer('are not sleeping', 'is not sleeping', 'not sleeping', 'are not sleeping')">C) not sleeping</button>
+            <button class="test-btn" onclick="checkAnswer('are not sleeping', 'is not sleeping', 'not sleeping', 'are not sleeping')">D) are not sleeping</button>
+          </div>
         </div>
       </div>
     </div>
@@ -499,6 +602,287 @@
         <button class="btn secondary" onclick="showPage('main')">Вернуться в главное меню</button>
       </div>
     </div>
+
+    <!-- Страница Present Perfect -->
+    <div id="present-perfect-page" class="page">
+      <div class="header">
+        <button onclick="showPage('tenses')" class="back-btn">← Назад</button>
+        <h1>✅ Present Perfect</h1>
+      </div>
+
+      <div class="content">
+        <h2>Настоящее совершенное время</h2>
+        
+        <div class="grammar-content">
+          <h3>📖 Формула</h3>
+          <p><strong>Утверждение:</strong> Subject + have/has + V3 (past participle)</p>
+          <p><strong>Отрицание:</strong> Subject + have/has + not + V3</p>
+          <p><strong>Вопрос:</strong> Have/Has + Subject + V3?</p>
+          
+          <h3>🎯 Примеры</h3>
+          <ul>
+            <li>I <strong>have finished</strong> my homework. (Я закончил домашнюю работу)</li>
+            <li>She <strong>has visited</strong> Paris three times. (Она была в Париже три раза)</li>
+            <li>We <strong>have never been</strong> to Italy. (Мы никогда не были в Италии)</li>
+            <li><strong>Have</strong> you <strong>eaten</strong> yet? (Ты уже поел?)</li>
+            <li>He <strong>hasn't called</strong> me today. (Он не звонил мне сегодня)</li>
+            <li>They <strong>have just arrived</strong>. (Они только что приехали)</li>
+          </ul>
+          
+          <h3>⏰ Когда используется</h3>
+          <ul>
+            <li><strong>Действие произошло в прошлом, но важно сейчас:</strong> I have lost my keys. (не могу открыть дверь)</li>
+            <li><strong>Жизненный опыт:</strong> She has been to Japan. (Она была в Японии)</li>
+            <li><strong>Действие, завершившееся недавно:</strong> We've just arrived. (Мы только что приехали)</li>
+            <li><strong>Действие началось в прошлом и длится до сих пор:</strong> I have lived here for 5 years. (Я живу здесь 5 лет)</li>
+            <li><strong>Результат действия важен в настоящем:</strong> She has finished her work. (Теперь она свободна)</li>
+            <li><strong>Опыт с ever/never:</strong> Have you ever tried sushi? (Ты когда-нибудь пробовал суши?)</li>
+          </ul>
+          
+          <h3>🔍 Особенности</h3>
+          <ul>
+            <li><strong>3-е лицо единственного числа:</strong> использует has вместо have</li>
+            <li><strong>Неправильные глаголы:</strong> нужно знать V3 форму (go → gone, see → seen)</li>
+            <li><strong>Регулярные глаголы:</strong> добавляется -ed (work → worked, play → played)</li>
+            <li><strong>Отрицания:</strong> haven't/hasn't + V3</li>
+            <li><strong>Вопросы:</strong> Have/Has + Subject + V3?</li>
+          </ul>
+          
+          <h3>📝 Частые наречия</h3>
+          <ul>
+            <li>ever (когда-либо), never (никогда), already (уже)</li>
+            <li>yet (еще не/уже), just (только что), recently (недавно)</li>
+            <li>so far (пока что), lately (в последнее время)</li>
+            <li>since (с какого-то момента), for (в течение)</li>
+            <li>this week/month/year (на этой неделе/месяце/году)</li>
+          </ul>
+          
+          <h3>🔄 Сравнение с Past Simple</h3>
+          <ul>
+            <li><strong>Present Perfect:</strong> I have seen that movie. (когда именно — неважно)</li>
+            <li><strong>Past Simple:</strong> I saw that movie yesterday. (вчера — указано время)</li>
+            <li><strong>Present Perfect:</strong> She has lived here for 10 years. (живет до сих пор)</li>
+            <li><strong>Past Simple:</strong> She lived here for 10 years. (жила, но больше не живет)</li>
+          </ul>
+        </div>
+        
+        <div class="test-section">
+          <h3>🧪 Тест: Present Perfect</h3>
+          <div class="test-question">
+            <p><strong>Вопрос 1:</strong> Выберите правильную форму:</p>
+            <p>I _____ (finish) my work.</p>
+            <button class="test-btn" onclick="checkAnswer('finish', 'finished', 'have finished', 'have finished')">A) finish</button>
+            <button class="test-btn" onclick="checkAnswer('finish', 'finished', 'have finished', 'have finished')">B) finished</button>
+            <button class="test-btn" onclick="checkAnswer('finish', 'finished', 'have finished', 'have finished')">C) have finished</button>
+            <button class="test-btn" onclick="checkAnswer('finish', 'finished', 'have finished', 'have finished')">D) have finished</button>
+          </div>
+          
+          <div class="test-question">
+            <p><strong>Вопрос 2:</strong> Выберите правильное предложение:</p>
+            <button class="test-btn" onclick="checkAnswer('She has went', 'She has gone', 'She went', 'She has gone')">A) She has went</button>
+            <button class="test-btn" onclick="checkAnswer('She has went', 'She has gone', 'She went', 'She has gone')">B) She has gone</button>
+            <button class="test-btn" onclick="checkAnswer('She has went', 'She has gone', 'She went', 'She has gone')">C) She went</button>
+            <button class="test-btn" onclick="checkAnswer('She has went', 'She has gone', 'She went', 'She has gone')">D) She has gone</button>
+          </div>
+          
+          <div class="test-question">
+            <p><strong>Вопрос 3:</strong> Выберите правильную отрицательную форму:</p>
+            <p>He _____ (call) me today.</p>
+            <button class="test-btn" onclick="checkAnswer('hasn\'t called', 'hasn\'t call', 'didn\'t called', 'hasn\'t called')">A) hasn't called</button>
+            <button class="test-btn" onclick="checkAnswer('hasn\'t called', 'hasn\'t call', 'didn\'t called', 'hasn\'t called')">B) hasn't call</button>
+            <button class="test-btn" onclick="checkAnswer('hasn\'t called', 'hasn\'t call', 'didn\'t called', 'hasn\'t called')">C) didn't called</button>
+            <button class="test-btn" onclick="checkAnswer('hasn\'t called', 'hasn\'t call', 'didn\'t called', 'hasn\'t called')">D) hasn't called</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Past Simple -->
+    <div id="past-simple-page" class="page">
+      <div class="header">
+        <button onclick="showPage('tenses')" class="back-btn">← Назад</button>
+        <h1>📚 Past Simple</h1>
+      </div>
+
+      <div class="content">
+        <h2>Прошедшее простое время</h2>
+        
+        <div class="grammar-content">
+          <h3>📖 Формула</h3>
+          <p><strong>Утверждение:</strong> Subject + V2 (вторая форма глагола)</p>
+          <p><strong>Отрицание:</strong> Subject + didn't + V1</p>
+          <p><strong>Вопрос:</strong> Did + Subject + V1?</p>
+          
+          <h3>🎯 Примеры</h3>
+          <ul>
+            <li>I <strong>watched</strong> a movie yesterday. (Я смотрел фильм вчера)</li>
+            <li>They <strong>went</strong> to Paris in 2020. (Они ездили в Париж в 2020 году)</li>
+            <li>He <strong>finished</strong> his homework an hour ago. (Он закончил домашнюю работу час назад)</li>
+            <li>She <strong>didn't like</strong> the movie. (Ей не понравился фильм)</li>
+            <li><strong>Did</strong> you <strong>see</strong> that film? (Ты видел тот фильм?)</li>
+            <li>We <strong>visited</strong> our grandparents last week. (Мы навещали бабушку и дедушку на прошлой неделе)</li>
+          </ul>
+          
+          <h3>⏰ Когда используется</h3>
+          <ul>
+            <li><strong>Завершённые действия в прошлом:</strong> I visited London last year.</li>
+            <li><strong>Последовательные действия в прошлом:</strong> She entered the room, turned on the light, and sat down.</li>
+            <li><strong>Регулярные действия в прошлом:</strong> We always played outside after school.</li>
+            <li><strong>Конкретные моменты в прошлом:</strong> The train arrived at 8 PM.</li>
+            <li><strong>Исторические события:</strong> World War II ended in 1945.</li>
+            <li><strong>Действия, которые больше не происходят:</strong> I lived in Moscow for 5 years. (теперь живу в другом месте)</li>
+          </ul>
+          
+          <h3>🔍 Особенности</h3>
+          <ul>
+            <li><strong>Правильные глаголы:</strong> добавляется -ed (watched, played, worked)</li>
+            <li><strong>Неправильные глаголы:</strong> уникальная форма (went, saw, ate, came)</li>
+            <li><strong>Отрицания:</strong> didn't + V1 (глагол в базовой форме)</li>
+            <li><strong>Вопросы:</strong> Did + Subject + V1?</li>
+            <li><strong>После did глагол всегда в базовой форме:</strong> Did you go? (не Did you went?)</li>
+          </ul>
+          
+          <h3>📝 Частые наречия</h3>
+          <ul>
+            <li>yesterday (вчера), last week/month/year (на прошлой неделе/в прошлом месяце/году)</li>
+            <li>in 2010 (в 2010 году), two days ago (два дня назад)</li>
+            <li>then (тогда), when I was a child (когда я был ребенком)</li>
+            <li>once (однажды), in the past (в прошлом)</li>
+            <li>ago (назад), earlier (раньше)</li>
+          </ul>
+          
+          <h3>🔄 Сравнение с Present Perfect</h3>
+          <ul>
+            <li><strong>Past Simple:</strong> I saw that movie yesterday. (вчера — указано время)</li>
+            <li><strong>Present Perfect:</strong> I have seen that movie. (когда именно — неважно)</li>
+            <li><strong>Past Simple:</strong> She lived here for 10 years. (жила, но больше не живет)</li>
+            <li><strong>Present Perfect:</strong> She has lived here for 10 years. (живет до сих пор)</li>
+          </ul>
+        </div>
+        
+        <div class="test-section">
+          <h3>🧪 Тест: Past Simple</h3>
+          <div class="test-question">
+            <p><strong>Вопрос 1:</strong> Выберите правильную форму:</p>
+            <p>I _____ (go) to the cinema yesterday.</p>
+            <button class="test-btn" onclick="checkAnswer('go', 'went', 'gone', 'went')">A) go</button>
+            <button class="test-btn" onclick="checkAnswer('go', 'went', 'gone', 'went')">B) went</button>
+            <button class="test-btn" onclick="checkAnswer('go', 'went', 'gone', 'went')">C) gone</button>
+            <button class="test-btn" onclick="checkAnswer('go', 'went', 'gone', 'went')">D) went</button>
+          </div>
+          
+          <div class="test-question">
+            <p><strong>Вопрос 2:</strong> Выберите правильное предложение:</p>
+            <button class="test-btn" onclick="checkAnswer('Did you went', 'Did you go', 'Do you went', 'Did you go')">A) Did you went</button>
+            <button class="test-btn" onclick="checkAnswer('Did you went', 'Did you go', 'Do you went', 'Did you go')">B) Did you go</button>
+            <button class="test-btn" onclick="checkAnswer('Did you went', 'Did you go', 'Do you went', 'Did you go')">C) Do you went</button>
+            <button class="test-btn" onclick="checkAnswer('Did you went', 'Did you go', 'Do you went', 'Did you go')">D) Did you go</button>
+          </div>
+          
+          <div class="test-question">
+            <p><strong>Вопрос 3:</strong> Выберите правильную отрицательную форму:</p>
+            <p>She _____ (like) the movie.</p>
+            <button class="test-btn" onclick="checkAnswer('didn\'t like', 'didn\'t liked', 'not like', 'didn\'t like')">A) didn't like</button>
+            <button class="test-btn" onclick="checkAnswer('didn\'t like', 'didn\'t liked', 'not like', 'didn\'t like')">B) didn't liked</button>
+            <button class="test-btn" onclick="checkAnswer('didn\'t like', 'didn\'t liked', 'not like', 'didn\'t like')">C) not like</button>
+            <button class="test-btn" onclick="checkAnswer('didn\'t like', 'didn\'t liked', 'not like', 'didn\'t like')">D) didn't like</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Future Simple -->
+    <div id="future-simple-page" class="page">
+      <div class="header">
+        <button onclick="showPage('tenses')" class="back-btn">← Назад</button>
+        <h1>🔮 Future Simple</h1>
+      </div>
+
+      <div class="content">
+        <h2>Будущее простое время</h2>
+        
+        <div class="grammar-content">
+          <h3>📖 Формула</h3>
+          <p><strong>Утверждение:</strong> Subject + will + V1 (инфинитив без to)</p>
+          <p><strong>Отрицание:</strong> Subject + will not (won't) + V1</p>
+          <p><strong>Вопрос:</strong> Will + Subject + V1?</p>
+          
+          <h3>🎯 Примеры</h3>
+          <ul>
+            <li>I <strong>will call</strong> you later. (Я позвоню тебе позже)</li>
+            <li>We <strong>will go</strong> to the beach tomorrow. (Мы поедем на пляж завтра)</li>
+            <li>I think it <strong>will rain</strong> soon. (Думаю, скоро пойдет дождь)</li>
+            <li>She <strong>won't come</strong> to the party. (Она не придет на вечеринку)</li>
+            <li><strong>Will</strong> you <strong>help</strong> me? (Ты поможешь мне?)</li>
+            <li>They <strong>will visit</strong> us next week. (Они посетят нас на следующей неделе)</li>
+          </ul>
+          
+          <h3>⏰ Когда используется</h3>
+          <ul>
+            <li><strong>Спонтанные решения:</strong> Oh, I forgot my wallet! I will go back and get it.</li>
+            <li><strong>Обещания, угрозы, прогнозы:</strong> She will be a great doctor.</li>
+            <li><strong>Действия в будущем без точного плана:</strong> They will visit us next week.</li>
+            <li><strong>Факты о будущем:</strong> The sun will rise tomorrow.</li>
+            <li><strong>Предсказания с I think, I hope, I believe:</strong> I think it will rain.</li>
+            <li><strong>Предложения и просьбы:</strong> I will help you with that.</li>
+          </ul>
+          
+          <h3>🔍 Особенности</h3>
+          <ul>
+            <li><strong>После will глагол всегда в базовой форме:</strong> He will go (не will goes)</li>
+            <li><strong>Сокращения:</strong> will not = won't</li>
+            <li><strong>В вопросах:</strong> Will + Subject + V1?</li>
+            <li><strong>В отрицаниях:</strong> Subject + won't + V1</li>
+            <li><strong>Не добавляется to после will:</strong> They will come (не will to come)</li>
+          </ul>
+          
+          <h3>📝 Частые наречия</h3>
+          <ul>
+            <li>tomorrow (завтра), next week/month/year (на следующей неделе/в следующем месяце/году)</li>
+            <li>soon (скоро), in 2025 (в 2025 году), in the future (в будущем)</li>
+            <li>I think, I hope, I believe, probably, perhaps</li>
+            <li>later (позже), in a few minutes (через несколько минут)</li>
+          </ul>
+          
+          <h3>🔄 Сравнение с другими способами выражения будущего</h3>
+          <ul>
+            <li><strong>Will:</strong> спонтанные решения, прогнозы</li>
+            <li><strong>Be going to:</strong> планы и намерения</li>
+            <li><strong>Present Continuous:</strong> запланированные действия</li>
+            <li><strong>Present Simple:</strong> расписания и графики</li>
+          </ul>
+        </div>
+        
+        <div class="test-section">
+          <h3>🧪 Тест: Future Simple</h3>
+          <div class="test-question">
+            <p><strong>Вопрос 1:</strong> Выберите правильную форму:</p>
+            <p>I _____ (call) you tomorrow.</p>
+            <button class="test-btn" onclick="checkAnswer('call', 'will call', 'calls', 'will call')">A) call</button>
+            <button class="test-btn" onclick="checkAnswer('call', 'will call', 'calls', 'will call')">B) will call</button>
+            <button class="test-btn" onclick="checkAnswer('call', 'will call', 'calls', 'will call')">C) calls</button>
+            <button class="test-btn" onclick="checkAnswer('call', 'will call', 'calls', 'will call')">D) will call</button>
+          </div>
+          
+          <div class="test-question">
+            <p><strong>Вопрос 2:</strong> Выберите правильное предложение:</p>
+            <button class="test-btn" onclick="checkAnswer('He will goes', 'He will go', 'He goes', 'He will go')">A) He will goes</button>
+            <button class="test-btn" onclick="checkAnswer('He will goes', 'He will go', 'He goes', 'He will go')">B) He will go</button>
+            <button class="test-btn" onclick="checkAnswer('He will goes', 'He will go', 'He goes', 'He will go')">C) He goes</button>
+            <button class="test-btn" onclick="checkAnswer('He will goes', 'He will go', 'He goes', 'He will go')">D) He will go</button>
+          </div>
+          
+          <div class="test-question">
+            <p><strong>Вопрос 3:</strong> Выберите правильную отрицательную форму:</p>
+            <p>She _____ (come) to the party.</p>
+            <button class="test-btn" onclick="checkAnswer('won\'t come', 'will not comes', 'not come', 'won\'t come')">A) won't come</button>
+            <button class="test-btn" onclick="checkAnswer('won\'t come', 'will not comes', 'not come', 'won\'t come')">B) will not comes</button>
+            <button class="test-btn" onclick="checkAnswer('won\'t come', 'will not comes', 'not come', 'won\'t come')">C) not come</button>
+            <button class="test-btn" onclick="checkAnswer('won\'t come', 'will not comes', 'not come', 'won\'t come')">D) won't come</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -600,6 +984,23 @@
 
     function contactSupport() {
       alert('Свяжитесь с нами: @engtrain_support');
+    }
+
+    function checkAnswer(wrong1, wrong2, wrong3, correct) {
+      const buttons = event.target.parentElement.querySelectorAll('.test-btn');
+      buttons.forEach(btn => {
+        btn.style.backgroundColor = '#ddd';
+        btn.disabled = true;
+      });
+      
+      event.target.style.backgroundColor = '#4CAF50';
+      event.target.style.color = 'white';
+      
+      if (event.target.textContent.includes(correct)) {
+        alert('✅ Правильно! Отличная работа!');
+      } else {
+        alert('❌ Неправильно. Правильный ответ: ' + correct);
+      }
     }
   </script>
 </body>
