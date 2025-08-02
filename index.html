@@ -39,32 +39,43 @@
       console.log('Current URL:', window.location.href);
       console.log('Current pathname:', window.location.pathname);
       
-      try {
-        // Попробуем несколько способов навигации
-        console.log('Attempting navigation...');
+      // Проверяем, находимся ли мы в Telegram Web App
+      if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+        console.log('Telegram Web App detected');
         
-        // Способ 1: Простая навигация
-        console.log('Method 1: window.location.href');
-        window.location.href = page;
-        
-        // Если дошли сюда, значит навигация не сработала
-        console.log('Navigation failed, trying alternative method...');
-        
-        // Способ 2: Открыть в новой вкладке
-        console.log('Method 2: window.open');
-        window.open(page, '_self');
-        
-      } catch (error) {
-        console.error('Navigation error:', error);
-        
-        // Способ 3: Попробуем через Telegram Web App API
-        if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
-          console.log('Method 3: Telegram Web App API');
-          try {
-            Telegram.WebApp.openLink(window.location.origin + '/' + page);
-          } catch (telegramError) {
-            console.error('Telegram API error:', telegramError);
+        try {
+          // Для Telegram Web App используем специальный подход
+          const currentUrl = window.location.href;
+          const baseUrl = currentUrl.substring(0, currentUrl.lastIndexOf('/') + 1);
+          const newUrl = baseUrl + page;
+          
+          console.log('Base URL:', baseUrl);
+          console.log('New URL:', newUrl);
+          
+          // Используем Telegram Web App API для навигации
+          if (Telegram.WebApp.openLink) {
+            console.log('Using Telegram.WebApp.openLink');
+            Telegram.WebApp.openLink(newUrl);
+          } else if (Telegram.WebApp.openTelegramLink) {
+            console.log('Using Telegram.WebApp.openTelegramLink');
+            Telegram.WebApp.openTelegramLink(newUrl);
+          } else {
+            console.log('Using fallback navigation');
+            window.location.href = page;
           }
+        } catch (error) {
+          console.error('Telegram navigation error:', error);
+          // Fallback к обычной навигации
+          window.location.href = page;
+        }
+      } else {
+        console.log('Browser mode detected');
+        // Обычная навигация для браузера
+        try {
+          window.location.href = page;
+        } catch (error) {
+          console.error('Browser navigation error:', error);
+          window.open(page, '_self');
         }
       }
     }
