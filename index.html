@@ -8,24 +8,230 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="header">
-    <h1>👋 Добро пожаловать в EngTrain App!</h1>
-  </div>
+  <div id="app">
+    <!-- Главная страница -->
+    <div id="main-page" class="page active">
+      <div class="header">
+        <h1>👋 Добро пожаловать в EngTrain App!</h1>
+      </div>
 
-  <div class="content">
-    <h2>Бесплатные разделы:</h2>
+      <div class="content">
+        <h2>Бесплатные разделы:</h2>
 
-    <button class="btn" onclick="navigateTo('grammar.html')">📚 Grammar</button>
-    <button class="btn" onclick="navigateTo('vocabulary.html')">🧠 Vocabulary</button>
-    <button class="btn" onclick="navigateTo('practice.html')">✍️ Practice</button>
-    <button class="btn" onclick="navigateTo('games.html')">🎮 Игры</button>
-    <button class="btn secondary" onclick="navigateTo('full-version.html')">🔐 Что в полной версии?</button>
-    <button class="btn" onclick="navigateTo('test.html')" style="background-color: #28a745;">🧪 Тест навигации</button>
-    <button class="btn" onclick="testNavigation()" style="background-color: #ff6b6b;">🔧 Тест в браузере</button>
-    <button class="btn" onclick="testDirectNavigation()" style="background-color: #ffa500;">🚀 Прямая навигация</button>
-    <button class="btn" onclick="testTelegramNavigation()" style="background-color: #9c27b0;">📱 Тест Telegram</button>
-    <button class="btn" onclick="simpleTest()" style="background-color: #e91e63;">🔬 Простой тест</button>
-    <button class="btn" onclick="testReplace()" style="background-color: #607d8b;">🔄 Тест Replace</button>
+        <button class="btn" onclick="showPage('grammar')">📚 Grammar</button>
+        <button class="btn" onclick="showPage('vocabulary')">🧠 Vocabulary</button>
+        <button class="btn" onclick="showPage('practice')">✍️ Practice</button>
+        <button class="btn" onclick="showPage('games')">🎮 Игры</button>
+        <button class="btn secondary" onclick="showPage('full-version')">🔐 Что в полной версии?</button>
+        <button class="btn" onclick="showPage('test')" style="background-color: #28a745;">🧪 Тест навигации</button>
+        <button class="btn" onclick="testNavigation()" style="background-color: #ff6b6b;">🔧 Тест в браузере</button>
+        <button class="btn" onclick="testDirectNavigation()" style="background-color: #ffa500;">🚀 Прямая навигация</button>
+        <button class="btn" onclick="testTelegramNavigation()" style="background-color: #9c27b0;">📱 Тест Telegram</button>
+        <button class="btn" onclick="simpleTest()" style="background-color: #e91e63;">🔬 Простой тест</button>
+        <button class="btn" onclick="testReplace()" style="background-color: #607d8b;">🔄 Тест Replace</button>
+      </div>
+    </div>
+
+    <!-- Страница Grammar -->
+    <div id="grammar-page" class="page">
+      <div class="header">
+        <button onclick="showPage('main')" class="back-btn">← Назад</button>
+        <h1>📚 Grammar</h1>
+      </div>
+
+      <div class="content">
+        <h2>Грамматические разделы</h2>
+        
+        <div class="section-grid">
+          <div class="section-card" onclick="openSection('tenses')">
+            <h3>⏰ Времена</h3>
+            <p>Изучение английских времен</p>
+          </div>
+          
+          <div class="section-card" onclick="openSection('articles')">
+            <h3>📝 Артикли</h3>
+            <p>Правила использования a/an/the</p>
+          </div>
+          
+          <div class="section-card" onclick="openSection('prepositions')">
+            <h3>🔗 Предлоги</h3>
+            <p>Предлоги места и времени</p>
+          </div>
+          
+          <div class="section-card" onclick="openSection('conditionals')">
+            <h3>🎯 Условные предложения</h3>
+            <p>If-clauses и их типы</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Vocabulary -->
+    <div id="vocabulary-page" class="page">
+      <div class="header">
+        <button onclick="showPage('main')" class="back-btn">← Назад</button>
+        <h1>🧠 Vocabulary</h1>
+      </div>
+
+      <div class="content">
+        <h2>Словарные разделы</h2>
+        
+        <div class="section-grid">
+          <div class="section-card" onclick="openSection('daily_words')">
+            <h3>📅 Слова дня</h3>
+            <p>Новые слова каждый день</p>
+          </div>
+          
+          <div class="section-card" onclick="openSection('topics')">
+            <h3>📚 Тематические слова</h3>
+            <p>Слова по темам</p>
+          </div>
+          
+          <div class="section-card" onclick="openSection('idioms')">
+            <h3>💬 Идиомы</h3>
+            <p>Популярные выражения</p>
+          </div>
+          
+          <div class="section-card" onclick="openSection('phrasal_verbs')">
+            <h3>🔗 Фразовые глаголы</h3>
+            <p>Важные фразовые глаголы</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Practice -->
+    <div id="practice-page" class="page">
+      <div class="header">
+        <button onclick="showPage('main')" class="back-btn">← Назад</button>
+        <h1>✍️ Practice</h1>
+      </div>
+
+      <div class="content">
+        <h2>Практические упражнения</h2>
+        
+        <div class="section-grid">
+          <div class="section-card" onclick="openSection('listening')">
+            <h3>🎧 Аудирование</h3>
+            <p>Упражнения на понимание речи</p>
+          </div>
+          
+          <div class="section-card" onclick="openSection('reading')">
+            <h3>📖 Чтение</h3>
+            <p>Тексты и понимание</p>
+          </div>
+          
+          <div class="section-card" onclick="openSection('writing')">
+            <h3>✏️ Письмо</h3>
+            <p>Написание текстов</p>
+          </div>
+          
+          <div class="section-card" onclick="openSection('speaking')">
+            <h3>🗣️ Говорение</h3>
+            <p>Разговорная практика</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Games -->
+    <div id="games-page" class="page">
+      <div class="header">
+        <button onclick="showPage('main')" class="back-btn">← Назад</button>
+        <h1>🎮 Игры</h1>
+      </div>
+
+      <div class="content">
+        <h2>Обучающие игры</h2>
+        
+        <div class="section-grid">
+          <div class="section-card" onclick="openSection('word_guess')">
+            <h3>🎯 Угадай слово</h3>
+            <p>Угадайте слово по описанию</p>
+          </div>
+          
+          <div class="section-card" onclick="openSection('memory')">
+            <h3>🧠 Память</h3>
+            <p>Найдите пары слов</p>
+          </div>
+          
+          <div class="section-card" onclick="openSection('quiz')">
+            <h3>❓ Викторина</h3>
+            <p>Ответьте на вопросы</p>
+          </div>
+          
+          <div class="section-card" onclick="openSection('puzzle')">
+            <h3>🧩 Головоломка</h3>
+            <p>Соберите предложение</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Страница Full Version -->
+    <div id="full-version-page" class="page">
+      <div class="header">
+        <button onclick="showPage('main')" class="back-btn">← Назад</button>
+        <h1>🔐 Полная версия</h1>
+      </div>
+
+      <div class="content">
+        <h2>Что включено в полную версию?</h2>
+        
+        <div class="premium-features">
+          <div class="feature-card">
+            <h3>🎯 IELTS Practice Tests</h3>
+            <p>Полные тесты для подготовки к IELTS</p>
+          </div>
+          
+          <div class="feature-card">
+            <h3>📊 Подробная статистика</h3>
+            <p>Отслеживание прогресса и достижений</p>
+          </div>
+          
+          <div class="feature-card">
+            <h3>🎧 Аудио материалы</h3>
+            <p>Озвученные тексты и диалоги</p>
+          </div>
+          
+          <div class="feature-card">
+            <h3>📱 Персональный план</h3>
+            <p>Индивидуальная программа обучения</p>
+          </div>
+          
+          <div class="feature-card">
+            <h3>💬 Чат с преподавателем</h3>
+            <p>Поддержка от опытных учителей</p>
+          </div>
+          
+          <div class="feature-card">
+            <h3>🏆 Сертификаты</h3>
+            <p>Получение сертификатов по уровням</p>
+          </div>
+        </div>
+        
+        <button class="btn primary" onclick="contactSupport()">
+          📞 Связаться с поддержкой
+        </button>
+      </div>
+    </div>
+
+    <!-- Страница Test -->
+    <div id="test-page" class="page">
+      <div class="header">
+        <button onclick="showPage('main')" class="back-btn">← Назад</button>
+        <h1>🧪 Тест</h1>
+      </div>
+
+      <div class="content">
+        <h2>Тестовая страница</h2>
+        
+        <p>Если вы видите эту страницу, значит навигация работает правильно!</p>
+        
+        <button class="btn" onclick="testAlert()">Тест уведомления</button>
+        <button class="btn secondary" onclick="showPage('main')">Вернуться в главное меню</button>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -34,24 +240,31 @@
       Telegram.WebApp.ready();
       Telegram.WebApp.expand();
       console.log('Telegram Web App initialized');
+    } else {
+      console.log('Running in browser mode');
     }
 
-    function navigateTo(page) {
-      console.log('=== NAVIGATION DEBUG ===');
-      console.log('Navigating to:', page);
-      console.log('Current URL:', window.location.href);
+    // SPA навигация
+    function showPage(pageName) {
+      console.log('=== SPA NAVIGATION ===');
+      console.log('Showing page:', pageName);
       
-      // Простая навигация для всех случаев
-      try {
-        console.log('Attempting navigation with window.location.replace');
-        window.location.replace(page);
-      } catch (error) {
-        console.error('Navigation error:', error);
-        // Fallback
-        window.location.href = page;
+      // Скрываем все страницы
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => {
+        page.classList.remove('active');
+      });
+      
+      // Показываем нужную страницу
+      const targetPage = document.getElementById(pageName + '-page');
+      if (targetPage) {
+        targetPage.classList.add('active');
+        console.log('Page shown successfully');
+      } else {
+        console.error('Page not found:', pageName);
       }
     }
-    
+
     function testNavigation() {
       console.log('Testing navigation...');
       alert('Тестирование навигации...\nПопробуйте нажать на любую кнопку выше.');
@@ -84,7 +297,7 @@
         alert('Telegram Web App не обнаружен.\nЭтот тест работает только в Telegram.');
       }
     }
-
+    
     function simpleTest() {
       console.log('=== SIMPLE TEST ===');
       console.log('Testing simple navigation to grammar.html');
@@ -107,6 +320,19 @@
         console.error('Replace navigation failed:', error);
         alert('Тест Replace не сработал. Ошибка: ' + error.message);
       }
+    }
+
+    function openSection(section) {
+      console.log('Opening section:', section);
+      alert(`Открывается раздел: ${section}`);
+    }
+
+    function testAlert() {
+      alert('Уведомления работают!');
+    }
+
+    function contactSupport() {
+      alert('Свяжитесь с нами: @engtrain_support');
     }
   </script>
 </body>
