@@ -4,7 +4,7 @@
   "description": "EngTrain WebApp for Telegram Bot",
   "main": "index.html",
   "scripts": {
-    "start": "npx serve -s . -l $PORT"
+    "start": "npx serve -s . -l ${PORT:-3000}"
   },
   "dependencies": {
     "serve": "^14.2.0"
