@@ -1,0 +1,782 @@
+[
+  {
+    "topic": "Present Simple",
+    "questions": [
+      {
+        "text": "Choose the correct form of the verb: They \\_\\_\\_ to school every day.",
+        "options": ["go", "goes", "went", "going"],
+        "correct_answer": "go",
+        "explanation": "Present Simple используется для регулярных действий. Для подлежащих 'they' глагол остается в начальной форме."
+      },
+      {
+        "text": "She \\_\\_\\_ English very well.",
+        "options": ["speak", "speaks", "spoke", "speaking"],
+        "correct_answer": "speaks",
+        "explanation": "В Present Simple с he/she/it к глаголу добавляется -s."
+      },
+      {
+        "text": "He often \\_\\_\\_ his homework after dinner.",
+        "options": ["do", "does", "doing", "did"],
+        "correct_answer": "does",
+        "explanation": "Present Simple используется для привычек. Для 'he' глагол 'do' принимает форму 'does'."
+      },
+      {
+        "text": "Water \\_\\_\\_ at 100 degrees Celsius.",
+        "options": ["boil", "boils", "is boiling", "boiled"],
+        "correct_answer": "boils",
+        "explanation": "Present Simple используется для выражения общеизвестных фактов и истин."
+      },
+      {
+        "text": "Do you \\_\\_\\_ coffee?",
+        "options": ["like", "likes", "liking", "liked"],
+        "correct_answer": "like",
+        "explanation": "В вопросах Present Simple с 'do' основной глагол используется в начальной форме."
+      },
+      {
+        "text": "The sun \\_\\_\\_ in the east.",
+        "options": ["rise", "rises", "rose", "rising"],
+        "correct_answer": "rises",
+        "explanation": "Present Simple используется для общеизвестных фактов. Для 3-го лица единственного числа к глаголу добавляется -s."
+      },
+      {
+        "text": "We \\_\\_\\_ our grandparents every weekend.",
+        "options": ["visit", "visits", "visited", "visiting"],
+        "correct_answer": "visit",
+        "explanation": "Present Simple используется для регулярных действий. Для подлежащих 'we' глагол остается в начальной форме."
+      },
+      {
+        "text": "My sister \\_\\_\\_ a lot of books.",
+        "options": ["read", "reads", "reading", "readed"],
+        "correct_answer": "reads",
+        "explanation": "В Present Simple с he/she/it к глаголу добавляется -s."
+      },
+      {
+        "text": "What time \\_\\_\\_ the train \\_\\_\\_?",
+        "options": ["do ... leave", "does ... leave", "is ... leaving", "did ... leave"],
+        "correct_answer": "does ... leave",
+        "explanation": "Present Simple используется для расписаний. Для 'the train' (it) используется 'does', и основной глагол в начальной форме."
+      },
+      {
+        "text": "Birds \\_\\_\\_.",
+        "options": ["fly", "flies", "flew", "flying"],
+        "correct_answer": "fly",
+        "explanation": "Present Simple используется для выражения общеизвестных фактов. Для подлежащих во множественном числе ('birds') глагол остается в начальной форме."
+      }
+    ]
+  },
+  {
+    "topic": "Present Continuous",
+    "questions": [
+      {
+        "text": "Right now, I \\_\\_\\_ a very interesting book.",
+        "options": ["read", "reads", "am reading", "have read"],
+        "correct_answer": "am reading",
+        "explanation": "Present Continuous используется для действий, происходящих в момент речи. Сигнальное слово 'Right now'. Формула: am/is/are + V-ing."
+      },
+      {
+        "text": "She \\_\\_\\_ dinner for the family at the moment.",
+        "options": ["cooks", "is cooking", "cooked", "will cook"],
+        "correct_answer": "is cooking",
+        "explanation": "Present Continuous используется для действий, происходящих прямо сейчас. Сигнальное слово 'at the moment'. Формула: am/is/are + V-ing."
+      },
+      {
+        "text": "They \\_\\_\\_ on a new project this week.",
+        "options": ["work", "works", "are working", "worked"],
+        "correct_answer": "are working",
+        "explanation": "Present Continuous используется для временных действий, происходящих в текущий период. 'This week' указывает на такой период."
+      },
+      {
+        "text": "Listen! The birds \\_\\_\\_ beautifully.",
+        "options": ["sing", "sings", "are singing", "sang"],
+        "correct_answer": "are singing",
+        "explanation": "Present Continuous используется для действий, происходящих в момент речи. 'Listen!' - сигнальное слово."
+      },
+      {
+        "text": "Why \\_\\_\\_ you \\_\\_\\_ your coat?",
+        "options": ["are you wear", "are you wearing", "do you wear", "are you wore"],
+        "correct_answer": "are you wearing",
+        "explanation": "Present Continuous используется для действий, происходящих прямо сейчас. Формула для вопросов: Am/Is/Are + Subject + V-ing."
+      },
+      {
+        "text": "What \\_\\_\\_ he \\_\\_\\_ right now?",
+        "options": ["is he doing", "does he do", "is he do", "are he doing"],
+        "correct_answer": "is he doing",
+        "explanation": "Present Continuous используется для вопроса о действии, происходящем в момент речи ('right now')."
+      },
+      {
+        "text": "We \\_\\_\\_ to the cinema tonight.",
+        "options": ["go", "are going", "goes", "went"],
+        "correct_answer": "are going",
+        "explanation": "Present Continuous используется для запланированных действий в ближайшем будущем ('tonight')."
+      },
+      {
+        "text": "The children \\_\\_\\_ in the garden.",
+        "options": ["play", "plays", "are playing", "played"],
+        "correct_answer": "are playing",
+        "explanation": "Present Continuous используется для действий, происходящих в данный момент."
+      },
+      {
+        "text": "Prices \\_\\_\\_ rapidly these days.",
+        "options": ["rise", "rises", "are rising", "rose"],
+        "correct_answer": "are rising",
+        "explanation": "Present Continuous используется для описания изменений, происходящих в текущий период."
+      },
+      {
+        "text": "You \\_\\_\\_ always \\_\\_\\_ your phone!",
+        "options": ["are always forgetting", "always forget", "are always forget", "always forgetting"],
+        "correct_answer": "are always forgetting",
+        "explanation": "Present Continuous с 'always' используется для выражения раздражения или жалобы на повторяющиеся действия."
+      }
+    ]
+  },
+  {
+    "topic": "Present Perfect",
+    "questions": [
+      {
+        "text": "They \\_\\_\\_ to Paris three times already.",
+        "options": ["go", "went", "have gone", "are going"],
+        "correct_answer": "have gone",
+        "explanation": "Present Perfect используется для обозначения жизненного опыта или действия, завершившегося к текущему моменту с результатом. Сигнальное слово 'already'. Формула: have/has + V3."
+      },
+      {
+        "text": "I \\_\\_\\_ my keys, so I can't open the door.",
+        "options": ["lose", "lost", "have lost", "am losing"],
+        "correct_answer": "have lost",
+        "explanation": "Present Perfect используется, когда действие произошло в прошлом, но его результат важен в настоящем ('can't open the door')."
+      },
+      {
+        "text": "She \\_\\_\\_ her work just now.",
+        "options": ["finish", "finishes", "has finished", "finished"],
+        "correct_answer": "has finished",
+        "explanation": "Present Perfect используется для действий, завершившихся недавно. Сигнальное слово 'just now'. Формула: have/has + V3."
+      },
+      {
+        "text": "Have you ever \\_\\_\\_ sushi?",
+        "options": ["try", "tried", "trying", "to try"],
+        "correct_answer": "tried",
+        "explanation": "Present Perfect используется для жизненного опыта. В вопросах с 'have' глагол ставится в третью форму (V3)."
+      },
+      {
+        "text": "We \\_\\_\\_ here for 5 years.",
+        "options": ["live", "lived", "have lived", "are living"],
+        "correct_answer": "have lived",
+        "explanation": "Present Perfect используется, когда действие началось в прошлом и продолжается до сих пор. 'For 5 years' указывает на продолжительность."
+      },
+      {
+        "text": "He \\_\\_\\_ his leg, so he can't play football.",
+        "options": ["break", "broke", "has broken", "is breaking"],
+        "correct_answer": "has broken",
+        "explanation": "Present Perfect используется, когда действие произошло в прошлом, и его результат (сломанная нога) важен в настоящем ('can't play')."
+      },
+      {
+        "text": "I \\_\\_\\_ never \\_\\_\\_ such a beautiful sunset.",
+        "options": ["have never see", "have never seen", "never saw", "never see"],
+        "correct_answer": "have never seen",
+        "explanation": "Present Perfect используется для обозначения жизненного опыта, особенно с 'never'. Глагол 'see' в третьей форме - 'seen'."
+      },
+      {
+        "text": "They \\_\\_\\_ the news yet.",
+        "options": ["didn't hear", "haven't heard", "don't hear", "aren't hearing"],
+        "correct_answer": "haven't heard",
+        "explanation": "Present Perfect используется для действий, которые еще не произошли к текущему моменту, часто с 'yet'."
+      },
+      {
+        "text": "How many times \\_\\_\\_ you \\_\\_\\_ to London?",
+        "options": ["did you go", "have you been", "are you going", "do you go"],
+        "correct_answer": "have you been",
+        "explanation": "Present Perfect используется для вопросов о количестве раз, когда что-то произошло ('How many times'), подразумевая жизненный опыт."
+      },
+      {
+        "text": "The postman \\_\\_\\_ already \\_\\_\\_.",
+        "options": ["has already came", "has already come", "already came", "already comes"],
+        "correct_answer": "has already come",
+        "explanation": "Present Perfect используется для недавно завершенных действий с 'already'. Глагол 'come' в третьей форме - 'come'."
+      }
+    ]
+  },
+  {
+    "topic": "Present Perfect Continuous",
+    "questions": [
+      {
+        "text": "He is tired because he \\_\\_\\_ all day.",
+        "options": ["works", "is working", "has worked", "has been working"],
+        "correct_answer": "has been working",
+        "explanation": "Present Perfect Continuous используется для длительного действия, которое только что закончилось и имеет видимый результат в настоящем ('tired'). Формула: have/has been + V-ing."
+      },
+      {
+        "text": "It \\_\\_\\_ hard since morning, so the ground is wet.",
+        "options": ["rains", "is raining", "has rained", "has been raining"],
+        "correct_answer": "has been raining",
+        "explanation": "Present Perfect Continuous используется для длительного действия, которое началось в прошлом и продолжается до настоящего момента, или его результат виден сейчас. 'Since morning' указывает на начало действия."
+      },
+      {
+        "text": "How long \\_\\_\\_ you \\_\\_\\_ English?",
+        "options": ["do you learn", "are you learning", "have you learned", "have you been learning"],
+        "correct_answer": "D. have you been learning",
+        "explanation": "Present Perfect Continuous используется, чтобы спросить о продолжительности действия, которое началось в прошлом и продолжается до сих пор. Сигнальное слово 'How long'."
+      },
+      {
+        "text": "She \\_\\_\\_ in this company for ten years by next month.",
+        "options": ["works", "is working", "has worked", "has been working"],
+        "correct_answer": "has been working",
+        "explanation": "Present Perfect Continuous используется для действия, которое началось в прошлом и продолжается до сих пор. 'For ten years' указывает на продолжительность."
+      },
+      {
+        "text": "They \\_\\_\\_ football for two hours, and they are still playing.",
+        "options": ["play", "played", "have played", "have been playing"],
+        "correct_answer": "have been playing",
+        "explanation": "Present Perfect Continuous используется для длительного действия, которое началось в прошлом и продолжается до настоящего момента. 'For two hours' и 'still playing' указывают на это."
+      },
+      {
+        "text": "The baby's eyes are red because he \\_\\_\\_ for a long time.",
+        "options": ["cries", "is crying", "has cried", "has been crying"],
+        "correct_answer": "has been crying",
+        "explanation": "Present Perfect Continuous используется, когда действие только что закончилось, и есть видимый результат ('red eyes') от длительного действия ('crying')."
+      },
+      {
+        "text": "I \\_\\_\\_ for you for half an hour. Where have you been?",
+        "options": ["wait", "am waiting", "have waited", "have been waiting"],
+        "correct_answer": "have been waiting",
+        "explanation": "Present Perfect Continuous используется для длительного действия, которое началось в прошлом и продолжается до момента речи, с акцентом на продолжительность ('for half an hour')."
+      },
+      {
+        "text": "She \\_\\_\\_ TV all morning.",
+        "options": ["watches", "is watching", "has watched", "has been watching"],
+        "correct_answer": "has been watching",
+        "explanation": "Present Perfect Continuous используется для действия, которое началось в прошлом и продолжалось до настоящего момента ('all morning')."
+      },
+      {
+        "text": "He looks exhausted; he \\_\\_\\_ without a break.",
+        "options": ["works", "is working", "has worked", "has been working"],
+        "correct_answer": "has been working",
+        "explanation": "Present Perfect Continuous используется для длительного действия, которое только что закончилось и имеет видимый результат ('exhausted')."
+      },
+      {
+        "text": "They \\_\\_\\_ this song a lot recently.",
+        "options": ["listen to", "are listening to", "have listened to", "have been listening to"],
+        "correct_answer": "have been listening to",
+        "explanation": "Present Perfect Continuous используется для длительных или повторяющихся действий, которые происходили в недавнем прошлом и, возможно, продолжаются ('recently')."
+      }
+    ]
+  },
+  {
+    "topic": "Past Simple",
+    "questions": [
+      {
+        "text": "I \\_\\_\\_ a movie yesterday.",
+        "options": ["see", "saw", "seen", "seeing"],
+        "correct_answer": "saw",
+        "explanation": "Past Simple - вторая форма глагола 'to see' ('saw') используется для завершенных действий в прошлом, указанных конкретным временем ('yesterday')."
+      },
+      {
+        "text": "They \\_\\_\\_ to the party last night.",
+        "options": ["go", "goes", "went", "going"],
+        "correct_answer": "went",
+        "explanation": "Past Simple - вторая форма глагола 'to go' ('went') используется для завершенных действий в прошлом ('last night')."
+      },
+      {
+        "text": "She \\_\\_\\_ her homework an hour ago.",
+        "options": ["finish", "finishes", "finished", "finishing"],
+        "correct_answer": "finished",
+        "explanation": "Past Simple используется для завершенных действий в прошлом. 'Finished' - вторая форма правильного глагола 'to finish'. 'An hour ago' указывает на конкретное время в прошлом."
+      },
+      {
+        "text": "Did you \\_\\_\\_ your keys?",
+        "options": ["find", "found", "finding", "to find"],
+        "correct_answer": "find",
+        "explanation": "В вопросах Past Simple с 'did' основной глагол используется в начальной форме (V1)."
+      },
+      {
+        "text": "He \\_\\_\\_ a new car two weeks ago.",
+        "options": ["buy", "buys", "bought", "buying"],
+        "correct_answer": "bought",
+        "explanation": "Past Simple - вторая форма глагола 'to buy' ('bought') используется для завершенных действий в прошлом. 'Two weeks ago' указывает на конкретное время."
+      },
+      {
+        "text": "We \\_\\_\\_ to Spain last summer.",
+        "options": ["travel", "travels", "traveled", "traveling"],
+        "correct_answer": "traveled",
+        "explanation": "Past Simple используется для завершенных действий в прошлом. 'Last summer' указывает на конкретное время."
+      },
+      {
+        "text": "They \\_\\_\\_ the whole cake yesterday.",
+        "options": ["eat", "ate", "eaten", "eating"],
+        "correct_answer": "ate",
+        "explanation": "Past Simple - вторая форма глагола 'to eat' ('ate') используется для завершенного действия в прошлом."
+      },
+      {
+        "text": "What \\_\\_\\_ you \\_\\_\\_ at the conference?",
+        "options": ["do ... do", "did ... do", "are ... doing", "were ... doing"],
+        "correct_answer": "did ... do",
+        "explanation": "В вопросах Past Simple с 'did' основной глагол используется в начальной форме."
+      },
+      {
+        "text": "She \\_\\_\\_ the letter and put it in her bag.",
+        "options": ["read", "reads", "reading", "will read"],
+        "correct_answer": "read",
+        "explanation": "Past Simple используется для последовательных действий в прошлом. Вторая форма 'read' пишется так же, как первая, но произносится иначе."
+      },
+      {
+        "text": "The company \\_\\_\\_ in 1995.",
+        "options": ["found", "founds", "founded", "founding"],
+        "correct_answer": "founded",
+        "explanation": "Past Simple используется для завершенного действия в определенный момент в прошлом ('in 1995')."
+      }
+    ]
+  },
+  {
+    "topic": "Past Continuous",
+    "questions": [
+        {
+            "text": "At 8 PM last night, I \\_\\_\\_ dinner.",
+            "options": ["A. cook", "B. cooked", "C. was cooking", "D. had cooked"],
+            "correct_answer": "C. was cooking",
+            "explanation": "Past Continuous используется для действия, которое происходило в конкретный момент в прошлом ('At 8 PM last night')."
+        },
+        {
+            "text": "While I \\_\\_\\_ a book, my phone rang.",
+            "options": ["A. read", "B. reads", "C. was reading", "D. has read"],
+            "correct_answer": "C. was reading",
+            "explanation": "Past Continuous используется для длительного действия, происходящего параллельно или прерываемого другим действием."
+        },
+        {
+            "text": "They \\_\\_\\_ football when it started to rain.",
+            "options": ["A. play", "B. played", "C. were playing", "D. had played"],
+            "correct_answer": "C. were playing",
+            "explanation": "Past Continuous используется для длительного действия, которое было прервано другим коротким действием (Past Simple)."
+        },
+        {
+            "text": "She \\_\\_\\_ on an email when the fire alarm rang.",
+            "options": ["A. works", "B. was working", "C. worked", "D. has worked"],
+            "correct_answer": "B. was working",
+            "explanation": "Past Continuous используется для действия, которое происходило в процессе, когда его прервало другое действие."
+        },
+        {
+            "text": "What \\_\\_\\_ you \\_\\_\\_ at 7 p.m. yesterday?",
+            "options": ["A. do you do", "B. were you doing", "C. did you do", "D. have you done"],
+            "correct_answer": "B. were you doing",
+            "explanation": "Past Continuous используется для вопроса о действии, которое происходило в определенный момент в прошлом."
+        },
+        {
+            "text": "The sun \\_\\_\\_ brightly when we left the house.",
+            "options": ["A. shine", "B. shone", "C. was shining", "D. had shone"],
+            "correct_answer": "C. was shining",
+            "explanation": "Past Continuous описывает фоновое действие, происходившее в момент другого короткого действия в прошлом."
+        },
+        {
+            "text": "While he \\_\\_\\_ TV, his sister \\_\\_\\_ her homework.",
+            "options": ["A. watched / did", "B. was watching / was doing", "C. watches / does", "D. had watched / had done"],
+            "correct_answer": "B. was watching / was doing",
+            "explanation": "Past Continuous используется для двух действий, происходящих одновременно в прошлом ('while')."
+        },
+        {
+            "text": "I \\_\\_\\_ my dog when I saw my old friend.",
+            "options": ["A. walked", "B. was walking", "C. had walked", "D. walk"],
+            "correct_answer": "B. was walking",
+            "explanation": "Past Continuous описывает длительное действие, которое было прервано другим коротким действием."
+        },
+        {
+            "text": "At midnight, we \\_\\_\\_ still \\_\\_\\_.",
+            "options": ["A. sleep", "B. slept", "C. were still sleeping", "D. had slept"],
+            "correct_answer": "C. were still sleeping",
+            "explanation": "Past Continuous используется для действия, которое продолжалось в определенный момент в прошлом."
+        },
+        {
+            "text": "What were they doing when you \\_\\_\\_?",
+            "options": ["A. called", "B. call", "C. calling", "D. had called"],
+            "correct_answer": "A. called",
+            "explanation": "Past Simple используется для действия, которое прерывает длительное действие в Past Continuous."
+        }
+    ]
+  },
+  {
+    "topic": "Past Perfect",
+    "questions": [
+        {
+            "text": "She \\_\\_\\_ before I arrived.",
+            "options": ["A. left", "B. leaves", "C. had left", "D. was leaving"],
+            "correct_answer": "C. had left",
+            "explanation": "Past Perfect используется для действия, которое произошло до другого действия в прошлом ('before I arrived')."
+        },
+        {
+            "text": "By the time I woke up, my brother \\_\\_\\_ breakfast.",
+            "options": ["A. ate", "B. was eating", "C. had eaten", "D. has eaten"],
+            "correct_answer": "C. had eaten",
+            "explanation": "Past Perfect используется для действия, завершившегося до другого момента в прошлом ('By the time I woke up')."
+        },
+        {
+            "text": "Nobody noticed that the chef \\_\\_\\_ the turkey.",
+            "options": ["A. burned", "B. burning", "C. had burned", "D. has burned"],
+            "correct_answer": "C. had burned",
+            "explanation": "Past Perfect используется для действия, которое произошло до другого действия в прошлом (никто не заметил *после* того, как он сжег)."
+        },
+        {
+            "text": "If you \\_\\_\\_ me, I would have picked you up.",
+            "options": ["A. asked", "B. had asked", "C. would ask", "D. were asking"],
+            "correct_answer": "B. had asked",
+            "explanation": "Это третье условие (Third Conditional), где в придаточном предложении используется Past Perfect."
+        },
+        {
+            "text": "They went to watch a movie after they \\_\\_\\_ their homework.",
+            "options": ["A. finished", "B. have finished", "C. had finished", "D. were finishing"],
+            "correct_answer": "C. had finished",
+            "explanation": "Past Perfect используется для действия, которое произошло раньше другого действия в прошлом (сначала закончили уроки, потом пошли в кино)."
+        },
+        {
+            "text": "When I arrived at the station, the train \\_\\_\\_ already \\_\\_\\_.",
+            "options": ["A. left", "B. was leaving", "C. had already left", "D. has already left"],
+            "correct_answer": "C. had already left",
+            "explanation": "Past Perfect используется, когда одно действие (поезд ушел) произошло до другого действия в прошлом (я приехал)."
+        },
+        {
+            "text": "He \\_\\_\\_ never \\_\\_\\_ sushi before he visited Japan.",
+            "options": ["A. ate", "B. had never eaten", "C. has never eaten", "D. never eat"],
+            "correct_answer": "B. had never eaten",
+            "explanation": "Past Perfect используется для обозначения опыта, который не происходил до определенного момента в прошлом ('before he visited Japan')."
+        },
+        {
+            "text": "She explained that she \\_\\_\\_ her mind.",
+            "options": ["A. changed", "B. has changed", "C. had changed", "D. was changing"],
+            "correct_answer": "C. had changed",
+            "explanation": "Past Perfect используется в косвенной речи, когда оригинальное действие произошло до момента говорения в прошлом."
+        },
+        {
+            "text": "By 2020, they \\_\\_\\_ in that house for five years.",
+            "options": ["A. lived", "B. had lived", "C. have lived", "D. were living"],
+            "correct_answer": "B. had lived",
+            "explanation": "Past Perfect используется для действия, которое завершилось к определенному моменту в прошлом ('By 2020')."
+        },
+        {
+            "text": "After he \\_\\_\\_ the message, he immediately called her.",
+            "options": ["A. read", "B. reads", "C. had read", "D. was reading"],
+            "correct_answer": "C. had read",
+            "explanation": "Past Perfect используется для действия, которое произошло раньше другого действия в прошлом (сначала прочитал, потом позвонил)."
+        }
+    ]
+  },
+  {
+    "topic": "Past Perfect Continuous",
+    "questions": [
+        {
+            "text": "He was tired because he \\_\\_\\_ all day.",
+            "options": ["A. worked", "B. was working", "C. had worked", "D. had been working"],
+            "correct_answer": "D. had been working",
+            "explanation": "Past Perfect Continuous используется для длительного действия, которое закончилось перед определенным моментом в прошлом и объясняет причину ('tired')."
+        },
+        {
+            "text": "How long \\_\\_\\_ you \\_\\_\\_ before you moved to London?",
+            "options": ["A. did you live", "B. were you living", "C. had you lived", "D. had you been living"],
+            "correct_answer": "D. had you been living",
+            "explanation": "Past Perfect Continuous используется, чтобы спросить о продолжительности действия, которое происходило до определенного момента в прошлом ('before you moved')."
+        },
+        {
+            "text": "It \\_\\_\\_ hard for several hours and the streets were very wet.",
+            "options": ["A. rained", "B. was raining", "C. had rained", "D. had been raining"],
+            "correct_answer": "D. had been raining",
+            "explanation": "Past Perfect Continuous используется для длительного действия, которое продолжалось до определенного момента в прошлом (мокрые улицы как результат длительного дождя)."
+        },
+        {
+            "text": "Her friends \\_\\_\\_ of calling the police when she walked in.",
+            "options": ["A. thought", "B. were thinking", "C. had thought", "D. had been thinking"],
+            "correct_answer": "D. had been thinking",
+            "explanation": "Past Perfect Continuous используется для длительного действия (процесса обдумывания), которое происходило до другого момента в прошлом (она вошла)."
+        },
+        {
+            "text": "John told them he \\_\\_\\_ late in the office that night.",
+            "options": ["A. worked", "B. was working", "C. had worked", "D. had been working"],
+            "correct_answer": "D. had been working",
+            "explanation": "Past Perfect Continuous используется для длительного действия, которое происходило в прошлом до определенного момента (Джон рассказал об этом)."
+        },
+        {
+            "text": "By the time he came home, she \\_\\_\\_ for hours.",
+            "options": ["A. slept", "B. was sleeping", "C. had slept", "D. had been sleeping"],
+            "correct_answer": "D. had been sleeping",
+            "explanation": "Past Perfect Continuous используется для длительного действия, которое началось и продолжалось до определенного момента в прошлом."
+        },
+        {
+            "text": "The ground was muddy because it \\_\\_\\_.",
+            "options": ["A. rained", "B. was raining", "C. had rained", "D. had been raining"],
+            "correct_answer": "D. had been raining",
+            "explanation": "Past Perfect Continuous объясняет причину состояния в прошлом (грязная земля как результат длительного дождя)."
+        },
+        {
+            "text": "They \\_\\_\\_ on the project for months when it was finally approved.",
+            "options": ["A. worked", "B. were working", "C. had worked", "D. had been working"],
+            "correct_answer": "D. had been working",
+            "explanation": "Past Perfect Continuous используется для длительного действия, которое продолжалось до определенного момента в прошлом."
+        },
+        {
+            "text": "He \\_\\_\\_ TV all evening when his wife arrived.",
+            "options": ["A. watched", "B. was watching", "C. had watched", "D. had been watching"],
+            "correct_answer": "D. had been watching",
+            "explanation": "Past Perfect Continuous используется для длительного действия, которое происходило до другого момента в прошлом."
+        },
+        {
+            "text": "Before the meeting started, we \\_\\_\\_ the agenda.",
+            "options": ["A. discussed", "B. were discussing", "C. had discussed", "D. had been discussing"],
+            "correct_answer": "D. had been discussing",
+            "explanation": "Past Perfect Continuous используется для длительного действия, происходившего до другого события в прошлом."
+        }
+    ]
+  },
+  {
+    "topic": "Future Simple",
+    "questions": [
+        {
+            "text": "I think it \\_\\_\\_ tomorrow.",
+            "options": ["A. rains", "B. will rain", "C. is raining", "D. has rained"],
+            "correct_answer": "B. will rain",
+            "explanation": "Future Simple используется для прогнозов, особенно с 'I think'."
+        },
+        {
+            "text": "She \\_\\_\\_ be late.",
+            "options": ["A. is", "B. will", "C. going to", "D. has"],
+            "correct_answer": "B. will",
+            "explanation": "Future Simple формируется с помощью 'will' + базовый глагол."
+        },
+        {
+            "text": "He \\_\\_\\_ us later.",
+            "options": ["A. helps", "B. will help", "C. is helping", "D. has helped"],
+            "correct_answer": "B. will help",
+            "explanation": "Future Simple используется для спонтанных решений или обещаний. 'Later' указывает на будущее."
+        },
+        {
+            "text": "We \\_\\_\\_ married in September.",
+            "options": ["A. get", "B. got", "C. will get", "D. are getting"],
+            "correct_answer": "C. will get",
+            "explanation": "Future Simple используется для будущих событий без точного плана, но с указанием времени."
+        },
+      {
+        "text": "Will you \\_\\_\\_ us for dinner?",
+        "options": ["A. join", "B. joins", "C. joining", "D. joined"],
+        "correct_answer": "A. join",
+        "explanation": "В вопросах Future Simple после 'will' глагол используется в базовой форме."
+      },
+      {
+        "text": "I promise I \\_\\_\\_ you tomorrow.",
+        "options": ["A. call", "B. will call", "C. am calling", "D. have called"],
+        "correct_answer": "B. will call",
+        "explanation": "Future Simple используется для обещаний."
+      },
+      {
+        "text": "Don't worry, I \\_\\_\\_ everything.",
+        "options": ["A. do", "B. will do", "C. am doing", "D. have done"],
+        "correct_answer": "B. will do",
+        "explanation": "Future Simple используется для спонтанных решений или заверений."
+      },
+      {
+        "text": "I think they \\_\\_\\_ the game.",
+        "options": ["A. win", "B. wins", "C. will win", "D. are winning"],
+        "correct_answer": "C. will win",
+        "explanation": "Future Simple используется для прогнозов, часто с 'I think'."
+      },
+      {
+        "text": "What \\_\\_\\_ you \\_\\_\\_ when you grow up?",
+        "options": ["A. do you do", "B. will you do", "C. are you doing", "D. did you do"],
+        "correct_answer": "B. will you do",
+        "explanation": "Future Simple используется для вопросов о будущих действиях или планах."
+      },
+      {
+        "text": "The party \\_\\_\\_ at 8 p.m.",
+        "options": ["A. starts", "B. will start", "C. is starting", "D. started"],
+        "correct_answer": "B. will start",
+        "explanation": "Future Simple используется для будущих событий, когда точное время указано, но без жесткого расписания, как в Present Simple. Здесь может быть и 'starts' (если по расписанию)."
+      }
+    ]
+  },
+  {
+    "topic": "Future Continuous",
+    "questions": [
+        {
+            "text": "At 7 PM tonight, I \\_\\_\\_ dinner with my family.",
+            "options": ["A. eat", "B. will eat", "C. will be eating", "D. have eaten"],
+            "correct_answer": "C. will be eating",
+            "explanation": "Future Continuous используется для действия, которое будет происходить в определенный момент в будущем."
+        },
+        {
+            "text": "This time next week, I \\_\\_\\_ on a beach in Hawaii.",
+            "options": ["A. lie", "B. will lie", "C. will be lying", "D. will have lain"],
+            "correct_answer": "C. will be lying",
+            "explanation": "Future Continuous используется для действия, которое будет происходить в определенный момент в будущем ('This time next week')."
+        },
+        {
+            "text": "While I \\_\\_\\_ to work, I will listen to a podcast.",
+            "options": ["A. drive", "B. will drive", "C. am driving", "D. will be driving"],
+            "correct_answer": "D. will be driving",
+            "explanation": "Future Continuous используется для действия, которое будет происходить параллельно другому действию в будущем."
+        },
+        {
+            "text": "Will you \\_\\_\\_ the game tomorrow?",
+            "options": ["A. play", "B. will play", "C. be playing", "D. have played"],
+            "correct_answer": "C. be playing",
+            "explanation": "Future Continuous используется для действия, которое будет происходить в определенный момент в будущем."
+        },
+        {
+            "text": "Don't call him at 9 p.m.; he \\_\\_\\_.",
+            "options": ["A. sleeps", "B. will sleep", "C. will be sleeping", "D. has slept"],
+            "correct_answer": "C. will be sleeping",
+            "explanation": "Future Continuous используется для действия, которое будет происходить в определенный момент в будущем."
+        },
+        {
+            "text": "By this time tomorrow, we \\_\\_\\_ our exams.",
+            "options": ["A. take", "B. will take", "C. will be taking", "D. will have taken"],
+            "correct_answer": "C. will be taking",
+            "explanation": "Future Continuous используется для действия, которое будет происходить в определенный момент в будущем."
+        },
+        {
+            "text": "I \\_\\_\\_ for my flight at the airport at 5 PM.",
+            "options": ["A. wait", "B. will wait", "C. will be waiting", "D. will have waited"],
+            "correct_answer": "C. will be waiting",
+            "explanation": "Future Continuous используется для действия, которое будет происходить в определенный момент в будущем."
+        },
+        {
+            "text": "They \\_\\_\\_ a party when you arrive.",
+            "options": ["A. have", "B. will have", "C. will be having", "D. are having"],
+            "correct_answer": "C. will be having",
+            "explanation": "Future Continuous используется для действия, которое будет происходить в момент другого действия в будущем."
+        },
+        {
+            "text": "Tomorrow morning, she \\_\\_\\_ on her presentation.",
+            "options": ["A. works", "B. will work", "C. will be working", "D. has worked"],
+            "correct_answer": "C. will be working",
+            "explanation": "Future Continuous используется для действия, которое будет происходить в определенный период в будущем."
+        },
+        {
+            "text": "What \\_\\_\\_ you \\_\\_\\_ this time next year?",
+            "options": ["A. do you do", "B. will you do", "C. will you be doing", "D. are you doing"],
+            "correct_answer": "C. will you be doing",
+            "explanation": "Future Continuous используется для вопроса о длительном действии, которое будет происходить в определенный момент в будущем."
+        }
+    ]
+  },
+  {
+    "topic": "Future Perfect",
+    "questions": [
+        {
+            "text": "By next year, she \\_\\_\\_ her degree.",
+            "options": ["A. gets", "B. will get", "C. will have gotten", "D. is getting"],
+            "correct_answer": "C. will have gotten",
+            "explanation": "Future Perfect используется для действия, которое завершится к определенному моменту в будущем ('By next year')."
+        },
+        {
+            "text": "By the time we arrive, the concert \\_\\_\\_.",
+            "options": ["A. starts", "B. will start", "C. will be starting", "D. will have started"],
+            "correct_answer": "D. will have started",
+            "explanation": "Future Perfect используется для действия, которое завершится к определенному моменту в будущем."
+        },
+        {
+            "text": "I \\_\\_\\_ my work by 5 p.m.",
+            "options": ["A. finish", "B. will finish", "C. will have finished", "D. am finishing"],
+            "correct_answer": "C. will have finished",
+            "explanation": "Future Perfect используется для действия, которое завершится к определенному моменту в будущем ('by 5 p.m.')."
+        },
+        {
+            "text": "She \\_\\_\\_ the report by Monday.",
+            "options": ["A. writes", "B. will write", "C. will have written", "D. is writing"],
+            "correct_answer": "C. will have written",
+            "explanation": "Future Perfect используется для действия, которое будет завершено к определенному моменту в будущем."
+        },
+        {
+            "text": "Will you \\_\\_\\_ when I pick you up?",
+            "options": ["A. eat", "B. eating", "C. have eaten", "D. have been eating"],
+            "correct_answer": "C. have eaten",
+            "explanation": "Future Perfect используется для вопроса о действии, которое будет завершено к определенному моменту в будущем."
+        },
+        {
+            "text": "By the end of the month, he \\_\\_\\_ all the books.",
+            "options": ["A. reads", "B. will read", "C. will be reading", "D. will have read"],
+            "correct_answer": "D. will have read",
+            "explanation": "Future Perfect используется для действия, которое завершится к определенному моменту в будущем."
+        },
+        {
+            "text": "They \\_\\_\\_ the project by the deadline.",
+            "options": ["A. complete", "B. will complete", "C. will be completing", "D. will have completed"],
+            "correct_answer": "D. will have completed",
+            "explanation": "Future Perfect используется для действия, которое будет завершено к определенному сроку в будущем."
+        },
+        {
+            "text": "How many countries \\_\\_\\_ she \\_\\_\\_ by the time she's thirty?",
+            "options": ["A. will she visit", "B. will she be visiting", "C. will she have visited", "D. has she visited"],
+            "correct_answer": "C. will she have visited",
+            "explanation": "Future Perfect используется для вопроса о количестве завершенных действий к определенному моменту в будущем."
+        },
+        {
+            "text": "We \\_\\_\\_ the painting by the time the exhibition opens.",
+            "options": ["A. finished", "B. will finish", "C. will be finishing", "D. will have finished"],
+            "correct_answer": "D. will have finished",
+            "explanation": "Future Perfect используется для действия, которое будет завершено до другого события в будущем."
+        },
+        {
+            "text": "The movie \\_\\_\\_ by the time we get there.",
+            "options": ["A. starts", "B. will start", "C. will be starting", "D. will have started"],
+            "correct_answer": "D. will have started",
+            "explanation": "Future Perfect используется для действия, которое завершится до определенного момента в будущем."
+        }
+    ]
+  },
+  {
+    "topic": "Future Perfect Continuous",
+    "questions": [
+        {
+            "text": "They \\_\\_\\_ for three hours by the time the movie starts.",
+            "options": ["A. will wait", "B. will be waiting", "C. will have waited", "D. will have been waiting"],
+            "correct_answer": "D. will have been waiting",
+            "explanation": "Future Perfect Continuous используется для длительного действия, которое будет продолжаться до определенного момента в будущем, с акцентом на продолжительность."
+        },
+        {
+            "text": "She \\_\\_\\_ English for five years by the time she graduates.",
+            "options": ["A. learns", "B. will learn", "C. will be learning", "D. will have been learning"],
+            "correct_answer": "D. will have been learning",
+            "explanation": "Future Perfect Continuous используется для действия, которое будет продолжаться до определенного момента в будущем, с акцентом на продолжительность."
+        },
+        {
+            "text": "By next month, I \\_\\_\\_ in this city for ten years.",
+            "options": ["A. live", "B. will live", "C. will be living", "D. will have been living"],
+            "correct_answer": "D. will have been living",
+            "explanation": "Future Perfect Continuous используется для длительного действия, которое начнется в прошлом/настоящем и будет продолжаться до определенного момента в будущем."
+        },
+        {
+            "text": "He will be tired because he \\_\\_\\_ all night.",
+            "options": ["A. travels", "B. will travel", "C. will be traveling", "D. will have been traveling"],
+            "correct_answer": "D. will have been traveling",
+            "explanation": "Future Perfect Continuous используется для объяснения причины будущего состояния, являющейся следствием длительного действия."
+        },
+        {
+            "text": "How long \\_\\_\\_ you \\_\\_\\_ on this project by Friday?",
+            "options": ["A. will you work", "B. will you be working", "C. will you have worked", "D. will you have been working"],
+            "correct_answer": "D. will you have been working",
+            "explanation": "Future Perfect Continuous используется, чтобы спросить о продолжительности действия, которое будет продолжаться до определенного момента в будущем."
+        },
+        {
+            "text": "By 2030, we \\_\\_\\_ in this house for 20 years.",
+            "options": ["A. live", "B. will live", "C. will be living", "D. will have been living"],
+            "correct_answer": "D. will have been living",
+            "explanation": "Future Perfect Continuous используется для длительного действия, которое будет продолжаться до определенного момента в будущем ('By 2030'), с указанием продолжительности ('for 20 years')."
+        },
+        {
+            "text": "She \\_\\_\\_ her novel for a year by the time it's published.",
+            "options": ["A. writes", "B. will write", "C. will be writing", "D. will have been writing"],
+            "correct_answer": "D. will have been writing",
+            "explanation": "Future Perfect Continuous используется для длительного действия, которое будет продолжаться до определенного момента в будущем ('by the time it's published'), с акцентом на продолжительность ('for a year')."
+        },
+        {
+            "text": "When you arrive, I \\_\\_\\_ for an hour.",
+            "options": ["A. wait", "B. will wait", "C. will be waiting", "D. will have been waiting"],
+            "correct_answer": "D. will have been waiting",
+            "explanation": "Future Perfect Continuous используется для длительного действия, которое будет продолжаться до другого момента в будущем."
+        },
+        {
+            "text": "They \\_\\_\\_ on this project all day tomorrow.",
+            "options": ["A. work", "B. will work", "C. will be working", "D. will have been working"],
+            "correct_answer": "D. will have been working",
+            "explanation": "Future Perfect Continuous используется для длительного действия, которое будет продолжаться до определенного момента в будущем (конец завтрашнего дня)."
+        },
+        {
+            "text": "By the end of the course, you \\_\\_\\_ English for six months.",
+            "options": ["A. study", "B. will study", "C. will be studying", "D. will have been studying"],
+            "correct_answer": "D. will have been studying",
+            "explanation": "Future Perfect Continuous используется для длительного действия, которое будет продолжаться до определенного момента в будущем, с указанием продолжительности."
+        }
+    ]
+  }
+]

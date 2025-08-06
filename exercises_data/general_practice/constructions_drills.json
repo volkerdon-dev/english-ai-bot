@@ -1,0 +1,426 @@
+[
+  {
+    "topic": "There is / There are",
+    "questions": [
+      {
+        "text": "Choose the correct option: '\\_\\_\\_ a lot of books in the library.'",
+        "options": ["There is", "There are", "It is", "They are"],
+        "correct_answer": "There are",
+        "explanation": "There are используется с существительными во множественном числе."
+      },
+      {
+        "text": "Complete the sentence: '\\_\\_\\_ some milk in the fridge.'",
+        "options": ["There is", "There are", "Is there", "Are there"],
+        "correct_answer": "There is",
+        "explanation": "There is используется с неисчисляемыми существительными ('milk')."
+      },
+      {
+        "text": "Choose the correct question: '\\_\\_\\_ a problem?'",
+        "options": ["Is there", "Are there", "There is", "There are"],
+        "correct_answer": "Is there",
+        "explanation": "В вопросах 'is' или 'are' ставится перед 'there'. Для 'a problem' (единственное число) используется 'is'."
+      },
+      {
+        "text": "Complete the sentence: 'In my town, \\_\\_\\_ a new park being built.'",
+        "options": ["there are", "there is", "it is", "they are"],
+        "correct_answer": "there is",
+        "explanation": "There is используется с существительными в единственном числе ('a new park')."
+      },
+      {
+        "text": "Choose the correct negative form: '\\_\\_\\_ any chairs in the room.'",
+        "options": ["There isn't", "There aren't", "There is no", "There aren't any"],
+        "correct_answer": "There aren't any",
+        "explanation": "There aren't any используется для отрицания существования чего-либо во множественном числе."
+      },
+      {
+        "text": "Complete the sentence: 'Last night, \\_\\_\\_ a loud noise outside.'",
+        "options": ["there is", "there was", "there were", "it was"],
+        "correct_answer": "there was",
+        "explanation": "Для единственного числа в прошедшем времени используется 'there was'."
+      },
+      {
+        "text": "Choose the correct option: '\\_\\_\\_ many people at the concert yesterday.'",
+        "options": ["There is", "There are", "There was", "There were"],
+        "correct_answer": "There were",
+        "explanation": "Для множественного числа в прошедшем времени используется 'there were'."
+      },
+      {
+        "text": "Complete the sentence: 'I hope \\_\\_\\_ no traffic on the way.'",
+        "options": ["there is", "there are", "it is", "they are"],
+        "correct_answer": "there is",
+        "explanation": "'Traffic' (трафик) - неисчисляемое существительное, поэтому используется 'there is'."
+      }
+    ]
+  },
+  {
+    "topic": "Have got / Has got",
+    "questions": [
+      {
+        "text": "Complete the sentence: 'She \\_\\_\\_ a new phone.'",
+        "options": ["has got", "have got", "got", "has"],
+        "correct_answer": "has got",
+        "explanation": "Для 3-го лица единственного числа (she) используется 'has got'."
+      },
+      {
+        "text": "Choose the correct question: '\\_\\_\\_ you \\_\\_\\_ a pen?'",
+        "options": ["Do you have", "Have you got", "Are you got", "Do you got"],
+        "correct_answer": "Have you got",
+        "explanation": "В вопросах 'have' или 'has' ставится перед подлежащим."
+      },
+      {
+        "text": "Complete the sentence: 'We \\_\\_\\_ any time left.'",
+        "options": ["haven't got", "hasn't got", "don't have got", "aren't got"],
+        "correct_answer": "haven't got",
+        "explanation": "Для отрицаний с 'we' используется 'haven't got'."
+      },
+      {
+        "text": "Choose the correct option: 'He \\_\\_\\_ a brother and two sisters.'",
+        "options": ["has got", "have got", "got", "is having"],
+        "correct_answer": "has got",
+        "explanation": "Для 3-го лица единственного числа (he) используется 'has got' для обозначения родственных связей."
+      },
+      {
+        "text": "Which sentence is correct?",
+        "options": ["They has got a car.", "They have got a car.", "They got a car.", "They is got a car."],
+        "correct_answer": "They have got a car.",
+        "explanation": "Для 'they' используется 'have got'."
+      },
+      {
+        "text": "Complete the sentence: 'I \\_\\_\\_ a headache.'",
+        "options": ["have got", "has got", "got", "am got"],
+        "correct_answer": "have got",
+        "explanation": "'Have got' часто используется для описания состояний, таких как болезни."
+      },
+      {
+        "text": "Choose the correct negative: 'My car \\_\\_\\_ an alarm system.'",
+        "options": ["doesn't got", "hasn't got", "don't got", "isn't got"],
+        "correct_answer": "hasn't got",
+        "explanation": "Для 3-го лица единственного числа ('my car') используется 'hasn't got'."
+      },
+      {
+        "text": "Which question is correctly formed?",
+        "options": ["Has she got blue eyes?", "Does she got blue eyes?", "Is she got blue eyes?", "Have she got blue eyes?"],
+        "correct_answer": "Has she got blue eyes?",
+        "explanation": "В вопросах 'has' ставится перед подлежащим 'she'."
+      }
+    ]
+  },
+  {
+    "topic": "Used to / Be used to / Get used to",
+    "questions": [
+      {
+        "text": "Complete the sentence: 'I \\_\\_\\_ play video games every day when I was a kid.'",
+        "options": ["used to", "would to", "am used to", "get used to"],
+        "correct_answer": "used to",
+        "explanation": "'Used to' + V1 используется для привычек или состояний в прошлом, которые больше не актуальны."
+      },
+      {
+        "text": "Choose the correct form: 'She \\_\\_\\_ living in a big city now.' (She is accustomed to it)",
+        "options": ["used to", "is used to", "gets used to", "would"],
+        "correct_answer": "is used to",
+        "explanation": "'Be used to' + V-ing означает 'быть привыкшим к чему-либо'."
+      },
+      {
+        "text": "Complete the sentence: 'It took him a while, but he finally \\_\\_\\_ working at night.'",
+        "options": ["used to", "is used to", "got used to", "would"],
+        "correct_answer": "got used to",
+        "explanation": "'Get used to' + V-ing означает 'привыкать к чему-либо'."
+      },
+      {
+        "text": "Which sentence refers to a past habit that no longer exists?",
+        "options": ["I am used to getting up early.", "I used to get up early.", "I get used to getting up early.", "I would get up early."],
+        "correct_answer": "I used to get up early.",
+        "explanation": "'Used to' + V1 указывает на привычку в прошлом, которая прекратилась."
+      },
+      {
+        "text": "Choose the correct form: 'Did you \\_\\_\\_ wear glasses?'",
+        "options": ["used to", "use to", "be used to", "get used to"],
+        "correct_answer": "use to",
+        "explanation": "В вопросах с 'did' используется базовая форма 'use to'."
+      },
+      {
+        "text": "Complete the sentence: 'He \\_\\_\\_ in the countryside, but now he lives in the city.' (past state)",
+        "options": ["would live", "used to live", "is used to living", "gets used to living"],
+        "correct_answer": "used to live",
+        "explanation": "'Used to' + V1 используется для описания состояний в прошлом."
+      },
+      {
+        "text": "Which sentence means 'She eventually became accustomed to the cold weather'?",
+        "options": ["She used to the cold weather.", "She was used to the cold weather.", "She got used to the cold weather.", "She would used to the cold weather."],
+        "correct_answer": "She got used to the cold weather.",
+        "explanation": "'Get used to' означает процесс привыкания."
+      },
+      {
+        "text": "Choose the correct negative: 'I \\_\\_\\_ like coffee when I was younger.'",
+        "options": ["didn't used to", "didn't use to", "wasn't used to", "wouldn't use to"],
+        "correct_answer": "didn't use to",
+        "explanation": "В отрицаниях с 'used to' используется 'didn't use to'."
+      }
+    ]
+  },
+  {
+    "topic": "Be going to",
+    "questions": [
+      {
+        "text": "Complete the sentence: 'I \\_\\_\\_ learn Spanish next year.'",
+        "options": ["am going to", "will", "go to", "am go to"],
+        "correct_answer": "am going to",
+        "explanation": "'Be going to' используется для планов и намерений."
+      },
+      {
+        "text": "Choose the correct prediction: 'Look at those dark clouds! It \\_\\_\\_ rain.'",
+        "options": ["will", "is going to", "is raining", "rains"],
+        "correct_answer": "is going to",
+        "explanation": "'Be going to' используется для предсказаний, основанных на текущих доказательствах."
+      },
+      {
+        "text": "Complete the sentence: 'They \\_\\_\\_ a new project next month.'",
+        "options": ["are starting", "will start", "are going to start", "start"],
+        "correct_answer": "are going to start",
+        "explanation": "'Be going to' используется для заранее принятых решений и планов."
+      },
+      {
+        "text": "Choose the correct question: '\\_\\_\\_ you \\_\\_\\_ eat that?'",
+        "options": ["Will you", "Are you going to", "Do you go to", "Are you go to"],
+        "correct_answer": "Are you going to",
+        "explanation": "Вопрос с 'be going to': Am/Is/Are + Subject + going to + V1."
+      },
+      {
+        "text": "Complete the sentence: 'He is driving too fast; he \\_\\_\\_ crash.'",
+        "options": ["will", "is going to", "is crashing", "crashes"],
+        "correct_answer": "is going to",
+        "explanation": "'Be going to' используется для предсказаний на основе очевидных признаков."
+      },
+      {
+        "text": "Which sentence indicates a planned action?",
+        "options": ["I will call him later.", "I am going to call him later.", "I am calling him later.", "I call him later."],
+        "correct_answer": "I am going to call him later.",
+        "explanation": "'Be going to' подчеркивает, что решение уже принято."
+      },
+      {
+        "text": "Choose the correct negative form: 'She \\_\\_\\_ study tonight.'",
+        "options": ["won't going to", "isn't going to", "doesn't go to", "not going to"],
+        "correct_answer": "isn't going to",
+        "explanation": "Отрицание с 'be going to': Subject + be (not) + going to + V1."
+      },
+      {
+        "text": "Complete the sentence: 'We \\_\\_\\_ move to a new house next year.'",
+        "options": ["will", "are going to", "go to", "are moving"],
+        "correct_answer": "are going to",
+        "explanation": "'Be going to' используется для планов на будущее."
+      }
+    ]
+  },
+  {
+    "topic": "It takes",
+    "questions": [
+      {
+        "text": "Complete the sentence: 'It \\_\\_\\_ me 20 minutes to get to work.'",
+        "options": ["takes", "take", "took", "is taking"],
+        "correct_answer": "takes",
+        "explanation": "В Present Simple для 'it' используется 'takes'."
+      },
+      {
+        "text": "Choose the correct question: 'How long \\_\\_\\_ it \\_\\_\\_ to cook dinner?'",
+        "options": ["does it take", "it takes", "is it taking", "will it take"],
+        "correct_answer": "does it take",
+        "explanation": "В вопросах Present Simple с 'it' используется 'does it take'."
+      },
+      {
+        "text": "Complete the sentence in the past: 'It \\_\\_\\_ us an hour to clean the house yesterday.'",
+        "options": ["takes", "took", "will take", "is taking"],
+        "correct_answer": "took",
+        "explanation": "В Past Simple для 'it takes' используется 'it took'."
+      },
+      {
+        "text": "Choose the correct form: 'It will \\_\\_\\_ a lot of effort to finish this project.'",
+        "options": ["take", "takes", "took", "taking"],
+        "correct_answer": "take",
+        "explanation": "После 'will' глагол используется в базовой форме."
+      },
+      {
+        "text": "What does 'It takes three days' imply?",
+        "options": ["It needs three days to happen.", "It needs someone to take three days.", "It needs three days of effort.", "It requires three days to complete."],
+        "correct_answer": "It requires three days to complete.",
+        "explanation": "Конструкция 'It takes' указывает на время, необходимое для выполнения действия."
+      },
+      {
+        "text": "Complete the sentence: 'It \\_\\_\\_ five minutes to brush my teeth.'",
+        "options": ["take", "takes", "took", "will take"],
+        "correct_answer": "takes",
+        "explanation": "Регулярное действие в Present Simple с 'it'."
+      },
+      {
+        "text": "Choose the correct negative: 'It \\_\\_\\_ long to read this book.'",
+        "options": ["doesn't take", "isn't take", "won't take", "didn't take"],
+        "correct_answer": "doesn't take",
+        "explanation": "Отрицание в Present Simple для 'it': 'doesn't take'."
+      },
+      {
+        "text": "Complete the sentence: 'How long \\_\\_\\_ you \\_\\_\\_ to learn English?'",
+        "options": ["did you take", "did it take", "does it take", "will it take"],
+        "correct_answer": "did it take",
+        "explanation": "Вопрос о продолжительности в Past Simple: 'How long did it take'."
+      }
+    ]
+  },
+  {
+    "topic": "Causative verbs (Have/Get something done)",
+    "questions": [
+      {
+        "text": "Choose the correct form: 'I \\_\\_\\_ my hair cut yesterday.'",
+        "options": ["had", "did", "made", "got"],
+        "correct_answer": "had",
+        "explanation": "'Have something done' означает, что кто-то другой выполнил действие за вас. Используется Past Participle."
+      },
+      {
+        "text": "Complete the sentence: 'She needs to \\_\\_\\_ her car repaired.'",
+        "options": ["have", "get", "do", "make"],
+        "correct_answer": "have",
+        "explanation": "'Have something done' - стандартная конструкция. 'Get something done' также возможно, но 'have' более формально."
+      },
+      {
+        "text": "Which sentence means 'Someone painted their house'?",
+        "options": ["They painted their house.", "They had painted their house.", "They had their house painted.", "They painted house for them."],
+        "correct_answer": "They had their house painted.",
+        "explanation": "'Have something done' показывает, что действие выполнено кем-то другим."
+      },
+      {
+        "text": "Choose the correct form: 'We're going to \\_\\_\\_ the roof repaired next week.'",
+        "options": ["have", "get", "do", "make"],
+        "correct_answer": "have",
+        "explanation": "'Have something done' - используется, когда вы организуете или платите за выполнение работы."
+      },
+      {
+        "text": "Complete the sentence: 'I need to \\_\\_\\_ my eyes checked.'",
+        "options": ["get", "do", "make", "take"],
+        "correct_answer": "get",
+        "explanation": "'Get something done' имеет то же значение, что и 'have something done', но часто используется в более неформальной речи."
+      },
+      {
+        "text": "Which sentence uses the causative structure correctly?",
+        "options": ["He is washing his car.", "He is having his car washed.", "He is washing for his car.", "He has his car wash."],
+        "correct_answer": "He is having his car washed.",
+        "explanation": "Causative construction: 'to have/get something + Past Participle'."
+      },
+      {
+        "text": "Choose the correct form: 'Can I \\_\\_\\_ my clothes delivered?'",
+        "options": ["have", "get", "do", "make"],
+        "correct_answer": "have",
+        "explanation": "'Have something done' - общая конструкция."
+      },
+      {
+        "text": "Complete the sentence: 'She \\_\\_\\_ her portrait painted by a famous artist.'",
+        "options": ["did", "got", "made", "took"],
+        "correct_answer": "got",
+        "explanation": "И 'got', и 'had' подходят, но 'got' часто используется, когда есть определенная трудность или процесс в получении услуги."
+      }
+    ]
+  },
+  {
+    "topic": "Question Tags",
+    "questions": [
+      {
+        "text": "Complete the question tag: 'You are English, \\_\\_\\_?'",
+        "options": ["are you", "aren't you", "do you", "don't you"],
+        "correct_answer": "aren't you",
+        "explanation": "Если основная часть утвердительная, тег отрицательный. Если глагол 'to be', он повторяется в теге."
+      },
+      {
+        "text": "Complete the question tag: 'He likes pizza, \\_\\_\\_?'",
+        "options": ["does he", "doesn't he", "is he", "isn't he"],
+        "correct_answer": "doesn't he",
+        "explanation": "Для Present Simple с основным глаголом используется 'do/does'. Если основная часть утвердительная, тег отрицательный."
+      },
+      {
+        "text": "Complete the question tag: 'She can swim, \\_\\_\\_?'",
+        "options": ["can she", "can't she", "does she", "doesn't she"],
+        "correct_answer": "can't she",
+        "explanation": "Модальный глагол повторяется в теге. Если основная часть утвердительная, тег отрицательный."
+      },
+      {
+        "text": "Complete the question tag: 'You haven't seen this movie, \\_\\_\\_?'",
+        "options": ["have you", "haven't you", "did you", "do you"],
+        "correct_answer": "have you",
+        "explanation": "Если основная часть отрицательная, тег утвердительный. Вспомогательный глагол повторяется в теге."
+      },
+      {
+        "text": "Complete the question tag: 'Let's go, \\_\\_\\_?'",
+        "options": ["do we", "don't we", "shall we", "will we"],
+        "correct_answer": "shall we",
+        "explanation": "Для предложений, начинающихся с 'Let's', используется 'shall we' в теге."
+      },
+      {
+        "text": "Complete the question tag: 'He won't be late, \\_\\_\\_?'",
+        "options": ["will he", "won't he", "is he", "isn't he"],
+        "correct_answer": "will he",
+        "explanation": "Если основная часть отрицательная, тег утвердительный. Вспомогательный глагол повторяется."
+      },
+      {
+        "text": "Complete the question tag: 'You went to the party, \\_\\_\\_?'",
+        "options": ["do you", "don't you", "did you", "didn't you"],
+        "correct_answer": "didn't you",
+        "explanation": "Для Past Simple с основным глаголом используется 'did'. Если основная часть утвердительная, тег отрицательный."
+      },
+      {
+        "text": "Complete the question tag: 'There's a lot of work, \\_\\_\\_?'",
+        "options": ["is there", "isn't there", "are there", "aren't there"],
+        "correct_answer": "isn't there",
+        "explanation": "Для конструкций 'There is/are' тег повторяет 'is/are' и 'there'."
+      }
+    ]
+  },
+  {
+    "topic": "Conditionals (Review)",
+    "questions": [
+      {
+        "text": "If I \\_\\_\\_ you, I would take that job. (Second Conditional)",
+        "options": ["am", "was", "were", "had been"],
+        "correct_answer": "were",
+        "explanation": "Во втором условном предложении, для 'to be' в условии часто используется 'were' для всех лиц."
+      },
+      {
+        "text": "If it \\_\\_\\_ a lot, the streets get wet. (Zero Conditional)",
+        "options": ["rain", "rains", "will rain", "is raining"],
+        "correct_answer": "rains",
+        "explanation": "Нулевое условное предложение для общеизвестных фактов: If + Present Simple, Present Simple."
+      },
+      {
+        "text": "If you \\_\\_\\_ hard, you will pass the exam. (First Conditional)",
+        "options": ["study", "studies", "studied", "had studied"],
+        "correct_answer": "study",
+        "explanation": "Первое условное предложение для реальных будущих событий: If + Present Simple, Future Simple."
+      },
+      {
+        "text": "If she \\_\\_\\_ me, I would have helped her. (Third Conditional)",
+        "options": ["asked", "had asked", "would ask", "asks"],
+        "correct_answer": "had asked",
+        "explanation": "Третье условное предложение для нереальных ситуаций в прошлом: If + Past Perfect, would have + V3."
+      },
+      {
+        "text": "If he spoke English, he \\_\\_\\_ a better job. (Second Conditional)",
+        "options": ["will get", "would get", "gets", "had gotten"],
+        "correct_answer": "would get",
+        "explanation": "Вторая часть второго условного предложения: would + V1."
+      },
+      {
+        "text": "If I \\_\\_\\_ enough money, I will buy a new car. (First Conditional)",
+        "options": ["have", "had", "will have", "would have"],
+        "correct_answer": "have",
+        "explanation": "Условие первого условного предложения: Present Simple."
+      },
+      {
+        "text": "If you heat water to 100 degrees Celsius, it \\_\\_\\_.",
+        "options": ["boil", "boils", "will boil", "is boiling"],
+        "correct_answer": "boils",
+        "explanation": "Нулевое условное предложение для научных фактов."
+      },
+      {
+        "text": "If she \\_\\_\\_ on time, we wouldn't have missed the train. (Third Conditional)",
+        "options": ["came", "had come", "would come", "comes"],
+        "correct_answer": "had come",
+        "explanation": "Условие третьего условного предложения: Past Perfect."
+      }
+    ]
+  }
+]

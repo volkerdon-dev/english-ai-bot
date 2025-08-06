@@ -1,0 +1,647 @@
+[
+  {
+    "topic": "Nouns",
+    "questions": [
+      {
+        "text": "Choose the correct plural form: one child, two \\_\\_\\_.",
+        "options": ["childs", "children", "childen", "child's"],
+        "correct_answer": "children",
+        "explanation": "Child - это исключение, множественное число - children."
+      },
+      {
+        "text": "Is 'information' a countable or uncountable noun?",
+        "options": ["Countable", "Uncountable", "Both", "Neither"],
+        "correct_answer": "Uncountable",
+        "explanation": "Information - неисчисляемое существительное, не имеет формы множественного числа и не используется с артиклем 'a/an'."
+      },
+      {
+        "text": "Choose the correct possessive form: The \\_\\_\\_ car is red.",
+        "options": ["boys", "boy's", "boys'", "boyes"],
+        "correct_answer": "boy's",
+        "explanation": "Притяжательный падеж для единственного числа образуется добавлением 's."
+      },
+      {
+        "text": "Which of these is a common noun?",
+        "options": ["London", "Table", "Sarah", "Mount Everest"],
+        "correct_answer": "Table",
+        "explanation": "Common noun (нарицательное существительное) - это общее название для класса людей, мест, вещей или идей."
+      },
+      {
+        "text": "Identify the abstract noun in the sentence: 'Her happiness was evident.'",
+        "options": ["Her", "happiness", "was", "evident"],
+        "correct_answer": "happiness",
+        "explanation": "Abstract noun (абстрактное существительное) - это существительное, обозначающее идею, качество или состояние, которые нельзя потрогать."
+      },
+      {
+        "text": "Choose the correct plural: one mouse, many \\_\\_\\_.",
+        "options": ["mouses", "mice", "mouse's", "mices"],
+        "correct_answer": "mice",
+        "explanation": "Mouse - это исключение, множественное число - mice."
+      },
+      {
+        "text": "Which word is a collective noun?",
+        "options": ["Student", "Computer", "Team", "Book"],
+        "correct_answer": "Team",
+        "explanation": "Collective noun (собирательное существительное) - это существительное, обозначающее группу людей или вещей как единое целое."
+      },
+      {
+        "text": "Is 'advice' countable or uncountable?",
+        "options": ["Countable", "Uncountable", "Both", "Neither"],
+        "correct_answer": "Uncountable",
+        "explanation": "Advice - неисчисляемое существительное."
+      },
+      {
+        "text": "Choose the correct form: The \\_\\_\\_ toys were scattered everywhere.",
+        "options": ["childrens", "children's", "childrens'", "childrens's"],
+        "correct_answer": "children's",
+        "explanation": "Для существительных во множественном числе, не оканчивающихся на -s, притяжательный падеж образуется добавлением 's."
+      },
+      {
+        "text": "Identify the proper noun: 'My favorite city is Paris.'",
+        "options": ["My", "favorite", "city", "Paris"],
+        "correct_answer": "Paris",
+        "explanation": "Proper noun (собственное существительное) - это название конкретного человека, места, организации или вещи, пишется с заглавной буквы."
+      }
+    ]
+  },
+  {
+    "topic": "Verbs",
+    "questions": [
+      {
+        "text": "Which is the past simple form of 'go'?",
+        "options": ["goed", "went", "gone", "going"],
+        "correct_answer": "went",
+        "explanation": "Go - неправильный глагол, вторая форма - went."
+      },
+      {
+        "text": "What is the past participle of 'eat'?",
+        "options": ["ate", "eaten", "eating", "eat"],
+        "correct_answer": "eaten",
+        "explanation": "Eat - неправильный глагол, третья форма - eaten."
+      },
+      {
+        "text": "Identify the modal verb in the sentence: 'You should study harder.'",
+        "options": ["You", "should", "study", "harder"],
+        "correct_answer": "should",
+        "explanation": "Modal verbs (модальные глаголы) выражают возможность, необходимость, разрешение и т.д."
+      },
+      {
+        "text": "Choose the correct form: She \\_\\_\\_ to sing.",
+        "options": ["love", "loves", "loving", "loved"],
+        "correct_answer": "loves",
+        "explanation": "Для 3-го лица единственного числа в Present Simple к глаголу добавляется -s."
+      },
+      {
+        "text": "Which of these is a phrasal verb?",
+        "options": ["Run", "Walk", "Look up", "Sleep"],
+        "correct_answer": "Look up",
+        "explanation": "Phrasal verb (фразовый глагол) - это комбинация глагола и предлога или наречия, имеющая новое значение."
+      },
+      {
+        "text": "What is the base form of 'ran'?",
+        "options": ["run", "running", "runs", "ran"],
+        "correct_answer": "run",
+        "explanation": "Ran - это прошедшая форма глагола 'run'."
+      },
+      {
+        "text": "Which verb is irregular?",
+        "options": ["Walk", "Play", "Break", "Listen"],
+        "correct_answer": "Break",
+        "explanation": "Irregular verbs (неправильные глаголы) не образуют прошедшее время и причастие прошедшего времени путем добавления -ed."
+      },
+      {
+        "text": "Choose the correct form: They \\_\\_\\_ playing football now.",
+        "options": ["is", "are", "am", "be"],
+        "correct_answer": "are",
+        "explanation": "В Present Continuous для подлежащих 'they' используется 'are'."
+      },
+      {
+        "text": "Which modal verb expresses ability?",
+        "options": ["May", "Must", "Can", "Would"],
+        "correct_answer": "Can",
+        "explanation": "Can выражает способность или возможность."
+      },
+      {
+        "text": "What is the past participle of 'write'?",
+        "options": ["wrote", "written", "writing", "writes"],
+        "correct_answer": "written",
+        "explanation": "Write - неправильный глагол, третья форма - written."
+      }
+    ]
+  },
+  {
+    "topic": "Adjectives",
+    "questions": [
+      {
+        "text": "Choose the correct comparative form: 'This book is \\_\\_\\_ than that one.'",
+        "options": ["good", "better", "best", "gooder"],
+        "correct_answer": "better",
+        "explanation": "Better - сравнительная степень прилагательного 'good'."
+      },
+      {
+        "text": "Which is the superlative form of 'happy'?",
+        "options": ["happier", "happiest", "more happy", "most happy"],
+        "correct_answer": "happiest",
+        "explanation": "Happiest - превосходная степень прилагательного 'happy'."
+      },
+      {
+        "text": "Identify the adjective: 'The beautiful flower bloomed.'",
+        "options": ["The", "beautiful", "flower", "bloomed"],
+        "correct_answer": "beautiful",
+        "explanation": "Adjective (прилагательное) описывает существительное."
+      },
+      {
+        "text": "Choose the correct adjective: 'I am very \\_\\_\\_ in this topic.'",
+        "options": ["interested", "interesting", "interest", "interestingly"],
+        "correct_answer": "interested",
+        "explanation": "Interested (с -ed) описывает чувство, испытываемое человеком."
+      },
+      {
+        "text": "Which adjective describes a quality?",
+        "options": ["Many", "First", "Red", "These"],
+        "correct_answer": "Red",
+        "explanation": "Red описывает цвет, что является качеством."
+      },
+      {
+        "text": "Choose the correct order of adjectives: 'a \\_\\_\\_ old wooden chair'",
+        "options": ["wooden old beautiful", "beautiful old wooden", "old beautiful wooden", "beautiful wooden old"],
+        "correct_answer": "beautiful old wooden",
+        "explanation": "Порядок прилагательных: Opinion (beautiful) -> Age (old) -> Material (wooden)."
+      },
+      {
+        "text": "Complete the sentence: 'This is the \\_\\_\\_ day of my life.'",
+        "options": ["happier", "happiest", "more happy", "most happy"],
+        "correct_answer": "happiest",
+        "explanation": "Happiest - превосходная степень прилагательного 'happy', используется с 'the'."
+      },
+      {
+        "text": "Which word is an adjective?",
+        "options": ["Quickly", "Run", "Soft", "Table"],
+        "correct_answer": "Soft",
+        "explanation": "Soft описывает качество."
+      },
+      {
+        "text": "Choose the correct adjective: 'The movie was very \\_\\_\\_.'",
+        "options": ["bored", "boring", "bore", "boringly"],
+        "correct_answer": "boring",
+        "explanation": "Boring (с -ing) описывает то, что вызывает чувство."
+      },
+      {
+        "text": "What is the comparative form of 'big'?",
+        "options": ["bigger", "biggest", "more big", "most big"],
+        "correct_answer": "bigger",
+        "explanation": "Bigger - сравнительная степень прилагательного 'big'. Удваивается последняя согласная, если перед ней гласная и прилагательное короткое."
+      }
+    ]
+  },
+  {
+    "topic": "Adverbs",
+    "questions": [
+      {
+        "text": "Identify the adverb of manner: 'She sings beautifully.'",
+        "options": ["She", "sings", "beautifully", "sings beautifully"],
+        "correct_answer": "beautifully",
+        "explanation": "Adverb of manner (наречие образа действия) описывает, как что-то делается, часто заканчивается на -ly."
+      },
+      {
+        "text": "Which word is an adverb of frequency?",
+        "options": ["Here", "Tomorrow", "Often", "Very"],
+        "correct_answer": "Often",
+        "explanation": "Adverb of frequency (наречие частоты) указывает, как часто что-то происходит."
+      },
+      {
+        "text": "Choose the correct position for the adverb: 'He \\_\\_\\_ plays tennis.' (often)",
+        "options": ["He plays often tennis.", "He often plays tennis.", "Often he plays tennis.", "He plays tennis often."],
+        "correct_answer": "He often plays tennis.",
+        "explanation": "Наречия частоты (often, always, never) обычно ставятся перед основным глаголом, но после глагола 'to be'."
+      },
+      {
+        "text": "What is the adverb form of 'quick'?",
+        "options": ["quicker", "quickest", "quickly", "quickness"],
+        "correct_answer": "quickly",
+        "explanation": "Наречия образа действия часто образуются добавлением -ly к прилагательным."
+      },
+      {
+        "text": "Identify the adverb of place: 'They live here.'",
+        "options": ["They", "live", "here", "live here"],
+        "correct_answer": "here",
+        "explanation": "Adverb of place (наречие места) указывает, где что-то происходит."
+      },
+      {
+        "text": "Choose the correct comparative form: 'He drives \\_\\_\\_ than his brother.' (carefully)",
+        "options": ["more carefully", "most carefully", "carefullier", "careful"],
+        "correct_answer": "more carefully",
+        "explanation": "Для наречий, оканчивающихся на -ly, сравнительная степень образуется с помощью 'more'."
+      },
+      {
+        "text": "Which word is an adverb of time?",
+        "options": ["Loudly", "Outside", "Soon", "Extremely"],
+        "correct_answer": "Soon",
+        "explanation": "Adverb of time (наречие времени) указывает, когда что-то происходит."
+      },
+      {
+        "text": "Identify the adverb of degree: 'She is \\_\\_\\_ happy.' (very)",
+        "options": ["She", "is", "very", "happy"],
+        "correct_answer": "very",
+        "explanation": "Adverb of degree (наречие степени) указывает на интенсивность или степень чего-либо."
+      },
+      {
+        "text": "Choose the correct position: 'I \\_\\_\\_ forget my keys.' (never)",
+        "options": ["I forget never my keys.", "I never forget my keys.", "Never I forget my keys.", "I forget my keys never."],
+        "correct_answer": "I never forget my keys.",
+        "explanation": "Наречия частоты обычно ставятся перед основным глаголом."
+      },
+      {
+        "text": "What is the adverb form of 'good'?",
+        "options": ["goodly", "well", "better", "best"],
+        "correct_answer": "well",
+        "explanation": "Good - прилагательное, well - соответствующее наречие."
+      }
+    ]
+  },
+  {
+    "topic": "Pronouns",
+    "questions": [
+      {
+        "text": "Choose the correct personal pronoun: 'This is my book. It's \\_\\_\\_.'",
+        "options": ["me", "I", "mine", "my"],
+        "correct_answer": "mine",
+        "explanation": "Mine - притяжательное местоимение, заменяет 'my book'."
+      },
+      {
+        "text": "Complete the sentence: 'He looked at \\_\\_\\_ in the mirror.'",
+        "options": ["him", "his", "himself", "he"],
+        "correct_answer": "himself",
+        "explanation": "Himself - возвратное местоимение, когда действие направлено на самого себя."
+      },
+      {
+        "text": "Which word is a demonstrative pronoun?",
+        "options": ["He", "Who", "This", "Something"],
+        "correct_answer": "This",
+        "explanation": "Demonstrative pronoun (указательное местоимение) указывает на конкретный предмет или людей."
+      },
+      {
+        "text": "Choose the correct relative pronoun: 'This is the man \\_\\_\\_ helped me.'",
+        "options": ["which", "whose", "who", "whom"],
+        "correct_answer": "who",
+        "explanation": "Who - относительное местоимение, используемое для людей."
+      },
+      {
+        "text": "Identify the indefinite pronoun: '\\_\\_\\_ is waiting for you.'",
+        "options": ["She", "They", "Someone", "You"],
+        "correct_answer": "Someone",
+        "explanation": "Indefinite pronoun (неопределенное местоимение) относится к неопределенным людям или вещам."
+      },
+      {
+        "text": "Choose the correct object pronoun: 'Give the book to \\_\\_\\_.'",
+        "options": ["she", "her", "hers", "he"],
+        "correct_answer": "her",
+        "explanation": "Her - объектное местоимение, используется после предлогов."
+      },
+      {
+        "text": "Which pronoun can be used for both people and things?",
+        "options": ["Who", "Which", "That", "Whom"],
+        "correct_answer": "That",
+        "explanation": "That может использоваться как для людей, так и для вещей в качестве относительного местоимения."
+      },
+      {
+        "text": "Complete the sentence: 'The cat cleaned \\_\\_\\_.'",
+        "options": ["it", "its", "itself", "it's"],
+        "correct_answer": "itself",
+        "explanation": "Itself - возвратное местоимение для животных или неодушевленных предметов."
+      },
+      {
+        "text": "Which of these is a possessive adjective?",
+        "options": ["Mine", "Yours", "Her", "Theirs"],
+        "correct_answer": "Her",
+        "explanation": "Her - притяжательное прилагательное, стоит перед существительным (e.g., her book). Mine, Yours, Theirs - притяжательные местоимения."
+      },
+      {
+        "text": "Choose the correct interrogative pronoun: '\\_\\_\\_ is your favorite color?'",
+        "options": ["Who", "Whom", "What", "Which"],
+        "correct_answer": "What",
+        "explanation": "What - вопросительное местоимение, используемое для вопросов о вещах или информации."
+      }
+    ]
+  },
+  {
+    "topic": "Conjunctions",
+    "questions": [
+      {
+        "text": "Choose the correct coordinating conjunction: 'I like coffee \\_\\_\\_ tea.'",
+        "options": ["but", "or", "and", "so"],
+        "correct_answer": "and",
+        "explanation": "And - сочинительный союз, соединяющий похожие идеи."
+      },
+      {
+        "text": "Complete the sentence: 'She was tired, \\_\\_\\_ she went to bed.'",
+        "options": ["but", "or", "so", "for"],
+        "correct_answer": "so",
+        "explanation": "So - сочинительный союз, указывающий на результат."
+      },
+      {
+        "text": "Identify the subordinating conjunction: 'I will call you \\_\\_\\_ I arrive.'",
+        "options": ["and", "but", "when", "or"],
+        "correct_answer": "when",
+        "explanation": "When - подчинительный союз, вводящий придаточное предложение времени."
+      },
+      {
+        "text": "Choose the correct correlative conjunction: '\\_\\_\\_ he \\_\\_\\_ I will go.'",
+        "options": ["Either...or", "Neither...nor", "Both...and", "Not only...but also"],
+        "correct_answer": "Either...or",
+        "explanation": "Either...or - парный союз, предлагающий выбор между двумя вариантами."
+      },
+      {
+        "text": "Complete the sentence: 'She studied hard, \\_\\_\\_ she didn't pass the exam.'",
+        "options": ["and", "so", "but", "because"],
+        "correct_answer": "but",
+        "explanation": "But - сочинительный союз, указывающий на контраст."
+      },
+      {
+        "text": "Which conjunction indicates cause or reason?",
+        "options": ["Although", "While", "Because", "Unless"],
+        "correct_answer": "Because",
+        "explanation": "Because - подчинительный союз, вводящий причину."
+      },
+      {
+        "text": "Choose the correct conjunction: 'You can have \\_\\_\\_ the cake \\_\\_\\_ the ice cream.'",
+        "options": ["either...or", "neither...nor", "both...and", "not only...but also"],
+        "correct_answer": "either...or",
+        "explanation": "Either...or используется для выбора между двумя вариантами."
+      },
+      {
+        "text": "Complete the sentence: '\\_\\_\\_ it was raining, we went for a walk.'",
+        "options": ["Because", "Although", "So", "And"],
+        "correct_answer": "Although",
+        "explanation": "Although - подчинительный союз, указывающий на уступку (несмотря на)."
+      },
+      {
+        "text": "Which conjunction connects two independent clauses?",
+        "options": ["If", "After", "For", "Unless"],
+        "correct_answer": "For",
+        "explanation": "For - сочинительный союз (F.A.N.B.O.Y.S.), может соединять независимые предложения, указывая на причину."
+      },
+      {
+        "text": "Choose the correct conjunction: 'She is \\_\\_\\_ smart \\_\\_\\_ beautiful.'",
+        "options": ["either...or", "neither...nor", "both...and", "not only...but also"],
+        "correct_answer": "both...and",
+        "explanation": "Both...and - парный союз, указывающий на наличие обоих качеств."
+      }
+    ]
+  },
+  {
+    "topic": "Articles",
+    "questions": [
+      {
+        "text": "Choose the correct article: 'I saw \\_\\_\\_ elephant at the zoo.'",
+        "options": ["a", "an", "the", "no article"],
+        "correct_answer": "an",
+        "explanation": "An используется перед словами, начинающимися с гласного звука."
+      },
+      {
+        "text": "Complete the sentence: '\\_\\_\\_ sun rises in the east.'",
+        "options": ["A", "An", "The", "No article"],
+        "correct_answer": "The",
+        "explanation": "The используется для уникальных объектов (the sun, the moon)."
+      },
+      {
+        "text": "Choose the correct article: 'She is \\_\\_\\_ doctor.'",
+        "options": ["a", "an", "the", "no article"],
+        "correct_answer": "a",
+        "explanation": "A используется перед существительными в единственном числе, начинающимися с согласного звука, когда речь идет о профессии."
+      },
+      {
+        "text": "Complete the sentence: 'I like \\_\\_\\_ music.'",
+        "options": ["a", "an", "the", "no article"],
+        "correct_answer": "no article",
+        "explanation": "No article (нулевой артикль) используется с неисчисляемыми существительными, когда речь идет о них в общем смысле."
+      },
+      {
+        "text": "Choose the correct article: 'He lives in \\_\\_\\_ United States.'",
+        "options": ["a", "an", "the", "no article"],
+        "correct_answer": "the",
+        "explanation": "The используется с названиями стран, которые являются множественным числом или включают слова типа 'States', 'Kingdom', 'Republic'."
+      },
+      {
+        "text": "Complete the sentence: 'Can you pass me \\_\\_\\_ salt?'",
+        "options": ["a", "an", "the", "no article"],
+        "correct_answer": "the",
+        "explanation": "The используется, когда предмет известен обоим собеседникам или является конкретным в данной ситуации."
+      },
+      {
+        "text": "Choose the correct article: 'She is \\_\\_\\_ honest person.'",
+        "options": ["a", "an", "the", "no article"],
+        "correct_answer": "an",
+        "explanation": "An используется перед словами, начинающимися с гласного звука, даже если буква 'h' не произносится (honest)."
+      },
+      {
+        "text": "Complete the sentence: 'I go to \\_\\_\\_ school every day.'",
+        "options": ["a", "an", "the", "no article"],
+        "correct_answer": "no article",
+        "explanation": "No article используется с учреждениями (school, church, hospital), когда речь идет об их основном назначении."
+      },
+      {
+        "text": "Choose the correct article: '\\_\\_\\_ Eiffel Tower is in Paris.'",
+        "options": ["A", "An", "The", "No article"],
+        "correct_answer": "The",
+        "explanation": "The используется с названиями известных зданий, памятников."
+      },
+      {
+        "text": "Complete the sentence: 'He plays \\_\\_\\_ piano.'",
+        "options": ["a", "an", "the", "no article"],
+        "correct_answer": "the",
+        "explanation": "The используется с названиями музыкальных инструментов."
+      }
+    ]
+  },
+  {
+    "topic": "Prepositions: In, At, On",
+    "questions": [
+      {
+        "text": "Choose the correct preposition: 'I live \\_\\_\\_ London.'",
+        "options": ["in", "at", "on", "to"],
+        "correct_answer": "in",
+        "explanation": "In используется с названиями городов и стран."
+      },
+      {
+        "text": "Complete the sentence: 'The meeting is \\_\\_\\_ 3 p.m.'",
+        "options": ["in", "at", "on", "for"],
+        "correct_answer": "at",
+        "explanation": "At используется с конкретным временем."
+      },
+      {
+        "text": "Choose the correct preposition: 'The book is \\_\\_\\_ the table.'",
+        "options": ["in", "at", "on", "under"],
+        "correct_answer": "on",
+        "explanation": "On используется для поверхностей."
+      },
+      {
+        "text": "Complete the sentence: 'She was born \\_\\_\\_ 1995.'",
+        "options": ["in", "at", "on", "during"],
+        "correct_answer": "in",
+        "explanation": "In используется с годами."
+      },
+      {
+        "text": "Choose the correct preposition: 'He is \\_\\_\\_ home.'",
+        "options": ["in", "at", "on", "to"],
+        "correct_answer": "at",
+        "explanation": "At используется с 'home'."
+      },
+      {
+        "text": "Complete the sentence: 'We go to school \\_\\_\\_ weekdays.'",
+        "options": ["in", "at", "on", "during"],
+        "correct_answer": "on",
+        "explanation": "On используется с днями недели."
+      },
+      {
+        "text": "Choose the correct preposition: 'They are \\_\\_\\_ the garden.'",
+        "options": ["in", "at", "on", "by"],
+        "correct_answer": "in",
+        "explanation": "In используется для закрытых пространств или территорий."
+      },
+      {
+        "text": "Complete the sentence: 'The party is \\_\\_\\_ the weekend.'",
+        "options": ["in", "at", "on", "during"],
+        "correct_answer": "at",
+        "explanation": "At используется с 'the weekend' (в американском английском, в британском чаще 'on')."
+      },
+      {
+        "text": "Choose the correct preposition: 'The picture is \\_\\_\\_ the wall.'",
+        "options": ["in", "at", "on", "over"],
+        "correct_answer": "on",
+        "explanation": "On используется для поверхностей."
+      },
+      {
+        "text": "Complete the sentence: 'I'll see you \\_\\_\\_ Christmas Day.'",
+        "options": ["in", "at", "on", "during"],
+        "correct_answer": "on",
+        "explanation": "On используется с конкретными датами или праздниками, включающими 'Day'."
+      },
+      {
+        "text": "Choose the correct preposition: 'She works \\_\\_\\_ an office.'",
+        "options": ["in", "at", "on", "to"],
+        "correct_answer": "in",
+        "explanation": "In используется для помещений."
+      },
+      {
+        "text": "Complete the sentence: 'He arrived \\_\\_\\_ the airport.'",
+        "options": ["in", "at", "on", "to"],
+        "correct_answer": "at",
+        "explanation": "At используется для конкретных точек или мест (зданий)."
+      },
+      {
+        "text": "Choose the correct preposition: 'My birthday is \\_\\_\\_ October.'",
+        "options": ["in", "at", "on", "during"],
+        "correct_answer": "in",
+        "explanation": "In используется с месяцами."
+      },
+      {
+        "text": "Complete the sentence: 'The cat is sleeping \\_\\_\\_ the sofa.'",
+        "options": ["in", "at", "on", "under"],
+        "correct_answer": "on",
+        "explanation": "On используется для поверхностей."
+      },
+      {
+        "text": "Choose the correct preposition: 'They live \\_\\_\\_ 25 Main Street.'",
+        "options": ["in", "at", "on", "to"],
+        "correct_answer": "at",
+        "explanation": "At используется с полными адресами."
+      },
+      {
+        "text": "Complete the sentence: 'We'll meet \\_\\_\\_ the morning.'",
+        "options": ["in", "at", "on", "during"],
+        "correct_answer": "in",
+        "explanation": "In используется с частями дня (in the morning/afternoon/evening)."
+      },
+      {
+        "text": "Choose the correct preposition: 'The keys are \\_\\_\\_ my pocket.'",
+        "options": ["in", "at", "on", "by"],
+        "correct_answer": "in",
+        "explanation": "In используется для чего-то внутри другого."
+      },
+      {
+        "text": "Complete the sentence: 'She put the sticker \\_\\_\\_ the laptop.'",
+        "options": ["in", "at", "on", "over"],
+        "correct_answer": "on",
+        "explanation": "On используется для поверхностей."
+      },
+      {
+        "text": "Choose the correct preposition: 'I work \\_\\_\\_ a bank.'",
+        "options": ["in", "at", "on", "to"],
+        "correct_answer": "at",
+        "explanation": "At используется для обозначения места работы/учебного заведения как точки."
+      },
+      {
+        "text": "Complete the sentence: 'The concert is \\_\\_\\_ Friday evening.'",
+        "options": ["in", "at", "on", "during"],
+        "correct_answer": "on",
+        "explanation": "On используется с днями недели и частями дня, если есть день недели."
+      }
+    ]
+  },
+  {
+    "topic": "Prepositions: Other",
+    "questions": [
+      {
+        "text": "Choose the correct preposition: 'She is afraid \\_\\_\\_ spiders.'",
+        "options": ["of", "from", "with", "about"],
+        "correct_answer": "of",
+        "explanation": "Устойчивое выражение: afraid of."
+      },
+      {
+        "text": "Complete the sentence: 'He is good \\_\\_\\_ playing chess.'",
+        "options": ["in", "at", "on", "for"],
+        "correct_answer": "at",
+        "explanation": "Устойчивое выражение: good at."
+      },
+      {
+        "text": "Choose the correct preposition: 'I agree \\_\\_\\_ you.'",
+        "options": ["to", "with", "on", "about"],
+        "correct_answer": "with",
+        "explanation": "Agree with (соглашаться с кем-то)."
+      },
+      {
+        "text": "Complete the sentence: 'This book was written \\_\\_\\_ J.K. Rowling.'",
+        "options": ["by", "with", "from", "of"],
+        "correct_answer": "by",
+        "explanation": "By используется для обозначения автора или исполнителя действия в пассивном залоге."
+      },
+      {
+        "text": "Choose the correct preposition: 'He is interested \\_\\_\\_ history.'",
+        "options": ["in", "at", "on", "for"],
+        "correct_answer": "in",
+        "explanation": "Устойчивое выражение: interested in."
+      },
+      {
+        "text": "Complete the sentence: 'We talked \\_\\_\\_ the weather.'",
+        "options": ["of", "about", "on", "with"],
+        "correct_answer": "about",
+        "explanation": "Talk about (говорить о чем-то)."
+      },
+      {
+        "text": "Choose the correct preposition: 'She apologized \\_\\_\\_ being late.'",
+        "options": ["for", "of", "about", "to"],
+        "correct_answer": "for",
+        "explanation": "Apologize for (извиняться за что-то)."
+      },
+      {
+        "text": "Complete the sentence: 'He depends \\_\\_\\_ his parents for money.'",
+        "options": ["on", "in", "at", "with"],
+        "correct_answer": "on",
+        "explanation": "Depend on (зависеть от)."
+      },
+      {
+        "text": "Choose the correct preposition: 'I'm looking forward \\_\\_\\_ my vacation.'",
+        "options": ["to", "for", "at", "about"],
+        "correct_answer": "to",
+        "explanation": "Look forward to (с нетерпением ждать чего-либо). После 'to' здесь используется герундий или существительное."
+      },
+      {
+        "text": "Complete the sentence: 'The bridge was built \\_\\_\\_ the river.'",
+        "options": ["across", "through", "over", "along"],
+        "correct_answer": "over",
+        "explanation": "Over (над, через) используется для обозначения положения над чем-либо, часто с движением или покрытием."
+      }
+    ]
+  }
+]

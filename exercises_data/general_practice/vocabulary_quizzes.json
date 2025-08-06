@@ -1,0 +1,30 @@
+[
+  {
+    "topic": "Travel",
+    "questions": [
+      {
+        "text": "What is the word for a place where you stay when you travel?",
+        "options": ["hotel", "restaurant", "museum", "airport"],
+        "correct_answer": "hotel",
+        "explanation": "A hotel is a place where you stay overnight."
+      },
+      {
+        "text": "Choose the synonym for 'journey'.",
+        "options": ["trip", "work", "sleep", "food"],
+        "correct_answer": "trip",
+        "explanation": "A trip is a synonym for journey."
+      }
+    ]
+  },
+  {
+    "topic": "Work & Career",
+    "questions": [
+      {
+        "text": "What is the word for a person who works for a company?",
+        "options": ["employee", "boss", "customer", "friend"],
+        "correct_answer": "employee",
+        "explanation": "An employee works for a company."
+      }
+    ]
+  }
+]

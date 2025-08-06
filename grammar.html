@@ -6,6 +6,166 @@
   <title>Grammar - EngTrain App</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .grammar-section {
+      margin: 20px 0;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      border-left: 4px solid #007bff;
+    }
+    
+    .grammar-content {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 10px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .grammar-content h3 {
+      color: #007bff;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #e9ecef;
+      padding-bottom: 10px;
+    }
+    
+    .grammar-content p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    
+    .grammar-content strong {
+      color: #495057;
+    }
+    
+    .grammar-content em {
+      color: #6c757d;
+      font-style: italic;
+    }
+    
+    .test-section {
+      background: #e3f2fd;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+    
+    .question {
+      background: white;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border-left: 3px solid #2196f3;
+    }
+    
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 10px 0;
+    }
+    
+    .option {
+      padding: 8px 12px;
+      background: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .option:hover {
+      background: #e9ecef;
+    }
+    
+    .option.selected {
+      background: #007bff;
+      color: white;
+    }
+    
+    .option.correct {
+      background: #28a745;
+      color: white;
+    }
+    
+    .option.incorrect {
+      background: #dc3545;
+      color: white;
+    }
+    
+    .explanation {
+      background: #fff3cd;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 4px;
+      border-left: 3px solid #ffc107;
+      display: none;
+    }
+    
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: #6c757d;
+    }
+    
+    .error {
+      background: #f8d7da;
+      color: #721c24;
+      padding: 15px;
+      border-radius: 6px;
+      margin: 10px 0;
+    }
+    
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+    }
+    
+    .category-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+    
+    .nested-category {
+      margin-left: 20px;
+      border-left: 3px solid #007bff;
+      padding-left: 15px;
+    }
+    
+    .category-btn {
+      padding: 8px 16px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .category-btn:hover {
+      background: #0056b3;
+    }
+    
+    .category-btn.active {
+      background: #28a745;
+    }
+  </style>
 </head>
 <body>
   <div class="header">
@@ -14,30 +174,35 @@
   </div>
 
   <div class="content">
-    <h2>Грамматические разделы</h2>
+    <div id="loading" class="loading">
+      <h3>Загрузка грамматических материалов...</h3>
+      <p>Пожалуйста, подождите...</p>
+    </div>
     
-    <div class="section-grid">
-      <div class="section-card" onclick="openSection('tenses')">
-        <h3>⏰ Времена</h3>
-        <p>Изучение английских времен</p>
+    <div id="error" class="error" style="display: none;">
+      <h3>Ошибка загрузки данных</h3>
+      <p>Не удалось загрузить грамматические материалы. Пожалуйста, попробуйте позже.</p>
+    </div>
+    
+    <div id="grammar-content" style="display: none;">
+      <h2>Грамматические разделы</h2>
+      
+      <div class="category-nav" id="category-nav">
+        <!-- Категории будут добавлены динамически -->
       </div>
       
-      <div class="section-card" onclick="openSection('articles')">
-        <h3>📝 Артикли</h3>
-        <p>Правила использования a/an/the</p>
+      <div class="category-nav" id="exercise-nav" style="margin-top: 10px;">
+        <button class="category-btn" onclick="showMainGrammar()">📚 Основная грамматика</button>
+        <button class="category-btn" onclick="showAdditionalExercises()">🎯 Дополнительные упражнения</button>
       </div>
       
-      <div class="section-card" onclick="openSection('prepositions')">
-        <h3>🔗 Предлоги</h3>
-        <p>Предлоги места и времени</p>
-      </div>
-      
-      <div class="section-card" onclick="openSection('conditionals')">
-        <h3>🎯 Условные предложения</h3>
-        <p>If-clauses и их типы</p>
+      <div id="grammar-sections">
+        <!-- Содержимое грамматики будет добавлено динамически -->
       </div>
     </div>
   </div>
+
+  <button class="back-to-top" onclick="scrollToTop()" id="back-to-top">↑</button>
 
   <script>
     // Инициализация Telegram Web App
@@ -56,6 +221,12 @@
       console.log('Running in browser mode');
     }
 
+    let grammarData = {};
+    let exercisesData = {};
+    let currentCategory = null;
+    let testResults = {};
+    let currentView = 'main'; // 'main' или 'exercises'
+
     function goBack() {
       console.log('Going back to main menu');
       
@@ -68,10 +239,548 @@
       }
     }
     
-    function openSection(section) {
-      console.log('Opening section:', section);
-      alert(`Открывается раздел: ${section}`);
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+    
+    // Показать/скрыть кнопку "Наверх"
+    window.onscroll = function() {
+      const backToTop = document.getElementById('back-to-top');
+      if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        backToTop.style.display = 'block';
+      } else {
+        backToTop.style.display = 'none';
+      }
+    };
+    
+    async function loadGrammarData() {
+      try {
+        // Загружаем основные данные грамматики
+        const grammarResponse = await fetch('grammar_categories_tree.json');
+        if (!grammarResponse.ok) {
+          throw new Error(`HTTP error! status: ${grammarResponse.status}`);
+        }
+        grammarData = await grammarResponse.json();
+        
+        // Загружаем дополнительные упражнения
+        try {
+          const tensesResponse = await fetch('exercises_data/general_practice/tenses_drills.json');
+          if (tensesResponse.ok) {
+            const tensesData = await tensesResponse.json();
+            exercisesData.tenses = tensesData;
+          }
+          
+          const grammarDrillsResponse = await fetch('exercises_data/general_practice/grammar_drills.json');
+          if (grammarDrillsResponse.ok) {
+            const grammarDrillsData = await grammarDrillsResponse.json();
+            exercisesData.grammar = grammarDrillsData;
+          }
+          
+          const constructionsResponse = await fetch('exercises_data/general_practice/constructions_drills.json');
+          if (constructionsResponse.ok) {
+            const constructionsData = await constructionsResponse.json();
+            exercisesData.constructions = constructionsData;
+          }
+          
+          const partsOfSpeechResponse = await fetch('exercises_data/general_practice/parts_of_speech_drills.json');
+          if (partsOfSpeechResponse.ok) {
+            const partsOfSpeechData = await partsOfSpeechResponse.json();
+            exercisesData.partsOfSpeech = partsOfSpeechData;
+          }
+          
+          const sentenceStructureResponse = await fetch('exercises_data/general_practice/sentence_structure_drills.json');
+          if (sentenceStructureResponse.ok) {
+            const sentenceStructureData = await sentenceStructureResponse.json();
+            exercisesData.sentenceStructure = sentenceStructureData;
+          }
+          
+          const commonMistakesResponse = await fetch('exercises_data/general_practice/common_mistakes_drills.json');
+          if (commonMistakesResponse.ok) {
+            const commonMistakesData = await commonMistakesResponse.json();
+            exercisesData.commonMistakes = commonMistakesData;
+          }
+        } catch (exerciseError) {
+          console.warn('Some exercise data could not be loaded:', exerciseError);
+        }
+        
+        displayGrammarContent();
+      } catch (error) {
+        console.error('Error loading grammar data:', error);
+        showError();
+      }
+    }
+    
+    function showError() {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('error').style.display = 'block';
+    }
+    
+    function displayGrammarContent() {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('grammar-content').style.display = 'block';
+      
+      const categoryNav = document.getElementById('category-nav');
+      const grammarSections = document.getElementById('grammar-sections');
+      
+      // Очищаем содержимое
+      categoryNav.innerHTML = '';
+      grammarSections.innerHTML = '';
+      
+      // Создаем навигацию по категориям
+      Object.keys(grammarData).forEach(category => {
+        const btn = document.createElement('button');
+        btn.className = 'category-btn';
+        btn.textContent = category;
+        btn.onclick = () => showCategory(category);
+        categoryNav.appendChild(btn);
+      });
+      
+      // Показываем первую категорию по умолчанию
+      if (Object.keys(grammarData).length > 0) {
+        showCategory(Object.keys(grammarData)[0]);
+      }
+      
+      // Инициализируем кнопки переключения
+      updateViewButtons();
+    }
+    
+    function showCategory(category) {
+      currentCategory = category;
+      
+      // Обновляем активную кнопку
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.textContent === category) {
+          btn.classList.add('active');
+        }
+      });
+      
+      const grammarSections = document.getElementById('grammar-sections');
+      grammarSections.innerHTML = '';
+      
+      const categoryData = grammarData[category];
+      
+      Object.keys(categoryData).forEach(subcategory => {
+        const subcategoryData = categoryData[subcategory];
+        
+        if (subcategoryData.type === 'text') {
+          // Отображаем текстовый контент
+          const section = createTextSection(subcategory, subcategoryData.content);
+          grammarSections.appendChild(section);
+        } else if (subcategoryData.type === 'grammar_test') {
+          // Отображаем тест
+          const testSection = createTestSection(subcategoryData);
+          grammarSections.appendChild(testSection);
+        } else if (subcategoryData.type === 'content_from_file') {
+          // Отображаем содержимое из файла
+          const fileSection = createFileContentSection(subcategory, subcategoryData);
+          grammarSections.appendChild(fileSection);
+        } else if (typeof subcategoryData === 'object' && !subcategoryData.type) {
+          // Рекурсивно обрабатываем вложенные категории
+          const nestedSection = createNestedSection(subcategory, subcategoryData, false);
+          grammarSections.appendChild(nestedSection);
+        }
+      });
+    }
+    
+    function createTextSection(title, content) {
+      const section = document.createElement('div');
+      section.className = 'grammar-section';
+      
+      const titleElement = document.createElement('h3');
+      titleElement.textContent = title;
+      section.appendChild(titleElement);
+      
+      const contentDiv = document.createElement('div');
+      contentDiv.className = 'grammar-content';
+      
+      // Преобразуем markdown-подобный текст в HTML
+      const formattedContent = formatGrammarContent(content);
+      contentDiv.innerHTML = formattedContent;
+      
+      section.appendChild(contentDiv);
+      return section;
+    }
+    
+    function createNestedSection(title, data, isNested = false) {
+      const section = document.createElement('div');
+      section.className = isNested ? 'grammar-section nested-category' : 'grammar-section';
+      
+      const titleElement = document.createElement('h3');
+      titleElement.textContent = title;
+      section.appendChild(titleElement);
+      
+      Object.keys(data).forEach(item => {
+        const itemData = data[item];
+        
+        if (itemData.type === 'text') {
+          const contentSection = createTextSection(item, itemData.content);
+          section.appendChild(contentSection);
+        } else if (itemData.type === 'grammar_test') {
+          const testSection = createTestSection(itemData);
+          section.appendChild(testSection);
+        } else if (itemData.type === 'content_from_file') {
+          // Обработка content_from_file типа
+          const fileContentSection = createFileContentSection(item, itemData);
+          section.appendChild(fileContentSection);
+        } else if (typeof itemData === 'object' && !itemData.type) {
+          // Рекурсивно обрабатываем вложенные подкатегории
+          const nestedSubSection = createNestedSection(item, itemData, true);
+          section.appendChild(nestedSubSection);
+        }
+      });
+      
+      return section;
+    }
+    
+    function createFileContentSection(title, data) {
+      const section = document.createElement('div');
+      section.className = 'grammar-section';
+      
+      const titleElement = document.createElement('h3');
+      titleElement.textContent = data.title || title;
+      section.appendChild(titleElement);
+      
+      const contentDiv = document.createElement('div');
+      contentDiv.className = 'grammar-content';
+      contentDiv.innerHTML = `<p><em>Содержимое загружается из файла: ${data.file}</em></p>`;
+      section.appendChild(contentDiv);
+      
+      // Попытка загрузить файл
+      if (data.file) {
+        loadFileContent(data.file, contentDiv);
+      }
+      
+      return section;
+    }
+    
+    async function loadFileContent(filename, targetDiv) {
+      try {
+        const response = await fetch(filename);
+        if (response.ok) {
+          const fileData = await response.json();
+          // Обработка содержимого файла в зависимости от его структуры
+          let content = '';
+          if (Array.isArray(fileData)) {
+            // Для irregular_verbs.json
+            if (fileData.length > 0 && fileData[0].base && fileData[0].past && fileData[0].participle) {
+              content = `
+                <div style="overflow-x: auto;">
+                  <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                      <tr style="background: #f8f9fa;">
+                        <th style="padding: 8px; border: 1px solid #dee2e6;">Infinitive</th>
+                        <th style="padding: 8px; border: 1px solid #dee2e6;">Past Simple</th>
+                        <th style="padding: 8px; border: 1px solid #dee2e6;">Past Participle</th>
+                        <th style="padding: 8px; border: 1px solid #dee2e6;">Перевод</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      ${fileData.map(verb => `
+                        <tr>
+                          <td style="padding: 8px; border: 1px solid #dee2e6;"><strong>${verb.base}</strong></td>
+                          <td style="padding: 8px; border: 1px solid #dee2e6;">${verb.past}</td>
+                          <td style="padding: 8px; border: 1px solid #dee2e6;">${verb.participle}</td>
+                          <td style="padding: 8px; border: 1px solid #dee2e6;">${verb.translation}</td>
+                        </tr>
+                      `).join('')}
+                    </tbody>
+                  </table>
+                </div>
+              `;
+            } else {
+              // Для других массивов
+              content = fileData.map(item => {
+                return `<div style="margin: 5px 0;">${JSON.stringify(item, null, 2)}</div>`;
+              }).join('');
+            }
+          } else {
+            content = `<pre>${JSON.stringify(fileData, null, 2)}</pre>`;
+          }
+          targetDiv.innerHTML = content;
+        }
+      } catch (error) {
+        console.error('Error loading file content:', error);
+        targetDiv.innerHTML = `<p><em>Ошибка загрузки файла: ${filename}</em></p>`;
+      }
+    }
+    
+    function createTestSection(testData) {
+      const section = document.createElement('div');
+      section.className = 'test-section';
+      
+      const title = document.createElement('h3');
+      title.textContent = testData.title;
+      section.appendChild(title);
+      
+      const instructions = document.createElement('p');
+      instructions.textContent = testData.instructions;
+      section.appendChild(instructions);
+      
+      const testId = `test-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+      
+      testData.questions.forEach((question, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'question';
+        
+        const questionText = document.createElement('p');
+        questionText.innerHTML = `<strong>Вопрос ${question.question_number}:</strong> ${question.text}`;
+        questionDiv.appendChild(questionText);
+        
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+        
+        question.options.forEach(option => {
+          const optionDiv = document.createElement('div');
+          optionDiv.className = 'option';
+          optionDiv.textContent = option;
+          optionDiv.onclick = () => selectOption(optionDiv, option, question.correct_answer, testId, question.question_number);
+          optionsDiv.appendChild(optionDiv);
+        });
+        
+        questionDiv.appendChild(optionsDiv);
+        
+        const explanationDiv = document.createElement('div');
+        explanationDiv.className = 'explanation';
+        explanationDiv.innerHTML = `<strong>Объяснение:</strong> ${question.explanation}`;
+        questionDiv.appendChild(explanationDiv);
+        
+        section.appendChild(questionDiv);
+      });
+      
+      return section;
+    }
+    
+    function selectOption(optionElement, selectedOption, correctAnswer, testId, questionNumber) {
+      // Убираем предыдущие выборы в этом вопросе
+      const questionDiv = optionElement.closest('.question');
+      questionDiv.querySelectorAll('.option').forEach(opt => {
+        opt.classList.remove('selected', 'correct', 'incorrect');
+      });
+      
+      // Отмечаем выбранный вариант
+      optionElement.classList.add('selected');
+      
+      // Проверяем правильность
+      if (selectedOption === correctAnswer) {
+        optionElement.classList.add('correct');
+      } else {
+        optionElement.classList.add('incorrect');
+        // Показываем правильный ответ
+        questionDiv.querySelectorAll('.option').forEach(opt => {
+          if (opt.textContent === correctAnswer) {
+            opt.classList.add('correct');
+          }
+        });
+      }
+      
+      // Показываем объяснение
+      const explanation = questionDiv.querySelector('.explanation');
+      explanation.style.display = 'block';
+      
+      // Сохраняем результат
+      if (!testResults[testId]) {
+        testResults[testId] = {};
+      }
+      testResults[testId][questionNumber] = selectedOption === correctAnswer;
+    }
+    
+    function formatGrammarContent(content) {
+      // Преобразуем markdown-подобный синтаксис в HTML
+      let formatted = content
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // **текст** -> <strong>текст</strong>
+        .replace(/\*(.*?)\*/g, '<em>$1</em>') // *текст* -> <em>текст</em>
+        .replace(/🧠/g, '🧠 ')
+        .replace(/📌/g, '📌 ')
+        .replace(/🧩/g, '🧩 ')
+        .replace(/🔹/g, '🔹 ')
+        .replace(/🚫/g, '🚫 ')
+        .replace(/❓/g, '❓ ')
+        .replace(/🧭/g, '🧭 ')
+        .replace(/📎/g, '📎 ')
+        .replace(/🛑/g, '🛑 ')
+        .replace(/\n\n/g, '</p><p>') // Двойные переносы строк -> новые параграфы
+        .replace(/\n/g, '<br>'); // Одинарные переносы строк -> <br>
+      
+      return `<p>${formatted}</p>`;
+    }
+    
+    function addAdditionalExercises() {
+      const grammarSections = document.getElementById('grammar-sections');
+      
+      // Добавляем дополнительные упражнения по временам
+      if (exercisesData.tenses) {
+        const tensesSection = document.createElement('div');
+        tensesSection.className = 'grammar-section';
+        
+        const tensesTitle = document.createElement('h3');
+        tensesTitle.textContent = '📚 Дополнительные упражнения по временам';
+        tensesSection.appendChild(tensesTitle);
+        
+        exercisesData.tenses.forEach(topic => {
+          const topicSection = createExerciseSection(topic);
+          tensesSection.appendChild(topicSection);
+        });
+        
+        grammarSections.appendChild(tensesSection);
+      }
+      
+      // Добавляем упражнения по частям речи
+      if (exercisesData.partsOfSpeech) {
+        const partsSection = document.createElement('div');
+        partsSection.className = 'grammar-section';
+        
+        const partsTitle = document.createElement('h3');
+        partsTitle.textContent = '🔤 Упражнения по частям речи';
+        partsSection.appendChild(partsTitle);
+        
+        exercisesData.partsOfSpeech.forEach(topic => {
+          const topicSection = createExerciseSection(topic);
+          partsSection.appendChild(topicSection);
+        });
+        
+        grammarSections.appendChild(partsSection);
+      }
+      
+      // Добавляем упражнения по конструкциям
+      if (exercisesData.constructions) {
+        const constructionsSection = document.createElement('div');
+        constructionsSection.className = 'grammar-section';
+        
+        const constructionsTitle = document.createElement('h3');
+        constructionsTitle.textContent = '🏗️ Упражнения по грамматическим конструкциям';
+        constructionsSection.appendChild(constructionsTitle);
+        
+        exercisesData.constructions.forEach(topic => {
+          const topicSection = createExerciseSection(topic);
+          constructionsSection.appendChild(topicSection);
+        });
+        
+        grammarSections.appendChild(constructionsSection);
+      }
+      
+      // Добавляем упражнения по структуре предложений
+      if (exercisesData.sentenceStructure) {
+        const structureSection = document.createElement('div');
+        structureSection.className = 'grammar-section';
+        
+        const structureTitle = document.createElement('h3');
+        structureTitle.textContent = '📝 Упражнения по структуре предложений';
+        structureSection.appendChild(structureTitle);
+        
+        exercisesData.sentenceStructure.forEach(topic => {
+          const topicSection = createExerciseSection(topic);
+          structureSection.appendChild(topicSection);
+        });
+        
+        grammarSections.appendChild(structureSection);
+      }
+      
+      // Добавляем упражнения по типичным ошибкам
+      if (exercisesData.commonMistakes) {
+        const mistakesSection = document.createElement('div');
+        mistakesSection.className = 'grammar-section';
+        
+        const mistakesTitle = document.createElement('h3');
+        mistakesTitle.textContent = '⚠️ Упражнения по типичным ошибкам';
+        mistakesSection.appendChild(mistakesTitle);
+        
+        exercisesData.commonMistakes.forEach(topic => {
+          const topicSection = createExerciseSection(topic);
+          mistakesSection.appendChild(topicSection);
+        });
+        
+        grammarSections.appendChild(mistakesSection);
+      }
+    }
+    
+    function createExerciseSection(topic) {
+      const section = document.createElement('div');
+      section.className = 'test-section';
+      
+      const title = document.createElement('h4');
+      title.textContent = topic.topic;
+      section.appendChild(title);
+      
+      const instructions = document.createElement('p');
+      instructions.textContent = 'Выберите правильный вариант ответа для каждого предложения.';
+      section.appendChild(instructions);
+      
+      const testId = `exercise-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+      
+      topic.questions.forEach((question, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'question';
+        
+        const questionText = document.createElement('p');
+        questionText.innerHTML = `<strong>Вопрос ${index + 1}:</strong> ${question.text}`;
+        questionDiv.appendChild(questionText);
+        
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+        
+        question.options.forEach(option => {
+          const optionDiv = document.createElement('div');
+          optionDiv.className = 'option';
+          optionDiv.textContent = option;
+          optionDiv.onclick = () => selectOption(optionDiv, option, question.correct_answer, testId, index + 1);
+          optionsDiv.appendChild(optionDiv);
+        });
+        
+        questionDiv.appendChild(optionsDiv);
+        
+        const explanationDiv = document.createElement('div');
+        explanationDiv.className = 'explanation';
+        explanationDiv.innerHTML = `<strong>Объяснение:</strong> ${question.explanation}`;
+        questionDiv.appendChild(explanationDiv);
+        
+        section.appendChild(questionDiv);
+      });
+      
+      return section;
+    }
+    
+    function showMainGrammar() {
+      currentView = 'main';
+      updateViewButtons();
+      
+      const grammarSections = document.getElementById('grammar-sections');
+      grammarSections.innerHTML = '';
+      
+      // Показываем основную грамматику
+      if (Object.keys(grammarData).length > 0) {
+        showCategory(Object.keys(grammarData)[0]);
+      }
+    }
+    
+    function showAdditionalExercises() {
+      currentView = 'exercises';
+      updateViewButtons();
+      
+      const grammarSections = document.getElementById('grammar-sections');
+      grammarSections.innerHTML = '';
+      
+      // Показываем дополнительные упражнения
+      addAdditionalExercises();
+    }
+    
+    function updateViewButtons() {
+      const mainBtn = document.querySelector('#exercise-nav button:first-child');
+      const exercisesBtn = document.querySelector('#exercise-nav button:last-child');
+      
+      if (currentView === 'main') {
+        mainBtn.classList.add('active');
+        exercisesBtn.classList.remove('active');
+      } else {
+        mainBtn.classList.remove('active');
+        exercisesBtn.classList.add('active');
+      }
+    }
+    
+    // Загружаем данные при загрузке страницы
+    window.onload = function() {
+      loadGrammarData();
+    };
   </script>
 </body>
 </html> 

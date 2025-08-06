@@ -1,0 +1,426 @@
+[
+  {
+    "topic": "Sentence Types",
+    "questions": [
+      {
+        "text": "Identify the type of sentence: 'The cat slept soundly.'",
+        "options": ["Declarative", "Interrogative", "Imperative", "Exclamatory"],
+        "correct_answer": "Declarative",
+        "explanation": "Declarative (повествовательное) предложение утверждает факт."
+      },
+      {
+        "text": "Which type of sentence expresses a command or request?",
+        "options": ["Declarative", "Interrogative", "Imperative", "Exclamatory"],
+        "correct_answer": "Imperative",
+        "explanation": "Imperative (повелительное) предложение отдает команду или выражает просьбу."
+      },
+      {
+        "text": "What type of sentence is 'How beautiful the sunset is!'?",
+        "options": ["Declarative", "Interrogative", "Imperative", "Exclamatory"],
+        "correct_answer": "Exclamatory",
+        "explanation": "Exclamatory (восклицательное) предложение выражает сильные эмоции."
+      },
+      {
+        "text": "Identify the type of sentence: 'Do you like pizza?'",
+        "options": ["Declarative", "Interrogative", "Imperative", "Exclamatory"],
+        "correct_answer": "Interrogative",
+        "explanation": "Interrogative (вопросительное) предложение задает вопрос."
+      },
+      {
+        "text": "Which sentence is a simple sentence?",
+        "options": ["I like coffee, and she likes tea.", "She sings beautifully.", "Although it was raining, we went out.", "He ran quickly because he was late."],
+        "correct_answer": "She sings beautifully.",
+        "explanation": "Simple sentence (простое предложение) содержит одну независимую часть (одно подлежащее и одно сказуемое)."
+      },
+      {
+        "text": "Identify the type of sentence: 'I want to go, but I am tired.'",
+        "options": ["Simple", "Compound", "Complex", "Compound-Complex"],
+        "correct_answer": "Compound",
+        "explanation": "Compound sentence (сложносочиненное предложение) состоит из двух или более независимых предложений, соединенных сочинительным союзом ('but')."
+      },
+      {
+        "text": "What type of sentence is 'She arrived when I was leaving.'?",
+        "options": ["Simple", "Compound", "Complex", "Compound-Complex"],
+        "correct_answer": "Complex",
+        "explanation": "Complex sentence (сложноподчиненное предложение) содержит одно независимое и одно или несколько зависимых предложений, соединенных подчинительным союзом ('when')."
+      },
+      {
+        "text": "Choose the type of sentence: 'Please, open the window.'",
+        "options": ["Declarative", "Interrogative", "Imperative", "Exclamatory"],
+        "correct_answer": "Imperative",
+        "explanation": "Imperative (повелительное) предложение выражает просьбу."
+      }
+    ]
+  },
+  {
+    "topic": "Word Order",
+    "questions": [
+      {
+        "text": "Choose the correct word order: 'She / coffee / likes / hot.'",
+        "options": ["She likes hot coffee.", "Hot coffee she likes.", "Likes she hot coffee.", "Coffee hot likes she."],
+        "correct_answer": "She likes hot coffee.",
+        "explanation": "Базовый порядок слов в английском: Subject + Verb + Object. Прилагательные стоят перед существительными."
+      },
+      {
+        "text": "Identify the correct order: 'always / late / he / is.'",
+        "options": ["Always he is late.", "He always is late.", "He is always late.", "He is late always."],
+        "correct_answer": "He is always late.",
+        "explanation": "Наречия частоты (always) ставятся после глагола 'to be'."
+      },
+      {
+        "text": "Choose the correct question: 'you / where / live / do / ?'",
+        "options": ["Where you do live?", "Where do you live?", "Do you live where?", "You live where do?"],
+        "correct_answer": "Where do you live?",
+        "explanation": "Порядок слов в Wh-вопросах: Wh-word + Auxiliary Verb + Subject + Main Verb."
+      },
+      {
+        "text": "Complete with correct word order: 'I like this book \\_\\_\\_.' (very much)",
+        "options": ["very much.", "much very.", "I very much.", "very much I."],
+        "correct_answer": "very much.",
+        "explanation": "Наречие 'very much' обычно ставится в конце предложения."
+      },
+      {
+        "text": "Which sentence has the correct word order?",
+        "options": ["Fast he runs.", "He fast runs.", "He runs fast.", "Runs fast he."],
+        "correct_answer": "He runs fast.",
+        "explanation": "Наречия образа действия обычно ставятся после глагола, который они описывают."
+      },
+      {
+        "text": "Correct the word order: 'He didn't / come / to the party.'",
+        "options": ["He didn't come to the party.", "Didn't he come to the party.", "To the party he didn't come.", "Come he didn't to the party."],
+        "correct_answer": "He didn't come to the party.",
+        "explanation": "В отрицательных предложениях вспомогательный глагол 'did' + not + основной глагол."
+      },
+      {
+        "text": "Choose the sentence with correct adverb placement: 'She / beautifully / sings.'",
+        "options": ["She beautifully sings.", "She sings beautifully.", "Beautifully she sings.", "Sings she beautifully."],
+        "correct_answer": "She sings beautifully.",
+        "explanation": "Наречия образа действия, как 'beautifully', обычно следуют за глаголом, который они описывают."
+      },
+      {
+        "text": "What is the basic word order in an English declarative sentence?",
+        "options": ["VSO", "OSV", "SOV", "SVO"],
+        "correct_answer": "SVO",
+        "explanation": "SVO (Subject-Verb-Object) - это основной порядок слов в английском языке."
+      }
+    ]
+  },
+  {
+    "topic": "Subject-Verb Agreement",
+    "questions": [
+      {
+        "text": "Choose the correct verb: 'The cat \\_\\_\\_ on the sofa.'",
+        "options": ["sleep", "sleeps", "are sleeping", "slept"],
+        "correct_answer": "sleeps",
+        "explanation": "Для подлежащего в единственном числе ('cat') в Present Simple используется глагол с окончанием -s."
+      },
+      {
+        "text": "Complete the sentence: 'My friends \\_\\_\\_ coming to the party.'",
+        "options": ["is", "are", "am", "be"],
+        "correct_answer": "are",
+        "explanation": "Для подлежащего во множественном числе ('friends') используется 'are'."
+      },
+      {
+        "text": "Choose the correct verb: 'Neither of the students \\_\\_\\_ finished the assignment.'",
+        "options": ["have", "has", "are", "is"],
+        "correct_answer": "has",
+        "explanation": "С 'neither of' глагол согласуется с единственным числом."
+      },
+      {
+        "text": "Complete the sentence: 'The news \\_\\_\\_ bad today.'",
+        "options": ["is", "are", "be", "were"],
+        "correct_answer": "is",
+        "explanation": "News (новости) в английском языке является неисчисляемым существительным и используется с глаголом в единственном числе."
+      },
+      {
+        "text": "Choose the correct verb: 'Every student \\_\\_\\_ expected to submit their essay.'",
+        "options": ["are", "is", "were", "be"],
+        "correct_answer": "is",
+        "explanation": "С 'every' (каждый) глагол всегда используется в единственном числе."
+      },
+      {
+        "text": "Complete the sentence: 'The team \\_\\_\\_ playing well.'",
+        "options": ["is", "are", "am", "be"],
+        "correct_answer": "is",
+        "explanation": "Collective nouns (собирательные существительные) как 'team' могут быть в единственном или множественном числе. В американском английском часто используется единственное число, если команда действует как единое целое."
+      },
+      {
+        "text": "Choose the correct verb: 'A lot of work \\_\\_\\_ to be done.'",
+        "options": ["have", "has", "are", "were"],
+        "correct_answer": "has",
+        "explanation": "Work (работа) - неисчисляемое существительное, поэтому используется глагол в единственном числе."
+      },
+      {
+        "text": "Complete the sentence: 'Both of my parents \\_\\_\\_ teachers.'",
+        "options": ["is", "are", "was", "has been"],
+        "correct_answer": "are",
+        "explanation": "Both (оба) подразумевает множественное число, поэтому используется 'are'."
+      }
+    ]
+  },
+  {
+    "topic": "Reported Speech",
+    "questions": [
+      {
+        "text": "Change to reported speech: 'He said, 'I am tired.''",
+        "options": ["He said he is tired.", "He said he was tired.", "He says he is tired.", "He said I am tired."],
+        "correct_answer": "He said he was tired.",
+        "explanation": "Present Simple 'am tired' меняется на Past Simple 'was tired' в косвенной речи, когда вводный глагол в прошедшем времени."
+      },
+      {
+        "text": "Change to reported speech: 'She asked, 'Do you like pizza?''",
+        "options": ["She asked if I like pizza.", "She asked if I liked pizza.", "She asked if do I like pizza.", "She asked if I do like pizza."],
+        "correct_answer": "She asked if I liked pizza.",
+        "explanation": "Общий вопрос в косвенной речи вводится через 'if' или 'whether', и время меняется на прошедшее."
+      },
+      {
+        "text": "Change to reported speech: 'They told me, 'We will come tomorrow.''",
+        "options": ["They told me they will come tomorrow.", "They told me they would come tomorrow.", "They told me they would come the next day.", "They told me they will come the next day."],
+        "correct_answer": "They told me they would come the next day.",
+        "explanation": "Will меняется на would, а 'tomorrow' на 'the next day' или 'the following day' в косвенной речи."
+      },
+      {
+        "text": "Change to reported speech: 'He ordered, 'Close the door!''",
+        "options": ["He ordered close the door.", "He ordered to close the door.", "He ordered that I close the door.", "He ordered closing the door."],
+        "correct_answer": "He ordered to close the door.",
+        "explanation": "Приказы в косвенной речи часто передаются через 'to + инфинитив'."
+      },
+      {
+        "text": "Change to reported speech: 'She said, 'I have finished my work.''",
+        "options": ["She said she finished her work.", "She said she has finished her work.", "She said she had finished her work.", "She says she has finished her work."],
+        "correct_answer": "She said she had finished her work.",
+        "explanation": "Present Perfect 'have finished' меняется на Past Perfect 'had finished'."
+      },
+      {
+        "text": "Change to reported speech: 'He asked, 'Where is the station?''",
+        "options": ["He asked where is the station.", "He asked where the station was.", "He asked where the station is.", "He asked where was the station."],
+        "correct_answer": "He asked where the station was.",
+        "explanation": "В косвенном вопросе порядок слов становится утвердительным (Subject + Verb), и время меняется на прошедшее."
+      },
+      {
+        "text": "Change to reported speech: 'They suggested, 'Let's go to the cinema.''",
+        "options": ["They suggested to go to the cinema.", "They suggested going to the cinema.", "They suggested we go to the cinema.", "They suggested that we should go to the cinema."],
+        "correct_answer": "They suggested going to the cinema.",
+        "explanation": "После 'suggest' часто используется герундий (-ing форма)."
+      },
+      {
+        "text": "Change to reported speech: 'He promised, 'I will help you.''",
+        "options": ["He promised he will help me.", "He promised to help me.", "He promised he would help me.", "He promised he helps me."],
+        "correct_answer": "He promised he would help me.",
+        "explanation": "Will меняется на would в косвенной речи, или можно использовать 'to + инфинитив'."
+      }
+    ]
+  },
+  {
+    "topic": "Passive Voice",
+    "questions": [
+      {
+        "text": "Change to passive voice: 'She cleaned the room.'",
+        "options": ["The room cleans by her.", "The room was cleaned by her.", "The room is cleaned by her.", "The room cleaned by her."],
+        "correct_answer": "The room was cleaned by her.",
+        "explanation": "Past Simple Active (cleaned) становится Past Simple Passive (was/were + V3)."
+      },
+      {
+        "text": "Complete the sentence in passive voice: 'English \\_\\_\\_ worldwide.'",
+        "options": ["speaks", "is spoken", "is speaking", "spoke"],
+        "correct_answer": "is spoken",
+        "explanation": "Present Simple Active (people speak) становится Present Simple Passive (is/are + V3)."
+      },
+      {
+        "text": "Change to passive voice: 'They will build a new house.'",
+        "options": ["A new house will build.", "A new house will be built.", "A new house is built.", "A new house will built."],
+        "correct_answer": "A new house will be built.",
+        "explanation": "Future Simple Active (will build) становится Future Simple Passive (will be + V3)."
+      },
+      {
+        "text": "Complete the sentence in passive voice: 'The book \\_\\_\\_ by a famous author.'",
+        "options": ["wrote", "was written", "writes", "is writing"],
+        "correct_answer": "was written",
+        "explanation": "Past Simple Passive: to be (was/were) + Past Participle (V3)."
+      },
+      {
+        "text": "Which sentence is in passive voice?",
+        "options": ["He writes books.", "Books are written by him.", "He is writing books.", "Books write him."],
+        "correct_answer": "Books are written by him.",
+        "explanation": "Пассивный залог образуется с помощью формы глагола 'to be' и Past Participle."
+      },
+      {
+        "text": "Change to passive voice: 'Someone has stolen my wallet.'",
+        "options": ["My wallet has stolen.", "My wallet has been stolen.", "My wallet is stolen.", "My wallet was stolen."],
+        "correct_answer": "My wallet has been stolen.",
+        "explanation": "Present Perfect Active (has stolen) становится Present Perfect Passive (has/have been + V3)."
+      },
+      {
+        "text": "Complete the sentence: 'The bridge \\_\\_\\_ now.' (build - Present Continuous Passive)",
+        "options": ["is built", "is being built", "was built", "will be built"],
+        "correct_answer": "is being built",
+        "explanation": "Present Continuous Passive: is/are being + V3."
+      },
+      {
+        "text": "Change to passive voice: 'The company published the article yesterday.'",
+        "options": ["The article published yesterday.", "The article was published yesterday.", "The article is published yesterday.", "The article has been published yesterday."],
+        "correct_answer": "The article was published yesterday.",
+        "explanation": "Past Simple Active (published) становится Past Simple Passive (was/were + V3)."
+      }
+    ]
+  },
+  {
+    "topic": "Conditional Sentences",
+    "questions": [
+      {
+        "text": "Complete the Zero Conditional: 'If you heat ice, it \\_\\_\\_.'",
+        "options": ["melts", "will melt", "would melt", "melted"],
+        "correct_answer": "melts",
+        "explanation": "Zero Conditional (для фактов и истин): If + Present Simple, Present Simple."
+      },
+      {
+        "text": "Complete the First Conditional: 'If it \\_\\_\\_ tomorrow, we will stay home.'",
+        "options": ["rain", "rains", "rained", "is raining"],
+        "correct_answer": "rains",
+        "explanation": "First Conditional (для реальных будущих событий): If + Present Simple, Future Simple."
+      },
+      {
+        "text": "Complete the Second Conditional: 'If I \\_\\_\\_ a millionaire, I would buy a yacht.'",
+        "options": ["am", "was", "were", "had been"],
+        "correct_answer": "were",
+        "explanation": "Second Conditional (для нереальных ситуаций в настоящем/будущем): If + Past Simple (часто 'were' для 'to be'), would + V1."
+      },
+      {
+        "text": "Complete the Third Conditional: 'If she \\_\\_\\_ harder, she would have passed the exam.'",
+        "options": ["studied", "had studied", "would study", "studies"],
+        "correct_answer": "had studied",
+        "explanation": "Third Conditional (для нереальных ситуаций в прошлом): If + Past Perfect, would have + V3."
+      },
+      {
+        "text": "Which conditional is used for general truths?",
+        "options": ["Zero Conditional", "First Conditional", "Second Conditional", "Third Conditional"],
+        "correct_answer": "Zero Conditional",
+        "explanation": "Zero Conditional используется для общеизвестных фактов и научных истин."
+      },
+      {
+        "text": "If he \\_\\_\\_ the bus, he will be late.",
+        "options": ["miss", "misses", "missed", "had missed"],
+        "correct_answer": "misses",
+        "explanation": "First Conditional: If + Present Simple, Future Simple."
+      },
+      {
+        "text": "If I had known, I \\_\\_\\_ earlier.",
+        "options": ["would come", "would have come", "will come", "come"],
+        "correct_answer": "would have come",
+        "explanation": "Third Conditional: If + Past Perfect, would have + V3."
+      },
+      {
+        "text": "If I \\_\\_\\_ you, I would take that job.",
+        "options": ["am", "was", "were", "had been"],
+        "correct_answer": "were",
+        "explanation": "Second Conditional: If + Past Simple (для 'to be' часто 'were' во всех лицах), would + V1. Используется для советов или нереальных ситуаций."
+      }
+    ]
+  },
+  {
+    "topic": "Gerunds and Infinitives",
+    "questions": [
+      {
+        "text": "Choose the correct form: 'I enjoy \\_\\_\\_ books.'",
+        "options": ["read", "to read", "reading", "reads"],
+        "correct_answer": "reading",
+        "explanation": "После глагола 'enjoy' используется герундий (-ing форма)."
+      },
+      {
+        "text": "Complete the sentence: 'She decided \\_\\_\\_ a new car.'",
+        "options": ["buy", "buying", "to buy", "buys"],
+        "correct_answer": "to buy",
+        "explanation": "После глагола 'decide' используется инфинитив с 'to'."
+      },
+      {
+        "text": "Which verb is typically followed by a gerund?",
+        "options": ["Want", "Need", "Avoid", "Agree"],
+        "correct_answer": "Avoid",
+        "explanation": "Avoid - один из глаголов, после которого используется герундий."
+      },
+      {
+        "text": "Choose the correct form: '\\_\\_\\_ is good for health.'",
+        "options": ["Swim", "To swim", "Swimming", "Swims"],
+        "correct_answer": "Swimming",
+        "explanation": "Герундий может использоваться как подлежащее предложения."
+      },
+      {
+        "text": "Complete the sentence: 'He offered \\_\\_\\_ me.'",
+        "options": ["help", "helping", "to help", "helps"],
+        "correct_answer": "to help",
+        "explanation": "После глагола 'offer' используется инфинитив с 'to'."
+      },
+      {
+        "text": "Which verb is typically followed by an infinitive with 'to'?",
+        "options": ["Finish", "Suggest", "Promise", "Imagine"],
+        "correct_answer": "Promise",
+        "explanation": "Promise - один из глаголов, после которого используется инфинитив с 'to'."
+      },
+      {
+        "text": "Choose the correct form: 'They stopped \\_\\_\\_ a coffee.'",
+        "options": ["drink", "drinking", "to drink", "drank"],
+        "correct_answer": "to drink",
+        "explanation": "Stop + to V означает 'остановиться, чтобы сделать что-то'."
+      },
+      {
+        "text": "Complete the sentence: 'I'm used to \\_\\_\\_ early.'",
+        "options": ["get up", "to get up", "getting up", "got up"],
+        "correct_answer": "getting up",
+        "explanation": "После 'be used to' используется герундий (-ing форма)."
+      }
+    ]
+  },
+  {
+    "topic": "Clauses",
+    "questions": [
+      {
+        "text": "Identify the main clause: 'Although it was raining, we went for a walk.'",
+        "options": ["Although it was raining", "it was raining", "we went for a walk", "we went"],
+        "correct_answer": "we went for a walk",
+        "explanation": "Main clause (главное предложение) может существовать самостоятельно."
+      },
+      {
+        "text": "Which word introduces an adverbial clause of time?",
+        "options": ["Because", "Although", "When", "That"],
+        "correct_answer": "When",
+        "explanation": "When (когда) вводит придаточное предложение времени."
+      },
+      {
+        "text": "Complete the sentence: 'This is the house \\_\\_\\_ Jack built.'",
+        "options": ["who", "whose", "which", "where"],
+        "correct_answer": "which",
+        "explanation": "Which (который) используется для введения придаточного предложения, относящегося к неодушевленному предмету."
+      },
+      {
+        "text": "Identify the noun clause: 'I believe that he is honest.'",
+        "options": ["I believe", "that he is honest", "he is honest", "honest"],
+        "correct_answer": "that he is honest",
+        "explanation": "Noun clause (придаточное существительное) функционирует как существительное в предложении, в данном случае - как дополнение к глаголу 'believe'."
+      },
+      {
+        "text": "Which clause tells us 'why' something happened?",
+        "options": ["Time clause", "Result clause", "Reason clause", "Condition clause"],
+        "correct_answer": "Reason clause",
+        "explanation": "Reason clause (придаточное причины) отвечает на вопрос 'почему?'."
+      },
+      {
+        "text": "Complete the sentence: 'She sings \\_\\_\\_ she is happy.'",
+        "options": ["unless", "although", "because", "so that"],
+        "correct_answer": "because",
+        "explanation": "Because (потому что) вводит придаточное причины."
+      },
+      {
+        "text": "Which of these words can introduce a relative clause?",
+        "options": ["If", "While", "Whom", "Since"],
+        "correct_answer": "Whom",
+        "explanation": "Whom (кого, кому) - это относительное местоимение, вводящее относительное (придаточное определительное) предложение."
+      },
+      {
+        "text": "Identify the independent clause: 'If it rains, we will stay home.'",
+        "options": ["If it rains", "it rains", "we will stay home", "stay home"],
+        "correct_answer": "we will stay home",
+        "explanation": "Independent clause (независимое предложение) может стоять отдельно как полное предложение."
+      }
+    ]
+  }
+]

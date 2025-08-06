@@ -1,0 +1,373 @@
+[
+  {
+    "topic": "Wrong Verb Forms",
+    "questions": [
+      {
+        "text": "Choose the correct sentence: 'He \\_\\_\\_ to school every day.'",
+        "options": ["go", "goes", "going", "went"],
+        "correct_answer": "goes",
+        "explanation": "В Present Simple для 3-го лица единственного числа ('he') к глаголу добавляется -s."
+      },
+      {
+        "text": "Correct the sentence: 'They was happy.'",
+        "options": ["They is happy.", "They are happy.", "They were happy.", "They been happy."],
+        "correct_answer": "They were happy.",
+        "explanation": "Глагол 'to be' в Past Simple для множественного числа ('they') - 'were'."
+      },
+      {
+        "text": "Choose the correct form: 'I have \\_\\_\\_ home.'",
+        "options": ["went", "gone", "go", "goes"],
+        "correct_answer": "gone",
+        "explanation": "В Present Perfect используется третья форма глагола (Past Participle). Третья форма от 'go' - 'gone'."
+      },
+      {
+        "text": "Correct the sentence: 'She did breaked the window.'",
+        "options": ["She did break the window.", "She broke the window.", "She breaks the window.", "She did breaking the window."],
+        "correct_answer": "She broke the window.",
+        "explanation": "В утвердительном предложении Past Simple используется вторая форма глагола. Если бы использовалось 'did' для усиления, то 'break' был бы в базовой форме."
+      },
+      {
+        "text": "Choose the correct sentence: 'The sun always \\_\\_\\_ in the east.'",
+        "options": ["rise", "rises", "rose", "rising"],
+        "correct_answer": "rises",
+        "explanation": "В Present Simple для 3-го лица единственного числа ('sun') к глаголу добавляется -s."
+      },
+      {
+        "text": "Correct the sentence: 'He don't like coffee.'",
+        "options": ["He doesn't like coffee.", "He do not like coffee.", "He not like coffee.", "He don't likes coffee."],
+        "correct_answer": "He doesn't like coffee.",
+        "explanation": "В Present Simple для 3-го лица единственного числа используется 'doesn't'."
+      },
+      {
+        "text": "Choose the correct form: 'She has \\_\\_\\_ that movie.'",
+        "options": ["saw", "seen", "see", "seeing"],
+        "correct_answer": "seen",
+        "explanation": "В Present Perfect используется третья форма глагола. Третья форма от 'see' - 'seen'."
+      },
+      {
+        "text": "Correct the sentence: 'They is living here.'",
+        "options": ["They are living here.", "They is live here.", "They be living here.", "They was living here."],
+        "correct_answer": "They are living here.",
+        "explanation": "Для подлежащего 'they' в Present Continuous используется 'are'."
+      }
+    ]
+  },
+  {
+    "topic": "Do / Does / Did Errors",
+    "questions": [
+      {
+        "text": "Choose the correct sentence: 'He \\_\\_\\_ not like coffee.'",
+        "options": ["do", "does", "is", "don't"],
+        "correct_answer": "does",
+        "explanation": "Для 3-го лица единственного числа ('he') в Present Simple используется 'does'."
+      },
+      {
+        "text": "Correct the question: 'Did you went to the party?'",
+        "options": ["Did you go to the party?", "Do you went to the party?", "Were you went to the party?", "Did you goes to the party?"],
+        "correct_answer": "Did you go to the party?",
+        "explanation": "После 'did' (в вопросах и отрицаниях) основной глагол всегда используется в базовой форме."
+      },
+      {
+        "text": "Choose the correct sentence: 'She \\_\\_\\_ not likes pizza.'",
+        "options": ["do", "does", "is", "don't"],
+        "correct_answer": "does",
+        "explanation": "После 'does not' ('doesn't') основной глагол не имеет окончания -s/-es."
+      },
+      {
+        "text": "Correct the sentence: 'They not play football.'",
+        "options": ["They don't play football.", "They not playing football.", "They do not play football.", "They doesn't play football."],
+        "correct_answer": "They do not play football.",
+        "explanation": "В отрицаниях Present Simple (кроме 'to be') нужен вспомогательный глагол 'do'."
+      },
+      {
+        "text": "Choose the correct question: '\\_\\_\\_ she work here?'",
+        "options": ["Do", "Does", "Is", "Did"],
+        "correct_answer": "Does",
+        "explanation": "Для 3-го лица единственного числа ('she') в вопросах Present Simple используется 'Does'."
+      },
+      {
+        "text": "Correct the sentence: 'I didn't had time.'",
+        "options": ["I didn't have time.", "I don't had time.", "I haven't time.", "I didn't has time."],
+        "correct_answer": "I didn't have time.",
+        "explanation": "После 'did not' ('didn't') основной глагол используется в базовой форме."
+      },
+      {
+        "text": "Choose the correct sentence: 'They \\_\\_\\_ understand.'",
+        "options": ["not", "do not", "does not", "are not"],
+        "correct_answer": "do not",
+        "explanation": "Для подлежащего 'they' в Present Simple в отрицании используется 'do not'."
+      },
+      {
+        "text": "Correct the question: 'Does he plays football?'",
+        "options": ["Does he play football?", "Do he plays football?", "Is he play football?", "Does he playing football?"],
+        "correct_answer": "Does he play football?",
+        "explanation": "После 'Does' основной глагол используется в базовой форме (без -s/-es)."
+      }
+    ]
+  },
+  {
+    "topic": "Word Order",
+    "questions": [
+      {
+        "text": "Choose the correct sentence: 'Always she is late.'",
+        "options": ["She always is late.", "She is always late.", "Is she always late.", "Always is she late."],
+        "correct_answer": "She is always late.",
+        "explanation": "Наречия частоты (always) ставятся после глагола 'to be' и перед основным глаголом."
+      },
+      {
+        "text": "Correct the sentence: 'I like very much this book.'",
+        "options": ["I very much like this book.", "I like this book very much.", "Very much I like this book.", "This book I like very much."],
+        "correct_answer": "I like this book very much.",
+        "explanation": "Наречия, такие как 'very much', обычно ставятся в конце предложения или после прямого дополнения."
+      },
+      {
+        "text": "Choose the correct question: 'Came he to the party?'",
+        "options": ["Did he come to the party?", "Does he come to the party?", "He came to the party?", "Came to the party he?"],
+        "correct_answer": "Did he come to the party?",
+        "explanation": "В вопросах Past Simple используется вспомогательный глагол 'did' и инверсия подлежащего и вспомогательного глагола."
+      },
+      {
+        "text": "Correct the sentence: 'To the store went I.'",
+        "options": ["I went to the store.", "Went I to the store.", "To the store I went.", "I to the store went."],
+        "correct_answer": "I went to the store.",
+        "explanation": "Основной порядок слов в английском: Subject + Verb + Object/Complement/Adverbial."
+      },
+      {
+        "text": "Choose the correct placement of 'never': 'He is \\_\\_\\_ happy.'",
+        "options": ["never is", "is never", "never he is", "is he never"],
+        "correct_answer": "is never",
+        "explanation": "Наречия частоты ставятся после глагола 'to be'."
+      },
+      {
+        "text": "Correct the sentence: 'She opened slowly the door.'",
+        "options": ["She slowly opened the door.", "Slowly she opened the door.", "She opened the door slowly.", "The door she opened slowly."],
+        "correct_answer": "She opened the door slowly.",
+        "explanation": "Наречия образа действия обычно ставятся после глагола или в конце предложения."
+      },
+      {
+        "text": "Which sentence has the correct word order for an indirect question?",
+        "options": ["He asked what was my name.", "He asked what my name was.", "He asked what is my name.", "He asked what my name is."],
+        "correct_answer": "He asked what my name was.",
+        "explanation": "В косвенных вопросах порядок слов утвердительный (Subject + Verb), и происходит согласование времен."
+      },
+      {
+        "text": "Choose the correct sentence: 'I \\_\\_\\_ go to work by bus.' (often)",
+        "options": ["I go often to work by bus.", "I often go to work by bus.", "Often I go to work by bus.", "I go to work often by bus."],
+        "correct_answer": "I often go to work by bus.",
+        "explanation": "Наречия частоты обычно ставятся перед основным глаголом."
+      }
+    ]
+  },
+  {
+    "topic": "Wrong Prepositions",
+    "questions": [
+      {
+        "text": "Choose the correct preposition: 'Married \\_\\_\\_ him.'",
+        "options": ["with", "to", "by", "for"],
+        "correct_answer": "to",
+        "explanation": "Устойчивое выражение: 'married to someone'."
+      },
+      {
+        "text": "Complete the sentence: 'She is good \\_\\_\\_ math.'",
+        "options": ["in", "at", "on", "with"],
+        "correct_answer": "at",
+        "explanation": "Устойчивое выражение: 'good at something'."
+      },
+      {
+        "text": "Choose the correct preposition: 'Listen \\_\\_\\_ music.'",
+        "options": ["to", "at", "for", "on"],
+        "correct_answer": "to",
+        "explanation": "Устойчивое выражение: 'listen to something'."
+      },
+      {
+        "text": "Complete the sentence: 'He depends \\_\\_\\_ you.'",
+        "options": ["from", "on", "at", "with"],
+        "correct_answer": "on",
+        "explanation": "Устойчивое выражение: 'depend on someone/something'."
+      },
+      {
+        "text": "Choose the correct preposition: 'She is interested \\_\\_\\_ history.'",
+        "options": ["at", "in", "on", "for"],
+        "correct_answer": "in",
+        "explanation": "Устойчивое выражение: 'interested in something'."
+      },
+      {
+        "text": "Complete the sentence: 'Are you afraid \\_\\_\\_ heights?'",
+        "options": ["from", "of", "with", "about"],
+        "correct_answer": "of",
+        "explanation": "Устойчивое выражение: 'afraid of something'."
+      },
+      {
+        "text": "Choose the correct preposition: 'She apologized \\_\\_\\_ being late.'",
+        "options": ["for", "of", "about", "to"],
+        "correct_answer": "for",
+        "explanation": "Устойчивое выражение: 'apologize for something'."
+      },
+      {
+        "text": "Complete the sentence: 'I'm looking forward \\_\\_\\_ my vacation.'",
+        "options": ["at", "to", "for", "about"],
+        "correct_answer": "to",
+        "explanation": "Устойчивое выражение: 'look forward to something/doing something'."
+      }
+    ]
+  },
+  {
+    "topic": "Articles",
+    "questions": [
+      {
+        "text": "Choose the correct article: 'I have \\_\\_\\_ cat.'",
+        "options": ["a", "an", "the", "no article"],
+        "correct_answer": "a",
+        "explanation": "Перед исчисляемым существительным в единственном числе ('cat') используется неопределенный артикль 'a'."
+      },
+      {
+        "text": "Correct the sentence: 'The Mount Everest is high.'",
+        "options": ["A Mount Everest is high.", "An Mount Everest is high.", "Mount Everest is high.", "The Mount Everest are high."],
+        "correct_answer": "Mount Everest is high.",
+        "explanation": "С названиями отдельных гор артикль не используется."
+      },
+      {
+        "text": "Choose the correct article: 'This is \\_\\_\\_ best day.'",
+        "options": ["a", "an", "the", "no article"],
+        "correct_answer": "the",
+        "explanation": "С прилагательными в превосходной степени ('best') используется определенный артикль 'the'."
+      },
+      {
+        "text": "Correct the sentence: 'I like apple.'",
+        "options": ["I like a apple.", "I like an apple.", "I like the apple.", "I like apples."],
+        "correct_answer": "I like an apple.",
+        "explanation": "Если речь об одном яблоке, то 'an' (так как 'apple' начинается с гласного звука). Если в общем, то 'apples'."
+      },
+      {
+        "text": "Choose the correct article: 'He plays \\_\\_\\_ piano.'",
+        "options": ["a", "an", "the", "no article"],
+        "correct_answer": "the",
+        "explanation": "С названиями музыкальных инструментов используется определенный артикль 'the'."
+      },
+      {
+        "text": "Correct the sentence: 'She is a honest person.'",
+        "options": ["She is an honest person.", "She is the honest person.", "She is honest person.", "She is a honest persons."],
+        "correct_answer": "She is an honest person.",
+        "explanation": "Хотя 'honest' начинается с 'h', звук здесь гласный, поэтому используется 'an'."
+      },
+      {
+        "text": "Choose the correct article: '\\_\\_\\_ United Kingdom is in Europe.'",
+        "options": ["A", "An", "The", "No article"],
+        "correct_answer": "The",
+        "explanation": "С названиями стран, включающими слова типа 'United', 'Kingdom', 'Republic', используется 'the'."
+      },
+      {
+        "text": "Correct the sentence: 'I go to school by a bus.'",
+        "options": ["I go to school by bus.", "I go to the school by a bus.", "I go to school by the bus.", "I go to a school by bus."],
+        "correct_answer": "I go to school by bus.",
+        "explanation": "С видами транспорта, когда они используются в общем смысле (by bus, by car), артикль не используется. Также 'school' используется без артикля, когда речь идет о посещении учебного заведения по его назначению."
+      }
+    ]
+  },
+  {
+    "topic": "Too / Enough",
+    "questions": [
+      {
+        "text": "Choose the correct sentence: 'He is enough tall.'",
+        "options": ["He is tall enough.", "He enough tall.", "Enough he is tall.", "Tall enough he is."],
+        "correct_answer": "He is tall enough.",
+        "explanation": "Enough ставится ПОСЛЕ прилагательного или наречия."
+      },
+      {
+        "text": "Complete the sentence: 'It's \\_\\_\\_ hot to go outside.'",
+        "options": ["enough", "too", "very", "much"],
+        "correct_answer": "too",
+        "explanation": "Too ставится ПЕРЕД прилагательным или наречием, указывая на избыточность."
+      },
+      {
+        "text": "Choose the correct sentence: 'I have enough money for buy a car.'",
+        "options": ["I have money enough to buy a car.", "I have enough money to buy a car.", "I enough have money to buy a car.", "Enough money I have to buy a car."],
+        "correct_answer": "I have enough money to buy a car.",
+        "explanation": "Enough ставится ПЕРЕД существительным, а за глаголом следует инфинитив с 'to'."
+      },
+      {
+        "text": "Correct the sentence: 'She runs quickly enough.'",
+        "options": ["She enough quickly runs.", "She runs enough quickly.", "She runs too quickly.", "She runs quickly enough."],
+        "correct_answer": "She runs quickly enough.",
+        "explanation": "Enough ставится ПОСЛЕ наречия."
+      },
+      {
+        "text": "Choose the correct sentence: 'This coffee is \\_\\_\\_ to drink.' (hot)",
+        "options": ["hot enough", "enough hot", "too hot", "hot too"],
+        "correct_answer": "hot enough",
+        "explanation": "Enough ставится ПОСЛЕ прилагательного."
+      },
+      {
+        "text": "Correct the sentence: 'He is too much kind.'",
+        "options": ["He is too kind.", "He is much too kind.", "He too kind.", "He is too many kind."],
+        "correct_answer": "He is too kind.",
+        "explanation": "Не используется 'too much' с прилагательными. Просто 'too'."
+      },
+      {
+        "text": "Choose the correct sentence: 'There aren't \\_\\_\\_ chairs for everyone.'",
+        "options": ["too", "enough", "many", "much"],
+        "correct_answer": "enough",
+        "explanation": "Enough используется с существительными для обозначения достаточного количества."
+      },
+      {
+        "text": "Complete the sentence: 'The music is \\_\\_\\_ loud.'",
+        "options": ["enough", "too", "very", "much"],
+        "correct_answer": "too",
+        "explanation": "Too ставится ПЕРЕД прилагательным ('loud') для обозначения избыточности."
+      }
+    ]
+  },
+  {
+    "topic": "False Friends",
+    "questions": [
+      {
+        "text": "What does 'actual' mean in English?",
+        "options": ["актуальный", "фактический, действительный", "действующий", "срочный"],
+        "correct_answer": "фактический, действительный",
+        "explanation": "Actual (англ.) = фактический, действительный. Актуальный (рус.) = current, relevant."
+      },
+      {
+        "text": "If someone is 'sympathetic' in English, what does it mean?",
+        "options": ["симпатичный (красивый)", "сочувствующий, понимающий", "умный", "добрый"],
+        "correct_answer": "сочувствующий, понимающий",
+        "explanation": "Sympathetic (англ.) = сочувствующий, понимающий. Симпатичный (рус.) = nice, attractive, cute."
+      },
+      {
+        "text": "What is the English meaning of 'intelligent'?",
+        "options": ["интеллигентный (воспитанный)", "умный, сообразительный", "образованный", "вежливый"],
+        "correct_answer": "умный, сообразительный",
+        "explanation": "Intelligent (англ.) = умный, сообразительный. Интеллигентный (рус.) = educated, well-mannered, cultured."
+      },
+      {
+        "text": "An 'artist' in English most commonly refers to a:",
+        "options": ["актер", "художник, скульптор", "певец", "любой исполнитель"],
+        "correct_answer": "художник, скульптор",
+        "explanation": "Artist (англ.) = художник, скульптор (человек искусства). Артист (рус.) = actor, performer."
+      },
+      {
+        "text": "If a situation is 'problematic' in English, it means it is:",
+        "options": ["проблематичный (вызывающий вопросы)", "легкий", "интересный", "понятный"],
+        "correct_answer": "проблематичный (вызывающий вопросы)",
+        "explanation": "Problematic (англ.) = сложный, сомнительный, проблематичный. В русском языке 'проблематичный' может иметь более широкий смысл."
+      },
+      {
+        "text": "The word 'magazine' in English means:",
+        "options": ["магазин (торговая точка)", "журнал", "склад", "книга"],
+        "correct_answer": "журнал",
+        "explanation": "Magazine (англ.) = журнал. Магазин (рус.) = shop, store."
+      },
+      {
+        "text": "If something is 'data' in English, what is it?",
+        "options": ["дата (календарная)", "данные, информация", "факт", "документ"],
+        "correct_answer": "данные, информация",
+        "explanation": "Data (англ.) = данные, информация. Дата (рус.) = date."
+      },
+      {
+        "text": "What does 'complexion' refer to in English?",
+        "options": ["комплекция (телосложение)", "цвет лица, тон кожи", "сложность", "комплекс"],
+        "correct_answer": "цвет лица, тон кожи",
+        "explanation": "Complexion (англ.) = цвет лица, тон кожи. Комплекция (рус.) = build, physique, body type."
+      }
+    ]
+  }
+]
