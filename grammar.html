@@ -347,6 +347,8 @@
     function showCategory(category) {
       currentCategory = category;
       
+      console.log('Showing category:', category);
+      
       // Обновляем активную кнопку
       document.querySelectorAll('.category-btn').forEach(btn => {
         btn.classList.remove('active');
@@ -359,6 +361,8 @@
       grammarSections.innerHTML = '';
       
       const categoryData = grammarData[category];
+      console.log('Category data:', categoryData);
+      console.log('Category keys:', Object.keys(categoryData));
       
       Object.keys(categoryData).forEach(subcategory => {
         const subcategoryData = categoryData[subcategory];
@@ -403,6 +407,8 @@
     }
     
     function createNestedSection(title, data, isNested = false) {
+      console.log('Creating nested section:', title, 'with data:', data);
+      
       const section = document.createElement('div');
       section.className = isNested ? 'grammar-section nested-category' : 'grammar-section';
       
