@@ -362,7 +362,7 @@
       
       Object.keys(categoryData).forEach(subcategory => {
         const subcategoryData = categoryData[subcategory];
-        
+
         if (subcategoryData.type === 'text') {
           // Отображаем текстовый контент
           const section = createTextSection(subcategory, subcategoryData.content);
@@ -376,23 +376,9 @@
           const fileSection = createFileContentSection(subcategory, subcategoryData);
           grammarSections.appendChild(fileSection);
         } else if (typeof subcategoryData === 'object' && !subcategoryData.type) {
-          // Для раздела Tenses создаем карточки для каждого времени
-          if (category === '📚 Tenses') {
-            Object.keys(subcategoryData).forEach(tenseName => {
-              const tenseData = subcategoryData[tenseName];
-              if (tenseData.type === 'text') {
-                const tenseSection = createTenseCard(tenseName, tenseData.content);
-                grammarSections.appendChild(tenseSection);
-              } else if (tenseData.type === 'grammar_test') {
-                const testSection = createTestSection(tenseData);
-                grammarSections.appendChild(testSection);
-              }
-            });
-          } else {
-            // Рекурсивно обрабатываем вложенные категории для других разделов
-            const nestedSection = createNestedSection(subcategory, subcategoryData, false);
-            grammarSections.appendChild(nestedSection);
-          }
+          // Рекурсивно обрабатываем вложенные категории
+          const nestedSection = createNestedSection(subcategory, subcategoryData, false);
+          grammarSections.appendChild(nestedSection);
         }
       });
     }
