@@ -380,11 +380,68 @@
           const fileSection = createFileContentSection(subcategory, subcategoryData);
           grammarSections.appendChild(fileSection);
         } else if (typeof subcategoryData === 'object' && !subcategoryData.type) {
-          // Рекурсивно обрабатываем вложенные категории
-          const nestedSection = createNestedSection(subcategory, subcategoryData, false);
-          grammarSections.appendChild(nestedSection);
+          // Для раздела Tenses создаем карточки для каждого времени
+          if (category === '📚 Tenses') {
+            Object.keys(subcategoryData).forEach(tenseName => {
+              const tenseData = subcategoryData[tenseName];
+              if (tenseData.type === 'text') {
+                const tenseSection = createTenseCard(tenseName, tenseData.content);
+                grammarSections.appendChild(tenseSection);
+              } else if (tenseData.type === 'grammar_test') {
+                const testSection = createTestSection(tenseData);
+                grammarSections.appendChild(testSection);
+              }
+            });
+          } else {
+            // Рекурсивно обрабатываем вложенные категории для других разделов
+            const nestedSection = createNestedSection(subcategory, subcategoryData, false);
+            grammarSections.appendChild(nestedSection);
+          }
         }
       });
+    }
+    
+    function createTenseCard(title, content) {
+      const card = document.createElement('div');
+      card.className = 'tense-card';
+      card.style.cssText = `
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 15px 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      `;
+      
+      card.onmouseover = () => {
+        card.style.transform = 'translateY(-2px)';
+        card.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+      };
+      
+      card.onmouseout = () => {
+        card.style.transform = 'translateY(0)';
+        card.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+      };
+      
+      const titleElement = document.createElement('h3');
+      titleElement.textContent = title;
+      titleElement.style.cssText = `
+        color: #007bff;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+      `;
+      card.appendChild(titleElement);
+      
+      const contentDiv = document.createElement('div');
+      contentDiv.className = 'grammar-content';
+      
+      // Преобразуем markdown-подобный текст в HTML
+      const formattedContent = formatGrammarContent(content);
+      contentDiv.innerHTML = formattedContent;
+      
+      card.appendChild(contentDiv);
+      return card;
     }
     
     function createTextSection(title, content) {
