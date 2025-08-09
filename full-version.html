@@ -69,17 +69,17 @@
     } else {
       console.log('Running in browser mode');
     }
-
+    
     function goBack() {
-      console.log('Going back to main menu');
-      
       try {
-        console.log('Attempting back navigation with window.location.replace');
-        window.location.replace('index.html');
-      } catch (error) {
-        console.error('Back navigation error:', error);
-        window.location.href = 'index.html';
+        if (window.history.length > 1) {
+          window.history.back();
+          return;
+        }
+      } catch (e) {
+        console.warn('history.back failed, fallback to index.html');
       }
+      window.location.href = 'index.html#main';
     }
     
     function contactSupport() {

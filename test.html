@@ -33,14 +33,15 @@
     }
 
     function goBack() {
-      if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
-        Telegram.WebApp.showAlert('Возврат в главное меню...');
-        setTimeout(() => {
-          window.location.href = 'index.html';
-        }, 300);
-      } else {
-        window.location.href = 'index.html';
+      try {
+        if (window.history.length > 1) {
+          window.history.back();
+          return;
+        }
+      } catch (e) {
+        console.warn('history.back failed, fallback to index.html');
       }
+      window.location.href = 'index.html#main';
     }
     
     function testAlert() {

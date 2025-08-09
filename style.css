@@ -169,10 +169,10 @@ body {
 }
 
 .back-btn {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background: rgba(255, 255, 255, 0.2);
   border: none;
   color: white;
@@ -180,6 +180,14 @@ body {
   border-radius: 20px;
   cursor: pointer;
   font-size: 16px;
+  z-index: 2;
+}
+
+.header .back-btn {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .back-btn:hover {
