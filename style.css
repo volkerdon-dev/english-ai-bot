@@ -97,8 +97,10 @@
 }
 
 .grammar-content p {
-  margin: 10px 0;
-  line-height: 1.6;
+  margin: 10px 0 12px 0;
+  line-height: 1.72;
+  font-size: 16.5px;
+  letter-spacing: 0.2px;
 }
 
 .grammar-content ul {
@@ -108,7 +110,7 @@
 
 .grammar-content li {
   margin: 8px 0;
-  line-height: 1.5;
+  line-height: 1.72;
 }
 
 .grammar-content strong {
@@ -137,11 +139,17 @@
 
 /* Existing styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", sans-serif;
   background-color: #f9f9f9;
   margin: 0;
   padding: 0;
-  color: #333;
+  color: #1f2937;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.65;
 }
 
 .container {
@@ -186,9 +194,10 @@ body {
 }
 
 .content h2 {
-  color: #333;
-  margin-bottom: 30px;
-  font-size: 24px;
+  color: #111827;
+  margin-bottom: 24px;
+  font-size: 22px;
+  letter-spacing: 0.2px;
 }
 
 /* Button styles */
@@ -398,6 +407,9 @@ body {
   border-radius:16px;
   box-shadow: 0 4px 20px rgba(0,0,0,.06);
   padding: 12px;
+  font-size: 16.5px;
+  line-height: 1.75;
+  white-space: pre-wrap;
 }
 
 .btn{

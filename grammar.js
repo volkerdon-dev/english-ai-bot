@@ -56,8 +56,6 @@
       const box = document.createElement('div');
       box.className = 'detail-box';
       box.style.whiteSpace = 'pre-wrap';
-      box.style.lineHeight = '1.6';
-      box.style.fontSize = '16px';
       box.innerText = leaf.content || '';
       container.appendChild(box);
       tg && tg.MainButton.hide();
