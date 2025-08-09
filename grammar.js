@@ -1,5 +1,5 @@
 
-// grammar.js — iOS-like design + full support for "quiz" and "grammar_test"
+// grammar.js — robust leaf detection + iOS-like UI
 (function(){
   const tg = window.Telegram && window.Telegram.WebApp;
   const root = () => document.getElementById('grammar-root');
@@ -7,7 +7,6 @@
   let TREE = null;
   const path = [];
 
-  // Inject CSS link once (no need to change index.html)
   function injectCSS(){
     if (document.getElementById('grammar-ios-css')) return;
     const link = document.createElement('link');
@@ -20,16 +19,32 @@
   function byPath(obj, arr){
     return arr.reduce((o,k)=> (o && o[k]) || null, obj);
   }
-  function isLeaf(node){
-    return node && typeof node === 'object' && (node.type === 'text' || node.type === 'quiz' || node.type === 'grammar_test');
+
+  function hasQuestions(node){
+    return node && typeof node === 'object' && Array.isArray(node.questions);
   }
+  function hasContent(node){
+    return node && typeof node === 'object' && typeof node.content === 'string';
+  }
+  function normalizeType(t){
+    return (t || '').toString().trim().toLowerCase();
+  }
+  function isLeaf(node){
+    if (!node || typeof node !== 'object') return false;
+    const t = normalizeType(node.type);
+    if (t === 'text' || t === 'quiz' || t === 'grammar_test') return true;
+    // Fallbacks: treat any object with questions as test, or with content as text
+    if (hasQuestions(node)) return true;
+    if (hasContent(node)) return true;
+    return false;
+  }
+
   function title(){
     return path.length ? path[path.length-1] : "📚 Grammar";
   }
 
   function escapeHTML(s){ return String(s || '').replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
 
-  // Render text content into nice cards with bullet list support
   function renderRich(text){
     const lines = (text || '').split(/\r?\n/);
     let html = '', inList = false;
@@ -67,7 +82,6 @@
     setHeader(title());
   }
 
-  // Helpers for tests that store letters differently
   function getOptionLetter(optText){
     const m = String(optText).trim().match(/^([A-ZА-Я])[\.\)]/i);
     return m ? m[1].toUpperCase() : null;
@@ -76,7 +90,6 @@
     const ca = q.correct_answer;
     if (!ca) return null;
     if (typeof ca === 'string'){
-      // can be "B" or "B. went"
       const m = ca.trim().match(/^([A-ZА-Я])/i);
       return m ? m[1].toUpperCase() : null;
     }
@@ -173,7 +186,8 @@
   }
 
   function renderLeaf(leaf){
-    if (leaf.type === 'text'){
+    const t = normalizeType(leaf.type);
+    if (t === 'text' || hasContent(leaf)){
       const container = root();
       container.classList.remove('section-grid');
       container.innerHTML = '';
@@ -194,7 +208,7 @@
       return;
     }
 
-    if (leaf.type === 'quiz' || leaf.type === 'grammar_test'){
+    if (t === 'quiz' || t === 'grammar_test' || hasQuestions(leaf)){
       renderTest(leaf);
       return;
     }
