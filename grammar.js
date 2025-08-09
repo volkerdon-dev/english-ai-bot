@@ -97,6 +97,11 @@
     }
     return String(ca).toUpperCase();
   }
+  function displayOptionText(opt){
+    const s = String(opt || '').trim();
+    const m = s.match(/^([A-ZА-Я])[\.\)]\s*(.*)$/i);
+    return m ? m[2] : s;
+  }
 
   function toArrayQuestions(questions){
     if (Array.isArray(questions)) return questions;
@@ -153,7 +158,7 @@
         div.style.marginTop = '10px';
         div.textContent = opt;
         div.onclick = () => {
-          answers[idx] = getOptionLetter(opt) || String(opt).trim()[0];
+          answers[idx] = opt;
           [...qWrap.querySelectorAll('.section-card')].forEach(el => el.style.opacity = '0.6');
           div.style.opacity = '1';
         };
@@ -167,7 +172,7 @@
       const q = questions[idx] || {};
       const chosen = answers[idx];
       if (!chosen) { tg && tg.HapticFeedback && tg.HapticFeedback.notificationOccurred('warning'); return; }
-      if ((getCorrectLetter(q) || '').toUpperCase() === String(chosen).toUpperCase()) score++;
+      if ((getCorrectLetter(q) || '').toUpperCase() === (getOptionLetter(chosen) || '').toUpperCase()) score++;
 
       if (idx < questions.length - 1){
         idx++; renderQuestion();
@@ -180,11 +185,15 @@
           const row = document.createElement('div');
           row.className = 'tg-card';
           row.style.marginTop = '10px';
-          const correct = getCorrectLetter(q) || '—';
-          const your = answers[i] || '—';
+          const correctLetter = getCorrectLetter(q) || '—';
+          const chosenOpt = answers[i];
+          const chosenLetter = getOptionLetter(chosenOpt) || '';
+          const isCorrect = String(chosenLetter).toUpperCase() === String(correctLetter).toUpperCase();
+          const correctText = (q.options || []).find(o => (getOptionLetter(o) || '').toUpperCase() === String(correctLetter).toUpperCase()) || q.correct_answer || '—';
           const qText = (q && (q.text || q.question)) || '';
           row.innerHTML = `<div class="tg-sub" style="font-weight:600;margin-bottom:6px;">${i+1}. ${escapeHTML(qText)}</div>
-            <div class="tg-sub">Ваш ответ: ${your} · Правильный: ${correct}</div>
+            <div class="tg-sub" style="${isCorrect ? 'color:#34c759;' : 'color:#ef4444;'}">Ваш ответ: ${escapeHTML(chosenOpt || '—')}</div>
+            <div class="tg-sub">Правильный: ${escapeHTML(correctText)}</div>
             ${q && q.explanation ? `<div class="tg-sub" style="margin-top:6px;">${escapeHTML(q.explanation)}</div>` : ''}`;
           qWrap.appendChild(row);
         });
