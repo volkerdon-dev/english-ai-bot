@@ -52,14 +52,15 @@
     }
 
     function goBack() {
-      console.log('Going back to main menu');
-      
       try {
-        window.location.href = 'index.html';
-      } catch (error) {
-        console.error('Navigation failed:', error);
-        window.open('index.html', '_self');
+        if (window.history.length > 1) {
+          window.history.back();
+          return;
+        }
+      } catch (e) {
+        console.warn('history.back failed, fallback to index.html');
       }
+      window.location.href = 'index.html#main';
     }
     
     function testAlert() {
