@@ -1,5 +1,4 @@
-
-// grammar.js — robust leaf detection + iOS-like UI
+// grammar.js — robust leaf detection + iOS-like UI (with universal quiz support)
 (function(){
   const tg = window.Telegram && window.Telegram.WebApp;
   const root = () => document.getElementById('grammar-root');
@@ -7,6 +6,7 @@
   let TREE = null;
   const path = [];
 
+  // Inject CSS once (keeps index.html unchanged)
   function injectCSS(){
     if (document.getElementById('grammar-ios-css')) return;
     const link = document.createElement('link');
@@ -21,7 +21,8 @@
   }
 
   function hasQuestions(node){
-    return node && typeof node === 'object' && Array.isArray(node.questions);
+    // accept arrays or objects for questions
+    return node && typeof node === 'object' && ('questions' in node);
   }
   function hasContent(node){
     return node && typeof node === 'object' && typeof node.content === 'string';
@@ -82,6 +83,7 @@
     setHeader(title());
   }
 
+  // Helpers for tests that store letters differently
   function getOptionLetter(optText){
     const m = String(optText).trim().match(/^([A-ZА-Я])[\.\)]/i);
     return m ? m[1].toUpperCase() : null;
@@ -94,6 +96,12 @@
       return m ? m[1].toUpperCase() : null;
     }
     return String(ca).toUpperCase();
+  }
+
+  function toArrayQuestions(questions){
+    if (Array.isArray(questions)) return questions;
+    if (questions && typeof questions === 'object') return Object.values(questions);
+    return [];
   }
 
   function renderTest(leaf){
@@ -109,7 +117,7 @@
 
     const h = document.createElement('div');
     h.className = 'tg-headline';
-    h.textContent = title();
+    h.textContent = leaf.title || title();
     container.appendChild(h);
 
     const info = document.createElement('div');
@@ -117,6 +125,7 @@
     info.innerHTML = `<div class="tg-sub">${leaf.instructions || 'Выберите правильный вариант'}</div>`;
     container.appendChild(info);
 
+    const questions = toArrayQuestions(leaf.questions);
     let idx = 0, score = 0;
     const answers = [];
     const qWrap = document.createElement('div');
@@ -131,10 +140,11 @@
     container.appendChild(ctaBar);
 
     function renderQuestion(){
-      const q = leaf.questions[idx];
+      const q = questions[idx] || {};
+      const qText = q.text || q.question || '';
       qWrap.innerHTML = `<div class="tg-card" style="margin-top:10px;">
-          <div class="tg-sub" style="font-weight:600;margin-bottom:8px;">Вопрос ${idx+1} из ${leaf.questions.length}</div>
-          <div class="tg-sub">${escapeHTML(q.text)}</div>
+          <div class="tg-sub" style="font-weight:600;margin-bottom:8px;">Вопрос ${idx+1} из ${questions.length}</div>
+          <div class="tg-sub">${escapeHTML(qText)}</div>
         </div>`;
 
       (q.options || []).forEach(opt => {
@@ -143,38 +153,39 @@
         div.style.marginTop = '10px';
         div.textContent = opt;
         div.onclick = () => {
-          answers[idx] = getOptionLetter(opt) || opt[0];
+          answers[idx] = getOptionLetter(opt) || String(opt).trim()[0];
           [...qWrap.querySelectorAll('.section-card')].forEach(el => el.style.opacity = '0.6');
           div.style.opacity = '1';
         };
         qWrap.appendChild(div);
       });
 
-      nextBtn.textContent = idx === leaf.questions.length - 1 ? 'Завершить' : 'Далее';
+      nextBtn.textContent = idx === questions.length - 1 ? 'Завершить' : 'Далее';
     }
 
     nextBtn.onclick = () => {
-      const q = leaf.questions[idx];
+      const q = questions[idx] || {};
       const chosen = answers[idx];
       if (!chosen) { tg && tg.HapticFeedback && tg.HapticFeedback.notificationOccurred('warning'); return; }
       if ((getCorrectLetter(q) || '').toUpperCase() === String(chosen).toUpperCase()) score++;
 
-      if (idx < leaf.questions.length - 1){
+      if (idx < questions.length - 1){
         idx++; renderQuestion();
       } else {
         qWrap.innerHTML = `<div class="tg-card">
-            <div class="tg-headline" style="font-size:18px;">Результат: ${score} / ${leaf.questions.length}</div>
+            <div class="tg-headline" style="font-size:18px;">Результат: ${score} / ${questions.length}</div>
             <div class="tg-sub">Разбор вопросов ниже.</div>
           </div>`;
-        leaf.questions.forEach((q, i) => {
+        questions.forEach((q, i) => {
           const row = document.createElement('div');
           row.className = 'tg-card';
           row.style.marginTop = '10px';
           const correct = getCorrectLetter(q) || '—';
           const your = answers[i] || '—';
-          row.innerHTML = `<div class="tg-sub" style="font-weight:600;margin-bottom:6px;">${i+1}. ${escapeHTML(q.text)}</div>
+          const qText = (q && (q.text || q.question)) || '';
+          row.innerHTML = `<div class="tg-sub" style="font-weight:600;margin-bottom:6px;">${i+1}. ${escapeHTML(qText)}</div>
             <div class="tg-sub">Ваш ответ: ${your} · Правильный: ${correct}</div>
-            ${q.explanation ? `<div class="tg-sub" style="margin-top:6px;">${escapeHTML(q.explanation)}</div>` : ''}`;
+            ${q && q.explanation ? `<div class="tg-sub" style="margin-top:6px;">${escapeHTML(q.explanation)}</div>` : ''}`;
           qWrap.appendChild(row);
         });
         ctaBar.remove();
@@ -200,7 +211,7 @@
 
       const h = document.createElement('div');
       h.className = 'tg-headline';
-      h.textContent = title();
+      h.textContent = leaf.title || title();
       container.appendChild(h);
 
       container.insertAdjacentHTML('beforeend', renderRich(leaf.content || ''));
