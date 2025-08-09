@@ -2015,17 +2015,26 @@
     // SPA навигация с историей браузера
     const pageHistory = [];
     function setActivePage(pageName, push = true){
-      const pages = document.querySelectorAll('.page');
-      pages.forEach(p => p.classList.remove('active'));
-      const target = document.getElementById(pageName + '-page');
-      if (target){
-        target.classList.add('active');
-        if (push){
-          pageHistory.push(pageName);
-          history.pushState({pageName}, '', '#' + pageName);
-        }
-      } else {
-        console.error('Page not found:', pageName);
+      // Sanitize and provide robust fallback for Telegram hashes
+      let targetPage = (pageName || '').toString().trim().replace(/^#/, '').replace(/\/$/, '');
+      if (!targetPage || targetPage === '/' || targetPage === 'index') targetPage = 'main';
+
+      let target = document.getElementById(targetPage + '-page');
+      if (!target){
+        console.warn('Unknown page, falling back to main:', pageName);
+        targetPage = 'main';
+        target = document.getElementById('main-page');
+      }
+      if (!target){
+        console.error('Main page element not found — aborting page switch');
+        return;
+      }
+
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      target.classList.add('active');
+      if (push){
+        pageHistory.push(targetPage);
+        history.pushState({pageName: targetPage}, '', '#' + targetPage);
       }
     }
     function showPage(pageName) {
@@ -2049,9 +2058,16 @@
     };
     // Инициализация стартовой страницы из hash/по умолчанию
     (function initRouting(){
-      const initial = (location.hash || '#main').replace('#','');
-      pageHistory.length = 0;
-      setActivePage(initial, true);
+      let initial = (location.hash || '#main').toString();
+      try {
+        // Telegram sometimes provides empty or malformed hash
+        initial = initial.replace(/^#?/, '#');
+        const clean = initial.replace('#','').trim();
+        setActivePage(clean || 'main', true);
+      } catch (e) {
+        console.warn('Init routing failed, fallback to main:', e);
+        setActivePage('main', true);
+      }
     })();
 
     function testNavigation() {
