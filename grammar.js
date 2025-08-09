@@ -1,4 +1,3 @@
-
 // grammar.js — with guaranteed typography injection
 (function(){
   const tg = window.Telegram && window.Telegram.WebApp;
