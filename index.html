@@ -2043,6 +2043,10 @@
       setActivePage(pageName, true);
     }
     function goBack(){
+      // First, if Grammar page can handle internal back, do it
+      if (typeof window.grammarBack === 'function' && window.grammarBack()){
+        return;
+      }
       if (pageHistory.length > 1){
         history.back();
         return;

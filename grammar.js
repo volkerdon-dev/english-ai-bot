@@ -262,6 +262,14 @@
       oldShow(id);
       if (id === 'grammar'){ path.length = 0; render(); }
     };
+
+    // Expose Grammar back handler for global Back button
+    window.grammarBack = function(){
+      const page = pageEl();
+      if (!page || !page.classList.contains('active')) return false;
+      if (path.length > 0){ path.pop(); render(); return true; }
+      return false;
+    };
   }
 
   document.addEventListener('DOMContentLoaded', init);
