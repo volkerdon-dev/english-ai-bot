@@ -63,18 +63,24 @@
             <div class="tg-sub" style="font-weight:600;margin-bottom:8px;">Вопрос ${idx+1} из ${leaf.questions.length}</div>
             <div class="tg-sub">${escapeHTML(q.text)}</div></div>`;
         q.options.forEach(opt => { const div = document.createElement('div'); div.className = 'section-card'; div.style.marginTop = '10px'; div.textContent = opt;
-          div.onclick = () => { answers[idx] = opt[0]; [...qWrap.querySelectorAll('.section-card')].forEach(el => el.style.opacity = '0.6'); div.style.opacity = '1'; };
+          div.onclick = () => { answers[idx] = opt; [...qWrap.querySelectorAll('.section-card')].forEach(el => el.style.opacity = '0.6'); div.style.opacity = '1'; };
           qWrap.appendChild(div); });
         nextBtn.textContent = idx === leaf.questions.length - 1 ? 'Завершить' : 'Далее';
       }
 
+      function getLetterFromOpt(opt){ const m = String(opt||'').trim().match(/^([A-ZА-Я])([\.)]|\s)/i); return m ? m[1].toUpperCase() : ''; }
       nextBtn.onclick = () => { const q = leaf.questions[idx]; const chosen = answers[idx]; if (!chosen) { tg && tg.HapticFeedback && tg.HapticFeedback.notificationOccurred('warning'); return; }
-        if (chosen === q.correct_answer) score++;
+        if (getLetterFromOpt(chosen) === String(q.correct_answer || '').toUpperCase()) score++;
         if (idx < leaf.questions.length - 1){ idx++; renderQuestion();
         } else { qWrap.innerHTML = `<div class="tg-card"><div class="tg-headline" style="font-size:18px;">Результат: ${score} / ${leaf.questions.length}</div><div class="tg-sub">Разбор вопросов ниже.</div></div>`;
           leaf.questions.forEach((q,i)=>{ const row = document.createElement('div'); row.className = 'tg-card'; row.style.marginTop = '10px';
+            const chosenOpt = answers[i]; const chosenLetter = getLetterFromOpt(chosenOpt);
+            const correctLetter = String(q.correct_answer || '').toUpperCase();
+            const isCorrect = chosenLetter.toUpperCase() === correctLetter;
+            const correctText = (q.options || []).find(o => getLetterFromOpt(o).toUpperCase() === correctLetter) || q.correct_answer || '—';
             row.innerHTML = `<div class="tg-sub" style="font-weight:600;margin-bottom:6px;">${i+1}. ${escapeHTML(q.text)}</div>
-            <div class="tg-sub">Ваш ответ: ${answers[i] || '—'} · Правильный: ${q.correct_answer}</div>
+            <div class="tg-sub" style="${isCorrect ? 'color:#34c759;' : 'color:#ef4444;'}">Ваш ответ: ${escapeHTML(chosenOpt || '—')}</div>
+            <div class="tg-sub">Правильный: ${escapeHTML(correctText)}</div>
             ${q.explanation ? `<div class="tg-sub" style="margin-top:6px;">${escapeHTML(q.explanation)}</div>` : ''}`; qWrap.appendChild(row); });
           ctaBar.remove(); } };
 
