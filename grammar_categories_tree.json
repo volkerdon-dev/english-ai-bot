@@ -93,6 +93,54 @@
             ],
             "correct_answer": "A",
             "explanation": "Регулярный факт — Present Simple of 'to be' → is."
+          },
+          {
+            "question_number": 7,
+            "text": "She usually _____ to the gym after work.",
+            "options": [
+              "A. go",
+              "B. goes",
+              "C. is going",
+              "D. has gone"
+            ],
+            "correct_answer": "B",
+            "explanation": "Present Simple — 'usually' указывает на регулярное действие, глагол в 3 л. ед. ч. принимает окончание -s."
+          },
+          {
+            "question_number": 8,
+            "text": "Look! The children _____ in the garden.",
+            "options": [
+              "A. play",
+              "B. are playing",
+              "C. have played",
+              "D. plays"
+            ],
+            "correct_answer": "B",
+            "explanation": "Present Continuous — 'Look!' указывает на действие, происходящее прямо сейчас."
+          },
+          {
+            "question_number": 9,
+            "text": "I _____ this movie three times already.",
+            "options": [
+              "A. watch",
+              "B. watched",
+              "C. have watched",
+              "D. am watching"
+            ],
+            "correct_answer": "C",
+            "explanation": "Present Perfect — действие произошло в прошлом, но имеет результат в настоящем ('already')."
+          },
+          {
+            "question_number": 10,
+            "text": "She is tired because she _____ all day.",
+            "options": [
+              "A. works",
+              "B. is working",
+              "C. has worked",
+              "D. has been working"
+            ],
+            "correct_answer": "D",
+            "explanation": "Present Perfect Continuous — действие началось в прошлом и продолжалось до настоящего момента ('all day')."
           }
         ]
       }
