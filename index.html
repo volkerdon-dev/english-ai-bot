@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EngTrain App</title>
+  <!-- Telegram WebApp SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <!-- Ваш общий стиль (если есть) -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Новый стиль раздела Grammar (iOS-like) -->
+  <link rel="stylesheet" href="grammar-ui.css?v=20250809">
+
+  <!-- Скрипт для раздела Grammar (заменяет старый grammar.js) -->
+  <script defer src="grammar-ios.js?v=20250809"></script>
+
+  <style>
+    /* базовая сетка страниц, если у вас уже есть — можно убрать */
+    .page { display: none; }
+    .page.active { display: block; }
+    .header { padding: 16px; }
+    .content { padding: 16px; }
+    .back-btn { border: 0; background: rgba(0,0,0,.06); border-radius: 10px; padding: 8px 12px; }
+    .section-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+    .section-card { cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- Главная (пример; оставьте свою реализацию) -->
+    <div id="main-page" class="page active">
+      <div class="header">
+        <h1>👋 Добро пожаловать в EngTrain App!</h1>
+      </div>
+      <div class="content">
+        <div class="section-grid">
+          <div class="section-card" onclick="openSection('grammar')">
+            <h3>📚 Grammar</h3>
+          </div>
+          <!-- остальные карточки вашего меню -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Раздел Grammar (динамически рендерится из grammar_categories_tree.json) -->
+    <div id="grammar-page" class="page">
+      <div class="header">
+        <button onclick="showPage('main')" class="back-btn">← Назад</button>
+        <h1>📚 Grammar</h1>
+      </div>
+      <div class="content">
+        <div id="grammar-root" class="section-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Навигация между страницами (если у вас уже реализовано — оставьте своё)
+    function showPage(id) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(id + '-page').classList.add('active');
+    }
+    function openSection(name) {
+      if (name === 'grammar') {
+        showPage('grammar');
+      }
+      // остальные секции...
+    }
+  </script>
+</body>
+</html>
