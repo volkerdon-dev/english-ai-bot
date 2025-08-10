@@ -37,6 +37,10 @@
         <h3>🔗 Фразовые глаголы</h3>
         <p>Важные фразовые глаголы</p>
       </div>
+      <div class="section-card" onclick="openSection('word_formation')">
+        <h3>🧩 Word Formation</h3>
+        <p>Образование слов</p>
+      </div>
     </div>
   </div>
 
@@ -79,7 +83,8 @@
         'daily_words': 'daily-words',
         'topics': 'topics',
         'idioms': 'idioms',
-        'phrasal_verbs': 'phrasal-verbs'
+        'phrasal_verbs': 'phrasal-verbs',
+        'word_formation': 'word-formation'
       };
       const target = map[section] || section;
       window.location.href = 'index.html#' + target;
