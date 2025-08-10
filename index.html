@@ -397,6 +397,10 @@
             <h3>🔗 Фразовые глаголы</h3>
             <p>Важные фразовые глаголы</p>
           </div>
+          <div class="section-card" onclick="showPage('word-formation')">
+            <h3>🧩 Word Formation</h3>
+            <p>Образование слов</p>
+          </div>
         </div>
       </div>
     </div>
@@ -482,7 +486,6 @@
         </div>
       </div>
     </div>
-
     <!-- Страница Games -->
     <div id="games-page" class="page">
       <div class="header">
@@ -928,7 +931,6 @@
         </div>
       </div>
     </div>
-
     <!-- Страница Nouns -->
     <div id="nouns-page" class="page">
       <div class="header">
@@ -1428,7 +1430,6 @@
         </div>
       </div>
     </div>
-
     <!-- Страница Pronouns -->
     <div id="pronouns-page" class="page">
       <div class="header">
@@ -1863,7 +1864,6 @@
         </div>
       </div>
     </div>
-
     <!-- Страница Conjunctions -->
     <div id="conjunctions-page" class="page">
       <div class="header">
@@ -2039,6 +2039,11 @@
           <div class="section-card" onclick="showPage('phrasal-verbs')">
             <h3>🔗 Фразовые глаголы</h3>
             <p>Важные фразовые глаголы</p>
+          </div>
+          
+          <div class="section-card" onclick="showPage('word-formation')">
+            <h3>🧩 Word Formation</h3>
+            <p>Образование слов</p>
           </div>
         </div>
       </div>
@@ -2330,7 +2335,6 @@
         </div>
       </div>
     </div>
-
     <!-- Страница Past Simple -->
     <div id="past-simple-page" class="page">
       <div class="header">
@@ -2733,7 +2737,7 @@
           </ul>
           
           <h4>⚡ Imperative (повелительные)</h4>
-          <p>Используются для отдачи команды, просьбы, инструкции или совета. Обычно начинаются с глагола и могут не иметь явного подлежащего (подразумевается "you"). Заканчиваются точкой или восклицательным знаком.</p>
+          <p>Используются для отдачи команды, просьбы, инструкции или совета. Обычно начинаются с глагола и могут не иметь явного подлежащего (подразумеется "you"). Заканчиваются точкой или восклицательным знаком.</p>
           <ul>
             <li>Close the door. (Закрой дверь.)</li>
             <li>Please sit down. (Пожалуйста, сядьте.)</li>
@@ -2810,7 +2814,6 @@
         </div>
       </div>
     </div>
-
     <!-- Страница Constructions -->
     <div id="constructions-page" class="page">
       <div class="header">
@@ -3288,7 +3291,6 @@
         </div>
       </div>
     </div>
-
     <!-- Страница Adjectives -->
     <div id="adjectives-page" class="page">
       <div class="header">
@@ -3740,9 +3742,40 @@
       </div>
     </div>
 
+    <!-- Word Formation -->
+    <div id="word-formation-page" class="page">
+      <div class="header">
+        <button onclick="showPage('vocabulary')" class="back-btn">← Назад</button>
+        <h1>🧩 Word Formation</h1>
+      </div>
+      <div class="content">
+        <div class="grammar-content">
+          <div class="word-card"><h4>happy → happiness — счастье</h4></div>
+          <div class="word-card"><h4>sad → sadness — грусть</h4></div>
+          <div class="word-card"><h4>decide → decision — решение</h4></div>
+          <div class="word-card"><h4>create → creation — создание</h4></div>
+          <div class="word-card"><h4>strong → strength — сила</h4></div>
+          <div class="word-card"><h4>weak → weakness — слабость</h4></div>
+          <div class="word-card"><h4>beautiful → beauty — красота</h4></div>
+          <div class="word-card"><h4>improve → improvement — улучшение</h4></div>
+          <div class="word-card"><h4>manage → management — управление</h4></div>
+          <div class="word-card"><h4>develop → development — развитие</h4></div>
+          <div class="word-card"><h4>possible → impossible — невозможный</h4></div>
+          <div class="word-card"><h4>appear → disappear — исчезать</h4></div>
+          <div class="word-card"><h4>agree → disagreement — разногласие</h4></div>
+          <div class="word-card"><h4>care → careless — небрежный</h4></div>
+          <div class="word-card"><h4>use → useful — полезный</h4></div>
+          <div class="word-card"><h4>use → useless — бесполезный</h4></div>
+          <div class="word-card"><h4>danger → dangerous — опасный</h4></div>
+          <div class="word-card"><h4>comfort → comfortable — удобный</h4></div>
+          <div class="word-card"><h4>comfort → uncomfortable — неудобный</h4></div>
+          <div class="word-card"><h4>help → helpless — беспомощный</h4></div>
+        </div>
+      </div>
+    </div>
+ 
     <!-- Конец вставки -->
   </div>
-
   <script>
     // Инициализация Telegram Web App
     if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
