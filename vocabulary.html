@@ -75,7 +75,14 @@
     
     function openSection(section) {
       console.log('Opening section:', section);
-      alert(`Открывается раздел: ${section}`);
+      const map = {
+        'daily_words': 'daily-words',
+        'topics': 'topics',
+        'idioms': 'idioms',
+        'phrasal_verbs': 'phrasal-verbs'
+      };
+      const target = map[section] || section;
+      window.location.href = 'index.html#' + target;
     }
   </script>
 </body>

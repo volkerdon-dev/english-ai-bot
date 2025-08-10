@@ -530,3 +530,5 @@ body, .page, .content, #grammar-page, #grammar-page .content, .detail-box {
   letter-spacing: 0.2px;
   font-weight: 600;
 }
+
+#daily-word-container .word-card { margin-top: 12px; }
