@@ -114,16 +114,8 @@
     container.classList.remove('section-grid');
     container.innerHTML = '';
 
-    const back = document.createElement('button');
-    back.className = 'back-btn';
-    back.textContent = '← Назад';
-    back.onclick = () => { path.pop(); render(); };
-    container.appendChild(back);
-
-    const h = document.createElement('div');
-    h.className = 'tg-headline';
-    h.textContent = leaf.title || title();
-    container.appendChild(h);
+    // Header already shows title and Back/Home. Avoid duplicating controls here.
+    setHeader(leaf.title || title());
 
     const info = document.createElement('div');
     info.className = 'tg-card';
@@ -210,16 +202,8 @@
     container.classList.remove('section-grid');
     container.innerHTML = '';
 
-    const back = document.createElement('button');
-    back.className = 'back-btn';
-    back.textContent = '← Назад';
-    back.onclick = () => { path.pop(); render(); };
-    container.appendChild(back);
-
-    const h = document.createElement('div');
-    h.className = 'tg-headline';
-    h.textContent = leaf.title || title();
-    container.appendChild(h);
+    // Use header for title
+    setHeader(leaf.title || title());
 
     const filePath = leaf.file || '';
     try {
@@ -320,16 +304,8 @@
       container.classList.remove('section-grid');
       container.innerHTML = '';
 
-      const back = document.createElement('button');
-      back.className = 'back-btn';
-      back.textContent = '← Назад';
-      back.onclick = () => { path.pop(); render(); };
-      container.appendChild(back);
-
-      const h = document.createElement('div');
-      h.className = 'tg-headline';
-      h.textContent = leaf.title || title();
-      container.appendChild(h);
+      // Only use header title, avoid duplicate h inside content
+      setHeader(leaf.title || title());
 
       container.insertAdjacentHTML('beforeend', renderRich(leaf.content || ''));
       tg && tg.MainButton && tg.MainButton.hide();

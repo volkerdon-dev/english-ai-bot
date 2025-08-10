@@ -11,6 +11,7 @@
   <div class="header">
     <button onclick="goBack()" class="back-btn">← Назад</button>
     <h1>✍️ Practice</h1>
+    <button onclick="goHome()" class="home-btn">🏠 Home</button>
   </div>
 
   <div class="content">
@@ -65,6 +66,10 @@
       } catch (e) {
         console.warn('history.back failed, fallback to index.html');
       }
+      window.location.href = 'index.html#main';
+    }
+
+    function goHome() {
       window.location.href = 'index.html#main';
     }
     

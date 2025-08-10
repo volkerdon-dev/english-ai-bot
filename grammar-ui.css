@@ -21,6 +21,14 @@
 }
 #grammar-page .back-btn:hover { background: rgba(17, 24, 39, 0.1); }
 
+/* Home button matches Back in Grammar */
+#grammar-page .home-btn {
+  background: rgba(17, 24, 39, 0.06);
+  color: var(--tg-text);
+  border: 1px solid var(--tg-card-border);
+}
+#grammar-page .home-btn:hover { background: rgba(17, 24, 39, 0.1); }
+
 .tg-card {
   background: var(--tg-card);
   border: 1px solid var(--tg-card-border);
