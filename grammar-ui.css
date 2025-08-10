@@ -51,3 +51,14 @@
 .tg-faq details { border-top: 1px solid var(--tg-card-border); padding: 10px 14px; }
 .tg-faq details:first-child { border-top: 0; }
 .tg-faq summary { cursor: pointer; font-weight: 600; color: var(--tg-text); }
+
+.tg-table-wrap { overflow-x: auto; }
+.tg-table { width: 100%; border-collapse: collapse; }
+.tg-table thead th { text-align: left; font-weight: 700; color: var(--tg-text); border-bottom: 1px solid var(--tg-card-border); padding: 10px 8px; white-space: nowrap; }
+.tg-table tbody td { padding: 10px 8px; border-bottom: 1px solid var(--tg-card-border); color: var(--tg-text); }
+.tg-table tbody tr:hover { background: rgba(10,132,255,0.06); }
+
+.tg-input { width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--tg-card-border); outline: none; font-size: 16px; }
+.tg-input:focus { border-color: var(--tg-accent); box-shadow: 0 0 0 3px rgba(10,132,255,0.12); }
+
+.verbs-table td:nth-child(1) { font-weight: 700; }

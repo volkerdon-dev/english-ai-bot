@@ -33,7 +33,7 @@
   function isLeaf(node){
     if (!node || typeof node !== 'object') return false;
     const t = normalizeType(node.type);
-    if (t === 'text' || t === 'quiz' || t === 'grammar_test') return true;
+    if (t === 'text' || t === 'quiz' || t === 'grammar_test' || t === 'content_from_file') return true;
     // Fallbacks: treat any object with questions as test, or with content as text
     if (hasQuestions(node)) return true;
     if (hasContent(node)) return true;
@@ -205,6 +205,114 @@
     tg && tg.MainButton && tg.MainButton.hide();
   }
 
+  async function renderFromFile(leaf){
+    const container = root();
+    container.classList.remove('section-grid');
+    container.innerHTML = '';
+
+    const back = document.createElement('button');
+    back.className = 'back-btn';
+    back.textContent = '← Назад';
+    back.onclick = () => { path.pop(); render(); };
+    container.appendChild(back);
+
+    const h = document.createElement('div');
+    h.className = 'tg-headline';
+    h.textContent = leaf.title || title();
+    container.appendChild(h);
+
+    const filePath = leaf.file || '';
+    try {
+      const res = await fetch(filePath);
+      const data = await res.json();
+
+      // Heuristics: if array of verbs with base/past/participle
+      const isIrregularVerbs = Array.isArray(data) && data.length && typeof data[0] === 'object' && ('base' in data[0]) && ('past' in data[0]) && ('participle' in data[0]);
+      if (isIrregularVerbs){
+        renderIrregularVerbsTable(container, data);
+      } else {
+        const card = document.createElement('div');
+        card.className = 'tg-card';
+        card.innerHTML = '<div class="tg-sub">Не удалось распознать формат файла для отображения.</div>';
+        container.appendChild(card);
+      }
+    } catch(e){
+      const card = document.createElement('div');
+      card.className = 'tg-card';
+      card.innerHTML = `<div class="tg-sub">Ошибка загрузки файла: ${escapeHTML(String(e))}</div>`;
+      container.appendChild(card);
+    }
+
+    tg && tg.MainButton && tg.MainButton.hide();
+  }
+
+  function renderIrregularVerbsTable(container, verbs){
+    // Search box
+    const searchWrap = document.createElement('div');
+    searchWrap.className = 'tg-card';
+    searchWrap.innerHTML = `
+      <input class="tg-input" type="text" placeholder="Поиск: base / V2 / V3 / перевод" aria-label="Поиск по таблице" />
+      <div class="tg-sub" style="margin-top:8px;"><span class="iv-count"></span></div>
+    `;
+    container.appendChild(searchWrap);
+    const input = searchWrap.querySelector('input');
+    const countEl = searchWrap.querySelector('.iv-count');
+
+    // Table wrapper
+    const wrap = document.createElement('div');
+    wrap.className = 'tg-table-wrap tg-card';
+    container.appendChild(wrap);
+
+    const table = document.createElement('table');
+    table.className = 'tg-table verbs-table';
+    table.innerHTML = `
+      <thead>
+        <tr>
+          <th>Base (V1)</th>
+          <th>Past (V2)</th>
+          <th>Participle (V3)</th>
+          <th>Перевод</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    `;
+    wrap.appendChild(table);
+    const tbody = table.querySelector('tbody');
+
+    const data = [...verbs].sort((a,b)=> String(a.base).localeCompare(String(b.base)));
+
+    function renderRows(list){
+      tbody.innerHTML = '';
+      list.forEach(v => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${escapeHTML(v.base)}</td>
+          <td>${escapeHTML(v.past)}</td>
+          <td>${escapeHTML(v.participle)}</td>
+          <td>${escapeHTML(v.translation || '')}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+      countEl.textContent = `Показано: ${list.length} из ${data.length}`;
+    }
+
+    function normalize(s){ return String(s || '').toLowerCase(); }
+
+    input.addEventListener('input', () => {
+      const q = normalize(input.value);
+      if (!q){ renderRows(data); return; }
+      const filtered = data.filter(v =>
+        normalize(v.base).includes(q) ||
+        normalize(v.past).includes(q) ||
+        normalize(v.participle).includes(q) ||
+        normalize(v.translation).includes(q)
+      );
+      renderRows(filtered);
+    });
+
+    renderRows(data);
+  }
+
   function renderLeaf(leaf){
     const t = normalizeType(leaf.type);
     if (t === 'text' || hasContent(leaf)){
@@ -230,6 +338,11 @@
 
     if (t === 'quiz' || t === 'grammar_test' || hasQuestions(leaf)){
       renderTest(leaf);
+      return;
+    }
+
+    if (t === 'content_from_file'){
+      renderFromFile(leaf);
       return;
     }
   }
