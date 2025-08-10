@@ -190,7 +190,37 @@ body {
   transform: translateY(-50%);
 }
 
-.back-btn:hover {
+/* New: Home button on the right */
+.home-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 2;
+}
+
+.header .home-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Ensure header title never overlaps buttons */
+.header h1 {
+  margin: 0;
+  font-size: 22px;
+  padding: 0 80px; /* safe area for left/back and right/home */
+}
+
+.back-btn:hover, .home-btn:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
@@ -380,6 +410,14 @@ body {
     padding: 8px 12px;
     font-size: 14px;
   }
+  /* Home button responsive */
+  .home-btn {
+    right: 15px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  /* Smaller safe area for narrow screens */
+  .header h1 { padding: 0 64px; font-size: 20px; }
 }
 
 
@@ -400,6 +438,10 @@ body {
   padding: 24px 18px;
   margin-bottom: 14px;
 }
+
+/* Safe padding for page headers as well */
+.page .header h1 { padding: 0 80px; }
+@media (max-width: 480px){ .page .header h1 { padding: 0 64px; } }
 
 .section-card{
   border: 1px solid rgba(0,0,0,0.05);

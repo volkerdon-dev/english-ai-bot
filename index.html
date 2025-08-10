@@ -2012,6 +2012,26 @@
       console.log('Running in browser mode');
     }
 
+    // Add Home buttons to all headers with Back buttons
+    function ensureNavButtons(){
+      document.querySelectorAll('.header').forEach(h => {
+        const hasBack = !!h.querySelector('.back-btn');
+        const hasHome = !!h.querySelector('.home-btn');
+        if (hasBack && !hasHome){
+          const btn = document.createElement('button');
+          btn.className = 'home-btn';
+          btn.textContent = '🏠 Home';
+          btn.onclick = goHome;
+          h.appendChild(btn);
+        }
+      });
+    }
+
+    function goHome(){
+      // Сброс на главную страницу
+      setActivePage('main', true);
+    }
+
     // SPA навигация с историей браузера
     const pageHistory = [];
     function setActivePage(pageName, push = true){
@@ -2036,6 +2056,9 @@
         pageHistory.push(targetPage);
         history.pushState({pageName: targetPage}, '', '#' + targetPage);
       }
+
+      // Make sure nav buttons exist on the newly shown page header as well
+      ensureNavButtons();
     }
     function showPage(pageName) {
       console.log('=== SPA NAVIGATION ===');
@@ -2072,6 +2095,8 @@
         console.warn('Init routing failed, fallback to main:', e);
         setActivePage('main', true);
       }
+      // Ensure buttons are present on first load
+      ensureNavButtons();
     })();
 
     function testNavigation() {
