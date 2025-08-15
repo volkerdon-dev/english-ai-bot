@@ -20,17 +20,43 @@ jobs:
           --health-cmd="pg_isready -U postgres -d appdb"
           --health-interval=5s
           --health-timeout=5s
-          --health-retries=10
+          --health-retries=20
     env:
       DATABASE_URL: postgresql+psycopg://postgres:postgres@localhost:5432/appdb
+      PGPASSWORD: postgres
       PIP_DISABLE_PIP_VERSION_CHECK: 1
+
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install -r requirements.txt
+
+      - name: Install Postgres client (psql)
+        run: sudo apt-get update && sudo apt-get install -y postgresql-client
+
+      - name: Wait for DB to be ready
+        run: |
+          for i in {1..60}; do
+            if psql -h localhost -U postgres -d appdb -c "select 1" >/dev/null 2>&1; then
+              echo "DB is up"; break
+            fi
+            echo "Waiting for DB... ($i)"
+            sleep 1
+          done
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Show Alembic heads
+        run: alembic heads
+
       - name: Alembic upgrade
         run: alembic upgrade head
+
+      - name: Show tables after migrate
+        run: psql -h localhost -U postgres -d appdb -c "\dt"
+
       - name: Run tests
         run: pytest -q
