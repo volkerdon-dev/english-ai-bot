@@ -303,6 +303,274 @@
         "type": "text",
         "content": "🧠 *Past Perfect Continuous — Предпрошедшее длительное время*\n\n📌 *Когда используется:*\n1. Действие длилось до определённого момента в прошлом: Описывает длительное действие, которое началось и продолжалось в течение какого-то периода до определенного момента или другого действия в прошлом. Фокус на продолжительности. Например: \"I *had been working* for two hours when she arrived.\" (Я работал два часа, когда она приехала.) \n2. Указывает на причину в прошлом: Объясняет причину какого-либо состояния или действия в прошлом. Например: \"She was tired because she *had been studying* all day.\" (Она была уставшей, потому что училась весь день.) \n\n🧩 *Формула:*\n[had been] + глагол + -ing \n• Для всех лиц и чисел: `had been + V-ing` \n\n🔹 *Примеры:*\n- We *had been living* there for years. (Мы жили там годами.) \n- He *had been waiting* since 5 p.m. (Он ждал с 5 вечера.) \n- By the time I found him, he *had been crying* for an hour. (К тому времени, как я нашел его, он плакал уже час.) \n\n🚫 *Типичные ошибки:*\n- Неправильное использование формы глагола:\n    - ❌ `I had been to study` → ✅ `I had been *studying*` \n- Ошибки в вспомогательных глаголах:\n    - ❌ `He had be playing` → ✅ `He *had been playing*` \n\n❓ *Вопросы:*\n- Вопросы формируются с помощью `Had` в начале предложения. \n- `How long had you been working?` (Как долго ты работал?) \n- `Had she been crying?` (Она плакала?) \n- `What had they been discussing before you joined?` (Что они обсуждали до того, как ты присоединился?) \n\n🧭 *Сигнальные слова:*\n- `since` (с тех пор как), `for` (в течение) \n- `all day/week/night` (весь день/неделю/ночь), `how long` (как долго?) \n- `before` (до того как), `by the time` (к тому времени как) "
       },
+      "Practice: Past Simple": {
+        "type": "quiz",
+        "title": "Практика: Past Simple",
+        "instructions": "Выберите правильный вариант.",
+        "questions": [
+          {
+            "question_number": 1,
+            "text": "He ___ to the store yesterday.",
+            "options": [
+              "A. go",
+              "B. goes",
+              "C. went",
+              "D. gone"
+            ],
+            "correct_answer": "C",
+            "explanation": "Past Simple → вторая форма глагола: go → went."
+          },
+          {
+            "question_number": 2,
+            "text": "They ___ a lot last summer.",
+            "options": [
+              "A. travel",
+              "B. traveled",
+              "C. traveling",
+              "D. have traveled"
+            ],
+            "correct_answer": "B",
+            "explanation": "Действие завершилось в прошлом → Past Simple."
+          },
+          {
+            "question_number": 3,
+            "text": "Did you ___ the email?",
+            "options": [
+              "A. receive",
+              "B. received",
+              "C. receiving",
+              "D. receives"
+            ],
+            "correct_answer": "A",
+            "explanation": "После Did используется начальная форма глагола."
+          },
+          {
+            "question_number": 4,
+            "text": "We ___ late for the meeting.",
+            "options": [
+              "A. was",
+              "B. were",
+              "C. are",
+              "D. be"
+            ],
+            "correct_answer": "B",
+            "explanation": "We → were (форма to be в Past Simple)."
+          },
+          {
+            "question_number": 5,
+            "text": "She ___ at home all evening.",
+            "options": [
+              "A. stayed",
+              "B. stay",
+              "C. was stay",
+              "D. has stayed"
+            ],
+            "correct_answer": "A",
+            "explanation": "Past Simple → stayed (действие завершено)."
+          }
+        ]
+      },
+      "Practice: Past Continuous": {
+        "type": "quiz",
+        "title": "Практика: Past Continuous",
+        "instructions": "Выберите правильный вариант.",
+        "questions": [
+          {
+            "question_number": 1,
+            "text": "I ___ TV when she called.",
+            "options": [
+              "A. watched",
+              "B. was watching",
+              "C. am watching",
+              "D. watching"
+            ],
+            "correct_answer": "B",
+            "explanation": "Одновременное действие в прошлом → was + Ving."
+          },
+          {
+            "question_number": 2,
+            "text": "They ___ dinner at 8 p.m. yesterday.",
+            "options": [
+              "A. were having",
+              "B. are having",
+              "C. had",
+              "D. has had"
+            ],
+            "correct_answer": "A",
+            "explanation": "Past Continuous → were + Ving для they."
+          },
+          {
+            "question_number": 3,
+            "text": "She ___ when it started to rain.",
+            "options": [
+              "A. walk",
+              "B. was walking",
+              "C. walked",
+              "D. had walked"
+            ],
+            "correct_answer": "B",
+            "explanation": "Длительное действие, прерванное другим — Past Continuous."
+          },
+          {
+            "question_number": 4,
+            "text": "What ___ you doing at 10 last night?",
+            "options": [
+              "A. were",
+              "B. was",
+              "C. did",
+              "D. are"
+            ],
+            "correct_answer": "A",
+            "explanation": "You → were. Past Continuous вопрос."
+          },
+          {
+            "question_number": 5,
+            "text": "He ___ not listening to the teacher.",
+            "options": [
+              "A. was",
+              "B. were",
+              "C. is",
+              "D. be"
+            ],
+            "correct_answer": "A",
+            "explanation": "He → was. Отрицание → was not + Ving."
+          }
+        ]
+      },
+      "Practice: Past Perfect": {
+        "type": "quiz",
+        "title": "Практика: Past Perfect",
+        "instructions": "Выберите правильный вариант.",
+        "questions": [
+          {
+            "question_number": 1,
+            "text": "I ___ already eaten when he arrived.",
+            "options": [
+              "A. had",
+              "B. have",
+              "C. was",
+              "D. did"
+            ],
+            "correct_answer": "A",
+            "explanation": "Past Perfect → had + V3. Употребляется до действия в Past Simple."
+          },
+          {
+            "question_number": 2,
+            "text": "They ___ left before we came.",
+            "options": [
+              "A. had",
+              "B. have",
+              "C. has",
+              "D. were"
+            ],
+            "correct_answer": "A",
+            "explanation": "Действие до другого действия в прошлом → Past Perfect."
+          },
+          {
+            "question_number": 3,
+            "text": "She ___ never seen snow before.",
+            "options": [
+              "A. had",
+              "B. has",
+              "C. did",
+              "D. was"
+            ],
+            "correct_answer": "A",
+            "explanation": "She → had + V3 в Past Perfect."
+          },
+          {
+            "question_number": 4,
+            "text": "We ___ finished the test when the bell rang.",
+            "options": [
+              "A. had",
+              "B. have",
+              "C. were",
+              "D. was"
+            ],
+            "correct_answer": "A",
+            "explanation": "Past Perfect показывает завершенность до другого действия."
+          },
+          {
+            "question_number": 5,
+            "text": "He told me he ___ visited London twice.",
+            "options": [
+              "A. had",
+              "B. has",
+              "C. did",
+              "D. was"
+            ],
+            "correct_answer": "A",
+            "explanation": "Перед reported speech часто стоит Past Perfect."
+          }
+        ]
+      },
+      "Practice: Past Perfect Continuous": {
+        "type": "quiz",
+        "title": "Практика: Past Perfect Continuous",
+        "instructions": "Выберите правильный вариант.",
+        "questions": [
+          {
+            "question_number": 1,
+            "text": "She ___ working for two hours before lunch.",
+            "options": [
+              "A. had been",
+              "B. has been",
+              "C. was",
+              "D. have been"
+            ],
+            "correct_answer": "A",
+            "explanation": "Past Perfect Continuous → had been + Ving."
+          },
+          {
+            "question_number": 2,
+            "text": "We ___ driving all night before we arrived.",
+            "options": [
+              "A. had been",
+              "B. have been",
+              "C. was",
+              "D. were"
+            ],
+            "correct_answer": "A",
+            "explanation": "Процесс до определенного момента в прошлом."
+          },
+          {
+            "question_number": 3,
+            "text": "He ___ not been sleeping well lately.",
+            "options": [
+              "A. had",
+              "B. had been",
+              "C. was",
+              "D. have been"
+            ],
+            "correct_answer": "B",
+            "explanation": "Отрицание в Past Perfect Continuous → had not been + Ving."
+          },
+          {
+            "question_number": 4,
+            "text": "They ___ been studying English for years.",
+            "options": [
+              "A. had",
+              "B. had been",
+              "C. were",
+              "D. are"
+            ],
+            "correct_answer": "B",
+            "explanation": "Процесс с длительностью до момента в прошлом."
+          },
+          {
+            "question_number": 5,
+            "text": "How long ___ you been working there?",
+            "options": [
+              "A. had",
+              "B. have",
+              "C. was",
+              "D. were"
+            ],
+            "correct_answer": "A",
+            "explanation": "Вопрос в Past Perfect Continuous → had you been."
+          }
+        ]
+      },
       "Практика: Прошедшие времена": {
         "type": "grammar_test",
         "title": "Практика: Прошедшие времена",
