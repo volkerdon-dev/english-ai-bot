@@ -69,18 +69,61 @@
     if (h1) h1.textContent = t;
   }
 
+  // replaced: renderList with grouping Theory/Practice
   function renderList(node){
     root().innerHTML = '';
     const container = root();
     container.classList.add('section-grid');
-    Object.keys(node).forEach(k => {
+
+    const keys = Object.keys(node);
+    const practiceFor = new Set();
+    keys.forEach(k => {
+      const m = String(k).match(/^\s*Practice:\s*(.+)$/i);
+      if (m && m[1]) practiceFor.add(m[1].trim());
+    });
+
+    keys.forEach(k => {
+      const isPractice = /^\s*Practice:\s*/i.test(String(k));
+      // Если есть пара «Теория + Практика», скрываем дубликат Practice в списке
+      if (isPractice){
+        const base = String(k).replace(/^\s*Practice:\s*/i, '').trim();
+        if (keys.includes(base)) return;
+      }
+
       const card = document.createElement('div');
       card.className = 'section-card';
       card.innerHTML = `<h3>${k}</h3>`;
-      card.onclick = () => { path.push(k); render(); };
+
+      if (!isPractice && practiceFor.has(String(k).trim())){
+        card.onclick = () => { path.push(k); renderChooserForTopic(k); };
+      } else {
+        card.onclick = () => { path.push(k); render(); };
+      }
+
       container.appendChild(card);
     });
     setHeader(title());
+  }
+
+  // Меню выбора для темы: Теория / Практика
+  function renderChooserForTopic(baseKey){
+    const container = root();
+    container.classList.add('section-grid');
+    container.innerHTML = '';
+    setHeader(title());
+
+    const theory = document.createElement('div');
+    theory.className = 'section-card';
+    theory.innerHTML = '<h3>📖 Теория</h3><p>Правила и примеры</p>';
+    theory.onclick = () => { /* остаёмся на базовой теме */ render(); };
+
+    const practice = document.createElement('div');
+    practice.className = 'section-card';
+    practice.innerHTML = '<h3>✍️ Практика</h3><p>Тест по теме</p>';
+    practice.onclick = () => { path[path.length - 1] = `Practice: ${baseKey}`; render(); };
+
+    container.appendChild(theory);
+    container.appendChild(practice);
   }
 
   // Helpers for tests that store letters differently
@@ -308,6 +351,24 @@
       setHeader(leaf.title || title());
 
       container.insertAdjacentHTML('beforeend', renderRich(leaf.content || ''));
+
+      // Показать кнопку «Перейти к практике», если у темы есть соответствующий раздел Practice
+      try {
+        const currentKey = path[path.length - 1];
+        const parentNode = byPath(TREE, path.slice(0, -1));
+        const practiceKey = `Practice: ${currentKey}`;
+        if (parentNode && parentNode[practiceKey] && isLeaf(parentNode[practiceKey])){
+          const ctaBar = document.createElement('div');
+          ctaBar.className = 'tg-cta-bar';
+          const btn = document.createElement('button');
+          btn.className = 'tg-cta';
+          btn.textContent = 'Перейти к практике';
+          btn.onclick = () => { path[path.length - 1] = practiceKey; render(); };
+          ctaBar.appendChild(btn);
+          container.appendChild(ctaBar);
+        }
+      } catch(_){}
+
       tg && tg.MainButton && tg.MainButton.hide();
       return;
     }
