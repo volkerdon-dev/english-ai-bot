@@ -17,130 +17,271 @@
         "type": "text",
         "content": "🧠 *Present Perfect Continuous — Настоящее совершенное длительное время*\n\n📌 *Когда используется:*\n1. Действие началось в прошлом и всё ещё продолжается: Подчеркивается длительность действия, которое началось в прошлом и продолжается до настоящего момента. \n- I have been reading for two hours. (Я читаю уже два часа. — И до сих пор читаю.) \n- They have been playing football since morning. (Они играют в футбол с утра. — И до сих пор играют.) \n2. Действие только что закончилось, но есть видимый результат: Результат действия виден в настоящем, и мы хотим подчеркнуть, что этот результат является следствием недавнего длительного действия. \n- She is tired because she has been working all day. (Она устала, потому что работала весь день.) (Усталость — это результат длительной работы.) \n- The ground is wet because it has been raining. (Земля мокрая, потому что шел дождь.) \n3. Подчёркивание длительности действия: Если мы хотим акцентировать внимание на том, как долго что-то происходило или происходит. \n\n🧩 *Формула:*\n[have/has] + been + глагол-ing \n• I/You/We/They → have been + V-ing \n• He/She/It → has been + V-ing \n\n🔹 *Примеры:*\n- I have been studying since 9 a.m. \n- He has been waiting for an hour. \n- We have been living here for 10 years. \n- What have you been doing all afternoon? (Что ты делал весь день?) \n\n🚫 *Типичные ошибки:*\n- ❌ She have been working → ✅ She *has* been working \n- ❌ He has been work → ✅ He has been *working* \n- ❌ I have been to read → ✅ I have been *reading* \n\n❓ *Вопросы:*\n- Have you been watching TV? \n- Has he been sleeping? \n- ❌ Has he been sleeps? → ✅ Has he been *sleeping?* \n- How long have they been building that house? (Как долго они строят этот дом?) \n\n🧭 *Сигнальные слова:*\n- for, since \n- all day/week/month/year, lately, recently \n- how long \n\n📎 *Сравнение с Present Perfect:*\n- I have been writing reports. (Я писал отчеты. — Фокус на процессе, который мог занять много времени или до сих пор продолжается.) \n- I have written 3 reports. (Я написал 3 отчета. — Фокус на количестве или завершенности, на результате.) \n\n📎 *Когда НЕ используется:*\nС глаголами состояния (know, like, believe, want и т.д.):\n✅ I have known her for years. \n❌ I have been knowing her for years. "
       },
-      "Practice: Present Tenses": {
+      "Practice: Present Simple": {
         "type": "quiz",
-        "title": "Практика: Настоящие времена",
-        "instructions": "Выберите правильный вариант. Вопросы смешаны по Present Simple / Continuous / Perfect / Perfect Continuous.",
+        "title": "Практика: Present Simple",
+        "instructions": "Выберите правильный вариант.",
         "questions": [
           {
             "question_number": 1,
-            "text": "I usually _____ coffee in the morning, but today I _____ tea.",
+            "text": "She usually ___ breakfast at 8 a.m.",
             "options": [
-              "A. drink / drink",
-              "B. am drinking / drink",
-              "C. drink / am drinking",
-              "D. am drinking / am drinking"
+              "A. have",
+              "B. has",
+              "C. is having",
+              "D. had"
             ],
-            "correct_answer": "C",
-            "explanation": "Обычно — Present Simple (drink); сегодня — временная ситуация, Present Continuous (am drinking)."
+            "correct_answer": "B",
+            "explanation": "В Present Simple для he/she/it используется форма с окончанием -s."
           },
           {
             "question_number": 2,
-            "text": "She _____ in London since 2018.",
-            "options": [
-              "A. lives",
-              "B. is living",
-              "C. has lived",
-              "D. has been living"
-            ],
-            "correct_answer": "D",
-            "explanation": "Указан длительный период до настоящего — Present Perfect Continuous предпочтительнее."
-          },
-          {
-            "question_number": 3,
-            "text": "Listen! The baby _____",
-            "options": [
-              "A. cries",
-              "B. is crying",
-              "C. has cried",
-              "D. has been crying"
-            ],
-            "correct_answer": "B",
-            "explanation": "Сейчас, в момент речи — Present Continuous."
-          },
-          {
-            "question_number": 4,
-            "text": "How long _____ your new job?",
-            "options": [
-              "A. do you have",
-              "B. are you having",
-              "C. have you had",
-              "D. have you been having"
-            ],
-            "correct_answer": "C",
-            "explanation": "Глагол have в значении «иметь» не используется в Continuous — Present Perfect Simple."
-          },
-          {
-            "question_number": 5,
-            "text": "We _____ for an hour. Let's take a break.",
-            "options": [
-              "A. work",
-              "B. are working",
-              "C. have worked",
-              "D. have been working"
-            ],
-            "correct_answer": "D",
-            "explanation": "Длительность до настоящего — Present Perfect Continuous."
-          },
-          {
-            "question_number": 6,
-            "text": "He never _____ late to meetings.",
-            "options": [
-              "A. is",
-              "B. is being",
-              "C. has been",
-              "D. has been being"
-            ],
-            "correct_answer": "A",
-            "explanation": "Регулярный факт — Present Simple of 'to be' → is."
-          },
-          {
-            "question_number": 7,
-            "text": "She usually _____ to the gym after work.",
+            "text": "I ___ to the gym twice a week.",
             "options": [
               "A. go",
               "B. goes",
-              "C. is going",
-              "D. has gone"
+              "C. am going",
+              "D. going"
             ],
-            "correct_answer": "B",
-            "explanation": "Present Simple — 'usually' указывает на регулярное действие, глагол в 3 л. ед. ч. принимает окончание -s."
+            "correct_answer": "A",
+            "explanation": "Для I/you/we/they используется начальная форма глагола."
           },
           {
-            "question_number": 8,
-            "text": "Look! The children _____ in the garden.",
+            "question_number": 3,
+            "text": "My brother ___ like football.",
             "options": [
-              "A. play",
-              "B. are playing",
-              "C. have played",
-              "D. plays"
+              "A. don't",
+              "B. doesn't",
+              "C. isn't",
+              "D. wasn't"
             ],
             "correct_answer": "B",
-            "explanation": "Present Continuous — 'Look!' указывает на действие, происходящее прямо сейчас."
+            "explanation": "Отрицание для he/she/it — doesn't + base verb."
           },
           {
-            "question_number": 9,
-            "text": "I _____ this movie three times already.",
+            "question_number": 4,
+            "text": "What time ___ your lessons start?",
             "options": [
-              "A. watch",
-              "B. watched",
-              "C. have watched",
-              "D. am watching"
+              "A. do",
+              "B. does",
+              "C. is",
+              "D. are"
+            ],
+            "correct_answer": "A",
+            "explanation": "Подлежащее your lessons (they) → do."
+          },
+          {
+            "question_number": 5,
+            "text": "Water ___ at 100°C.",
+            "options": [
+              "A. boil",
+              "B. boils",
+              "C. is boiling",
+              "D. boiled"
+            ],
+            "correct_answer": "B",
+            "explanation": "Научные факты и законы природы → Present Simple."
+          }
+        ]
+      },
+      "Practice: Present Continuous": {
+        "type": "quiz",
+        "title": "Практика: Present Continuous",
+        "instructions": "Выберите правильный вариант.",
+        "questions": [
+          {
+            "question_number": 1,
+            "text": "He ___ a book right now.",
+            "options": [
+              "A. reads",
+              "B. read",
+              "C. is reading",
+              "D. reading"
             ],
             "correct_answer": "C",
-            "explanation": "Present Perfect — действие произошло в прошлом, но имеет результат в настоящем ('already')."
+            "explanation": "В момент речи → am/is/are + V-ing."
           },
           {
-            "question_number": 10,
-            "text": "She is tired because she _____ all day.",
+            "question_number": 2,
+            "text": "They ___ TV at the moment.",
             "options": [
-              "A. works",
-              "B. is working",
-              "C. has worked",
-              "D. has been working"
+              "A. watch",
+              "B. are watching",
+              "C. watches",
+              "D. watching"
             ],
-            "correct_answer": "D",
-            "explanation": "Present Perfect Continuous — действие началось в прошлом и продолжалось до настоящего момента ('all day')."
+            "correct_answer": "B",
+            "explanation": "Подлежащее — they, вспомогательный глагол are + V-ing."
+          },
+          {
+            "question_number": 3,
+            "text": "She ___ not sleeping now.",
+            "options": [
+              "A. do",
+              "B. does",
+              "C. is",
+              "D. has"
+            ],
+            "correct_answer": "C",
+            "explanation": "В отрицаниях также используется is not + V-ing."
+          },
+          {
+            "question_number": 4,
+            "text": "What ___ you doing?",
+            "options": [
+              "A. do",
+              "B. are",
+              "C. is",
+              "D. did"
+            ],
+            "correct_answer": "B",
+            "explanation": "Вопрос: What + are + you + doing?"
+          },
+          {
+            "question_number": 5,
+            "text": "Listen! Someone ___ at the door.",
+            "options": [
+              "A. knocks",
+              "B. knock",
+              "C. is knocking",
+              "D. knocking"
+            ],
+            "correct_answer": "C",
+            "explanation": "Сигнал Listen! указывает на действие прямо сейчас."
+          }
+        ]
+      },
+      "Practice: Present Perfect": {
+        "type": "quiz",
+        "title": "Практика: Present Perfect",
+        "instructions": "Выберите правильный вариант.",
+        "questions": [
+          {
+            "question_number": 1,
+            "text": "I ___ already finished my homework.",
+            "options": [
+              "A. have",
+              "B. has",
+              "C. had",
+              "D. am"
+            ],
+            "correct_answer": "A",
+            "explanation": "Present Perfect: have/has + V3. Подлежащее — I → have."
+          },
+          {
+            "question_number": 2,
+            "text": "She ___ never been to London.",
+            "options": [
+              "A. has",
+              "B. have",
+              "C. is",
+              "D. was"
+            ],
+            "correct_answer": "A",
+            "explanation": "Для he/she/it — has + V3."
+          },
+          {
+            "question_number": 3,
+            "text": "We ___ just eaten.",
+            "options": [
+              "A. has",
+              "B. are",
+              "C. have",
+              "D. did"
+            ],
+            "correct_answer": "C",
+            "explanation": "Наречие just типично для Present Perfect → have + V3."
+          },
+          {
+            "question_number": 4,
+            "text": "How long ___ you known her?",
+            "options": [
+              "A. did",
+              "B. have",
+              "C. do",
+              "D. had"
+            ],
+            "correct_answer": "B",
+            "explanation": "Действие началось в прошлом и продолжается → Present Perfect."
+          },
+          {
+            "question_number": 5,
+            "text": "He ___ his passport!",
+            "options": [
+              "A. lost",
+              "B. has lost",
+              "C. loses",
+              "D. is losing"
+            ],
+            "correct_answer": "B",
+            "explanation": "Результат важен (паспорт потерян) → Present Perfect."
+          }
+        ]
+      },
+      "Practice: Present Perfect Continuous": {
+        "type": "quiz",
+        "title": "Практика: Present Perfect Continuous",
+        "instructions": "Выберите правильный вариант.",
+        "questions": [
+          {
+            "question_number": 1,
+            "text": "She ___ working here since 2015.",
+            "options": [
+              "A. is",
+              "B. has been",
+              "C. was",
+              "D. have been"
+            ],
+            "correct_answer": "B",
+            "explanation": "С since → Present Perfect Continuous: has been + V-ing."
+          },
+          {
+            "question_number": 2,
+            "text": "I ___ studying for three hours.",
+            "options": [
+              "A. have been",
+              "B. am",
+              "C. was",
+              "D. has been"
+            ],
+            "correct_answer": "A",
+            "explanation": "Подлежащее I → have been + V-ing."
+          },
+          {
+            "question_number": 3,
+            "text": "They ___ waiting for you.",
+            "options": [
+              "A. are",
+              "B. were",
+              "C. have been",
+              "D. has been"
+            ],
+            "correct_answer": "C",
+            "explanation": "Present Perfect Continuous → have been + V-ing."
+          },
+          {
+            "question_number": 4,
+            "text": "How long ___ you been feeling sick?",
+            "options": [
+              "A. did",
+              "B. are",
+              "C. have",
+              "D. will"
+            ],
+            "correct_answer": "C",
+            "explanation": "Present Perfect Continuous → have you been + V-ing."
+          },
+          {
+            "question_number": 5,
+            "text": "He ___ playing football all day.",
+            "options": [
+              "A. is",
+              "B. has been",
+              "C. have been",
+              "D. was"
+            ],
+            "correct_answer": "B",
+            "explanation": "Подлежащее he → has been + V-ing."
           }
         ]
       }
