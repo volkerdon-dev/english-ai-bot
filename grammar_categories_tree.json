@@ -716,6 +716,274 @@
         "type": "text",
         "content": "🧠 *Future Perfect Continuous — Будущее совершённое длительное время*\n\n📌 *Когда используется:*\n1. Действие будет продолжаться до определённого момента в будущем: Описывает длительное действие, которое начнется в прошлом или настоящем и будет продолжаться до какого-то момента в будущем. Фокус на продолжительности до этой точки. Например: \"By 2026, I *will have been working* here for 10 years.\" (К 2026 году я буду работать здесь уже 10 лет.) \n2. Подчёркивание длительности действия в будущем: Используется, чтобы подчеркнуть, как долго будет происходить действие к определенному моменту в будущем. Например: \"She *will have been studying* for 5 hours.\" (Она будет учиться 5 часов.) \n3. Указание на причину действия в будущем: Может использоваться для объяснения причины будущего состояния. Например: \"He will be tired because he *will have been travelling* all night.\" (Он будет уставшим, потому что он будет путешествовать всю ночь.) \n\n🧩 *Формула:*\n[will have been] + глагол + -ing \n• Для всех лиц и чисел: `will have been + V-ing` \n\n🔹 *Примеры:*\n- I *will have been driving* for 3 hours by then. (К тому времени я буду за рулем уже 3 часа.) \n- He *will have been training* all day. (Он будет тренироваться весь день.) \n- By next month, she *will have been living* in Paris for a year. (К следующему месяцу она будет жить в Париже уже год.) \n\n🚫 *Типичные ошибки:*\n- Ошибки в форме вспомогательных глаголов:\n    - ❌ `Will have be working` → ✅ `Will have *been working*` \n- Забывают `-ing`:\n    - ❌ `They will have been play` → ✅ `They will have been *playing*` \n\n❓ *Вопросы:*\n- Вопросы формируются с помощью `Will` в начале предложения. \n- `How long will you have been working?` (Как долго ты будешь работать?) \n- `Will she have been waiting long?` (Она долго будет ждать?) \n- `By next year, how long will you have been learning English?` (К следующему году, как долго ты будешь учить английский?) \n\n🧭 *Сигнальные слова:*\n- `for` (в течение), `since` (с тех пор как) \n- `by the time` (к тому времени как), `by + (момент в будущем)` (к...) \n- `all day/week/month/year` (весь день/неделю/месяц/год) "
       },
+      "Practice: Future Simple": {
+        "type": "quiz",
+        "title": "Практика: Future Simple",
+        "instructions": "Выберите правильный вариант.",
+        "questions": [
+          {
+            "question_number": 1,
+            "text": "I ___ call you later.",
+            "options": [
+              "A. will",
+              "B. am",
+              "C. shall",
+              "D. would"
+            ],
+            "correct_answer": "A",
+            "explanation": "Future Simple → will + base verb."
+          },
+          {
+            "question_number": 2,
+            "text": "They ___ arrive tomorrow morning.",
+            "options": [
+              "A. will",
+              "B. are",
+              "C. have",
+              "D. were"
+            ],
+            "correct_answer": "A",
+            "explanation": "Для выражения будущего → will + глагол."
+          },
+          {
+            "question_number": 3,
+            "text": "She ___ not go to the party.",
+            "options": [
+              "A. will",
+              "B. will be",
+              "C. shall",
+              "D. is"
+            ],
+            "correct_answer": "A",
+            "explanation": "Отрицание в Future Simple → will not (won’t) + глагол."
+          },
+          {
+            "question_number": 4,
+            "text": "___ you help me with this task?",
+            "options": [
+              "A. Will",
+              "B. Do",
+              "C. Can",
+              "D. Shall"
+            ],
+            "correct_answer": "A",
+            "explanation": "Вопрос в Future Simple начинается с will."
+          },
+          {
+            "question_number": 5,
+            "text": "We ___ finish the report by Monday.",
+            "options": [
+              "A. will",
+              "B. are",
+              "C. have",
+              "D. has"
+            ],
+            "correct_answer": "A",
+            "explanation": "Будущее действие → will + глагол."
+          }
+        ]
+      },
+      "Practice: Future Continuous": {
+        "type": "quiz",
+        "title": "Практика: Future Continuous",
+        "instructions": "Выберите правильный вариант.",
+        "questions": [
+          {
+            "question_number": 1,
+            "text": "I ___ be working at 10 a.m.",
+            "options": [
+              "A. will",
+              "B. will be",
+              "C. am",
+              "D. have"
+            ],
+            "correct_answer": "B",
+            "explanation": "Future Continuous → will be + Ving."
+          },
+          {
+            "question_number": 2,
+            "text": "They ___ be traveling next week.",
+            "options": [
+              "A. will",
+              "B. will be",
+              "C. are",
+              "D. have been"
+            ],
+            "correct_answer": "B",
+            "explanation": "Продолжительное действие в будущем → will be + глагол-ing."
+          },
+          {
+            "question_number": 3,
+            "text": "What ___ you be doing at 9 tonight?",
+            "options": [
+              "A. will",
+              "B. do",
+              "C. are",
+              "D. can"
+            ],
+            "correct_answer": "A",
+            "explanation": "Вопрос в Future Continuous → will + подлежащее + be + Ving."
+          },
+          {
+            "question_number": 4,
+            "text": "She ___ not be coming to the event.",
+            "options": [
+              "A. will",
+              "B. will be",
+              "C. is",
+              "D. has"
+            ],
+            "correct_answer": "B",
+            "explanation": "Отрицание → will not be + Ving."
+          },
+          {
+            "question_number": 5,
+            "text": "By this time tomorrow, I ___ be flying to Paris.",
+            "options": [
+              "A. will",
+              "B. will be",
+              "C. am",
+              "D. was"
+            ],
+            "correct_answer": "B",
+            "explanation": "Указание на конкретное время в будущем → Future Continuous."
+          }
+        ]
+      },
+      "Practice: Future Perfect": {
+        "type": "quiz",
+        "title": "Практика: Future Perfect",
+        "instructions": "Выберите правильный вариант.",
+        "questions": [
+          {
+            "question_number": 1,
+            "text": "She ___ have finished the book by Friday.",
+            "options": [
+              "A. will",
+              "B. will be",
+              "C. will have",
+              "D. have"
+            ],
+            "correct_answer": "C",
+            "explanation": "Future Perfect → will have + V3."
+          },
+          {
+            "question_number": 2,
+            "text": "They ___ have left before we arrive.",
+            "options": [
+              "A. will",
+              "B. will have",
+              "C. are",
+              "D. have"
+            ],
+            "correct_answer": "B",
+            "explanation": "Действие завершится до другого в будущем."
+          },
+          {
+            "question_number": 3,
+            "text": "I ___ have completed the project by next month.",
+            "options": [
+              "A. will",
+              "B. will be",
+              "C. will have",
+              "D. am"
+            ],
+            "correct_answer": "C",
+            "explanation": "Future Perfect → завершённое действие к определённому моменту."
+          },
+          {
+            "question_number": 4,
+            "text": "He ___ not have called by then.",
+            "options": [
+              "A. will",
+              "B. will have",
+              "C. is",
+              "D. has"
+            ],
+            "correct_answer": "B",
+            "explanation": "Отрицание → will not have + V3."
+          },
+          {
+            "question_number": 5,
+            "text": "___ she have left before noon?",
+            "options": [
+              "A. Will",
+              "B. Does",
+              "C. Has",
+              "D. Is"
+            ],
+            "correct_answer": "A",
+            "explanation": "Вопрос → Will + подлежащее + have + V3?"
+          }
+        ]
+      },
+      "Practice: Future Perfect Continuous": {
+        "type": "quiz",
+        "title": "Практика: Future Perfect Continuous",
+        "instructions": "Выберите правильный вариант.",
+        "questions": [
+          {
+            "question_number": 1,
+            "text": "By next year, I ___ been working here for 10 years.",
+            "options": [
+              "A. will",
+              "B. will have",
+              "C. will have been",
+              "D. have been"
+            ],
+            "correct_answer": "C",
+            "explanation": "Future Perfect Continuous → will have been + Ving."
+          },
+          {
+            "question_number": 2,
+            "text": "She ___ have been studying all night.",
+            "options": [
+              "A. will",
+              "B. will have",
+              "C. will have been",
+              "D. is"
+            ],
+            "correct_answer": "C",
+            "explanation": "Продолжительное действие до определенного момента в будущем."
+          },
+          {
+            "question_number": 3,
+            "text": "How long ___ you have been living there?",
+            "options": [
+              "A. will",
+              "B. will have",
+              "C. will have been",
+              "D. have"
+            ],
+            "correct_answer": "C",
+            "explanation": "Вопрос → will you have been + Ving."
+          },
+          {
+            "question_number": 4,
+            "text": "He ___ not have been working on it long.",
+            "options": [
+              "A. will",
+              "B. will have",
+              "C. will have been",
+              "D. has"
+            ],
+            "correct_answer": "C",
+            "explanation": "Отрицание → will not have been + Ving."
+          },
+          {
+            "question_number": 5,
+            "text": "They ___ have been building the house for months.",
+            "options": [
+              "A. will",
+              "B. will have been",
+              "C. have",
+              "D. are"
+            ],
+            "correct_answer": "B",
+            "explanation": "Future Perfect Continuous → длительное действие в будущем."
+          }
+        ]
+      },
       "Практика: Будущие времена": {
         "type": "grammar_test",
         "title": "Практика: Будущие времена",
@@ -856,6 +1124,207 @@
       "Present for Future": {
         "type": "text",
         "content": "🧠 *Present for Future — Настоящее время для будущего*\n\n📌 *Когда используется:*\n1. *Present Simple* — для расписаний, графиков, официальных событий:Используется для обозначения запланированных событий, которые происходят по фиксированному графику, расписанию, или являются частью какой-либо программы. Это часто касается транспорта, кинотеатров, учебных заведений, государственных учреждений. Например: \"The train *leaves* at 6 p.m.\" (Поезд отправляется в 6 вечера.) \"School *starts* next week.\" (Школа начинается на следующей неделе.) \n\n2. *Present Continuous* — для личных планов и договорённостей: Применяется для описания личных планов или договоренностей, которые уже были сделаны и зафиксированы. Часто используются с указанием времени в будущем. Это более гибкий и личный план, чем расписание. Например: \"I'm *meeting* my friend tomorrow.\" (Я встречаюсь с другом завтра.) \"She's *flying* to Paris next Friday.\" (Она летит в Париж в следующую пятницу.) \n\n🧩 *Формулы:*\n• **Present Simple** → `[subject] + V(s/es)` \n• **Present Continuous** → `[am/is/are] + V-ing` \n\n🔹 *Примеры:*\n- The flight *departs* at noon. (Рейс отправляется в полдень.) \n- I'm *having dinner* with my parents tonight. (Я ужинаю с родителями сегодня вечером.) \n- The concert *begins* at 8 PM. (Концерт начинается в 8 вечера.) \n- We *are visiting* Rome in spring. (Мы посещаем Рим весной.) \n\n🚫 *Типичные ошибки:*\n- Путаница между Present Simple и Present Continuous для будущего:\n    - ❌ `I meet him tomorrow` (если это личная договоренность) → ✅ `I'm *meeting* him tomorrow` \n    - ❌ `The show starting soon` (если это по расписанию) → ✅ `The show *starts* soon` \n- Использование `will` вместо настоящих времен, когда есть четкий план или расписание:\n    - ❌ `The train will leave at 6 p.m.` → ✅ `The train *leaves* at 6 p.m.` \n\n🧭 *Сигнальные слова:*\n- `tomorrow` (завтра), `next week/month/year` (на следующей неделе/в следующем месяце/году) \n- `soon` (скоро), `at 8 p.m.` (в 8 вечера), `on Monday` (в понедельник) \n- `tonight` (сегодня вечером), `this evening` (этим вечером) "
+      },
+      "Practice: Used to / Would": {
+        "type": "quiz",
+        "title": "Практика: Used to / Would",
+        "instructions": "Выберите правильный вариант.",
+        "questions": [
+          {
+            "question_number": 1,
+            "text": "I ___ play outside every day when I was a child.",
+            "options": [
+              "A. used to",
+              "B. use to",
+              "C. would",
+              "D. will"
+            ],
+            "correct_answer": "A",
+            "explanation": "Для регулярных привычек в прошлом — used to."
+          },
+          {
+            "question_number": 2,
+            "text": "He ___ go fishing with his dad on weekends.",
+            "options": [
+              "A. would",
+              "B. used",
+              "C. use to",
+              "D. will"
+            ],
+            "correct_answer": "A",
+            "explanation": "Would также можно использовать для прошлых привычек."
+          },
+          {
+            "question_number": 3,
+            "text": "We ___ live near the beach.",
+            "options": [
+              "A. used to",
+              "B. use to",
+              "C. would",
+              "D. has used"
+            ],
+            "correct_answer": "A",
+            "explanation": "Used to + V → привычки или состояния в прошлом."
+          },
+          {
+            "question_number": 4,
+            "text": "Did you ___ go there as a kid?",
+            "options": [
+              "A. use to",
+              "B. used to",
+              "C. would",
+              "D. had"
+            ],
+            "correct_answer": "A",
+            "explanation": "В вопросах → Did + use to (без -d)."
+          },
+          {
+            "question_number": 5,
+            "text": "She ___ not like chocolate before.",
+            "options": [
+              "A. used to",
+              "B. did use to",
+              "C. didn’t use to",
+              "D. would"
+            ],
+            "correct_answer": "C",
+            "explanation": "В отрицании → didn’t use to (не used to)."
+          }
+        ]
+      },
+      "Practice: Future in the Past": {
+        "type": "quiz",
+        "title": "Практика: Future in the Past",
+        "instructions": "Выберите правильный вариант.",
+        "questions": [
+          {
+            "question_number": 1,
+            "text": "I thought he ___ come to the meeting.",
+            "options": [
+              "A. would",
+              "B. will",
+              "C. can",
+              "D. shall"
+            ],
+            "correct_answer": "A",
+            "explanation": "Future in the Past → would + base verb."
+          },
+          {
+            "question_number": 2,
+            "text": "She said she ___ be working late.",
+            "options": [
+              "A. would",
+              "B. will",
+              "C. is",
+              "D. has"
+            ],
+            "correct_answer": "A",
+            "explanation": "После said → Future in the Past → would + глагол."
+          },
+          {
+            "question_number": 3,
+            "text": "They told us they ___ finish by Friday.",
+            "options": [
+              "A. would",
+              "B. will",
+              "C. can",
+              "D. have"
+            ],
+            "correct_answer": "A",
+            "explanation": "Would заменяет will в прошлом."
+          },
+          {
+            "question_number": 4,
+            "text": "He knew they ___ be arriving soon.",
+            "options": [
+              "A. would",
+              "B. will",
+              "C. are",
+              "D. was"
+            ],
+            "correct_answer": "A",
+            "explanation": "Future in the Past используется для планов или предположений в прошлом."
+          },
+          {
+            "question_number": 5,
+            "text": "We believed she ___ help us.",
+            "options": [
+              "A. would",
+              "B. will",
+              "C. is going to",
+              "D. has"
+            ],
+            "correct_answer": "A",
+            "explanation": "Future in the Past → would + base verb."
+          }
+        ]
+      },
+      "Practice: Present for Future": {
+        "type": "quiz",
+        "title": "Практика: Present for Future",
+        "instructions": "Выберите правильный вариант.",
+        "questions": [
+          {
+            "question_number": 1,
+            "text": "My flight ___ at 8 a.m. tomorrow.",
+            "options": [
+              "A. leaves",
+              "B. will leave",
+              "C. is leaving",
+              "D. left"
+            ],
+            "correct_answer": "A",
+            "explanation": "Расписание → Present Simple для будущего."
+          },
+          {
+            "question_number": 2,
+            "text": "We ___ a party next Saturday.",
+            "options": [
+              "A. are having",
+              "B. have",
+              "C. will have",
+              "D. had"
+            ],
+            "correct_answer": "A",
+            "explanation": "Уверенные планы → Present Continuous."
+          },
+          {
+            "question_number": 3,
+            "text": "School ___ next week.",
+            "options": [
+              "A. starts",
+              "B. start",
+              "C. will start",
+              "D. is start"
+            ],
+            "correct_answer": "A",
+            "explanation": "Расписание → Present Simple."
+          },
+          {
+            "question_number": 4,
+            "text": "I ___ the dentist at 4.",
+            "options": [
+              "A. am seeing",
+              "B. see",
+              "C. will see",
+              "D. saw"
+            ],
+            "correct_answer": "A",
+            "explanation": "Личные договоренности → Present Continuous."
+          },
+          {
+            "question_number": 5,
+            "text": "The movie ___ at 9 p.m.",
+            "options": [
+              "A. starts",
+              "B. will start",
+              "C. is starting",
+              "D. started"
+            ],
+            "correct_answer": "A",
+            "explanation": "Фиксированные события → Present Simple."
+          }
+        ]
       },
       "Практика: Особые случаи": {
         "type": "grammar_test",
