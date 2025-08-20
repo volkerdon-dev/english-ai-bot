@@ -1606,6 +1606,253 @@
           "explanation": "‘Yikes’ выражает внезапный испуг/удивление."
         }
       ]
+    },
+    "Practice: Prepositions": {
+      "type": "grammar_test",
+      "title": "Практика: Prepositions",
+      "instructions": "Выберите правильный вариант ответа.",
+      "questions": [
+        {
+          "question_number": 1,
+          "text": "The cat is ___ the box.",
+          "options": [
+            "A) in",
+            "B) at",
+            "C) on",
+            "D) under"
+          ],
+          "correct_answer": "A",
+          "explanation": "“In” показывает нахождение внутри."
+        },
+        {
+          "question_number": 2,
+          "text": "Which sentence uses a preposition correctly?",
+          "options": [
+            "A) He is waiting the bus.",
+            "B) He is waiting for the bus.",
+            "C) He is waiting on the bus.",
+            "D) He is waiting by the bus."
+          ],
+          "correct_answer": "B",
+          "explanation": "Правильная фраза — “wait for”."
+        },
+        {
+          "question_number": 3,
+          "text": "What is the function of prepositions?",
+          "options": [
+            "A) Show emotions",
+            "B) Show relationships",
+            "C) Replace nouns",
+            "D) Modify verbs"
+          ],
+          "correct_answer": "B",
+          "explanation": "Предлоги показывают отношения места, времени и причины."
+        },
+        {
+          "question_number": 4,
+          "text": "I live ___ Paris.",
+          "options": [
+            "A) in",
+            "B) at",
+            "C) on",
+            "D) over"
+          ],
+          "correct_answer": "A",
+          "explanation": "“In” используется с городами и странами."
+        },
+        {
+          "question_number": 5,
+          "text": "I will meet you ___ the bus stop.",
+          "options": [
+            "A) in",
+            "B) at",
+            "C) on",
+            "D) over"
+          ],
+          "correct_answer": "B",
+          "explanation": "“At” — точное место."
+        },
+        {
+          "question_number": 6,
+          "text": "The book is lying ___ the table.",
+          "options": [
+            "A) on",
+            "B) in",
+            "C) at",
+            "D) by"
+          ],
+          "correct_answer": "A",
+          "explanation": "“On” = на поверхности."
+        },
+        {
+          "question_number": 7,
+          "text": "Which is correct?",
+          "options": [
+            "A) I arrived in the station.",
+            "B) I arrived on the station.",
+            "C) I arrived at the station.",
+            "D) I arrived over the station."
+          ],
+          "correct_answer": "C",
+          "explanation": "Для транспортных пунктов используем “at”."
+        },
+        {
+          "question_number": 8,
+          "text": "The shoes are ___ the bed.",
+          "options": [
+            "A) under",
+            "B) below",
+            "C) in",
+            "D) on"
+          ],
+          "correct_answer": "A",
+          "explanation": "“Under the bed” = физически под."
+        },
+        {
+          "question_number": 9,
+          "text": "Which sentence uses “below” correctly?",
+          "options": [
+            "A) The cat is below the table.",
+            "B) The temperature is below zero.",
+            "C) The keys are below the bag.",
+            "D) He is below the chair."
+          ],
+          "correct_answer": "B",
+          "explanation": "“Below” часто про уровни, показатели."
+        },
+        {
+          "question_number": 10,
+          "text": "The plane flew ___ the clouds.",
+          "options": [
+            "A) above",
+            "B) under",
+            "C) in",
+            "D) beside"
+          ],
+          "correct_answer": "A",
+          "explanation": "“Above” = выше, не касаясь."
+        },
+        {
+          "question_number": 11,
+          "text": "He held an umbrella ___ his head.",
+          "options": [
+            "A) above",
+            "B) over",
+            "C) in",
+            "D) on"
+          ],
+          "correct_answer": "B",
+          "explanation": "“Over” = прямо сверху, покрывает."
+        },
+        {
+          "question_number": 12,
+          "text": "There is a picture ___ the fireplace.",
+          "options": [
+            "A) above",
+            "B) under",
+            "C) over",
+            "D) beside"
+          ],
+          "correct_answer": "A",
+          "explanation": "“Above the fireplace” = на стене выше."
+        },
+        {
+          "question_number": 13,
+          "text": "She is sitting ___ her best friend.",
+          "options": [
+            "A) beside",
+            "B) above",
+            "C) over",
+            "D) in"
+          ],
+          "correct_answer": "A",
+          "explanation": "“Beside” = рядом."
+        },
+        {
+          "question_number": 14,
+          "text": "The bank is ___ the post office.",
+          "options": [
+            "A) next to",
+            "B) over",
+            "C) under",
+            "D) among"
+          ],
+          "correct_answer": "A",
+          "explanation": "“Next to” = рядом."
+        },
+        {
+          "question_number": 15,
+          "text": "She divided the chocolate ___ her two kids.",
+          "options": [
+            "A) between",
+            "B) among",
+            "C) over",
+            "D) beside"
+          ],
+          "correct_answer": "A",
+          "explanation": "“Between” = для двух."
+        },
+        {
+          "question_number": 16,
+          "text": "He was standing ___ his friends.",
+          "options": [
+            "A) among",
+            "B) between",
+            "C) under",
+            "D) at"
+          ],
+          "correct_answer": "A",
+          "explanation": "“Among” = в окружении (3+)."
+        },
+        {
+          "question_number": 17,
+          "text": "There is a secret ___ the three of us.",
+          "options": [
+            "A) between",
+            "B) among",
+            "C) under",
+            "D) at"
+          ],
+          "correct_answer": "A",
+          "explanation": "“Between three of us” = ограниченная группа."
+        },
+        {
+          "question_number": 18,
+          "text": "The car is parked ___ the house.",
+          "options": [
+            "A) behind",
+            "B) in front of",
+            "C) over",
+            "D) on"
+          ],
+          "correct_answer": "A",
+          "explanation": "“Behind” = позади."
+        },
+        {
+          "question_number": 19,
+          "text": "He is standing ___ the class.",
+          "options": [
+            "A) behind",
+            "B) in front of",
+            "C) over",
+            "D) under"
+          ],
+          "correct_answer": "B",
+          "explanation": "“In front of” = перед."
+        },
+        {
+          "question_number": 20,
+          "text": "The sun disappeared ___ the clouds.",
+          "options": [
+            "A) behind",
+            "B) in front of",
+            "C) beside",
+            "D) over"
+          ],
+          "correct_answer": "A",
+          "explanation": "Солнце скрылось за облаками."
+        }
+      ]
     }
   },
   "🧱 Sentence Structure": {
