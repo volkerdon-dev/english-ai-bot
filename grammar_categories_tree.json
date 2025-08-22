@@ -2151,6 +2151,274 @@
           "explanation": "Предложение является командой или просьбой, поэтому оно повелительное (imperative)."
         }
       ]
+    },
+    "Practice: Questions": {
+      "type": "grammar_test",
+      "title": "Практика: Questions",
+      "instructions": "Выберите правильный вариант ответа.",
+      "questions": [
+        {
+          "question_number": 1,
+          "text": "___ you like coffee?",
+          "options": [
+            "A) Do",
+            "B) Does",
+            "C) Are",
+            "D) Did"
+          ],
+          "correct_answer": "A",
+          "explanation": "Вопрос в Present Simple: Do/Does + subject + V. С подлежащим you → Do."
+        },
+        {
+          "question_number": 2,
+          "text": "Where ___ she live?",
+          "options": [
+            "A) is",
+            "B) do",
+            "C) does",
+            "D) did"
+          ],
+          "correct_answer": "C",
+          "explanation": "Третье лицо ед. ч. в Present Simple → does + base verb."
+        },
+        {
+          "question_number": 3,
+          "text": "What are you looking ___?",
+          "options": [
+            "A) at",
+            "B) for",
+            "C) to",
+            "D) on"
+          ],
+          "correct_answer": "B",
+          "explanation": "Фразовый глагол look for — «искать», предлог стоит в конце вопроса."
+        },
+        {
+          "question_number": 4,
+          "text": "___ time does the lesson start?",
+          "options": [
+            "A) What",
+            "B) Which",
+            "C) When",
+            "D) How"
+          ],
+          "correct_answer": "A",
+          "explanation": "Устойчивое выражение — What time ...?"
+        },
+        {
+          "question_number": 5,
+          "text": "Who ___ your teacher?",
+          "options": [
+            "A) are",
+            "B) is",
+            "C) do",
+            "D) does"
+          ],
+          "correct_answer": "B",
+          "explanation": "Be в настоящем времени с ед. числом: Who is your teacher?"
+        }
+      ]
+    },
+    "Practice: Negation": {
+      "type": "grammar_test",
+      "title": "Практика: Negation",
+      "instructions": "Выберите правильный вариант ответа.",
+      "questions": [
+        {
+          "question_number": 1,
+          "text": "She ___ like milk.",
+          "options": [
+            "A) don't",
+            "B) isn't",
+            "C) doesn't",
+            "D) not"
+          ],
+          "correct_answer": "C",
+          "explanation": "Отрицание в Present Simple для he/she/it → doesn't + V."
+        },
+        {
+          "question_number": 2,
+          "text": "They ___ at home yesterday.",
+          "options": [
+            "A) weren't",
+            "B) didn't be",
+            "C) don't be",
+            "D) hasn't been"
+          ],
+          "correct_answer": "A",
+          "explanation": "Глагол to be в Past Simple: were/were not → weren't."
+        },
+        {
+          "question_number": 3,
+          "text": "I have ___ seen this movie.",
+          "options": [
+            "A) no",
+            "B) never",
+            "C) not",
+            "D) none"
+          ],
+          "correct_answer": "B",
+          "explanation": "Отрицательное наречие частоты: have never seen."
+        },
+        {
+          "question_number": 4,
+          "text": "He ___ swim.",
+          "options": [
+            "A) doesn't can",
+            "B) can't",
+            "C) no can",
+            "D) isn't can"
+          ],
+          "correct_answer": "B",
+          "explanation": "Отрицательная форма модального can → can't."
+        },
+        {
+          "question_number": 5,
+          "text": "There was ___ water left.",
+          "options": [
+            "A) any",
+            "B) some",
+            "C) no",
+            "D) none"
+          ],
+          "correct_answer": "C",
+          "explanation": "В значении «совсем не осталось» используется no + существительное."
+        }
+      ]
+    },
+    "Practice: Complex Sentences": {
+      "type": "grammar_test",
+      "title": "Практика: Complex Sentences",
+      "instructions": "Выберите правильный вариант ответа.",
+      "questions": [
+        {
+          "question_number": 1,
+          "text": "I'll call you when I ___ home.",
+          "options": [
+            "A) will get",
+            "B) get",
+            "C) got",
+            "D) am getting"
+          ],
+          "correct_answer": "B",
+          "explanation": "В придаточных времени после when — Present Simple, не will."
+        },
+        {
+          "question_number": 2,
+          "text": "He left early because he ___ tired.",
+          "options": [
+            "A) was",
+            "B) is",
+            "C) will be",
+            "D) has been"
+          ],
+          "correct_answer": "A",
+          "explanation": "Причина в прошлом → Past Simple: was."
+        },
+        {
+          "question_number": 3,
+          "text": "If it rains, we ___ at home.",
+          "options": [
+            "A) stay",
+            "B) will stay",
+            "C) stayed",
+            "D) would stay"
+          ],
+          "correct_answer": "B",
+          "explanation": "Первый тип условных: If + Present Simple, will + V."
+        },
+        {
+          "question_number": 4,
+          "text": "Although it was cold, they ___ for a walk.",
+          "options": [
+            "A) go",
+            "B) went",
+            "C) are going",
+            "D) had gone"
+          ],
+          "correct_answer": "B",
+          "explanation": "Противопоставление Although + Past Simple → went."
+        },
+        {
+          "question_number": 5,
+          "text": "She didn't come, ___ she was invited.",
+          "options": [
+            "A) because",
+            "B) but",
+            "C) although",
+            "D) so"
+          ],
+          "correct_answer": "C",
+          "explanation": "Хотя её пригласили — although."
+        }
+      ]
+    },
+    "Practice: Passive Voice": {
+      "type": "grammar_test",
+      "title": "Практика: Passive Voice",
+      "instructions": "Выберите правильный вариант ответа.",
+      "questions": [
+        {
+          "question_number": 1,
+          "text": "The letter ___ yesterday.",
+          "options": [
+            "A) sends",
+            "B) was sent",
+            "C) is sending",
+            "D) has sent"
+          ],
+          "correct_answer": "B",
+          "explanation": "Пассив Past Simple: was/were + V3 → was sent."
+        },
+        {
+          "question_number": 2,
+          "text": "This book ___ by many people.",
+          "options": [
+            "A) reads",
+            "B) is read",
+            "C) read",
+            "D) was reading"
+          ],
+          "correct_answer": "B",
+          "explanation": "Пассив Present Simple: am/is/are + V3 → is read."
+        },
+        {
+          "question_number": 3,
+          "text": "The car ___ by next week.",
+          "options": [
+            "A) will repair",
+            "B) will be repaired",
+            "C) is repairing",
+            "D) repaired"
+          ],
+          "correct_answer": "B",
+          "explanation": "Пассив Future Simple: will be + V3."
+        },
+        {
+          "question_number": 4,
+          "text": "The windows ___ now.",
+          "options": [
+            "A) are cleaned",
+            "B) are being cleaned",
+            "C) were cleaned",
+            "D) have cleaned"
+          ],
+          "correct_answer": "B",
+          "explanation": "Сейчас в процессе → Present Continuous Passive: are being cleaned."
+        },
+        {
+          "question_number": 5,
+          "text": "He hates being ___ late.",
+          "options": [
+            "A) keep",
+            "B) kept",
+            "C) keeping",
+            "D) to keep"
+          ],
+          "correct_answer": "B",
+          "explanation": "После being — причастие V3 в пассивном значении: kept."
+        }
+      ]
     }
   },
   "🛠 Constructions": {
@@ -2238,6 +2506,341 @@
           ],
           "correct_answer": "C. is going to",
           "explanation": "'Be going to' используется для предсказаний на основе видимых доказательств."
+        }
+      ]
+    },
+    "Practice: There is / There are": {
+      "type": "grammar_test",
+      "title": "Практика: There is / There are",
+      "instructions": "Выберите правильный вариант ответа.",
+      "questions": [
+        {
+          "question_number": 1,
+          "text": "___ a cat on the sofa.",
+          "options": [
+            "A) There is",
+            "B) There are",
+            "C) It is",
+            "D) It are"
+          ],
+          "correct_answer": "A",
+          "explanation": "Единственное число → There is."
+        },
+        {
+          "question_number": 2,
+          "text": "___ two apples on the table.",
+          "options": [
+            "A) There is",
+            "B) There are",
+            "C) It is",
+            "D) They are"
+          ],
+          "correct_answer": "B",
+          "explanation": "Множественное число → There are."
+        },
+        {
+          "question_number": 3,
+          "text": "___ any milk in the fridge?",
+          "options": [
+            "A) Is there",
+            "B) Are there",
+            "C) There is",
+            "D) There are"
+          ],
+          "correct_answer": "A",
+          "explanation": "Вопрос в ед. числе → Is there ...?"
+        },
+        {
+          "question_number": 4,
+          "text": "There ___ no chairs in the room.",
+          "options": [
+            "A) is",
+            "B) are",
+            "C) be",
+            "D) were"
+          ],
+          "correct_answer": "B",
+          "explanation": "Множественное число → There are no ..."
+        },
+        {
+          "question_number": 5,
+          "text": "How many books ___ on the shelf?",
+          "options": [
+            "A) there is",
+            "B) are there",
+            "C) there are",
+            "D) is there"
+          ],
+          "correct_answer": "B",
+          "explanation": "Порядок в вопросе: How many ... are there?"
+        }
+      ]
+    },
+    "Practice: Have got / Has got": {
+      "type": "grammar_test",
+      "title": "Практика: Have got / Has got",
+      "instructions": "Выберите правильный вариант ответа.",
+      "questions": [
+        {
+          "question_number": 1,
+          "text": "I ___ a new phone.",
+          "options": [
+            "A) have got",
+            "B) has got",
+            "C) am got",
+            "D) have"
+          ],
+          "correct_answer": "A",
+          "explanation": "Для I/you/we/they → have got."
+        },
+        {
+          "question_number": 2,
+          "text": "She ___ two brothers.",
+          "options": [
+            "A) have got",
+            "B) has got",
+            "C) is got",
+            "D) got"
+          ],
+          "correct_answer": "B",
+          "explanation": "Для he/she/it → has got."
+        },
+        {
+          "question_number": 3,
+          "text": "___ you got any questions?",
+          "options": [
+            "A) Do",
+            "B) Are",
+            "C) Have",
+            "D) Has"
+          ],
+          "correct_answer": "C",
+          "explanation": "Вопрос с have got → Have you got ...?"
+        },
+        {
+          "question_number": 4,
+          "text": "He ___ got a car. (negative)",
+          "options": [
+            "A) has",
+            "B) hasn't",
+            "C) doesn't",
+            "D) haven't"
+          ],
+          "correct_answer": "B",
+          "explanation": "Отрицание с he/she/it → hasn't got."
+        },
+        {
+          "question_number": 5,
+          "text": "They ___ got enough time. (negative)",
+          "options": [
+            "A) haven't",
+            "B) hasn't",
+            "C) don't",
+            "D) aren't"
+          ],
+          "correct_answer": "A",
+          "explanation": "Отрицание для they → haven't got."
+        }
+      ]
+    },
+    "Practice: Used to": {
+      "type": "grammar_test",
+      "title": "Практика: Used to",
+      "instructions": "Выберите правильный вариант ответа.",
+      "questions": [
+        {
+          "question_number": 1,
+          "text": "I ___ live in Rome, but now I live in Berlin.",
+          "options": [
+            "A) used to",
+            "B) would",
+            "C) was",
+            "D) have used to"
+          ],
+          "correct_answer": "A",
+          "explanation": "Привычка/состояние в прошлом, которое изменилось → used to."
+        },
+        {
+          "question_number": 2,
+          "text": "Did you ___ play tennis when you were a child?",
+          "options": [
+            "A) used to",
+            "B) use to",
+            "C) would",
+            "D) were"
+          ],
+          "correct_answer": "B",
+          "explanation": "В вопросах после did → use to (без -d)."
+        },
+        {
+          "question_number": 3,
+          "text": "She ___ always visit her grandma on Sundays.",
+          "options": [
+            "A) used to",
+            "B) would",
+            "C) was used to",
+            "D) had used to"
+          ],
+          "correct_answer": "B",
+          "explanation": "Повторяющееся действие в прошлом → would + V."
+        },
+        {
+          "question_number": 4,
+          "text": "I ___ waking up early.",
+          "options": [
+            "A) used to",
+            "B) am used to",
+            "C) use to",
+            "D) would to"
+          ],
+          "correct_answer": "B",
+          "explanation": "Be used to + V-ing/сущ. (привык к) — другой смысл."
+        },
+        {
+          "question_number": 5,
+          "text": "He didn't ___ like coffee.",
+          "options": [
+            "A) used to",
+            "B) use to",
+            "C) would",
+            "D) using to"
+          ],
+          "correct_answer": "B",
+          "explanation": "Отрицание с did → didn't use to."
+        }
+      ]
+    },
+    "Practice: Be going to": {
+      "type": "grammar_test",
+      "title": "Практика: Be going to",
+      "instructions": "Выберите правильный вариант ответа.",
+      "questions": [
+        {
+          "question_number": 1,
+          "text": "She is ___ buy a new laptop.",
+          "options": [
+            "A) going to",
+            "B) go to",
+            "C) going",
+            "D) going for"
+          ],
+          "correct_answer": "A",
+          "explanation": "Конструкция be going to + V для планов."
+        },
+        {
+          "question_number": 2,
+          "text": "I ___ visit my parents this weekend.",
+          "options": [
+            "A) going to",
+            "B) am going to",
+            "C) will going to",
+            "D) am go to"
+          ],
+          "correct_answer": "B",
+          "explanation": "С подлежащим I → am going to + V."
+        },
+        {
+          "question_number": 3,
+          "text": "Look at those clouds! It ___ rain.",
+          "options": [
+            "A) is going to",
+            "B) will",
+            "C) goes to",
+            "D) is going"
+          ],
+          "correct_answer": "A",
+          "explanation": "Очевидные признаки → be going to."
+        },
+        {
+          "question_number": 4,
+          "text": "___ you going to study tonight?",
+          "options": [
+            "A) Do",
+            "B) Are",
+            "C) Will",
+            "D) Have"
+          ],
+          "correct_answer": "B",
+          "explanation": "Вопрос: Are you going to ...?"
+        },
+        {
+          "question_number": 5,
+          "text": "They ___ going to join us. (negative)",
+          "options": [
+            "A) are not",
+            "B) is not",
+            "C) do not",
+            "D) were not"
+          ],
+          "correct_answer": "A",
+          "explanation": "Отрицание: are not (aren't) going to ..."
+        }
+      ]
+    },
+    "Practice: It takes": {
+      "type": "grammar_test",
+      "title": "Практика: It takes",
+      "instructions": "Выберите правильный вариант ответа.",
+      "questions": [
+        {
+          "question_number": 1,
+          "text": "___ me 20 minutes to get to work.",
+          "options": [
+            "A) It take",
+            "B) It takes",
+            "C) It is taking",
+            "D) Takes"
+          ],
+          "correct_answer": "B",
+          "explanation": "Шаблон: It takes + кому + время + to + V."
+        },
+        {
+          "question_number": 2,
+          "text": "How long ___ it take to cook this dish?",
+          "options": [
+            "A) does",
+            "B) do",
+            "C) is",
+            "D) has"
+          ],
+          "correct_answer": "A",
+          "explanation": "Вопрос: How long does it take ...?"
+        },
+        {
+          "question_number": 3,
+          "text": "It took us an hour ___ finish the report.",
+          "options": [
+            "A) to",
+            "B) for",
+            "C) —",
+            "D) of"
+          ],
+          "correct_answer": "A",
+          "explanation": "Инфинитив с to: to finish."
+        },
+        {
+          "question_number": 4,
+          "text": "It will ___ a few days to repair the car.",
+          "options": [
+            "A) taking",
+            "B) took",
+            "C) takes",
+            "D) take"
+          ],
+          "correct_answer": "D",
+          "explanation": "В Future Simple после will — base form → take."
+        },
+        {
+          "question_number": 5,
+          "text": "It doesn't take ___ time.",
+          "options": [
+            "A) many",
+            "B) much",
+            "C) a few",
+            "D) several"
+          ],
+          "correct_answer": "B",
+          "explanation": "С неисчисляемым time → much."
         }
       ]
     }
@@ -2337,633 +2940,6 @@
           "explanation": "Перед исчисляемым существительным в единственном числе используется неопределенный артикль 'a'."
         }
       ]
-    }
-  },
-  "Grammar": {
-    "Sentence Structure": {
-      "Questions": {
-        "Practice: Questions": {
-          "type": "quiz",
-          "title": "Практика: Questions",
-          "instructions": "Выберите правильный вариант ответа.",
-          "questions": [
-            {
-              "question_number": 1,
-              "text": "___ you like coffee?",
-              "options": [
-                "A. Do",
-                "B. Does",
-                "C. Are",
-                "D. Did"
-              ],
-              "correct_answer": "A",
-              "explanation": "Вопрос в Present Simple: Do/Does + subject + V. С подлежащим you → Do."
-            },
-            {
-              "question_number": 2,
-              "text": "Where ___ she live?",
-              "options": [
-                "A. is",
-                "B. do",
-                "C. does",
-                "D. did"
-              ],
-              "correct_answer": "C",
-              "explanation": "Третье лицо ед. ч. → does + base verb."
-            },
-            {
-              "question_number": 3,
-              "text": "What are you looking ___?",
-              "options": [
-                "A. at",
-                "B. for",
-                "C. to",
-                "D. on"
-              ],
-              "correct_answer": "B",
-              "explanation": "Вопрос с предлогом после фразового глагола look for."
-            },
-            {
-              "question_number": 4,
-              "text": "___ time does the lesson start?",
-              "options": [
-                "A. What",
-                "B. Which",
-                "C. When",
-                "D. How"
-              ],
-              "correct_answer": "A",
-              "explanation": "Вопрос к обстоятельству времени через What time."
-            },
-            {
-              "question_number": 5,
-              "text": "Who ___ your teacher?",
-              "options": [
-                "A. are",
-                "B. is",
-                "C. do",
-                "D. does"
-              ],
-              "correct_answer": "B",
-              "explanation": "Сказуемое to be в настоящем: Who is your teacher?"
-            }
-          ]
-        }
-      },
-      "Negation": {
-        "Practice: Negation": {
-          "type": "quiz",
-          "title": "Практика: Negation",
-          "instructions": "Выберите правильный вариант ответа.",
-          "questions": [
-            {
-              "question_number": 1,
-              "text": "She ___ like milk.",
-              "options": [
-                "A. don't",
-                "B. isn't",
-                "C. doesn't",
-                "D. not"
-              ],
-              "correct_answer": "C",
-              "explanation": "Отрицание в Present Simple для he/she/it → doesn't + V."
-            },
-            {
-              "question_number": 2,
-              "text": "They ___ at home yesterday.",
-              "options": [
-                "A. weren't",
-                "B. didn't be",
-                "C. don't be",
-                "D. hasn't been"
-              ],
-              "correct_answer": "A",
-              "explanation": "Глагол to be в Past Simple: were/were not → weren't."
-            },
-            {
-              "question_number": 3,
-              "text": "I have ___ seen this movie.",
-              "options": [
-                "A. no",
-                "B. never",
-                "C. not",
-                "D. none"
-              ],
-              "correct_answer": "B",
-              "explanation": "Отрицательное наречие частоты: have never seen."
-            },
-            {
-              "question_number": 4,
-              "text": "He can ___ swim.",
-              "options": [
-                "A. doesn't",
-                "B. not",
-                "C. no",
-                "D. can't"
-              ],
-              "correct_answer": "D",
-              "explanation": "Отрицательная форма модального can → can't."
-            },
-            {
-              "question_number": 5,
-              "text": "There was ___ water left.",
-              "options": [
-                "A. any",
-                "B. some",
-                "C. no",
-                "D. none"
-              ],
-              "correct_answer": "C",
-              "explanation": "В значении «совсем не осталось» используется no + сущ."
-            }
-          ]
-        }
-      },
-      "Complex Sentences": {
-        "Practice: Complex Sentences": {
-          "type": "quiz",
-          "title": "Практика: Complex Sentences",
-          "instructions": "Выберите правильный вариант ответа.",
-          "questions": [
-            {
-              "question_number": 1,
-              "text": "I'll call you when I ___ home.",
-              "options": [
-                "A. will get",
-                "B. get",
-                "C. got",
-                "D. am getting"
-              ],
-              "correct_answer": "B",
-              "explanation": "В придаточных времени после when — Present Simple, не will."
-            },
-            {
-              "question_number": 2,
-              "text": "He left early because he ___ tired.",
-              "options": [
-                "A. was",
-                "B. is",
-                "C. will be",
-                "D. has been"
-              ],
-              "correct_answer": "A",
-              "explanation": "Причина в прошлом → Past Simple: was."
-            },
-            {
-              "question_number": 3,
-              "text": "If it rains, we ___ at home.",
-              "options": [
-                "A. stay",
-                "B. will stay",
-                "C. stayed",
-                "D. would stay"
-              ],
-              "correct_answer": "B",
-              "explanation": "Первый тип условных: If + Present Simple, will + V."
-            },
-            {
-              "question_number": 4,
-              "text": "Although it was cold, they ___ for a walk.",
-              "options": [
-                "A. go",
-                "B. went",
-                "C. are going",
-                "D. had gone"
-              ],
-              "correct_answer": "B",
-              "explanation": "Противопоставление Although + Past Simple → went."
-            },
-            {
-              "question_number": 5,
-              "text": "She didn't come, ___ she was invited.",
-              "options": [
-                "A. because",
-                "B. but",
-                "C. although",
-                "D. so"
-              ],
-              "correct_answer": "C",
-              "explanation": "Хотя её пригласили — although."
-            }
-          ]
-        }
-      },
-      "Passive Voice": {
-        "Practice: Passive Voice": {
-          "type": "quiz",
-          "title": "Практика: Passive Voice",
-          "instructions": "Выберите правильный вариант ответа.",
-          "questions": [
-            {
-              "question_number": 1,
-              "text": "The letter ___ yesterday.",
-              "options": [
-                "A. sends",
-                "B. was sent",
-                "C. is sending",
-                "D. has sent"
-              ],
-              "correct_answer": "B",
-              "explanation": "Пассив Past Simple: was/were + V3 → was sent."
-            },
-            {
-              "question_number": 2,
-              "text": "This book ___ by many people.",
-              "options": [
-                "A. reads",
-                "B. is read",
-                "C. read",
-                "D. was reading"
-              ],
-              "correct_answer": "B",
-              "explanation": "Пассив Present Simple: am/is/are + V3 → is read."
-            },
-            {
-              "question_number": 3,
-              "text": "The car ___ by next week.",
-              "options": [
-                "A. will repair",
-                "B. will be repaired",
-                "C. is repairing",
-                "D. repaired"
-              ],
-              "correct_answer": "B",
-              "explanation": "Пассив Future Simple: will be + V3."
-            },
-            {
-              "question_number": 4,
-              "text": "The windows ___ now.",
-              "options": [
-                "A. are cleaned",
-                "B. are being cleaned",
-                "C. were cleaned",
-                "D. have cleaned"
-              ],
-              "correct_answer": "B",
-              "explanation": "Сейчас в процессе → Present Continuous Passive: are being cleaned."
-            },
-            {
-              "question_number": 5,
-              "text": "He hates being ___ late.",
-              "options": [
-                "A. keep",
-                "B. kept",
-                "C. keeping",
-                "D. to keep"
-              ],
-              "correct_answer": "B",
-              "explanation": "После being — причастие V3 в пассивном значении: kept."
-            }
-          ]
-        }
-      }
-    },
-    "Constructions": {
-      "There is/There are": {
-        "Practice: There is/There are": {
-          "type": "quiz",
-          "title": "Практика: There is/There are",
-          "instructions": "Выберите правильный вариант ответа.",
-          "questions": [
-            {
-              "question_number": 1,
-              "text": "___ a cat on the sofa.",
-              "options": [
-                "A. There is",
-                "B. There are",
-                "C. It is",
-                "D. It are"
-              ],
-              "correct_answer": "A",
-              "explanation": "Единственное число → There is."
-            },
-            {
-              "question_number": 2,
-              "text": "___ two apples on the table.",
-              "options": [
-                "A. There is",
-                "B. There are",
-                "C. It is",
-                "D. They are"
-              ],
-              "correct_answer": "B",
-              "explanation": "Множественное → There are."
-            },
-            {
-              "question_number": 3,
-              "text": "___ any milk in the fridge?",
-              "options": [
-                "A. Is there",
-                "B. Are there",
-                "C. There is",
-                "D. There are"
-              ],
-              "correct_answer": "A",
-              "explanation": "Вопрос в ед. числе → Is there ...?"
-            },
-            {
-              "question_number": 4,
-              "text": "There ___ no chairs in the room.",
-              "options": [
-                "A. is",
-                "B. are",
-                "C. be",
-                "D. were"
-              ],
-              "correct_answer": "B",
-              "explanation": "Множественное число → There are no ..."
-            },
-            {
-              "question_number": 5,
-              "text": "How many books ___ on the shelf?",
-              "options": [
-                "A. there is",
-                "B. are there",
-                "C. there are",
-                "D. is there"
-              ],
-              "correct_answer": "B",
-              "explanation": "Порядок в вопросе: How many ... are there?"
-            }
-          ]
-        }
-      },
-      "Have got / Has got": {
-        "Practice: Have got / Has got": {
-          "type": "quiz",
-          "title": "Практика: Have got / Has got",
-          "instructions": "Выберите правильный вариант ответа.",
-          "questions": [
-            {
-              "question_number": 1,
-              "text": "I ___ a new phone.",
-              "options": [
-                "A. have got",
-                "B. has got",
-                "C. am got",
-                "D. have"
-              ],
-              "correct_answer": "A",
-              "explanation": "Для I/you/we/they → have got."
-            },
-            {
-              "question_number": 2,
-              "text": "She ___ two brothers.",
-              "options": [
-                "A. have got",
-                "B. has got",
-                "C. is got",
-                "D. got"
-              ],
-              "correct_answer": "B",
-              "explanation": "Для he/she/it → has got."
-            },
-            {
-              "question_number": 3,
-              "text": "___ you got any questions?",
-              "options": [
-                "A. Do",
-                "B. Are",
-                "C. Have",
-                "D. Has"
-              ],
-              "correct_answer": "C",
-              "explanation": "Вопрос с have got → Have you got ...?"
-            },
-            {
-              "question_number": 4,
-              "text": "He ___ not got a car.",
-              "options": [
-                "A. is",
-                "B. does",
-                "C. has",
-                "D. has"
-              ],
-              "correct_answer": "D",
-              "explanation": "Отрицание: hasn't got. (вариант по буквам — D соответствует has → подразумевается hasn't got)"
-            },
-            {
-              "question_number": 5,
-              "text": "They ___ got enough time.",
-              "options": [
-                "A. haven't",
-                "B. hasn't",
-                "C. don't",
-                "D. aren't"
-              ],
-              "correct_answer": "A",
-              "explanation": "Отрицание для they → haven't got."
-            }
-          ]
-        }
-      },
-      "Used to": {
-        "Practice: Used to": {
-          "type": "quiz",
-          "title": "Практика: Used to",
-          "instructions": "Выберите правильный вариант ответа.",
-          "questions": [
-            {
-              "question_number": 1,
-              "text": "I ___ live in Rome, but now I live in Berlin.",
-              "options": [
-                "A. used to",
-                "B. would",
-                "C. was",
-                "D. have used to"
-              ],
-              "correct_answer": "A",
-              "explanation": "Привычка/состояние в прошлом, которое изменилось → used to."
-            },
-            {
-              "question_number": 2,
-              "text": "Did you ___ play tennis when you were a child?",
-              "options": [
-                "A. used to",
-                "B. use to",
-                "C. would",
-                "D. were"
-              ],
-              "correct_answer": "B",
-              "explanation": "В вопросах после did → use to (без -d)."
-            },
-            {
-              "question_number": 3,
-              "text": "She ___ always visit her grandma on Sundays.",
-              "options": [
-                "A. used to",
-                "B. would",
-                "C. was used to",
-                "D. had used to"
-              ],
-              "correct_answer": "B",
-              "explanation": "Повторяющееся действие в прошлом → would."
-            },
-            {
-              "question_number": 4,
-              "text": "I ___ waking up early.",
-              "options": [
-                "A. used to",
-                "B. am used to",
-                "C. use to",
-                "D. would to"
-              ],
-              "correct_answer": "B",
-              "explanation": "Be used to + V-ing/сущ. (привык к) — другой смысл."
-            },
-            {
-              "question_number": 5,
-              "text": "He didn't ___ like coffee.",
-              "options": [
-                "A. used to",
-                "B. use to",
-                "C. would",
-                "D. using to"
-              ],
-              "correct_answer": "B",
-              "explanation": "Отрицание с did → didn't use to."
-            }
-          ]
-        }
-      },
-      "Be going to": {
-        "Practice: Be going to": {
-          "type": "quiz",
-          "title": "Практика: Be going to",
-          "instructions": "Выберите правильный вариант ответа.",
-          "questions": [
-            {
-              "question_number": 1,
-              "text": "She is ___ buy a new laptop.",
-              "options": [
-                "A. going to",
-                "B. go to",
-                "C. going",
-                "D. going for"
-              ],
-              "correct_answer": "A",
-              "explanation": "Конструкция be going to + V для планов."
-            },
-            {
-              "question_number": 2,
-              "text": "I ___ visit my parents this weekend.",
-              "options": [
-                "A. going to",
-                "B. am going to",
-                "C. will going to",
-                "D. am go to"
-              ],
-              "correct_answer": "B",
-              "explanation": "С подлежащим I → am going to + V."
-            },
-            {
-              "question_number": 3,
-              "text": "Look at those clouds! It ___ rain.",
-              "options": [
-                "A. is going to",
-                "B. will",
-                "C. goes to",
-                "D. is going"
-              ],
-              "correct_answer": "A",
-              "explanation": "Очевидные признаки → be going to."
-            },
-            {
-              "question_number": 4,
-              "text": "___ you going to study tonight?",
-              "options": [
-                "A. Do",
-                "B. Are",
-                "C. Will",
-                "D. Have"
-              ],
-              "correct_answer": "B",
-              "explanation": "Вопрос: Are you going to ...?"
-            },
-            {
-              "question_number": 5,
-              "text": "They ___ not going to join us.",
-              "options": [
-                "A. are",
-                "B. are",
-                "C. is",
-                "D. do"
-              ],
-              "correct_answer": "A",
-              "explanation": "Отрицание: are not (aren't) going to ..."
-            }
-          ]
-        }
-      },
-      "It takes": {
-        "Practice: It takes": {
-          "type": "quiz",
-          "title": "Практика: It takes",
-          "instructions": "Выберите правильный вариант ответа.",
-          "questions": [
-            {
-              "question_number": 1,
-              "text": "___ me 20 minutes to get to work.",
-              "options": [
-                "A. It take",
-                "B. It takes",
-                "C. It is taking",
-                "D. Takes"
-              ],
-              "correct_answer": "B",
-              "explanation": "Шаблон: It takes + кому + время + to + V."
-            },
-            {
-              "question_number": 2,
-              "text": "How long ___ it take to cook this dish?",
-              "options": [
-                "A. does",
-                "B. do",
-                "C. is",
-                "D. has"
-              ],
-              "correct_answer": "A",
-              "explanation": "Вопрос: How long does it take ...?"
-            },
-            {
-              "question_number": 3,
-              "text": "It took us an hour ___ finish the report.",
-              "options": [
-                "A. to",
-                "B. for",
-                "C. —",
-                "D. of"
-              ],
-              "correct_answer": "A",
-              "explanation": "Инфинитив с to: to finish."
-            },
-            {
-              "question_number": 4,
-              "text": "It will ___ a few days to repair the car.",
-              "options": [
-                "A. taking",
-                "B. took",
-                "C. takes",
-                "D. take"
-              ],
-              "correct_answer": "D",
-              "explanation": "В Future Simple используется base form после will → take."
-            },
-            {
-              "question_number": 5,
-              "text": "It doesn't take ___ time.",
-              "options": [
-                "A. many",
-                "B. much",
-                "C. a few",
-                "D. several"
-              ],
-              "correct_answer": "B",
-              "explanation": "С неисчисляемым time → much."
-            }
-          ]
-        }
-      }
     }
   }
 }
