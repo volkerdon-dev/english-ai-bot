@@ -52,7 +52,7 @@ def create_user_lesson_task(cur):
 
 def insert_attempt(cur, user_id, task_id, is_correct):
     cur.execute(
-        "INSERT INTO task_attempt (user_id, task_id, is_correct, response) VALUES (%s, %s, %s, '{"r":1}'::jsonb) RETURNING id",
+        "INSERT INTO task_attempt (user_id, task_id, is_correct, response) VALUES (%s, %s, %s, '{}'::jsonb) RETURNING id",
         (user_id, task_id, is_correct),
     )
     return cur.fetchone()[0]
