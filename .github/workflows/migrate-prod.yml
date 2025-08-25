@@ -1,0 +1,45 @@
+name: Migrate PROD
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Show alembic heads/current before upgrade"
+        required: false
+        default: "false"
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      # (optional) quick visibility before applying
+      - name: Alembic info (dry-run)
+        if: ${{ inputs.dry_run == 'true' }}
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL_PROD }}
+        run: |
+          alembic --version
+          alembic heads
+          alembic current || true
+
+      - name: Upgrade DB
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL_PROD }}
+        run: alembic upgrade head
+
+      - name: Show current revision
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL_PROD }}
+        run: alembic current
+
