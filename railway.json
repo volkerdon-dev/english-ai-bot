@@ -1,11 +1,10 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
-    "builder": "NIXPACKS"
+    "builder": "DOCKERFILE"
   },
   "deploy": {
-    "startCommand": "npx serve -s . -l ${PORT:-3000}",
-    "healthcheckPath": "/health.html",
+    "healthcheckPath": "/health",
     "healthcheckTimeout": 100,
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10
