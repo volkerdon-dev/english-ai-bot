@@ -120,3 +120,14 @@ def summary(user_id: int):
             ]
     return {"lessons": lessons, "weakSubtopics": weak}
 
+
+@app.get("/")
+def root():
+    return {"ok": True}
+
+
+if __name__ == "__main__":
+    import os as _os
+    import uvicorn as _uvicorn
+    _port = int(_os.getenv("PORT", "8000"))
+    _uvicorn.run("app.main:app", host="0.0.0.0", port=_port)
