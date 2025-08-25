@@ -43,6 +43,14 @@
 - `railway.json` - конфигурация Railway
 - `package.json` - зависимости и скрипты
 
+## Backend (FastAPI)
+
+Локальный запуск сервера разработки:
+
+```bash
+uvicorn app.main:app --reload --port 8000
+```
+
 ## Исправления
 
 ### Проблема с навигацией
