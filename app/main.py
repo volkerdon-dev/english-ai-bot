@@ -1,7 +1,9 @@
 import os
 from typing import Optional, List
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 import logging
 from pydantic import BaseModel, Field
 import psycopg
@@ -12,6 +14,15 @@ DB_URL = DB_URL.replace("postgresql+psycopg://", "postgresql://")  # psycopg nat
 
 app = FastAPI(title="English AI Bot API")
 
+# CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 class AttemptIn(BaseModel):
     user_id: int
@@ -21,6 +32,10 @@ class AttemptIn(BaseModel):
     score: Optional[float] = None
     response: dict = Field(default_factory=dict)
     error_tags: List[str] = Field(default_factory=list)
+
+
+class AuthTgIn(BaseModel):
+    tg_user_id: int
 
 
 logger = logging.getLogger("app")
@@ -76,6 +91,25 @@ def create_attempt(a: AttemptIn):
     return {"attemptId": attempt_id, "lessonId": lesson_id, "progress": progress}
 
 
+@app.post("/auth/tg")
+def auth_tg(payload: AuthTgIn):
+    # Create or get a user bound to Telegram ID
+    email = f"tg-{payload.tg_user_id}@tg.local"
+    with psycopg.connect(DB_URL, autocommit=True) as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                INSERT INTO app_user (email)
+                VALUES (%s)
+                ON CONFLICT (email) DO UPDATE SET email = EXCLUDED.email
+                RETURNING id
+                """,
+                (email,),
+            )
+            user_id = cur.fetchone()[0]
+    return {"user_id": user_id}
+
+
 @app.get("/progress/summary")
 def summary(user_id: int):
     with psycopg.connect(DB_URL, autocommit=True) as conn:
@@ -119,11 +153,108 @@ def summary(user_id: int):
     return {"lessons": lessons, "weakSubtopics": weak}
 
 
- 
+@app.get("/lessons/overview")
+def lessons_overview(user_id: int, group: Optional[str] = "grammar"):
+    group = (group or "grammar").lower()
+    with psycopg.connect(DB_URL, autocommit=True) as conn:
+        with conn.cursor() as cur:
+            # Detect available columns in lesson table
+            cur.execute(
+                """
+                SELECT column_name
+                FROM information_schema.columns
+                WHERE table_schema = 'public' AND table_name = 'lesson'
+                """
+            )
+            cols = {r[0] for r in cur.fetchall()}
+            topic_col = 'topic_code' if 'topic_code' in cols else ('topic' if 'topic' in cols else None)
+            subtopic_select = 'l.subtopic_code' if 'subtopic_code' in cols else 'NULL::text'
+            if not topic_col:
+                raise HTTPException(500, "lesson_topic_column_not_found")
+
+            where = (
+                f"COALESCE(l.{topic_col}, '') ILIKE 'Vocabulary%'"
+                if group == "vocabulary"
+                else f"COALESCE(l.{topic_col}, '') ILIKE 'Grammar%'"
+            )
+
+            sql = f"""
+                SELECT l.id, l.title, l.{topic_col} AS topic_value,
+                       {subtopic_select} AS subtopic_value,
+                       COALESCE(lp.attempts,0) AS attempts,
+                       COALESCE(lp.correct,0)  AS correct,
+                       COALESCE(lp.mastered,false) AS mastered,
+                       CASE WHEN COALESCE(lp.attempts,0)>0
+                            THEN COALESCE(lp.correct,0)::float/COALESCE(lp.attempts,0) ELSE 0 END AS accuracy
+                FROM lesson l
+                LEFT JOIN lesson_progress lp
+                  ON lp.user_id = %s AND lp.lesson_id = l.id
+                WHERE {where}
+                ORDER BY mastered ASC, l.id ASC
+            """
+            cur.execute(sql, (user_id,))
+            rows = cur.fetchall()
+            lessons = [
+                {
+                    "lesson_id": r[0],
+                    "title": r[1],
+                    "topic": r[2],
+                    "subtopic": r[3],
+                    "attempts_total": r[4],
+                    "correct_total": r[5],
+                    "mastered": r[6],
+                    "accuracy": float(r[7]),
+                }
+                for r in rows
+            ]
+    return {"group": group, "lessons": lessons}
+
+
+@app.get("/tasks/next")
+def next_task(user_id: int, lesson_id: int):
+    with psycopg.connect(DB_URL, autocommit=True) as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT t.id,
+                       NULL AS type,
+                       t.content AS prompt,
+                       t.answer AS answer_schema
+                FROM task t
+                LEFT JOIN (
+                    SELECT task_id, COUNT(*) attempts
+                    FROM task_attempt
+                    WHERE user_id = %s
+                    GROUP BY task_id
+                ) a ON a.task_id = t.id
+                WHERE t.lesson_id = %s
+                ORDER BY COALESCE(a.attempts, 0) ASC, t.id ASC
+                LIMIT 1
+                """,
+                (user_id, lesson_id),
+            )
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(404, "no_task_for_lesson")
+            return {
+                "task_id": row[0],
+                "type": row[1],
+                "prompt": row[2] or {},
+                "answer_schema": row[3] or {},
+            }
+
+
+# Static files and root index
+STATIC_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static")
+if os.path.isdir(STATIC_DIR):
+    app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 
 @app.get("/")
 def root():
+    index_path = os.path.join(STATIC_DIR, "index.html")
+    if os.path.exists(index_path):
+        return FileResponse(index_path)
     return {"ok": True}
 
 

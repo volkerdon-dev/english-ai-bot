@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>EngTrain</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    :root { --primary:#2a62ff; --bg:#f6f7fb; --text:#111; --muted:#666; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background:var(--bg); color:var(--text); }
+    header { position: sticky; top:0; background:#fff; padding:12px 16px; box-shadow:0 1px 8px rgba(0,0,0,.05); z-index:10; }
+    .tabs { display:flex; gap:8px; }
+    .tab { padding:10px 14px; border-radius:10px; background:#eef1f7; cursor:pointer; }
+    .tab.active { background:var(--primary); color:#fff; }
+    main { padding:16px; }
+    .grid { display:grid; grid-template-columns: 1fr; gap:12px; }
+    @media (min-width:600px){ .grid{ grid-template-columns: repeat(2,1fr); } }
+    .card { background:#fff; border-radius:14px; padding:14px; box-shadow:0 2px 10px rgba(0,0,0,.05); }
+    .row { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+    .muted { color:var(--muted); font-size:12px; }
+    .badge { font-size:12px; padding:4px 8px; border-radius:999px; background:#eef1f7; }
+    .btn { display:inline-block; padding:10px 14px; border:0; border-radius:10px; cursor:pointer; }
+    .btn.primary { background:var(--primary); color:#fff; }
+    .btn.ghost { background:#eef1f7; color:#111; }
+    .hidden { display:none; }
+    .progress-bar { height:8px; background:#eef1f7; border-radius:6px; overflow:hidden; }
+    .progress-bar > div { height:100%; background:#38c172; width:0%; transition: width .3s; }
+    .choices { display:flex; flex-direction:column; gap:8px; margin-top:8px; }
+    .choice { padding:10px; border:1px solid #e5e7eb; border-radius:10px; cursor:pointer; }
+    .choice.selected { border-color:var(--primary); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="row">
+      <div><b>EngTrain</b></div>
+      <div class="muted" id="authStatus">инициализация…</div>
+    </div>
+    <div class="tabs" style="margin-top:8px">
+      <div class="tab active" data-group="grammar">Grammar</div>
+      <div class="tab" data-group="vocabulary">Vocabulary</div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Список уроков -->
+    <section id="listView" class="grid"></section>
+
+    <!-- Экран задания -->
+    <section id="taskView" class="hidden">
+      <div class="card" id="taskCard">
+        <div class="muted" id="taskLessonTitle"></div>
+        <h3 id="taskPromptTitle" style="margin:8px 0 4px 0">Task</h3>
+        <div id="taskPromptText"></div>
+        <div class="choices" id="choicesBox"></div>
+        <div class="row" style="margin-top:12px">
+          <button class="btn ghost" id="btnBack">← Назад</button>
+          <div>
+            <button class="btn" id="btnWrong">Неверно ❌</button>
+            <button class="btn primary" id="btnCorrect">Верно ✅</button>
+          </div>
+        </div>
+        <pre id="taskResult" class="muted" style="margin-top:10px"></pre>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const tg = window.Telegram?.WebApp;
+    let state = {
+      userId: null,
+      group: 'grammar',
+      lessons: [],
+      currentLesson: null,
+      currentTask: null,
+      selectedChoice: null,
+    };
+
+    const $listView = document.getElementById('listView');
+    const $taskView = document.getElementById('taskView');
+    const $authStatus = document.getElementById('authStatus');
+    const $tabs = document.querySelectorAll('.tab');
+
+    async function ensureUser() {
+      const tgId = tg?.initDataUnsafe?.user?.id || null;
+      if (tgId) {
+        const resp = await fetch('/auth/tg', {
+          method: 'POST', headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({ tg_user_id: tgId })
+        });
+        const data = await resp.json();
+        state.userId = data.user_id;
+        $authStatus.textContent = `Telegram • user_id=${state.userId}`;
+        tg?.ready?.();
+      } else {
+        state.userId = 1; // fallback для браузера
+        $authStatus.textContent = 'Demo • user_id=1';
+      }
+    }
+
+    function progressBar(pct) {
+      const p = Math.round((pct || 0)*100);
+      return `<div class="progress-bar"><div style="width:${p}%"></div></div>`;
+    }
+
+    function renderLessons() {
+      $listView.innerHTML = '';
+      for (const l of state.lessons) {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="row">
+            <div style="max-width:70%">
+              <div><b>${l.title}</b></div>
+              <div class="muted">${l.topic} • ${l.subtopic ?? ''}</div>
+            </div>
+            <div><span class="badge">${l.mastered ? 'Mastered' : 'Learn'}</span></div>
+          </div>
+          <div style="margin-top:8px">${progressBar(l.accuracy)}</div>
+          <div class="row" style="margin-top:10px">
+            <div class="muted">Attempts: ${l.attempts_total} • Accuracy: ${(l.accuracy*100).toFixed(0)}%</div>
+            <button class="btn primary" data-open="${l.lesson_id}">Начать</button>
+          </div>
+        `;
+        $listView.appendChild(card);
+      }
+      // кнопки «Начать»
+      document.querySelectorAll('[data-open]').forEach(btn => {
+        btn.onclick = () => openLesson(Number(btn.getAttribute('data-open')));
+      });
+    }
+
+    async function loadLessons() {
+      const r = await fetch(`/lessons/overview?user_id=${state.userId}&group=${state.group}`);
+      const data = await r.json();
+      state.lessons = data.lessons || [];
+      renderLessons();
+    }
+
+    async function openLesson(lessonId) {
+      const lesson = state.lessons.find(x => x.lesson_id === lessonId);
+      state.currentLesson = lesson;
+      // подгрузим «следующее задание»
+      const r = await fetch(`/tasks/next?user_id=${state.userId}&lesson_id=${lessonId}`);
+      if (!r.ok) {
+        alert('Нет задания для этого урока.');
+        return;
+      }
+      const task = await r.json();
+      state.currentTask = task;
+      renderTask();
+      toggleView('task');
+    }
+
+    function renderTask() {
+      const l = state.currentLesson;
+      const t = state.currentTask;
+      document.getElementById('taskLessonTitle').textContent = l ? l.title : '';
+      const prompt = t?.prompt || {};
+      document.getElementById('taskPromptText').textContent = prompt.text || 'Выполните задание';
+      // множественный выбор, если есть choices
+      const $choices = document.getElementById('choicesBox');
+      $choices.innerHTML = '';
+      if (Array.isArray(prompt.choices)) {
+        for (const [idx, ch] of prompt.choices.entries()) {
+          const div = document.createElement('div');
+          div.className = 'choice';
+          div.textContent = ch;
+          div.onclick = () => {
+            state.selectedChoice = idx;
+            document.querySelectorAll('.choice').forEach(el => el.classList.remove('selected'));
+            div.classList.add('selected');
+          };
+          $choices.appendChild(div);
+        }
+      }
+      document.getElementById('taskResult').textContent = '';
+    }
+
+    async function sendAttempt(isCorrect) {
+      const t = state.currentTask;
+      if (!t) return;
+      const resp = await fetch('/attempts', {
+        method: 'POST', headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({
+          user_id: state.userId,
+          task_id: t.task_id,
+          is_correct: isCorrect,
+          response: { choice: state.selectedChoice },
+          error_tags: []
+        })
+      });
+      const data = await resp.json();
+      document.getElementById('taskResult').textContent = JSON.stringify(data.progress || data, null, 2);
+      // обновим список уроков (прогресс)
+      await loadLessons();
+    }
+
+    function toggleView(view) {
+      if (view === 'task') {
+        $listView.classList.add('hidden');
+        $taskView.classList.remove('hidden');
+      } else {
+        $taskView.classList.add('hidden');
+        $listView.classList.remove('hidden');
+      }
+    }
+
+    // events
+    document.getElementById('btnCorrect').onclick = () => sendAttempt(true);
+    document.getElementById('btnWrong').onclick = () => sendAttempt(false);
+    document.getElementById('btnBack').onclick = () => toggleView('list');
+
+    $tabs.forEach(tab => {
+      tab.onclick = async () => {
+        $tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        state.group = tab.getAttribute('data-group');
+        await loadLessons();
+        toggleView('list');
+      };
+    });
+
+    (async function init(){
+      await ensureUser();
+      await loadLessons();
+    })();
+  </script>
+</body>
+</html>
+

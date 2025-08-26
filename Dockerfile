@@ -5,6 +5,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY alembic.ini .
 COPY migrations ./migrations
 COPY app ./app
+COPY static ./static
+RUN mkdir -p /app/static || true
 ENV PYTHONUNBUFFERED=1
 EXPOSE 8000
 CMD ["python", "-m", "app.main"]
