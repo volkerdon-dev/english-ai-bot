@@ -1,6 +1,8 @@
 import os
 from typing import Optional, List
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import JSONResponse
+import logging
 from pydantic import BaseModel, Field
 import psycopg
 from psycopg.types.json import Json
@@ -19,6 +21,15 @@ class AttemptIn(BaseModel):
     score: Optional[float] = None
     response: dict = Field(default_factory=dict)
     error_tags: List[str] = Field(default_factory=list)
+
+
+logger = logging.getLogger("app")
+
+
+@app.exception_handler(Exception)
+async def all_exception_handler(request: Request, exc: Exception):
+    logger.exception("Unhandled error on %s %s", request.method, request.url)
+    return JSONResponse(status_code=500, content={"detail": "internal_error"})
 
 
 @app.get("/health")
@@ -40,12 +51,11 @@ def create_attempt(a: AttemptIn):
 
             cur.execute(
                 """
-                INSERT INTO task_attempt
-                (user_id, task_id, lesson_id, started_at, finished_at, client_latency_ms, response, is_correct, score, error_tags)
-                VALUES (%s,%s,%s, NOW(), NOW(), %s, %s, %s, %s, %s)
+                INSERT INTO task_attempt (user_id, task_id, lesson_id, response, is_correct)
+                VALUES (%s, %s, %s, %s, %s)
                 RETURNING id
                 """,
-                (a.user_id, a.task_id, lesson_id, 0, Json(a.response), a.is_correct, a.score, a.error_tags),
+                (a.user_id, a.task_id, lesson_id, Json(a.response), a.is_correct),
             )
             attempt_id = cur.fetchone()[0]
 
