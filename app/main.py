@@ -61,8 +61,8 @@ def create_attempt(a: AttemptIn):
 
             cur.execute(
                 """
-                SELECT attempts_total, correct_total, mastered,
-                       CASE WHEN attempts_total>0 THEN correct_total::float/attempts_total ELSE 0 END AS accuracy
+                SELECT attempts, correct, mastered,
+                       CASE WHEN attempts>0 THEN correct::float/attempts ELSE 0 END AS accuracy
                 FROM lesson_progress
                 WHERE user_id=%s AND lesson_id=%s
                 """,
@@ -87,12 +87,13 @@ def summary(user_id: int):
         with conn.cursor() as cur:
             cur.execute(
                 """
-                SELECT l.id, l.title, lp.attempts_total, lp.correct_total, lp.mastered,
-                       CASE WHEN lp.attempts_total>0 THEN lp.correct_total::float/lp.attempts_total ELSE 0 END AS accuracy
+                SELECT l.id, l.title,
+                       lp.attempts, lp.correct, lp.mastered,
+                       CASE WHEN lp.attempts>0 THEN lp.correct::float/lp.attempts ELSE 0 END AS accuracy
                 FROM lesson_progress lp
                 JOIN lesson l ON l.id = lp.lesson_id
                 WHERE lp.user_id=%s
-                ORDER BY lp.mastered DESC, lp.last_seen_at DESC
+                ORDER BY lp.mastered DESC, lp.updated_at DESC NULLS LAST
                 """,
                 (user_id,),
             )
@@ -109,11 +110,11 @@ def summary(user_id: int):
             ]
             cur.execute(
                 """
-                SELECT topic_code, subtopic_code, attempts_total, correct_total,
-                       CASE WHEN attempts_total>0 THEN correct_total::float/attempts_total ELSE 0 END AS accuracy
+                SELECT topic_code, subtopic_code, attempts, correct,
+                       CASE WHEN attempts>0 THEN correct::float/attempts ELSE 0 END AS accuracy
                 FROM topic_stats
-                WHERE user_id=%s AND attempts_total >= 10
-                ORDER BY accuracy ASC, attempts_total DESC
+                WHERE user_id=%s AND attempts >= 10
+                ORDER BY accuracy ASC, attempts DESC
                 LIMIT 5
                 """,
                 (user_id,),
