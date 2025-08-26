@@ -245,9 +245,15 @@ def next_task(user_id: int, lesson_id: int):
 
 
 # Static files and root index
-STATIC_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static")
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+STATIC_DIR = os.path.join(BASE_DIR, "static")
 if os.path.isdir(STATIC_DIR):
     app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+
+# Mount legacy assets (root-level HTML/CSS/JS) under /legacy to avoid path clashes
+LEGACY_DIR = BASE_DIR
+if os.path.isdir(LEGACY_DIR):
+    app.mount("/legacy", StaticFiles(directory=LEGACY_DIR), name="legacy")
 
 
 @app.get("/")
