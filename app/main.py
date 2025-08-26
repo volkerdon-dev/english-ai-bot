@@ -93,7 +93,7 @@ def summary(user_id: int):
                 FROM lesson_progress lp
                 JOIN lesson l ON l.id = lp.lesson_id
                 WHERE lp.user_id=%s
-                ORDER BY lp.mastered DESC, lp.updated_at DESC NULLS LAST
+                ORDER BY lp.mastered DESC, lp.last_seen_at DESC NULLS LAST
                 """,
                 (user_id,),
             )
