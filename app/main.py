@@ -41,33 +41,28 @@ def health():
 def create_attempt(a: AttemptIn):
     with psycopg.connect(DB_URL, autocommit=True) as conn:
         with conn.cursor() as cur:
-            lesson_id = a.lesson_id
-            if lesson_id is None:
-                cur.execute("SELECT lesson_id FROM task WHERE id=%s", (a.task_id,))
-                row = cur.fetchone()
-                if not row:
-                    raise HTTPException(400, "task_id not found")
-                lesson_id = row[0]
+            # Get lesson_id from task table (do NOT insert lesson_id into task_attempt)
+            cur.execute("SELECT lesson_id FROM task WHERE id=%s", (a.task_id,))
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(400, "task_id not found")
+            lesson_id = row[0]
 
-            cur.execute(
-                """
-                INSERT INTO task_attempt (user_id, task_id, lesson_id, response, is_correct)
-                VALUES (%s, %s, %s, %s, %s)
+            # Minimal insert: only existing columns in your DB
+            cur.execute("""
+                INSERT INTO task_attempt (user_id, task_id, response, is_correct)
+                VALUES (%s, %s, %s, %s)
                 RETURNING id
-                """,
-                (a.user_id, a.task_id, lesson_id, Json(a.response), a.is_correct),
-            )
+            """, (a.user_id, a.task_id, Json(a.response), a.is_correct))
             attempt_id = cur.fetchone()[0]
 
-            cur.execute(
-                """
+            # Read progress from your schema (attempts/correct/mastered), no last_seen_at
+            cur.execute("""
                 SELECT attempts, correct, mastered,
                        CASE WHEN attempts>0 THEN correct::float/attempts ELSE 0 END AS accuracy
                 FROM lesson_progress
                 WHERE user_id=%s AND lesson_id=%s
-                """,
-                (a.user_id, lesson_id),
-            )
+            """, (a.user_id, lesson_id))
             row = cur.fetchone()
             progress = None
             if row:
@@ -85,50 +80,32 @@ def create_attempt(a: AttemptIn):
 def summary(user_id: int):
     with psycopg.connect(DB_URL, autocommit=True) as conn:
         with conn.cursor() as cur:
-            cur.execute(
-                """
+            cur.execute("""
                 SELECT l.id, l.title,
                        lp.attempts, lp.correct, lp.mastered,
                        CASE WHEN lp.attempts>0 THEN lp.correct::float/lp.attempts ELSE 0 END AS accuracy
                 FROM lesson_progress lp
                 JOIN lesson l ON l.id = lp.lesson_id
                 WHERE lp.user_id=%s
-                ORDER BY lp.mastered DESC, lp.last_seen_at DESC NULLS LAST
-                """,
-                (user_id,),
-            )
+                ORDER BY lp.mastered DESC, lp.attempts DESC
+            """, (user_id,))
             lessons = [
-                {
-                    "lesson_id": r[0],
-                    "title": r[1],
-                    "attempts_total": r[2],
-                    "correct_total": r[3],
-                    "mastered": r[4],
-                    "accuracy": float(r[5]),
-                }
+                {"lesson_id": r[0], "title": r[1], "attempts_total": r[2],
+                 "correct_total": r[3], "mastered": r[4], "accuracy": float(r[5])}
                 for r in cur.fetchall()
             ]
-            cur.execute(
-                """
+
+            cur.execute("""
                 SELECT topic_code, subtopic_code, attempts, correct,
                        CASE WHEN attempts>0 THEN correct::float/attempts ELSE 0 END AS accuracy
                 FROM topic_stats
                 WHERE user_id=%s AND attempts >= 10
                 ORDER BY accuracy ASC, attempts DESC
                 LIMIT 5
-                """,
-                (user_id,),
-            )
-            weak = [
-                {
-                    "topic": r[0],
-                    "subtopic": r[1],
-                    "attempts": r[2],
-                    "correct": r[3],
-                    "accuracy": float(r[4]),
-                }
-                for r in cur.fetchall()
-            ]
+            """, (user_id,))
+            weak = [{"topic": r[0], "subtopic": r[1], "attempts": r[2],
+                     "correct": r[3], "accuracy": float(r[4])}
+                    for r in cur.fetchall()]
     return {"lessons": lessons, "weakSubtopics": weak}
 
 
