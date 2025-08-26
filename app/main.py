@@ -90,23 +90,32 @@ def summary(user_id: int):
                 ORDER BY lp.mastered DESC, lp.attempts DESC
             """, (user_id,))
             lessons = [
-                {"lesson_id": r[0], "title": r[1], "attempts_total": r[2],
-                 "correct_total": r[3], "mastered": r[4], "accuracy": float(r[5])}
+                {
+                    "lesson_id": r[0], "title": r[1],
+                    "attempts_total": r[2], "correct_total": r[3],
+                    "mastered": r[4], "accuracy": float(r[5])
+                }
                 for r in cur.fetchall()
             ]
+    return {"lessons": lessons, "weakSubtopics": []}
 
+
+@app.get("/debug/columns")
+def debug_columns():
+    with psycopg.connect(DB_URL, autocommit=True) as conn:
+        with conn.cursor() as cur:
             cur.execute("""
-                SELECT topic_code, subtopic_code, attempts, correct,
-                       CASE WHEN attempts>0 THEN correct::float/attempts ELSE 0 END AS accuracy
-                FROM topic_stats
-                WHERE user_id=%s AND attempts >= 10
-                ORDER BY accuracy ASC, attempts DESC
-                LIMIT 5
-            """, (user_id,))
-            weak = [{"topic": r[0], "subtopic": r[1], "attempts": r[2],
-                     "correct": r[3], "accuracy": float(r[4])}
-                    for r in cur.fetchall()]
-    return {"lessons": lessons, "weakSubtopics": weak}
+                SELECT table_name, column_name, data_type
+                FROM information_schema.columns
+                WHERE table_schema='public'
+                  AND table_name IN ('lesson_progress','topic_stats')
+                ORDER BY table_name, ordinal_position
+            """)
+            rows = cur.fetchall()
+            data = {}
+            for t, c, dt in rows:
+                data.setdefault(t, []).append({"column": c, "type": dt})
+    return data
 
 
 @app.get("/")
