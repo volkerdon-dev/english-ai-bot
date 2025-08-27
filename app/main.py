@@ -172,13 +172,23 @@ def lessons_overview(user_id: int, group: Optional[str] = "grammar"):
             if not topic_col:
                 raise HTTPException(500, "lesson_topic_column_not_found")
 
-            where = (
-                f"COALESCE(l.{topic_col}, '') ILIKE 'Vocabulary%'"
-                if group == "vocabulary"
-                else f"COALESCE(l.{topic_col}, '') ILIKE 'Grammar%'"
-            )
+            if group == "vocabulary":
+                where = (
+                    f"(COALESCE(l.{topic_col}, '') ILIKE 'Vocabulary%' "
+                    f"OR COALESCE(l.{topic_col}, '') ILIKE 'Vocab%' "
+                    f"OR l.{topic_col} LIKE '🧠%')"
+                )
+            else:
+                where = (
+                    f"(COALESCE(l.{topic_col}, '') ILIKE 'Grammar%' "
+                    f"OR l.{topic_col} LIKE '📚%' "
+                    f"OR l.{topic_col} LIKE '📌%' "
+                    f"OR l.{topic_col} LIKE '🧱%' "
+                    f"OR l.{topic_col} LIKE '🛠%' "
+                    f"OR l.{topic_col} LIKE '🚫%')"
+                )
 
-            sql = f"""
+            select_base = f"""
                 SELECT l.id, l.title, l.{topic_col} AS topic_value,
                        {subtopic_select} AS subtopic_value,
                        COALESCE(lp.attempts,0) AS attempts,
@@ -189,11 +199,16 @@ def lessons_overview(user_id: int, group: Optional[str] = "grammar"):
                 FROM lesson l
                 LEFT JOIN lesson_progress lp
                   ON lp.user_id = %s AND lp.lesson_id = l.id
-                WHERE {where}
-                ORDER BY mastered ASC, l.id ASC
             """
-            cur.execute(sql, (user_id,))
+
+            sql_filtered = f"{select_base}\n                WHERE {where}\n                ORDER BY mastered ASC, l.id ASC"
+            cur.execute(sql_filtered, (user_id,))
             rows = cur.fetchall()
+            # Optional fallback: if no rows matched, return all lessons to avoid empty UI
+            if not rows:
+                sql_all = f"{select_base}\n                ORDER BY mastered ASC, l.id ASC"
+                cur.execute(sql_all, (user_id,))
+                rows = cur.fetchall()
             lessons = [
                 {
                     "lesson_id": r[0],
