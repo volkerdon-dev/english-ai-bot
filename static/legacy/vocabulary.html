@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vocabulary - Classic</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="/static/legacy/classic.css">
+</head>
+<body>
+  <main>
+    <h1>🧠 Vocabulary</h1>
+    <section class="card">
+      <div class="muted">Выберите раздел → подраздел → юнит. Если есть практика — запустите её.</div>
+    </section>
+    <section id="classic-root"></section>
+  </main>
+  <script src="/static/legacy/classic.js"></script>
+  <script>
+    window.__USER_ID__ = 1;
+    window.__GROUP__ = 'vocabulary';
+    bootClassic('vocabulary');
+  </script>
+</body>
+</html>

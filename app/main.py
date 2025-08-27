@@ -1,5 +1,5 @@
 import os
-from typing import Optional, List
+from typing import Optional, List, Dict, Tuple
 from fastapi import FastAPI, HTTPException, Request, Body
 from fastapi.responses import JSONResponse, FileResponse, RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -10,6 +10,7 @@ import psycopg
 from psycopg.types.json import Json
 from psycopg.rows import dict_row
 from datetime import datetime, timezone
+import re
 
 DB_URL = os.getenv("DATABASE_URL", "postgresql+psycopg://postgres:postgres@localhost:5432/appdb")
 DB_URL = DB_URL.replace("postgresql+psycopg://", "postgresql://")  # psycopg native
@@ -222,7 +223,13 @@ def set_plan(uid: int, request: Request, plan: str = Body(..., embed=True), days
 
 
 @app.get("/lessons/overview")
-def lessons_overview(user_id: int, group: Optional[str] = "grammar"):
+def lessons_overview(
+    user_id: int,
+    group: Optional[str] = "grammar",
+    section: Optional[str] = None,
+    subsection: Optional[str] = None,
+    unit: Optional[str] = None,
+):
     group = (group or "grammar").lower()
     with psycopg.connect(DB_URL, autocommit=True) as conn:
         with conn.cursor() as cur:
@@ -257,8 +264,24 @@ def lessons_overview(user_id: int, group: Optional[str] = "grammar"):
                     "🚫%",
                 ]
 
-            conds = [f"COALESCE(l.{topic_col}, '') ILIKE %s" for _ in patterns]
+            topic_full = f"COALESCE(l.{topic_col}, '')"
+            conds = [f"{topic_full} ILIKE %s" for _ in patterns]
             where = "(" + " OR ".join(conds) + ")"
+
+            # Optional hierarchical filters: section / subsection / unit
+            filters: List[str] = []
+            params_filters: List[str] = []
+            parts: List[str] = []
+            if section:
+                parts.append(section.strip())
+            if subsection:
+                parts.append(subsection.strip())
+            if unit:
+                parts.append(unit.strip())
+            if parts:
+                like_pattern = " / ".join([f"%{p}%" for p in parts]) + "%"
+                filters.append(f"{topic_full} ILIKE %s")
+                params_filters.append(like_pattern)
 
             select_base = f"""
                 SELECT l.id, l.title, l.{topic_col} AS topic_value,
@@ -273,8 +296,9 @@ def lessons_overview(user_id: int, group: Optional[str] = "grammar"):
                   ON lp.user_id = %s AND lp.lesson_id = l.id
             """
 
-            sql_filtered = f"{select_base}\n                WHERE {where}\n                ORDER BY mastered ASC, l.id ASC"
-            params = [user_id, *patterns]
+            extra_where = (" AND " + " AND ".join(filters)) if filters else ""
+            sql_filtered = f"{select_base}\n                WHERE {where}{extra_where}\n                ORDER BY mastered ASC, l.id ASC"
+            params = [user_id, *patterns, *params_filters]
             cur.execute(sql_filtered, params)
             rows = cur.fetchall()
             # Optional fallback: if no rows matched, return all lessons to avoid empty UI
@@ -358,25 +382,174 @@ CLASSIC_GRAMMAR_URL = os.getenv("CLASSIC_GRAMMAR_URL")
 # Friendly redirect for Grammar section. If CLASSIC_GRAMMAR_URL is set, use it; otherwise serve bundled legacy page
 @app.get("/grammar")
 def grammar_legacy_redirect():
-    target = CLASSIC_GRAMMAR_URL or "/legacy/grammar.html"
+    target = CLASSIC_GRAMMAR_URL or "/static/legacy/grammar.html"
     return RedirectResponse(url=target)
 
 
 @app.get("/vocabulary")
 def vocabulary_legacy_redirect():
-    return RedirectResponse(url="/legacy/vocabulary.html")
+    return RedirectResponse(url="/static/legacy/vocabulary.html")
 
 
 @app.get("/legacy/grammar.html", include_in_schema=False)
 def legacy_grammar_html():
     if CLASSIC_GRAMMAR_URL:
         return RedirectResponse(CLASSIC_GRAMMAR_URL, status_code=302)
-    # Fall back to static file if present
+    # Serve new static legacy page if available
+    new_path = os.path.join(STATIC_DIR, "legacy", "grammar.html")
+    if os.path.exists(new_path):
+        return FileResponse(new_path)
+    # Fallback to old root-level legacy file
     legacy_path = os.path.join(LEGACY_DIR, "grammar.html")
     if os.path.exists(legacy_path):
         return FileResponse(legacy_path)
     # As a last resort, redirect to /grammar (which will handle routing)
     return RedirectResponse(url="/grammar")
+
+
+# ---- Catalog Tree Endpoint ----
+
+def _slugify(value: str) -> str:
+    if not value:
+        return ""
+    value = value.strip().lower()
+    # replace emojis and non-word with hyphen
+    value = re.sub(r"[\W_]+", "-", value, flags=re.UNICODE)
+    value = re.sub(r"-+", "-", value).strip("-")
+    return value
+
+
+def _split_hierarchy(topic_full: str) -> Tuple[str, Optional[str], Optional[str]]:
+    if not topic_full:
+        return ("", None, None)
+    parts = [p.strip() for p in topic_full.split(" / ")]
+    if len(parts) == 1:
+        return (parts[0], None, None)
+    if len(parts) == 2:
+        return (parts[0], parts[1], None)
+    return (parts[0], parts[1], parts[2])
+
+
+@app.get("/catalog/tree")
+def catalog_tree(group: str):
+    group = (group or "").lower()
+    if group not in ("grammar", "vocabulary"):
+        raise HTTPException(status_code=400, detail="invalid_group")
+
+    with psycopg.connect(DB_URL, autocommit=True) as conn:
+        with conn.cursor() as cur:
+            # Detect available columns in lesson table
+            cur.execute(
+                """
+                SELECT column_name
+                FROM information_schema.columns
+                WHERE table_schema = 'public' AND table_name = 'lesson'
+                """
+            )
+            cols = {r[0] for r in cur.fetchall()}
+            topic_col = 'topic_code' if 'topic_code' in cols else ('topic' if 'topic' in cols else None)
+            if not topic_col:
+                raise HTTPException(500, "lesson_topic_column_not_found")
+
+            if group == "vocabulary":
+                patterns = [
+                    "Vocabulary%",
+                    "Vocab%",
+                    "🧠%",
+                ]
+            else:
+                patterns = [
+                    "Grammar%",
+                    "📚%",
+                    "📌%",
+                    "🧱%",
+                    "🛠%",
+                    "🚫%",
+                ]
+
+            topic_full = f"COALESCE(l.{topic_col}, '')"
+            conds = [f"{topic_full} ILIKE %s" for _ in patterns]
+            where = "(" + " OR ".join(conds) + ")"
+
+            sql = f"""
+                SELECT l.id AS lesson_id, {topic_full} AS topic_full, l.title
+                FROM lesson l
+                WHERE {where}
+                ORDER BY l.id
+            """
+            cur.execute(sql, patterns)
+            lessons = cur.fetchall()
+
+            # Build nested dict structure
+            tree: Dict[str, dict] = {}
+            unit_to_lessons: Dict[str, List[int]] = {}
+
+            for lesson_id, topic_value, lesson_title in lessons:
+                sec, sub, uni = _split_hierarchy(topic_value)
+                if not sec:
+                    # skip orphaned
+                    continue
+                sec_code = _slugify(sec)
+                if sec_code not in tree:
+                    tree[sec_code] = {"code": sec_code, "title": sec, "subsections": {}}
+                if sub:
+                    sub_code = _slugify(sub)
+                else:
+                    sub_code = "_default"
+                    sub = "General"
+                subsections = tree[sec_code]["subsections"]
+                if sub_code not in subsections:
+                    subsections[sub_code] = {"code": sub_code, "title": sub, "units": {}}
+                if uni:
+                    unit_title = uni
+                else:
+                    unit_title = lesson_title or f"Lesson {lesson_id}"
+                unit_code = _slugify(unit_title)
+                units = subsections[sub_code]["units"]
+                if unit_code not in units:
+                    units[unit_code] = {"code": unit_code, "title": unit_title, "lessonIds": []}
+                units[unit_code]["lessonIds"].append(lesson_id)
+                unit_to_lessons.setdefault(unit_code, []).append(lesson_id)
+
+            # Determine hasPractice per unit in one query
+            all_lesson_ids: List[int] = []
+            for ids in unit_to_lessons.values():
+                all_lesson_ids.extend(ids)
+            practice_set: set = set()
+            if all_lesson_ids:
+                cur.execute(
+                    "SELECT DISTINCT lesson_id FROM task WHERE lesson_id = ANY(%s)",
+                    (all_lesson_ids,),
+                )
+                practice_set = {r[0] for r in cur.fetchall()}
+
+            # Normalize to list and annotate hasPractice
+            sections_out: List[dict] = []
+            for sec_code, sec_obj in tree.items():
+                subsections_out: List[dict] = []
+                for sub_code, sub_obj in sec_obj["subsections"].items():
+                    units_out: List[dict] = []
+                    for unit_code, unit_obj in sub_obj["units"].items():
+                        lesson_ids = unit_obj["lessonIds"]
+                        has_practice = any(lid in practice_set for lid in lesson_ids)
+                        units_out.append({
+                            "code": unit_code,
+                            "title": unit_obj["title"],
+                            "lessonIds": lesson_ids,
+                            "hasPractice": has_practice,
+                        })
+                    subsections_out.append({
+                        "code": sub_obj["code"],
+                        "title": sub_obj["title"],
+                        "units": units_out,
+                    })
+                sections_out.append({
+                    "code": sec_obj["code"],
+                    "title": sec_obj["title"],
+                    "subsections": subsections_out,
+                })
+
+    return {"group": group, "sections": sections_out}
 
 
 if __name__ == "__main__":
