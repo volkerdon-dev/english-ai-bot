@@ -1,6 +1,6 @@
 import os
 from typing import Optional, List
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException, Request, Body
 from fastapi.responses import JSONResponse, FileResponse, RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -8,6 +8,8 @@ import logging
 from pydantic import BaseModel, Field
 import psycopg
 from psycopg.types.json import Json
+from psycopg.rows import dict_row
+from datetime import datetime, timezone
 
 DB_URL = os.getenv("DATABASE_URL", "postgresql+psycopg://postgres:postgres@localhost:5432/appdb")
 DB_URL = DB_URL.replace("postgresql+psycopg://", "postgresql://")  # psycopg native
@@ -39,6 +41,39 @@ class AuthTgIn(BaseModel):
 
 
 logger = logging.getLogger("app")
+
+
+def _is_pro(user_row: dict) -> bool:
+    if not user_row:
+        return False
+    if user_row.get("plan") == "pro":
+        return True
+    pro_until = user_row.get("pro_until")
+    if isinstance(pro_until, str):
+        try:
+            pro_until = datetime.fromisoformat(pro_until)
+        except Exception:
+            pro_until = None
+    return bool(pro_until and pro_until > datetime.now(timezone.utc))
+
+
+def _has_entitlement(user_row: dict, key: str) -> bool:
+    if _is_pro(user_row):
+        return True
+    ent = user_row.get("entitlements") or {}
+    try:
+        return bool(ent.get(key) is True)
+    except AttributeError:
+        return False
+
+
+def _get_user_row(conn, user_id: int):
+    with conn.cursor(row_factory=dict_row) as cur:
+        cur.execute(
+            "SELECT id, plan, pro_until, entitlements FROM app_user WHERE id=%s",
+            (user_id,),
+        )
+        return cur.fetchone()
 
 
 @app.exception_handler(Exception)
@@ -107,12 +142,22 @@ def auth_tg(payload: AuthTgIn):
                 (email,),
             )
             user_id = cur.fetchone()[0]
-    return {"user_id": user_id}
+        user = _get_user_row(conn, user_id)
+    return {
+        "user_id": user_id,
+        "plan": (user or {}).get("plan", "free"),
+        "proUntil": (user or {}).get("pro_until"),
+        "entitlements": (user or {}).get("entitlements") or {},
+    }
 
 
 @app.get("/progress/summary")
 def summary(user_id: int):
     with psycopg.connect(DB_URL, autocommit=True) as conn:
+        # Entitlement gate
+        user = _get_user_row(conn, user_id)
+        if not _has_entitlement(user, "progress_summary"):
+            raise HTTPException(status_code=402, detail="progress_summary_required")
         with conn.cursor() as cur:
             cur.execute("""
                 SELECT l.id, l.title,
@@ -151,6 +196,29 @@ def summary(user_id: int):
                 for r in cur.fetchall()
             ]
     return {"lessons": lessons, "weakSubtopics": weak}
+
+
+# Admin plan toggle endpoint
+ADMIN_TOKEN = os.getenv("ADMIN_TOKEN", "")
+
+
+@app.post("/admin/users/{uid}/plan")
+def set_plan(uid: int, request: Request, plan: str = Body(..., embed=True), days: Optional[int] = Body(None, embed=True)):
+    token = request.headers.get("X-Admin-Token")
+    if token != ADMIN_TOKEN:
+        raise HTTPException(status_code=403, detail="forbidden")
+    with psycopg.connect(DB_URL, autocommit=True) as conn:
+        with conn.cursor() as cur:
+            if plan == "pro" and days:
+                # Note: days is sanitized as int in interval
+                days_int = int(days)
+                cur.execute(
+                    f"UPDATE app_user SET plan=%s, pro_until=NOW() + INTERVAL '{days_int} days' WHERE id=%s",
+                    (plan, uid),
+                )
+            else:
+                cur.execute("UPDATE app_user SET plan=%s, pro_until=NULL WHERE id=%s", (plan, uid))
+    return {"ok": True}
 
 
 @app.get("/lessons/overview")
@@ -284,17 +352,31 @@ def root():
     return {"ok": True}
 
 
+CLASSIC_GRAMMAR_URL = os.getenv("CLASSIC_GRAMMAR_URL")
+
+
 # Friendly redirect for Grammar section. If CLASSIC_GRAMMAR_URL is set, use it; otherwise serve bundled legacy page
 @app.get("/grammar")
 def grammar_legacy_redirect():
-    classic_url = os.getenv("CLASSIC_GRAMMAR_URL")
-    target = classic_url or "/legacy/grammar.html"
+    target = CLASSIC_GRAMMAR_URL or "/legacy/grammar.html"
     return RedirectResponse(url=target)
 
 
 @app.get("/vocabulary")
 def vocabulary_legacy_redirect():
     return RedirectResponse(url="/legacy/vocabulary.html")
+
+
+@app.get("/legacy/grammar.html", include_in_schema=False)
+def legacy_grammar_html():
+    if CLASSIC_GRAMMAR_URL:
+        return RedirectResponse(CLASSIC_GRAMMAR_URL, status_code=302)
+    # Fall back to static file if present
+    legacy_path = os.path.join(LEGACY_DIR, "grammar.html")
+    if os.path.exists(legacy_path):
+        return FileResponse(legacy_path)
+    # As a last resort, redirect to /grammar (which will handle routing)
+    return RedirectResponse(url="/grammar")
 
 
 if __name__ == "__main__":
