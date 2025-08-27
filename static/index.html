@@ -106,6 +106,27 @@
 
     function renderLessons() {
       $listView.innerHTML = '';
+      // Fallback: if there are no lessons yet, show links to legacy content
+      if (!Array.isArray(state.lessons) || state.lessons.length === 0) {
+        const group = state.group === 'vocabulary' ? 'vocabulary' : 'grammar';
+        const href = group === 'vocabulary' ? '/legacy/vocabulary.html' : '/legacy/grammar.html';
+        const title = group === 'vocabulary' ? 'Vocabulary' : 'Grammar';
+        const $card = document.createElement('div');
+        $card.className = 'card';
+        $card.innerHTML = `
+          <div class="row">
+            <div style="max-width:70%">
+              <div><b>Раздел ${title}</b></div>
+              <div class="muted">Пока нет уроков. Откройте теорию и практику из классической версии.</div>
+            </div>
+          </div>
+          <div style="margin-top:10px">
+            <a class="btn primary" href="${href}" style="text-decoration:none; display:inline-block">Открыть ${title}</a>
+          </div>
+        `;
+        $listView.appendChild($card);
+        return;
+      }
       for (const l of state.lessons) {
         const card = document.createElement('div');
         card.className = 'card';
@@ -132,9 +153,14 @@
     }
 
     async function loadLessons() {
-      const r = await fetch(`/lessons/overview?user_id=${state.userId}&group=${state.group}`);
-      const data = await r.json();
-      state.lessons = data.lessons || [];
+      try {
+        const r = await fetch(`/lessons/overview?user_id=${state.userId}&group=${state.group}`);
+        if (!r.ok) throw new Error('No lessons');
+        const data = await r.json();
+        state.lessons = data.lessons || [];
+      } catch (e) {
+        state.lessons = [];
+      }
       renderLessons();
     }
 
