@@ -172,21 +172,25 @@ def lessons_overview(user_id: int, group: Optional[str] = "grammar"):
             if not topic_col:
                 raise HTTPException(500, "lesson_topic_column_not_found")
 
+            # Build parameterized ILIKE conditions to avoid raw % tokens in SQL
             if group == "vocabulary":
-                where = (
-                    f"(COALESCE(l.{topic_col}, '') ILIKE 'Vocabulary%' "
-                    f"OR COALESCE(l.{topic_col}, '') ILIKE 'Vocab%' "
-                    f"OR l.{topic_col} LIKE '🧠%')"
-                )
+                patterns = [
+                    "Vocabulary%",
+                    "Vocab%",
+                    "🧠%",
+                ]
             else:
-                where = (
-                    f"(COALESCE(l.{topic_col}, '') ILIKE 'Grammar%' "
-                    f"OR l.{topic_col} LIKE '📚%' "
-                    f"OR l.{topic_col} LIKE '📌%' "
-                    f"OR l.{topic_col} LIKE '🧱%' "
-                    f"OR l.{topic_col} LIKE '🛠%' "
-                    f"OR l.{topic_col} LIKE '🚫%')"
-                )
+                patterns = [
+                    "Grammar%",
+                    "📚%",
+                    "📌%",
+                    "🧱%",
+                    "🛠%",
+                    "🚫%",
+                ]
+
+            conds = [f"COALESCE(l.{topic_col}, '') ILIKE %s" for _ in patterns]
+            where = "(" + " OR ".join(conds) + ")"
 
             select_base = f"""
                 SELECT l.id, l.title, l.{topic_col} AS topic_value,
@@ -202,7 +206,8 @@ def lessons_overview(user_id: int, group: Optional[str] = "grammar"):
             """
 
             sql_filtered = f"{select_base}\n                WHERE {where}\n                ORDER BY mastered ASC, l.id ASC"
-            cur.execute(sql_filtered, (user_id,))
+            params = [user_id, *patterns]
+            cur.execute(sql_filtered, params)
             rows = cur.fetchall()
             # Optional fallback: if no rows matched, return all lessons to avoid empty UI
             if not rows:
