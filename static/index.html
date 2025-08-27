@@ -70,6 +70,8 @@
     const tg = window.Telegram?.WebApp;
     let state = {
       userId: null,
+      plan: 'free',
+      entitlements: {},
       group: 'grammar',
       lessons: [],
       currentLesson: null,
@@ -82,6 +84,27 @@
     const $authStatus = document.getElementById('authStatus');
     const $tabs = document.querySelectorAll('.tab');
 
+    function hasEnt(key){
+      if (state.plan === 'pro') return true;
+      return !!(state.entitlements && state.entitlements[key] === true);
+    }
+
+    function applyGating(){
+      document.querySelectorAll('[data-pro-only]').forEach(el => {
+        const key = el.getAttribute('data-pro-only');
+        const enabled = (state.plan === 'pro') || (state.entitlements && state.entitlements[key] === true);
+        el.classList.toggle('disabled', !enabled);
+        const handler = (e) => {
+          if (!enabled){
+            e.preventDefault();
+            alert('Эта функция доступна в Pro.');
+            return false;
+          }
+        };
+        el.addEventListener('click', handler);
+      });
+    }
+
     async function ensureUser() {
       const tgId = tg?.initDataUnsafe?.user?.id || null;
       if (tgId) {
@@ -91,8 +114,11 @@
         });
         const data = await resp.json();
         state.userId = data.user_id;
+        state.plan = data.plan || 'free';
+        state.entitlements = data.entitlements || {};
         $authStatus.textContent = `Telegram • user_id=${state.userId}`;
         tg?.ready?.();
+        applyGating();
       } else {
         state.userId = 1; // fallback для браузера
         $authStatus.textContent = 'Demo • user_id=1';
