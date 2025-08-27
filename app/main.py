@@ -1,7 +1,7 @@
 import os
 from typing import Optional, List
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import JSONResponse, FileResponse
+from fastapi.responses import JSONResponse, FileResponse, RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 import logging
@@ -277,6 +277,17 @@ def root():
     if os.path.exists(index_path):
         return FileResponse(index_path)
     return {"ok": True}
+
+
+# Friendly redirects for legacy sections so links like /grammar work
+@app.get("/grammar")
+def grammar_legacy_redirect():
+    return RedirectResponse(url="/legacy/grammar.html")
+
+
+@app.get("/vocabulary")
+def vocabulary_legacy_redirect():
+    return RedirectResponse(url="/legacy/vocabulary.html")
 
 
 if __name__ == "__main__":
