@@ -279,10 +279,12 @@ def root():
     return {"ok": True}
 
 
-# Friendly redirects for legacy sections so links like /grammar work
+# Friendly redirect for Grammar section. If CLASSIC_GRAMMAR_URL is set, use it; otherwise serve bundled legacy page
 @app.get("/grammar")
 def grammar_legacy_redirect():
-    return RedirectResponse(url="/legacy/grammar.html")
+    classic_url = os.getenv("CLASSIC_GRAMMAR_URL")
+    target = classic_url or "/legacy/grammar.html"
+    return RedirectResponse(url=target)
 
 
 @app.get("/vocabulary")
