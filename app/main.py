@@ -310,6 +310,80 @@ def set_plan(uid: int, request: Request, plan: str = Body(..., embed=True), days
     return {"ok": True}
 
 
+# ---- Admin: Seed Demo Content ----
+
+@app.post("/admin/seed/demo")
+def seed_demo(request: Request):
+    token = request.headers.get("X-Admin-Token")
+    if token != ADMIN_TOKEN:
+        raise HTTPException(status_code=403, detail="forbidden")
+
+    base_dir = os.path.dirname(os.path.dirname(__file__))
+    seed_dir = os.path.join(base_dir, "static", "seed")
+    if not os.path.isdir(seed_dir):
+        raise HTTPException(status_code=404, detail="seed_dir_not_found")
+
+    # collect all json files
+    files = [os.path.join(seed_dir, f) for f in os.listdir(seed_dir) if f.endswith(".json")]
+    total_lessons = 0
+    total_tasks = 0
+
+    with psycopg.connect(DB_URL, autocommit=True) as conn:
+        with conn.cursor(row_factory=dict_row) as cur:
+            for path in files:
+                try:
+                    with open(path, "r", encoding="utf-8") as f:
+                        data = json.load(f)
+                except Exception:
+                    continue
+                items = data.get("items", [])
+                for it in items:
+                    topic_code = it.get("topic_code") or it.get("topic") or None
+                    title = it.get("title")
+                    if not title or not topic_code:
+                        continue
+                    # find existing lesson by (topic,title)
+                    cur.execute(
+                        "SELECT id FROM lesson WHERE COALESCE(topic, '') = %s AND title = %s",
+                        (topic_code, title),
+                    )
+                    row = cur.fetchone()
+                    if row:
+                        lesson_id = row["id"] if isinstance(row, dict) else row[0]
+                    else:
+                        cur.execute(
+                            """
+                            INSERT INTO lesson (title, topic, metadata)
+                            VALUES (%s, %s, %s)
+                            RETURNING id
+                            """,
+                            (title, topic_code, Json(it.get("metadata") or {})),
+                        )
+                        lesson_id = cur.fetchone()[0]
+                        total_lessons += 1
+
+                    # insert tasks idempotently by (lesson_id, content)
+                    for t in it.get("tasks", []):
+                        content_obj = t.get("content") or {}
+                        answer_obj = t.get("answer") or {}
+                        cur.execute(
+                            "SELECT 1 FROM task WHERE lesson_id = %s AND content = %s",
+                            (lesson_id, Json(content_obj)),
+                        )
+                        if cur.fetchone():
+                            continue
+                        cur.execute(
+                            """
+                            INSERT INTO task (lesson_id, content, answer, topic)
+                            VALUES (%s, %s, %s, %s)
+                            """,
+                            (lesson_id, Json(content_obj), Json(answer_obj), topic_code),
+                        )
+                        total_tasks += 1
+
+    return {"ok": True, "lessons_added": total_lessons, "tasks_added": total_tasks}
+
+
 @app.get("/lessons/overview")
 def lessons_overview(
     user_id: Optional[int] = None,
@@ -554,6 +628,20 @@ def _split_hierarchy(topic_full: str) -> Tuple[str, Optional[str], Optional[str]
     if not topic_full:
         return ("", None, None)
     parts = [p.strip() for p in topic_full.split(" / ")]
+    # Skip umbrella root like "Grammar", "Vocabulary" or emojis
+    if parts and (
+        parts[0].lower().startswith("grammar")
+        or parts[0].lower().startswith("vocab")
+        or parts[0].startswith("📚")
+        or parts[0].startswith("📌")
+        or parts[0].startswith("🧱")
+        or parts[0].startswith("🛠")
+        or parts[0].startswith("🚫")
+        or parts[0].startswith("🧠")
+    ):
+        parts = parts[1:]
+    if len(parts) == 0:
+        return ("", None, None)
     if len(parts) == 1:
         return (parts[0], None, None)
     if len(parts) == 2:

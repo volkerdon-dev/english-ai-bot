@@ -5,6 +5,7 @@ from httpx import ASGITransport
 
 # Set DATABASE_URL for tests before importing the app
 os.environ.setdefault("DATABASE_URL", "postgresql+psycopg://postgres:postgres@localhost:5432/appdb")
+os.environ.setdefault("ADMIN_TOKEN", "test_admin_token")
 
 from app.main import app  # noqa: E402
 
