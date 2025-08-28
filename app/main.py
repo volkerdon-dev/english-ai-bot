@@ -11,6 +11,45 @@ from psycopg.types.json import Json
 from psycopg.rows import dict_row
 from datetime import datetime, timezone
 import re
+import hmac
+import hashlib
+from urllib.parse import parse_qsl
+import json
+import httpx
+
+# --- Compatibility for tests using httpx.ASGITransport with sync Client ---
+try:
+    from httpx import ASGITransport as _ASGITransport
+    if not hasattr(_ASGITransport, "__enter__"):
+        def _asgi_enter(self):
+            return self
+        def _asgi_exit(self, exc_type, exc, tb):
+            return False
+        setattr(_ASGITransport, "__enter__", _asgi_enter)
+        setattr(_ASGITransport, "__exit__", _asgi_exit)
+    # Provide sync handle_request if missing (wraps async handler)
+    if not hasattr(_ASGITransport, "handle_request") and hasattr(_ASGITransport, "handle_async_request"):
+        def _handle_request(self, request):
+            import asyncio as _asyncio
+            import httpx as _httpx
+            async def _runner():
+                resp = await self.handle_async_request(request)
+                try:
+                    await resp.aread()
+                except Exception:
+                    pass
+                # Create a new sync Response with in-memory bytes content
+                return _httpx.Response(
+                    status_code=resp.status_code,
+                    headers=resp.headers,
+                    content=resp.content,
+                    request=request,
+                    extensions=resp.extensions,
+                )
+            return _asyncio.run(_runner())
+        setattr(_ASGITransport, "handle_request", _handle_request)
+except Exception:
+    pass
 
 DB_URL = os.getenv("DATABASE_URL", "postgresql+psycopg://postgres:postgres@localhost:5432/appdb")
 DB_URL = DB_URL.replace("postgresql+psycopg://", "postgresql://")  # psycopg native
@@ -28,7 +67,7 @@ app.add_middleware(
 
 
 class AttemptIn(BaseModel):
-    user_id: int
+    user_id: Optional[int] = None
     task_id: int
     lesson_id: Optional[int] = None
     is_correct: bool
@@ -38,7 +77,8 @@ class AttemptIn(BaseModel):
 
 
 class AuthTgIn(BaseModel):
-    tg_user_id: int
+    tg_user_id: Optional[int] = None
+    init_data: Optional[str] = None
 
 
 logger = logging.getLogger("app")
@@ -92,28 +132,47 @@ def health():
 def create_attempt(a: AttemptIn):
     with psycopg.connect(DB_URL, autocommit=True) as conn:
         with conn.cursor() as cur:
-            # Get lesson_id from task table (do NOT insert lesson_id into task_attempt)
+            # Resolve lesson_id for the task
             cur.execute("SELECT lesson_id FROM task WHERE id=%s", (a.task_id,))
             row = cur.fetchone()
             if not row:
                 raise HTTPException(400, "task_id not found")
             lesson_id = row[0]
 
-            # Minimal insert: only existing columns in your DB
-            cur.execute("""
+            # Guest mode: no user_id provided -> do not persist, return minimal progress stub
+            if a.user_id is None:
+                return {
+                    "attemptId": None,
+                    "lessonId": lesson_id,
+                    "progress": {
+                        "attempts_total": 1,
+                        "correct_total": 1 if a.is_correct else 0,
+                        "mastered": False,
+                        "accuracy": 1.0 if a.is_correct else 0.0,
+                    },
+                }
+
+            # Persist attempt for authenticated users
+            cur.execute(
+                """
                 INSERT INTO task_attempt (user_id, task_id, response, is_correct)
                 VALUES (%s, %s, %s, %s)
                 RETURNING id
-            """, (a.user_id, a.task_id, Json(a.response), a.is_correct))
+                """,
+                (a.user_id, a.task_id, Json(a.response), a.is_correct),
+            )
             attempt_id = cur.fetchone()[0]
 
-            # Read progress from your schema (attempts/correct/mastered), no last_seen_at
-            cur.execute("""
+            # Read progress aggregate
+            cur.execute(
+                """
                 SELECT attempts, correct, mastered,
                        CASE WHEN attempts>0 THEN correct::float/attempts ELSE 0 END AS accuracy
                 FROM lesson_progress
                 WHERE user_id=%s AND lesson_id=%s
-            """, (a.user_id, lesson_id))
+                """,
+                (a.user_id, lesson_id),
+            )
             row = cur.fetchone()
             progress = None
             if row:
@@ -129,8 +188,36 @@ def create_attempt(a: AttemptIn):
 
 @app.post("/auth/tg")
 def auth_tg(payload: AuthTgIn):
-    # Create or get a user bound to Telegram ID
-    email = f"tg-{payload.tg_user_id}@tg.local"
+    # Verify Telegram initData HMAC if provided/required
+    bot_token = os.getenv("BOT_TOKEN", "")
+    tg_user_id: Optional[int] = None
+
+    if bot_token:
+        if not payload.init_data:
+            raise HTTPException(status_code=401, detail="init_data_required")
+        secret_key = hashlib.sha256(bot_token.encode()).digest()
+        # Parse init_data and verify hash
+        items = dict(parse_qsl(payload.init_data, keep_blank_values=True))
+        recv_hash = items.pop("hash", None)
+        data_check_string = "\n".join(f"{k}={items[k]}" for k in sorted(items.keys()))
+        calc_hash = hmac.new(secret_key, data_check_string.encode(), hashlib.sha256).hexdigest()
+        if not (recv_hash and hmac.compare_digest(recv_hash, calc_hash)):
+            raise HTTPException(status_code=401, detail="invalid_signature")
+        # Extract user id from 'user' JSON if present; otherwise fallback to explicit tg_user_id
+        user_json = items.get("user")
+        if user_json:
+            try:
+                user_obj = json.loads(user_json)
+                tg_user_id = int(user_obj.get("id"))
+            except Exception:
+                tg_user_id = None
+    # Fallback (e.g., local dev without BOT_TOKEN)
+    if tg_user_id is None:
+        tg_user_id = payload.tg_user_id or None
+    if not tg_user_id:
+        raise HTTPException(status_code=400, detail="tg_user_id_missing")
+
+    email = f"tg-{tg_user_id}@tg.local"
     with psycopg.connect(DB_URL, autocommit=True) as conn:
         with conn.cursor() as cur:
             cur.execute(
@@ -143,12 +230,13 @@ def auth_tg(payload: AuthTgIn):
                 (email,),
             )
             user_id = cur.fetchone()[0]
-        user = _get_user_row(conn, user_id)
+        user = _get_user_row(conn, user_id) or {}
+
     return {
-        "user_id": user_id,
-        "plan": (user or {}).get("plan", "free"),
-        "proUntil": (user or {}).get("pro_until"),
-        "entitlements": (user or {}).get("entitlements") or {},
+        "userId": user_id,
+        "plan": user.get("plan", "free"),
+        "proUntil": user.get("pro_until"),
+        "entitlements": user.get("entitlements") or {},
     }
 
 
@@ -224,7 +312,7 @@ def set_plan(uid: int, request: Request, plan: str = Body(..., embed=True), days
 
 @app.get("/lessons/overview")
 def lessons_overview(
-    user_id: int,
+    user_id: Optional[int] = None,
     group: Optional[str] = "grammar",
     section: Optional[str] = None,
     subsection: Optional[str] = None,
@@ -323,28 +411,43 @@ def lessons_overview(
 
 
 @app.get("/tasks/next")
-def next_task(user_id: int, lesson_id: int):
+def next_task(lesson_id: int, user_id: Optional[int] = None):
     with psycopg.connect(DB_URL, autocommit=True) as conn:
         with conn.cursor() as cur:
-            cur.execute(
-                """
-                SELECT t.id,
-                       NULL AS type,
-                       t.content AS prompt,
-                       t.answer AS answer_schema
-                FROM task t
-                LEFT JOIN (
-                    SELECT task_id, COUNT(*) attempts
-                    FROM task_attempt
-                    WHERE user_id = %s
-                    GROUP BY task_id
-                ) a ON a.task_id = t.id
-                WHERE t.lesson_id = %s
-                ORDER BY COALESCE(a.attempts, 0) ASC, t.id ASC
-                LIMIT 1
-                """,
-                (user_id, lesson_id),
-            )
+            if user_id is not None:
+                cur.execute(
+                    """
+                    SELECT t.id,
+                           NULL AS type,
+                           t.content AS prompt,
+                           t.answer AS answer_schema
+                    FROM task t
+                    LEFT JOIN (
+                        SELECT task_id, COUNT(*) attempts
+                        FROM task_attempt
+                        WHERE user_id = %s
+                        GROUP BY task_id
+                    ) a ON a.task_id = t.id
+                    WHERE t.lesson_id = %s
+                    ORDER BY COALESCE(a.attempts, 0) ASC, t.id ASC
+                    LIMIT 1
+                    """,
+                    (user_id, lesson_id),
+                )
+            else:
+                cur.execute(
+                    """
+                    SELECT t.id,
+                           NULL AS type,
+                           t.content AS prompt,
+                           t.answer AS answer_schema
+                    FROM task t
+                    WHERE t.lesson_id = %s
+                    ORDER BY t.id ASC
+                    LIMIT 1
+                    """,
+                    (lesson_id,),
+                )
             row = cur.fetchone()
             if not row:
                 raise HTTPException(404, "no_task_for_lesson")
@@ -353,6 +456,34 @@ def next_task(user_id: int, lesson_id: int):
                 "type": row[1],
                 "prompt": row[2] or {},
                 "answer_schema": row[3] or {},
+            }
+
+
+# Public lesson details (theory/metadata)
+@app.get("/lesson/{lesson_id}")
+def get_lesson(lesson_id: int):
+    with psycopg.connect(DB_URL, autocommit=True) as conn:
+        with conn.cursor(row_factory=dict_row) as cur:
+            cur.execute(
+                "SELECT id, title, topic, metadata FROM lesson WHERE id=%s",
+                (lesson_id,),
+            )
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(404, "lesson_not_found")
+            # Expose theory if present inside metadata
+            theory = None
+            try:
+                meta = row.get("metadata") or {}
+                theory = meta.get("theory")
+            except Exception:
+                theory = None
+            return {
+                "lesson_id": row["id"],
+                "title": row["title"],
+                "topic": row.get("topic"),
+                "theory": theory,
+                "metadata": row.get("metadata") or {},
             }
 
 
@@ -550,6 +681,70 @@ def catalog_tree(group: str):
                 })
 
     return {"group": group, "sections": sections_out}
+
+
+# ---- Billing: Telegram Payments ----
+
+@app.post("/billing/create_invoice_link")
+def create_invoice_link():
+    bot_token = os.getenv("BOT_TOKEN", "")
+    price_cents = int(os.getenv("PRO_PRICE_CENTS", "0") or 0)
+    title = os.getenv("PRO_TITLE", "EngTrain Pro")
+    desc = os.getenv("PRO_DESC", "One year of EngTrain Pro access")
+    provider_token = os.getenv("PRO_PROVIDER_TOKEN", "")
+    currency = os.getenv("PRO_CURRENCY", "USD")
+
+    if not bot_token or not provider_token or price_cents <= 0:
+        raise HTTPException(status_code=500, detail="billing_not_configured")
+
+    api_url = f"https://api.telegram.org/bot{bot_token}/createInvoiceLink"
+    payload = {
+        "title": title,
+        "description": desc,
+        "payload": "engtrain_pro_1y",
+        "provider_token": provider_token,
+        "currency": currency,
+        "prices": [{"label": "Pro", "amount": price_cents}],
+    }
+    try:
+        with httpx.Client(timeout=10.0) as client:
+            res = client.post(api_url, json=payload)
+            data = res.json()
+            if not data.get("ok"):
+                logger.error("createInvoiceLink failed: %s", data)
+                raise HTTPException(status_code=502, detail="telegram_api_error")
+            return {"url": data["result"]}
+    except httpx.RequestError:
+        raise HTTPException(status_code=502, detail="telegram_unreachable")
+
+
+@app.post("/telegram/webhook")
+async def telegram_webhook(request: Request):
+    bot_token = os.getenv("BOT_TOKEN", "")
+    if not bot_token:
+        # allow in dev
+        return {"ok": True}
+    body = await request.json()
+    # Detect successful payment in update
+    message = body.get("message") or {}
+    sp = message.get("successful_payment")
+    if sp:
+        from_user = message.get("from") or {}
+        tg_id = from_user.get("id")
+        if tg_id:
+            email = f"tg-{tg_id}@tg.local"
+            with psycopg.connect(DB_URL, autocommit=True) as conn:
+                with conn.cursor() as cur:
+                    cur.execute(
+                        """
+                        UPDATE app_user
+                        SET plan='pro', pro_until=NOW() + INTERVAL '365 days'
+                        WHERE email=%s
+                        """,
+                        (email,),
+                    )
+            return {"ok": True}
+    return {"ok": True}
 
 
 if __name__ == "__main__":
