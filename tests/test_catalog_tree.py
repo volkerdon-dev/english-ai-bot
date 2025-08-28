@@ -3,10 +3,10 @@ import time
 import uuid
 import psycopg
 import pytest
-import httpx
+ 
 
 DB_URL = os.getenv("DATABASE_URL", "postgresql+psycopg://postgres:postgres@localhost:5432/appdb")
-API_URL = os.getenv("API_URL", "http://localhost:8000")
+ 
 
 
 def pg_native_url(url: str) -> str:
@@ -45,33 +45,31 @@ def ensure_seed_tree(conn):
             cur.execute("INSERT INTO lesson (title, topic) VALUES ('Animals A1', '🧠 Animals / Mammals / Cats')")
 
 
-def test_catalog_tree_grammar(conn):
+def test_catalog_tree_grammar(conn, api_client):
     ensure_seed_tree(conn)
-    with httpx.Client(base_url=API_URL, timeout=10.0) as client:
-        r = client.get("/catalog/tree", params={"group":"grammar"})
-        assert r.status_code == 200
-        data = r.json()
-        assert data.get("group") == "grammar"
-        sections = data.get("sections", [])
-        assert isinstance(sections, list) and len(sections) > 0
-        # ensure 3-level presence
-        any_unit = False
-        for s in sections:
-            for sub in s.get("subsections", []):
-                if sub.get("units"):
-                    any_unit = True
-        assert any_unit
+    r = api_client.get("/catalog/tree", params={"group": "grammar"})
+    assert r.status_code == 200
+    data = r.json()
+    assert data.get("group") == "grammar"
+    sections = data.get("sections", [])
+    assert isinstance(sections, list) and len(sections) > 0
+    # ensure 3-level presence
+    any_unit = False
+    for s in sections:
+        for sub in s.get("subsections", []):
+            if sub.get("units"):
+                any_unit = True
+    assert any_unit
 
 
-def test_lessons_overview_filtering(conn):
-    with httpx.Client(base_url=API_URL, timeout=10.0) as client:
-        r = client.get("/lessons/overview", params={
-            "user_id": 1,
-            "group": "grammar",
-            "section": "Tenses",
-            "subsection": "Present"
-        })
-        assert r.status_code == 200
-        data = r.json()
-        assert data.get("group") == "grammar"
-        assert isinstance(data.get("lessons"), list)
+def test_lessons_overview_filtering(conn, api_client):
+    r = api_client.get("/lessons/overview", params={
+        "user_id": 1,
+        "group": "grammar",
+        "section": "Tenses",
+        "subsection": "Present"
+    })
+    assert r.status_code == 200
+    data = r.json()
+    assert data.get("group") == "grammar"
+    assert isinstance(data.get("lessons"), list)

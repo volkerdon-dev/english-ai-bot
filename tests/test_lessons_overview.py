@@ -4,11 +4,11 @@ import uuid
 
 import psycopg
 import pytest
-import httpx
+ 
 
 
 DB_URL = os.getenv("DATABASE_URL", "postgresql+psycopg://postgres:postgres@localhost:5432/appdb")
-API_URL = os.getenv("API_URL", "http://localhost:8000")
+ 
 
 
 def pg_native_url(url: str) -> str:
@@ -54,30 +54,28 @@ def ensure_seed_lessons(conn):
 			cur.execute("INSERT INTO lesson (title, topic) VALUES ('V2', 'Vocab: Animals')")
 
 
-def test_lessons_overview_returns_grammar(conn):
+def test_lessons_overview_returns_grammar(conn, api_client):
 	ensure_seed_lessons(conn)
 	user_id = create_user(conn)
-	with httpx.Client(base_url=API_URL, timeout=10.0) as client:
-		r = client.get(f"/lessons/overview", params={"user_id": user_id, "group": "grammar"})
-		assert r.status_code == 200
-		data = r.json()
-		assert data.get("group") == "grammar"
-		lessons = data.get("lessons", [])
-		assert len(lessons) > 0
-		# At least one should have a grammar emoji/prefix
-		assert any(l["topic"].startswith(("📚", "📌", "🧱", "🛠", "🚫", "Grammar")) for l in lessons if l["topic"]) 
+	r = api_client.get(f"/lessons/overview", params={"user_id": user_id, "group": "grammar"})
+	assert r.status_code == 200
+	data = r.json()
+	assert data.get("group") == "grammar"
+	lessons = data.get("lessons", [])
+	assert len(lessons) > 0
+	# At least one should have a grammar emoji/prefix
+	assert any(l["topic"].startswith(("📚", "📌", "🧱", "🛠", "🚫", "Grammar")) for l in lessons if l["topic"]) 
 
 
-def test_lessons_overview_returns_vocabulary(conn):
+def test_lessons_overview_returns_vocabulary(conn, api_client):
 	ensure_seed_lessons(conn)
 	user_id = create_user(conn)
-	with httpx.Client(base_url=API_URL, timeout=10.0) as client:
-		r = client.get(f"/lessons/overview", params={"user_id": user_id, "group": "vocabulary"})
-		assert r.status_code == 200
-		data = r.json()
-		assert data.get("group") == "vocabulary"
-		lessons = data.get("lessons", [])
-		assert len(lessons) > 0
-		# At least one should have a vocabulary emoji/prefix
-		assert any(l["topic"].startswith(("🧠", "Vocabulary", "Vocab")) for l in lessons if l["topic"]) 
+	r = api_client.get(f"/lessons/overview", params={"user_id": user_id, "group": "vocabulary"})
+	assert r.status_code == 200
+	data = r.json()
+	assert data.get("group") == "vocabulary"
+	lessons = data.get("lessons", [])
+	assert len(lessons) > 0
+	# At least one should have a vocabulary emoji/prefix
+	assert any(l["topic"].startswith(("🧠", "Vocabulary", "Vocab")) for l in lessons if l["topic"]) 
 
