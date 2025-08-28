@@ -1,0 +1,96 @@
+{
+  "group": "vocabulary",
+  "items": [
+    {
+      "topic_code": "Vocabulary / Topic Words / Food / Fruits",
+      "title": "Fruits #1",
+      "difficulty": 1,
+      "tasks": [
+        {"type": "tf", "content": {"text": "A banana is a fruit."}, "answer": {"is_correct": true}},
+        {"type": "mcq", "content": {"text": "Choose a citrus fruit", "options": ["apple", "orange"]}, "answer": {"index": 1}}
+      ]
+    },
+    {
+      "topic_code": "Vocabulary / Topic Words / Food / Vegetables",
+      "title": "Vegetables #1",
+      "difficulty": 1,
+      "tasks": [
+        {"type": "tf", "content": {"text": "A carrot is a vegetable."}, "answer": {"is_correct": true}},
+        {"type": "mcq", "content": {"text": "Root vegetable", "options": ["carrot", "strawberry"]}, "answer": {"index": 0}}
+      ]
+    },
+    {
+      "topic_code": "Vocabulary / Topic Words / Travel / Airport",
+      "title": "Airport #1",
+      "difficulty": 1,
+      "tasks": [
+        {"type": "tf", "content": {"text": "You go through security before boarding."}, "answer": {"is_correct": true}},
+        {"type": "mcq", "content": {"text": "Where is the gate?", "options": ["terminal", "gate"]}, "answer": {"index": 1}}
+      ]
+    },
+    {
+      "topic_code": "Vocabulary / Topic Words / Travel / Hotel",
+      "title": "Hotel #1",
+      "difficulty": 1,
+      "tasks": [
+        {"type": "tf", "content": {"text": "Reception is where you check in."}, "answer": {"is_correct": true}},
+        {"type": "mcq", "content": {"text": "Synonym for reservation", "options": ["booking", "cancellation"]}, "answer": {"index": 0}}
+      ]
+    },
+    {
+      "topic_code": "Vocabulary / Word of the Day / A",
+      "title": "Word of the Day: Abundant",
+      "difficulty": 1,
+      "tasks": [
+        {"type": "tf", "content": {"text": "Abundant means scarce."}, "answer": {"is_correct": false}},
+        {"type": "mcq", "content": {"text": "Choose the synonym", "options": ["plentiful", "rare"]}, "answer": {"index": 0}}
+      ]
+    },
+    {
+      "topic_code": "Vocabulary / Topic Words / Animals / Mammals",
+      "title": "Animals: Mammals",
+      "difficulty": 1,
+      "tasks": [
+        {"type": "tf", "content": {"text": "Cats are mammals."}, "answer": {"is_correct": true}},
+        {"type": "mcq", "content": {"text": "Which is a mammal?", "options": ["eagle", "whale"]}, "answer": {"index": 1}}
+      ]
+    },
+    {
+      "topic_code": "Vocabulary / Topic Words / Home / Rooms",
+      "title": "Home: Rooms",
+      "difficulty": 1,
+      "tasks": [
+        {"type": "tf", "content": {"text": "Kitchen is where you sleep."}, "answer": {"is_correct": false}},
+        {"type": "mcq", "content": {"text": "Where do you cook?", "options": ["kitchen", "bedroom"]}, "answer": {"index": 0}}
+      ]
+    },
+    {
+      "topic_code": "Vocabulary / Topic Words / Technology / Devices",
+      "title": "Technology: Devices",
+      "difficulty": 1,
+      "tasks": [
+        {"type": "tf", "content": {"text": "A smartphone is a device."}, "answer": {"is_correct": true}},
+        {"type": "mcq", "content": {"text": "Portable computer", "options": ["laptop", "desktop"]}, "answer": {"index": 0}}
+      ]
+    },
+    {
+      "topic_code": "Vocabulary / Topic Words / Nature / Weather",
+      "title": "Nature: Weather",
+      "difficulty": 1,
+      "tasks": [
+        {"type": "tf", "content": {"text": "Rain is a type of precipitation."}, "answer": {"is_correct": true}},
+        {"type": "mcq", "content": {"text": "Opposite of hot", "options": ["cold", "warm"]}, "answer": {"index": 0}}
+      ]
+    },
+    {
+      "topic_code": "Vocabulary / Topic Words / School / Classroom",
+      "title": "School: Classroom",
+      "difficulty": 1,
+      "tasks": [
+        {"type": "tf", "content": {"text": "A whiteboard is used by students only."}, "answer": {"is_correct": false}},
+        {"type": "mcq", "content": {"text": "Person who teaches", "options": ["teacher", "student"]}, "answer": {"index": 0}}
+      ]
+    }
+  ]
+}
+

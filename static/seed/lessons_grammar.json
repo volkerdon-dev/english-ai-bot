@@ -1,0 +1,97 @@
+{
+  "group": "grammar",
+  "items": [
+    {
+      "topic_code": "Grammar / Tenses / Present / Present Simple",
+      "title": "Present Simple #1",
+      "difficulty": 1,
+      "metadata": {"theory": "We use Present Simple for habits and facts."},
+      "tasks": [
+        {"type": "tf", "content": {"text": "He go to school every day."}, "answer": {"is_correct": false}},
+        {"type": "mcq", "content": {"text": "Choose the correct form", "options": ["He go", "He goes"]}, "answer": {"index": 1}}
+      ]
+    },
+    {
+      "topic_code": "Grammar / Tenses / Present / Present Simple",
+      "title": "Present Simple #2",
+      "difficulty": 1,
+      "tasks": [
+        {"type": "tf", "content": {"text": "They plays football on Sundays."}, "answer": {"is_correct": false}},
+        {"type": "mcq", "content": {"text": "Choose the auxiliary for questions", "options": ["do", "does"]}, "answer": {"index": 0}}
+      ]
+    },
+    {
+      "topic_code": "Grammar / Tenses / Present / Present Simple",
+      "title": "Present Simple #3",
+      "difficulty": 1,
+      "tasks": [
+        {"type": "tf", "content": {"text": "The sun rise in the west."}, "answer": {"is_correct": false}},
+        {"type": "mcq", "content": {"text": "3rd person singular of 'to have'", "options": ["have", "has"]}, "answer": {"index": 1}}
+      ]
+    },
+    {
+      "topic_code": "Grammar / Tenses / Past / Past Simple",
+      "title": "Past Simple #1",
+      "difficulty": 1,
+      "tasks": [
+        {"type": "tf", "content": {"text": "I go to school yesterday."}, "answer": {"is_correct": false}},
+        {"type": "mcq", "content": {"text": "Past form of 'go'", "options": ["goed", "went"]}, "answer": {"index": 1}}
+      ]
+    },
+    {
+      "topic_code": "Grammar / Tenses / Past / Past Simple",
+      "title": "Past Simple #2",
+      "difficulty": 1,
+      "tasks": [
+        {"type": "tf", "content": {"text": "She didn't went home."}, "answer": {"is_correct": false}},
+        {"type": "mcq", "content": {"text": "Choose correct sentence", "options": ["She didn't go.", "She didn't went."]}, "answer": {"index": 0}}
+      ]
+    },
+    {
+      "topic_code": "Grammar / Parts of Speech / Nouns / Countable-Uncountable",
+      "title": "Countable & Uncountable #1",
+      "difficulty": 1,
+      "tasks": [
+        {"type": "tf", "content": {"text": "Milk is countable."}, "answer": {"is_correct": false}},
+        {"type": "mcq", "content": {"text": "Choose correct quantifier", "options": ["many water", "much water"]}, "answer": {"index": 1}}
+      ]
+    },
+    {
+      "topic_code": "Grammar / Parts of Speech / Nouns / Countable-Uncountable",
+      "title": "Countable & Uncountable #2",
+      "difficulty": 1,
+      "tasks": [
+        {"type": "tf", "content": {"text": "Apples are countable."}, "answer": {"is_correct": true}},
+        {"type": "mcq", "content": {"text": "Choose correct quantifier", "options": ["much apples", "many apples"]}, "answer": {"index": 1}}
+      ]
+    },
+    {
+      "topic_code": "Grammar / Sentence Structure / Simple Sentence",
+      "title": "Simple Sentence #1",
+      "difficulty": 1,
+      "tasks": [
+        {"type": "tf", "content": {"text": "A simple sentence has one independent clause."}, "answer": {"is_correct": true}},
+        {"type": "mcq", "content": {"text": "Choose simple sentence", "options": ["Because I was late.", "I was late."]}, "answer": {"index": 1}}
+      ]
+    },
+    {
+      "topic_code": "Grammar / Tenses / Present / Present Continuous",
+      "title": "Present Continuous #1",
+      "difficulty": 1,
+      "tasks": [
+        {"type": "tf", "content": {"text": "He is play football now."}, "answer": {"is_correct": false}},
+        {"type": "mcq", "content": {"text": "Choose correct form", "options": ["is playing", "play"]}, "answer": {"index": 0}}
+      ]
+    },
+    {
+      "topic_code": "Grammar / Tenses / Future / Will vs Going to",
+      "title": "Future Plans #1",
+      "difficulty": 1,
+      "tasks": [
+        {"type": "tf", "content": {"text": "I'm going to visit my grandma tomorrow."}, "answer": {"is_correct": true}},
+        {"type": "mcq", "content": {"text": "Spontaneous decision?", "options": ["will", "going to"]}, "answer": {"index": 0}}
+      ]
+    }
+  ]
+}
+
