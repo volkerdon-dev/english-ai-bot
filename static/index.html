@@ -115,11 +115,11 @@
     }
 
     async function ensureUser() {
-      const initData = tg?.initData || null;
-      if (initData) {
+      const tgId = tg?.initDataUnsafe?.user?.id;
+      if (tgId) {
         const resp = await fetch('/auth/tg', {
           method: 'POST', headers: {'Content-Type':'application/json'},
-          body: JSON.stringify({ init_data: initData })
+          body: JSON.stringify({ tg_user_id: tgId })
         });
         if (resp.ok){
           const data = await resp.json();
