@@ -94,35 +94,59 @@
         const key = el.getAttribute('data-pro-only');
         const enabled = (state.plan === 'pro') || (state.entitlements && state.entitlements[key] === true);
         el.classList.toggle('disabled', !enabled);
-        const handler = (e) => {
+        el.onclick = (e) => {
           if (!enabled){
             e.preventDefault();
-            alert('Эта функция доступна в Pro.');
+            openUpgrade();
             return false;
           }
         };
-        el.addEventListener('click', handler);
       });
     }
 
+    function ensureAnonSession(){
+      const name = 'anon_session_id=';
+      const cookies = document.cookie.split(';').map(s=>s.trim());
+      let has = cookies.some(c => c.startsWith(name));
+      if (!has){
+        const id = crypto?.randomUUID ? crypto.randomUUID() : (Date.now().toString(36)+Math.random().toString(36).slice(2));
+        document.cookie = `anon_session_id=${id}; Path=/; SameSite=Lax; Max-Age=${60*60*24*365}`;
+      }
+    }
+
     async function ensureUser() {
-      const tgId = tg?.initDataUnsafe?.user?.id || null;
-      if (tgId) {
+      const initData = tg?.initData || null;
+      if (initData) {
         const resp = await fetch('/auth/tg', {
           method: 'POST', headers: {'Content-Type':'application/json'},
-          body: JSON.stringify({ tg_user_id: tgId })
+          body: JSON.stringify({ init_data: initData })
         });
-        const data = await resp.json();
-        state.userId = data.user_id;
-        state.plan = data.plan || 'free';
-        state.entitlements = data.entitlements || {};
-        $authStatus.textContent = `Telegram • user_id=${state.userId}`;
-        tg?.ready?.();
-        applyGating();
-      } else {
-        state.userId = 1; // fallback для браузера
-        $authStatus.textContent = 'Demo • user_id=1';
+        if (resp.ok){
+          const data = await resp.json();
+          state.userId = data.userId;
+          state.plan = data.plan || 'free';
+          state.entitlements = data.entitlements || {};
+          $authStatus.textContent = `Telegram • user_id=${state.userId}`;
+          tg?.ready?.();
+          applyGating();
+          return;
+        }
       }
+      // Guest mode
+      state.userId = null;
+      ensureAnonSession();
+      $authStatus.textContent = 'Browser • user_id=guest';
+      applyGating();
+    }
+
+    function openUpgrade(){
+      fetch('/billing/create_invoice_link', { method: 'POST' })
+        .then(r=>r.json())
+        .then(d=>{
+          if (tg && typeof tg.openInvoice === 'function') tg.openInvoice(d.url);
+          else window.location.href = d.url;
+        })
+        .catch(()=> alert('Оплата временно недоступна. Попробуйте позже.'));
     }
 
     function progressBar(pct) {
@@ -180,7 +204,10 @@
 
     async function loadLessons() {
       try {
-        const r = await fetch(`/lessons/overview?user_id=${state.userId}&group=${state.group}`);
+        const url = new URL(`/lessons/overview`, window.location.origin);
+        url.searchParams.set('group', state.group);
+        if (state.userId != null) url.searchParams.set('user_id', String(state.userId));
+        const r = await fetch(url);
         if (!r.ok) throw new Error('No lessons');
         const data = await r.json();
         state.lessons = data.lessons || [];
@@ -194,7 +221,10 @@
       const lesson = state.lessons.find(x => x.lesson_id === lessonId);
       state.currentLesson = lesson;
       // подгрузим «следующее задание»
-      const r = await fetch(`/tasks/next?user_id=${state.userId}&lesson_id=${lessonId}`);
+      const url = new URL(`/tasks/next`, window.location.origin);
+      url.searchParams.set('lesson_id', String(lessonId));
+      if (state.userId != null) url.searchParams.set('user_id', String(state.userId));
+      const r = await fetch(url);
       if (!r.ok) {
         alert('Нет задания для этого урока.');
         return;
