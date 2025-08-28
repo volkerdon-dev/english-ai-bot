@@ -276,7 +276,24 @@
 
     (async function init(){
       await ensureUser();
+      // Support deep-linking from classic UI: ?group=grammar&lesson_id=123
+      const params = new URLSearchParams(location.search);
+      const group = params.get('group');
+      const lessonParam = params.get('lesson_id');
+      if (group === 'vocabulary' || group === 'grammar') {
+        state.group = group;
+        document.querySelectorAll('.tab').forEach(t=>{
+          t.classList.toggle('active', t.getAttribute('data-group')===state.group);
+        });
+      }
       await loadLessons();
+      const lessonId = lessonParam ? Number(lessonParam) : null;
+      if (lessonId) {
+        const exists = state.lessons.some(l => l.lesson_id === lessonId);
+        if (exists) {
+          await openLesson(lessonId);
+        }
+      }
     })();
   </script>
 </body>
