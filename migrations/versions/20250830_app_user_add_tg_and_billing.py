@@ -1,7 +1,7 @@
 """add tg_user_id, plan, pro_until, entitlements, real_email, updated_at
 
-Revision ID: 20250830_app_user_add_tg_and_billing
-Revises: 0003
+revision = "0004_app_user_billing"
+down_revision = "0003"
 Create Date: 2025-08-30 00:00:00
 
 """
