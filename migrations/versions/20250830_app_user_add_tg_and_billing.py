@@ -1,6 +1,6 @@
 """add tg_user_id, plan, pro_until, entitlements, real_email, updated_at
 
-revision = "0004_app_user_billing"
+revision = "0004_app_user_billing"   # <= КОРОТКОЕ имя (<=32 символов)
 down_revision = "0003"
 Create Date: 2025-08-30 00:00:00
 
